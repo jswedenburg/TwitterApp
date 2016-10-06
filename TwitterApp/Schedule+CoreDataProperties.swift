@@ -2,15 +2,15 @@
 //  Schedule+CoreDataProperties.swift
 //  TwitterApp
 //
-//  Created by Jake SWEDENBURG on 10/5/16.
+//  Created by Jake SWEDENBURG on 10/6/16.
 //  Copyright © 2016 Jake Swedenbug. All rights reserved.
 //
 
 import Foundation
 import CoreData
-import 
 
 extension Schedule {
+    
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Schedule> {
         return NSFetchRequest<Schedule>(entityName: "Schedule");

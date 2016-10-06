@@ -12,4 +12,8 @@ import CoreData
 
 public class TwitterAccount: NSManagedObject {
 
+    convenience init(context: NSManagedObjectContext = CoreDataStack.context){
+        
+        self.init(context: context)
+    }
 }
