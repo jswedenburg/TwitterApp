@@ -13,6 +13,10 @@
 		818AC8A41DA539E500659821 /* TwitterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8A21DA539E500659821 /* TwitterApp.xcdatamodeld */; };
 		818AC8A61DA539E500659821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818AC8A51DA539E500659821 /* Assets.xcassets */; };
 		818AC8A91DA539E500659821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818AC8A71DA539E500659821 /* LaunchScreen.storyboard */; };
+		818AC8DC1DA610CC00659821 /* TwitterAccount+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8D81DA610CC00659821 /* TwitterAccount+CoreDataClass.swift */; };
+		818AC8DD1DA610CC00659821 /* TwitterAccount+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8D91DA610CC00659821 /* TwitterAccount+CoreDataProperties.swift */; };
+		818AC8DE1DA610CC00659821 /* Schedule+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8DA1DA610CC00659821 /* Schedule+CoreDataClass.swift */; };
+		818AC8DF1DA610CC00659821 /* Schedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8DB1DA610CC00659821 /* Schedule+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		818AC8A51DA539E500659821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		818AC8A81DA539E500659821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		818AC8AA1DA539E500659821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		818AC8D81DA610CC00659821 /* TwitterAccount+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TwitterAccount+CoreDataClass.swift"; path = "Model/TwitterAccount+CoreDataClass.swift"; sourceTree = "<group>"; };
+		818AC8D91DA610CC00659821 /* TwitterAccount+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TwitterAccount+CoreDataProperties.swift"; path = "Model/TwitterAccount+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		818AC8DA1DA610CC00659821 /* Schedule+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Schedule+CoreDataClass.swift"; path = "Model/Schedule+CoreDataClass.swift"; sourceTree = "<group>"; };
+		818AC8DB1DA610CC00659821 /* Schedule+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Schedule+CoreDataProperties.swift"; path = "Model/Schedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,7 @@
 		818AC88F1DA539E500659821 = {
 			isa = PBXGroup;
 			children = (
+				818AC8E01DA610D400659821 /* New Group */,
 				818AC89A1DA539E500659821 /* TwitterApp */,
 				818AC8991DA539E500659821 /* Products */,
 			);
@@ -65,6 +74,17 @@
 				818AC8A21DA539E500659821 /* TwitterApp.xcdatamodeld */,
 			);
 			path = TwitterApp;
+			sourceTree = "<group>";
+		};
+		818AC8E01DA610D400659821 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				818AC8D81DA610CC00659821 /* TwitterAccount+CoreDataClass.swift */,
+				818AC8D91DA610CC00659821 /* TwitterAccount+CoreDataProperties.swift */,
+				818AC8DA1DA610CC00659821 /* Schedule+CoreDataClass.swift */,
+				818AC8DB1DA610CC00659821 /* Schedule+CoreDataProperties.swift */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +161,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				818AC8A41DA539E500659821 /* TwitterApp.xcdatamodeld in Sources */,
+				818AC8DD1DA610CC00659821 /* TwitterAccount+CoreDataProperties.swift in Sources */,
+				818AC8DC1DA610CC00659821 /* TwitterAccount+CoreDataClass.swift in Sources */,
 				818AC89E1DA539E500659821 /* ViewController.swift in Sources */,
+				818AC8DE1DA610CC00659821 /* Schedule+CoreDataClass.swift in Sources */,
 				818AC89C1DA539E500659821 /* AppDelegate.swift in Sources */,
+				818AC8DF1DA610CC00659821 /* Schedule+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
