@@ -1,20 +1,19 @@
 //
-//  ScheduleController.swift
+//  TwitterAccountController.swift
 //  TwitterApp
 //
-//  Created by Jake SWEDENBURG on 10/5/16.
+//  Created by Jake SWEDENBURG on 10/7/16.
 //  Copyright © 2016 Jake Swedenbug. All rights reserved.
 //
 
 import Foundation
-import CoreData
 
-class ScheduleController {
-    static let sharedController = ScheduleController()
+class TwitterAccountController {
+    static let sharedController = TwitterAccountController()
     
-    var schedules: [Schedule] {
+    var twitterAccounts: [TwitterAccount] {
         
-        let request: NSFetchRequest<Schedule> = Schedule.fetchRequest()
+        let request: NSFetchRequest<TwitterAccount> = TwitterAccount.fetchRequest()
         let moc = CoreDataStack.context
         do {
             let result = try moc.fetch(request)
@@ -47,6 +46,3 @@ class ScheduleController {
     
     
 }
-
-
-

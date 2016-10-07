@@ -9,9 +9,12 @@
 import UIKit
 
 class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let scheduleArray = ScheduleController.sharedController.schedules
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         
     }
@@ -22,16 +25,24 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ScheduleController.sharedController.schedules.count
+        return scheduleArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as? ScheduleTableViewCell else { return UITableViewCell() }
+        let schedule = scheduleArray[indexPath.row]
+        cell.updateWithSchedule(schedule: schedule)
+        
+        
         
         return cell
         
     }
     
+    
+    //MARK: Helper Functions
+    
+       
     
     
 

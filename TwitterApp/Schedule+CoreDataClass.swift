@@ -12,7 +12,7 @@ import CoreData
 
 public class Schedule: NSManagedObject {
 
-    convenience init(repeating: Bool, days: Int16 = 1, startTime: NSDate = NSDate(), endTime: NSDate = NSDate(), twitterAccounts: [TwitterAccount] = [], context: NSManagedObjectContext = CoreDataStack.context){
+    convenience init(repeating: Bool, days: Int16 = 1, startTime: NSDate = NSDate(), endTime: NSDate = NSDate(), title: String = "Fantasy Football", enabled: Bool = true, twitterAccounts: [TwitterAccount] = [], context: NSManagedObjectContext = CoreDataStack.context){
         
         
         
@@ -22,6 +22,8 @@ public class Schedule: NSManagedObject {
         self.startTime = startTime as NSDate
         self.endTime = endTime as NSDate
         self.twitterAccounts = NSSet(array: twitterAccounts)
+        self.title = title
+        self.enabled = enabled
         
         
         

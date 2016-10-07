@@ -23,7 +23,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Us0-eX-yMG">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scheduleCell" rowHeight="55" id="fEN-1n-LFU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scheduleCell" rowHeight="55" id="fEN-1n-LFU" customClass="ScheduleTableViewCell" customModule="TwitterApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fEN-1n-LFU" id="wUR-Aa-ptC">
@@ -62,6 +62,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="enabledSwitch" destination="0Lf-RA-1S3" id="40w-qs-eNf"/>
+                                            <outlet property="scheduleImageView" destination="tcj-eq-64S" id="JAf-Pj-Hb1"/>
+                                            <outlet property="timeAndDateLabel" destination="ws1-VO-LWd" id="L6v-JX-72M"/>
+                                            <outlet property="titleLabel" destination="shN-Ms-cYI" id="HzN-Kr-8qm"/>
                                             <segue destination="BZC-Wb-C9Y" kind="show" id="qCQ-Uo-zf8"/>
                                         </connections>
                                     </tableViewCell>

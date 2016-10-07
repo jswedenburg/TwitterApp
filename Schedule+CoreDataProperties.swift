@@ -8,9 +8,9 @@
 
 import Foundation
 import CoreData
+ 
 
 extension Schedule {
-    
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Schedule> {
         return NSFetchRequest<Schedule>(entityName: "Schedule");
@@ -20,6 +20,8 @@ extension Schedule {
     @NSManaged public var days: Int16
     @NSManaged public var startTime: NSDate?
     @NSManaged public var endTime: NSDate?
+    @NSManaged public var title: String?
+    @NSManaged public var enabled: Bool
     @NSManaged public var twitterAccounts: NSSet?
 
 }
