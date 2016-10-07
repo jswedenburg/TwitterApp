@@ -12,6 +12,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     let scheduleArray = ScheduleController.sharedController.schedules
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

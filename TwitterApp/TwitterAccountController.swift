@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class TwitterAccountController {
     static let sharedController = TwitterAccountController()
@@ -23,13 +24,13 @@ class TwitterAccountController {
         }
     }
     
-    func add(_ schedule: Schedule){
+    func add(_ twitterAccount: TwitterAccount){
         self.saveToPersistentStorage()
         
     }
     
-    func delete(_ schedule: Schedule){
-        schedule.managedObjectContext?.delete(schedule)
+    func delete(_ twitterAccount: TwitterAccount){
+        twitterAccount.managedObjectContext?.delete(twitterAccount)
         
         self.saveToPersistentStorage()
     }
