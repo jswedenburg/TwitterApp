@@ -20,11 +20,6 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return scheduleArray.count
@@ -41,21 +36,23 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
+    }
+    
     
     //MARK: Helper Functions
     
-       
     
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        guard let detailVC = segue.destination as? ScheduleDetailTableViewController, let index = tableView.indexPathForSelectedRow?.row else {return}
+        if segue.identifier == "editSchedule"{
+                detailVC.schedule = scheduleArray[index]
+            }
+    
     }
-    */
-
 }

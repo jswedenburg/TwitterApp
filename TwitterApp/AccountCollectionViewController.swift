@@ -61,7 +61,7 @@ class AccountCollectionViewController: UICollectionViewController {
         
         cell.backgroundColor = UIColor.red
        // cell.accountNameLabel.text = "test"
-        cell.sampleButton.setTitle("test", for: .normal)
+       // cell.sampleButton.setTitle("test", for: .normal)
     
         return cell
     }
