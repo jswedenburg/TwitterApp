@@ -11,7 +11,17 @@ import UIKit
 class AccountCollectionViewCell: UICollectionViewCell {
     
     
-    @IBOutlet weak var accountNameLabel: UILabel!
+    
+    
+    
+    
+    @IBOutlet weak var sampleButton: UIButton!
+    
+   // @IBOutlet var accountNameLabel: UILabel!
+    
+    
+    
+   
     
     
     

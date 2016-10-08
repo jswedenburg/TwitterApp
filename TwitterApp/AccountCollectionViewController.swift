@@ -12,14 +12,18 @@ private let reuseIdentifier = "accountCell"
 
 class AccountCollectionViewController: UICollectionViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(AccountCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -53,10 +57,11 @@ class AccountCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        //cell.accountNameLabel.text = "test"
-    
-        // Configure the cell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? AccountCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.backgroundColor = UIColor.red
+       // cell.accountNameLabel.text = "test"
+        cell.sampleButton.setTitle("test", for: .normal)
     
         return cell
     }

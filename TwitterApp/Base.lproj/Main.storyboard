@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yP7-pP-bgG">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -320,37 +320,30 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="7EP-NX-fwV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8ck-Pz-VGv">
-                            <size key="itemSize" width="52" height="44"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IEt-YB-SdO">
+                            <size key="itemSize" width="65" height="44"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="accountCell" id="c47-6b-Ar3">
-                                <rect key="frame" x="0.0" y="0.0" width="52" height="44"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="accountCell" id="c47-6b-Ar3" customClass="AccountCollectionViewCell" customModule="TwitterApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="65" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="52" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="65" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9x1-ry-65D">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmL-Q3-wWK">
+                                            <frame key="frameInset" minX="8" minY="6" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
                                     </subviews>
                                 </view>
-                                <constraints>
-                                    <constraint firstItem="9x1-ry-65D" firstAttribute="top" secondItem="c47-6b-Ar3" secondAttribute="top" constant="12" id="8U1-RJ-YEl"/>
-                                    <constraint firstAttribute="bottom" secondItem="9x1-ry-65D" secondAttribute="bottom" constant="12" id="9B9-NO-Xtw"/>
-                                    <constraint firstItem="9x1-ry-65D" firstAttribute="leading" secondItem="c47-6b-Ar3" secondAttribute="leading" constant="5" id="cvQ-4n-ba0"/>
-                                    <constraint firstAttribute="trailing" secondItem="9x1-ry-65D" secondAttribute="trailing" constant="5" id="oY1-Rq-DyU"/>
-                                </constraints>
                                 <connections>
-                                    <outlet property="accountName" destination="9x1-ry-65D" id="QsD-as-Z6m"/>
-                                    <outlet property="accountNameLabel" destination="9x1-ry-65D" id="K3d-oQ-YfV"/>
+                                    <outlet property="sampleButton" destination="mmL-Q3-wWK" id="JI8-jp-CQ8"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -362,7 +355,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcQ-vd-3CG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="-67"/>
+            <point key="canvasLocation" x="1924" y="-67.466266866566727"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="06D-Q8-A8z">
@@ -533,7 +526,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pd-WK-A4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2833" y="-30"/>
+            <point key="canvasLocation" x="2833" y="603"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tge-EO-8PT">
