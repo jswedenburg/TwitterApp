@@ -25,6 +25,10 @@
 		818AC9061DA81FD000659821 /* ScheduleDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */; };
 		818AC9081DA837C600659821 /* AccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9071DA837C600659821 /* AccountCollectionViewController.swift */; };
 		818AC90A1DA8384F00659821 /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9091DA8384F00659821 /* AccountCollectionViewCell.swift */; };
+		818AC90C1DAA97EB00659821 /* RepeatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC90B1DAA97EB00659821 /* RepeatingTableViewCell.swift */; };
+		818AC90F1DAA986800659821 /* StartDatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC90E1DAA986800659821 /* StartDatePickerTableViewCell.swift */; };
+		818AC9111DAA9A2600659821 /* EndDatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9101DAA9A2600659821 /* EndDatePickerTableViewCell.swift */; };
+		818AC9131DAA9E8500659821 /* AddAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9121DAA9E8500659821 /* AddAccountTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetailTableViewController.swift; sourceTree = "<group>"; };
 		818AC9071DA837C600659821 /* AccountCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewController.swift; sourceTree = "<group>"; };
 		818AC9091DA8384F00659821 /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
+		818AC90B1DAA97EB00659821 /* RepeatingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatingTableViewCell.swift; sourceTree = "<group>"; };
+		818AC90E1DAA986800659821 /* StartDatePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartDatePickerTableViewCell.swift; sourceTree = "<group>"; };
+		818AC9101DAA9A2600659821 /* EndDatePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDatePickerTableViewCell.swift; sourceTree = "<group>"; };
+		818AC9121DAA9E8500659821 /* AddAccountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAccountTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				818AC8E61DA6B35100659821 /* ScheduleTableViewController.swift */,
-				818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */,
 				818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */,
+				818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */,
+				818AC90D1DAA97F200659821 /* DetailVCCells */,
 				818AC9091DA8384F00659821 /* AccountCollectionViewCell.swift */,
 				818AC9071DA837C600659821 /* AccountCollectionViewController.swift */,
 			);
@@ -142,6 +151,17 @@
 				818AC8AA1DA539E500659821 /* Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		818AC90D1DAA97F200659821 /* DetailVCCells */ = {
+			isa = PBXGroup;
+			children = (
+				818AC90B1DAA97EB00659821 /* RepeatingTableViewCell.swift */,
+				818AC90E1DAA986800659821 /* StartDatePickerTableViewCell.swift */,
+				818AC9101DAA9A2600659821 /* EndDatePickerTableViewCell.swift */,
+				818AC9121DAA9E8500659821 /* AddAccountTableViewCell.swift */,
+			);
+			name = DetailVCCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,12 +241,16 @@
 				818AC8FE1DA7D2BD00659821 /* TwitterAccountController.swift in Sources */,
 				818AC9081DA837C600659821 /* AccountCollectionViewController.swift in Sources */,
 				818AC8EE1DA6F14C00659821 /* Schedule+CoreDataClass.swift in Sources */,
+				818AC90F1DAA986800659821 /* StartDatePickerTableViewCell.swift in Sources */,
 				818AC8E71DA6B35100659821 /* ScheduleTableViewController.swift in Sources */,
 				818AC8A41DA539E500659821 /* TwitterApp.xcdatamodeld in Sources */,
 				818AC8DD1DA610CC00659821 /* TwitterAccount+CoreDataProperties.swift in Sources */,
 				818AC8E41DA6137900659821 /* ScheduleController.swift in Sources */,
 				818AC90A1DA8384F00659821 /* AccountCollectionViewCell.swift in Sources */,
+				818AC90C1DAA97EB00659821 /* RepeatingTableViewCell.swift in Sources */,
+				818AC9131DAA9E8500659821 /* AddAccountTableViewCell.swift in Sources */,
 				818AC8F41DA70D4D00659821 /* ScheduleTableViewCell.swift in Sources */,
+				818AC9111DAA9A2600659821 /* EndDatePickerTableViewCell.swift in Sources */,
 				818AC8FA1DA70E4B00659821 /* Schedule+CoreDataProperties.swift in Sources */,
 				818AC9061DA81FD000659821 /* ScheduleDetailTableViewController.swift in Sources */,
 				818AC8DC1DA610CC00659821 /* TwitterAccount+CoreDataClass.swift in Sources */,
