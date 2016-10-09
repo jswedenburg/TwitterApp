@@ -17,6 +17,7 @@ class ScheduleDetailTableViewController: UITableViewController {
     @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
+    @IBOutlet weak var daysImage: UIImageView!
     
     var schedule: Schedule?
     
@@ -42,9 +43,26 @@ class ScheduleDetailTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+    func setupView(){
+        startDatePicker.datePickerMode = .time
+        endDatePicker.datePickerMode = .time
+        if let schedule = schedule{
+            repeatingSwitch.isOn = schedule.repeating
+            daysLabel.text = "Sunday"
+            startTimeLabel.text = String(describing: schedule.startTime)
+            endTimeLabel.text = String(describing: schedule.endTime)
+            
+            
+        }
     }
+    
+    func
+    
+    //MARK: Helper Functions
+    
+    //TODO: Function to take a int and turn it into a string label for the days
+    
+    //TODO: Date helper function
     
     
     
