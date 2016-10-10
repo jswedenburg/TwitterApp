@@ -10,7 +10,8 @@ import UIKit
 
 class ScheduleDetailTableViewController: UITableViewController {
     
-    @IBOutlet weak var titleLabel: UILabel!
+        
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var repeatingSwitch: UISwitch!
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
@@ -18,11 +19,37 @@ class ScheduleDetailTableViewController: UITableViewController {
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
     @IBOutlet weak var daysImage: UIImageView!
+    @IBOutlet weak var daysCell: UITableViewCell!
     
     var schedule: Schedule?
+    var startDatePickerVisable: Bool = false
+    var endDatePickerVisable: Bool = false
     
+    var days: 
+    
+    @IBAction func repeatSwitchPressed(_ sender: AnyObject) {
+        
+        if repeatingSwitch.isOn {
+            startDatePicker.datePickerMode = .time
+            endDatePicker.datePickerMode = .time
+            daysCell.isHidden = false
+            self.tableView.reloadData()
+        } else {
+            startDatePicker.datePickerMode = .dateAndTime
+            endDatePicker.datePickerMode = .dateAndTime
+            daysCell.isHidden = true
+            self.tableView.reloadData()
+            
+        }
+        
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: AnyObject) {
+       
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         
     }
     
@@ -43,67 +70,107 @@ class ScheduleDetailTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height = self.tableView.rowHeight
+        if daysCell.isHidden {
+            if indexPath.row == 1 {
+                return 0.0
+            }
+        }
+        
+        if indexPath.row == 3 {
+            height = self.startDatePickerVisable ? 100.0 : 0.0
+        }
+        
+        if indexPath.row == 5 {
+            height = self.startDatePickerVisable ? 100.0 : 0.0
+        }
+        return height
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 2 {
+            if self.startDatePickerVisable {
+                self.hideDatePicker(picker: startDatePicker, start: true)
+            } else {
+                self.showDatePicker(picker: startDatePicker, start: true)
+            }
+        }
+        
+        if indexPath.row == 4 {
+            if self.endDatePickerVisable {
+                self.hideDatePicker(picker: endDatePicker, start: false)
+            } else {
+                self.showDatePicker(picker: endDatePicker, start: false)
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    //MARK: Helper Functions
+    
+    func showDatePicker(picker: UIDatePicker, start: Bool){
+        if start{
+            self.startDatePickerVisable = true
+        } else {
+            self.endDatePickerVisable = true
+        }
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
+        picker.isHidden = false
+        picker.alpha = 0.0
+        UIView.animate(withDuration: 0.25) { 
+            picker.alpha = 1.0
+        }
+    }
+    
+    func hideDatePicker(picker: UIDatePicker, start: Bool){
+        if start{
+            self.startDatePickerVisable = false
+        } else {
+            self.endDatePickerVisable = false
+        }
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
+        UIView.animate(withDuration: 0.25, animations: { 
+            picker.alpha = 0.0
+            }) { (_) in
+                picker.isHidden = true
+        }
+    }
+    
     func setupView(){
         startDatePicker.datePickerMode = .time
         endDatePicker.datePickerMode = .time
+        
         if let schedule = schedule{
+            titleTextField.text = schedule.title
             repeatingSwitch.isOn = schedule.repeating
             daysLabel.text = "Sunday"
-            startTimeLabel.text = String(describing: schedule.startTime)
-            endTimeLabel.text = String(describing: schedule.endTime)
+            startTimeLabel.text = schedule.startTime?.description
+            endTimeLabel.text = schedule.endTime?.description
+            daysImage.isHidden = true
+        } else {
+            repeatingSwitch.isOn = true
+            daysImage.image = #imageLiteral(resourceName: "calendar")
+            daysLabel.isHidden = true
+            startTimeLabel.text = "Select Start Time"
+            endTimeLabel.text = "Select End Time"
             
             
         }
     }
-    
-    func
-    
-    //MARK: Helper Functions
     
     //TODO: Function to take a int and turn it into a string label for the days
     
     //TODO: Date helper function
     
     
-    
-    
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 
