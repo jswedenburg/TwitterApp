@@ -15,6 +15,9 @@ class DaysPickerTableViewController: UITableViewController {
 
            }
 
+    @IBAction func exitButtonPressed(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     // MARK: - Table view data source
 
@@ -37,7 +40,9 @@ class DaysPickerTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let cell = tableView.cellForRow(at: indexPath) as? DayTableViewCell else { return }
+        cell.checkMarkImage.isHidden = !cell.checkMarkImage.isHidden
+        tableView.reloadData()
     }
 
    

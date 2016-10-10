@@ -402,6 +402,9 @@
                                     <frame key="frameInset" minX="16" minY="7" width="30" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Exit"/>
+                                    <connections>
+                                        <action selector="exitButtonPressed:" destination="JcD-wV-dmu" eventType="touchUpInside" id="Q77-pA-D5Z"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

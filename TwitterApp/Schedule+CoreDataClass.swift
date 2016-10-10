@@ -12,16 +12,16 @@ import CoreData
 
 public class Schedule: NSManagedObject {
 
-    convenience init(repeating: Bool, days: Int16 = 1, startTime: NSDate = NSDate(), endTime: NSDate = NSDate(), title: String = "Fantasy Football", enabled: Bool = true, twitterAccounts: [TwitterAccount] = [], context: NSManagedObjectContext = CoreDataStack.context){
+    convenience init(repeating: Bool, startTime: NSDate = NSDate(), endTime: NSDate = NSDate(), title: String = "Fantasy Football", enabled: Bool = true, twitterAccounts: [TwitterAccount] = [], days: [days] = [], context: NSManagedObjectContext = CoreDataStack.context){
         
         
         
         self.init(context: context)
         self.repeating = repeating
-        self.days = days
         self.startTime = startTime as NSDate
         self.endTime = endTime as NSDate
         self.twitterAccounts = NSSet(array: twitterAccounts)
+        self.days = NSSet(array: days)
         self.title = title
         self.enabled = enabled
         
