@@ -27,6 +27,18 @@ class DaysPickerTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 7
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell") as? DayTableViewCell else { return UITableViewCell() }
+        cell.updateWithRow(row: indexPath.row)
+        
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 
    
  
