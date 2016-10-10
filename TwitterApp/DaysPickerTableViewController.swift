@@ -17,14 +17,12 @@ class DaysPickerTableViewController: UITableViewController {
 
            }
     
-    var days: [daysOfWeek] = [] {
-        didSet {
-            print(days)
-        }
-    }
+    let daysArray = DaysController.sharedController.days
+    
 
     @IBAction func exitButtonPressed(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+        
     }
     
     // MARK: - Table view data source

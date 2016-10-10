@@ -30,6 +30,7 @@
 		819B3BE51DAC02E200D0D674 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BE41DAC02E200D0D674 /* DayTableViewCell.swift */; };
 		819B3BEA1DAC1FD600D0D674 /* Days+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BE71DAC1FD600D0D674 /* Days+CoreDataClass.swift */; };
 		819B3BEB1DAC1FD600D0D674 /* Days+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BE81DAC1FD600D0D674 /* Days+CoreDataProperties.swift */; };
+		819B3BED1DAC324900D0D674 /* DaysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BEC1DAC324900D0D674 /* DaysController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		819B3BE41DAC02E200D0D674 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		819B3BE71DAC1FD600D0D674 /* Days+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Days+CoreDataClass.swift"; sourceTree = "<group>"; };
 		819B3BE81DAC1FD600D0D674 /* Days+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Days+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		819B3BEC1DAC324900D0D674 /* DaysController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				818AC8FB1DA722F500659821 /* NetworkController.swift */,
 				818AC8E31DA6137900659821 /* ScheduleController.swift */,
 				818AC8FD1DA7D2BD00659821 /* TwitterAccountController.swift */,
+				819B3BEC1DAC324900D0D674 /* DaysController.swift */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				819B3BE31DABFC6C00D0D674 /* DaysPickerTableViewController.swift in Sources */,
 				818AC8FC1DA722F500659821 /* NetworkController.swift in Sources */,
+				819B3BED1DAC324900D0D674 /* DaysController.swift in Sources */,
 				818AC8FE1DA7D2BD00659821 /* TwitterAccountController.swift in Sources */,
 				818AC9081DA837C600659821 /* AccountCollectionViewController.swift in Sources */,
 				818AC8EE1DA6F14C00659821 /* Schedule+CoreDataClass.swift in Sources */,
