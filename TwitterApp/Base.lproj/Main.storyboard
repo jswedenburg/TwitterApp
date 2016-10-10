@@ -386,10 +386,10 @@
             </objects>
             <point key="canvasLocation" x="1924" y="-67.466266866566727"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Days Picker Table View Controller-->
         <scene sceneID="06D-Q8-A8z">
             <objects>
-                <tableViewController id="JcD-wV-dmu" sceneMemberID="viewController">
+                <tableViewController id="JcD-wV-dmu" customClass="DaysPickerTableViewController" customModule="TwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" id="JQI-yi-UGr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -567,7 +567,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pd-WK-A4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2833" y="-50"/>
+            <point key="canvasLocation" x="2832.8000000000002" y="-50.824587706146929"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tge-EO-8PT">

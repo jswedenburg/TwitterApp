@@ -26,6 +26,7 @@
 		818AC9081DA837C600659821 /* AccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9071DA837C600659821 /* AccountCollectionViewController.swift */; };
 		818AC90A1DA8384F00659821 /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9091DA8384F00659821 /* AccountCollectionViewCell.swift */; };
 		819B3BE11DABFB4600D0D674 /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BE01DABFB4600D0D674 /* Days.swift */; };
+		819B3BE31DABFC6C00D0D674 /* DaysPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BE21DABFC6C00D0D674 /* DaysPickerTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		818AC9071DA837C600659821 /* AccountCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewController.swift; sourceTree = "<group>"; };
 		818AC9091DA8384F00659821 /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		819B3BE01DABFB4600D0D674 /* Days.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Days.swift; sourceTree = "<group>"; };
+		819B3BE21DABFC6C00D0D674 /* DaysPickerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysPickerTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				818AC8E61DA6B35100659821 /* ScheduleTableViewController.swift */,
+				819B3BE21DABFC6C00D0D674 /* DaysPickerTableViewController.swift */,
 				818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */,
 				818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */,
 				818AC9091DA8384F00659821 /* AccountCollectionViewCell.swift */,
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				819B3BE31DABFC6C00D0D674 /* DaysPickerTableViewController.swift in Sources */,
 				818AC8FC1DA722F500659821 /* NetworkController.swift in Sources */,
 				818AC8FE1DA7D2BD00659821 /* TwitterAccountController.swift in Sources */,
 				818AC9081DA837C600659821 /* AccountCollectionViewController.swift in Sources */,
