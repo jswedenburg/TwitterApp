@@ -12,7 +12,7 @@ import CoreData
 
 public class Days: NSManagedObject {
 
-    convenience init(day: Int16, schedule: Schedule = Schedule(), context:NSManagedObjectContext = CoreDataStack.context) {
+    convenience init(day: Int16, schedule: Schedule, context:NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
         self.day = day
         self.schedule = schedule

@@ -193,7 +193,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="JcD-wV-dmu" kind="presentation" id="Yhi-cl-AXY"/>
+                                            <segue destination="JcD-wV-dmu" kind="presentation" identifier="toDaysPicker" id="Yhi-cl-AXY"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="OrI-ku-NDG">

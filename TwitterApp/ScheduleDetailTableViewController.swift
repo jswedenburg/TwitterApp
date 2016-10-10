@@ -25,7 +25,8 @@ class ScheduleDetailTableViewController: UITableViewController {
     var startDatePickerVisable: Bool = false
     var endDatePickerVisable: Bool = false
     
-    var days: [daysOfWeek] = []
+    
+    
     
     @IBAction func repeatSwitchPressed(_ sender: AnyObject) {
         
@@ -47,10 +48,11 @@ class ScheduleDetailTableViewController: UITableViewController {
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
        
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
+
+    override func viewDidAppear(_ animated: Bool) {
         setupView()
         
+        setupDayLabel()
     }
     
     // MARK: - Table view data source
@@ -149,9 +151,9 @@ class ScheduleDetailTableViewController: UITableViewController {
         endDatePicker.datePickerMode = .time
         
         if let schedule = schedule{
+            
             titleTextField.text = schedule.title
             repeatingSwitch.isOn = schedule.repeating
-            daysLabel.text = "Sunday"
             startTimeLabel.text = schedule.startTime?.description
             endTimeLabel.text = schedule.endTime?.description
             daysImage.isHidden = true
@@ -164,6 +166,24 @@ class ScheduleDetailTableViewController: UITableViewController {
             
             
         }
+    }
+    
+    func setupDayLabel() {
+        
+        guard let schedule = schedule,
+            let days = schedule.days else { return }
+        
+        let daysArray = days.allObjects
+        print(daysArray)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDaysPicker" {
+            guard let destinationVC = segue.destination as? DaysPickerTableViewController else { return }
+            destinationVC.schedule = schedule
+        }
+        
     }
     
     //TODO: Function to take a int and turn it into a string label for the days

@@ -17,7 +17,7 @@ class DaysPickerTableViewController: UITableViewController {
 
            }
     
-    let daysArray = DaysController.sharedController.days
+    var schedule: Schedule?
     
 
     @IBAction func exitButtonPressed(_ sender: AnyObject) {
@@ -48,48 +48,62 @@ class DaysPickerTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? DayTableViewCell else { return }
-        if cell.dayIncluded{
+        guard let schedule = schedule else { return }
+        if cell.dayIncluded == false{
             switch indexPath.row {
             case 0:
-                guard let index = days.index(of: daysOfWeek.Sunday) else { return }
-                days.remove(at: index)
+                let day = Days(day: 0, schedule: schedule)
+                DaysController.sharedController.add(day)
             case 1:
-                guard let index = days.index(of: daysOfWeek.Monday) else { return }
-                days.remove(at: index)
+                let day = Days(day: 1, schedule: schedule)
+                DaysController.sharedController.add(day)
             case 2:
-                guard let index = days.index(of: daysOfWeek.Tuesday) else { return }
-                days.remove(at: index)
+                let day = Days(day: 2, schedule: schedule)
+                DaysController.sharedController.add(day)
             case 3:
-                guard let index = days.index(of: daysOfWeek.Wednesay) else { return }
-                days.remove(at: index)
+                let day = Days(day: 3, schedule: schedule)
+                DaysController.sharedController.add(day)
             case 4:
-                guard let index = days.index(of: daysOfWeek.Thursday) else { return }
-                days.remove(at: index)
+                let day = Days(day: 4, schedule: schedule)
+                DaysController.sharedController.add(day)
             case 5:
-                guard let index = days.index(of: daysOfWeek.Friday) else { return }
-                days.remove(at: index)
+                let day = Days(day: 5, schedule: schedule)
+                DaysController.sharedController.add(day)
             case 6:
-                guard let index = days.index(of: daysOfWeek.Saturday) else { return }
-                days.remove(at: index)
+                let day = Days(day: 6, schedule: schedule)
+                DaysController.sharedController.add(day)
             default:
                 print("mistake")
             }
         } else {
             switch indexPath.row {
             case 0:
-                days.append(daysOfWeek.Sunday)
+                let day = Days(day: 0, schedule: schedule)
+                DaysController.sharedController.delete(day)
             case 1:
-                days.append(daysOfWeek.Monday)
+                let day = Days(day: 1, schedule: schedule)
+                DaysController.sharedController.delete(day)
+
             case 2:
-                days.append(daysOfWeek.Tuesday)
+                let day = Days(day: 2, schedule: schedule)
+                DaysController.sharedController.delete(day)
+
             case 3:
-                days.append(daysOfWeek.Wednesay)
+                let day = Days(day: 3, schedule: schedule)
+                DaysController.sharedController.delete(day)
+
             case 4:
-                days.append(daysOfWeek.Thursday)
+                let day = Days(day: 4, schedule: schedule)
+                DaysController.sharedController.delete(day)
+
             case 5:
-                days.append(daysOfWeek.Friday)
+                let day = Days(day: 5, schedule: schedule)
+                DaysController.sharedController.delete(day)
+
             case 6:
-                days.append(daysOfWeek.Saturday)
+                let day = Days(day: 6, schedule: schedule)
+                DaysController.sharedController.delete(day)
+
             default:
                 print("mistake")
             }

@@ -12,6 +12,7 @@ import CoreData
 class DaysController {
     static let sharedController = DaysController()
     
+    /*
     var days: [Days] {
         
         let request: NSFetchRequest<Days> = Days.fetchRequest()
@@ -22,28 +23,22 @@ class DaysController {
         } catch {
             return []
         }
-    }
+   }*/
+ 
     
     func add(_ day: Days){
-        self.saveToPersistentStorage()
+        ScheduleController.sharedController.saveToPersistentStorage()
         
     }
     
     func delete(_ day: Days){
         day.managedObjectContext?.delete(day)
         
-        self.saveToPersistentStorage()
+        ScheduleController.sharedController.saveToPersistentStorage()
     }
     
     
-    
-    func saveToPersistentStorage() {
-        do {
-            try CoreDataStack.context.save()
-        } catch {
-            NSLog("Error saving to core data: \(error)")
-        }
-    }
+
     
     
 }
