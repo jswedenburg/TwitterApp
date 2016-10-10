@@ -25,7 +25,7 @@ class ScheduleDetailTableViewController: UITableViewController {
     var startDatePickerVisable: Bool = false
     var endDatePickerVisable: Bool = false
     
-    var days: [days] = []
+    var days: [daysOfWeek] = []
     
     @IBAction func repeatSwitchPressed(_ sender: AnyObject) {
         

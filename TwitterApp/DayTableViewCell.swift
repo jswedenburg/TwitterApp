@@ -12,6 +12,7 @@ class DayTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var checkMarkImage: UIImageView!
+    var dayIncluded = false
     
 
     func updateWithRow(row: Int) {
