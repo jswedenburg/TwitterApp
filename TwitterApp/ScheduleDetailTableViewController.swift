@@ -51,7 +51,8 @@ class ScheduleDetailTableViewController: UITableViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         setupView()
-        
+        //print(dayIntArray)
+        print(" Here is the days from core data: \(self.schedule?.days)")
         
     }
     
@@ -205,8 +206,7 @@ class ScheduleDetailTableViewController: UITableViewController {
         }
         
         daysLabel.text = dayLabelText
-        print(dayIntArray)
-        //print(" Here is the days from core data: \(DaysController.sharedController.days)")
+        
         
         
         

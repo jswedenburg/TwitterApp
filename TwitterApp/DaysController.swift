@@ -13,20 +13,7 @@ class DaysController {
     static let sharedController = DaysController()
     
     
-    var days: [Days] {
-        
-        let request: NSFetchRequest<Days> = Days.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "day", ascending: true)
-        request.sortDescriptors = [sortDescriptor]
-        let moc = CoreDataStack.context
-        do {
-            let result = try moc.fetch(request)
-            return result
-        } catch {
-            return []
-        }
-        
-    }
+    
    
  
     
@@ -36,7 +23,9 @@ class DaysController {
     }
     
     func delete(_ day: Days){
-        day.managedObjectContext?.delete(day)
+        let moc = ScheduleController.sharedController.moc
+        
+        moc.delete(day)
         
         ScheduleController.sharedController.saveToPersistentStorage()
     }

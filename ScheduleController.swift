@@ -12,10 +12,12 @@ import CoreData
 class ScheduleController {
     static let sharedController = ScheduleController()
     
+    let moc = CoreDataStack.context
+    
     var schedules: [Schedule] {
         
         let request: NSFetchRequest<Schedule> = Schedule.fetchRequest()
-        let moc = CoreDataStack.context
+        
         do {
             let result = try moc.fetch(request)
             return result

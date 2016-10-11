@@ -20,6 +20,8 @@ class DaysPickerTableViewController: UITableViewController {
     
     var schedule: Schedule?
     
+    var dayArray: [Int16] = []
+    
 
     @IBAction func exitButtonPressed(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
@@ -67,16 +69,28 @@ class DaysPickerTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? DayTableViewCell else { return }
         guard let schedule = schedule, let days = schedule.days else { return }
-        var sunday = Days(day: 0, schedule: schedule)
-        var thursday = Days(day: 4, schedule: schedule)
-        if cell.checkMarkImage.isHidden{
+        
+        
+        
             switch indexPath.row {
             case 0:
-                DaysController.sharedController.add(sunday)
-                
+                let sunday = Days(day: 0, schedule: schedule)
+                if cell.checkMarkImage.isHidden {
+                    DaysController.sharedController.add(sunday)
+                } else {
+                    DaysController.sharedController.delete(sunday)
+                    if let daysArray = days.array as? [Days] {
+                        let matchingDay = daysArray.index { $0.day == 0 }
+                        DaysController.sharedController.delete(matchingDay)
+                    }
+                }
             case 1:
-                let day = Days(day: 1, schedule: schedule)
-                DaysController.sharedController.add(day)
+                let monday = Days(day: 1, schedule: schedule)
+                if cell.checkMarkImage.isHidden {
+                    DaysController.sharedController.add(monday)
+                } else {
+                    DaysController.sharedController.delete(monday)
+                }
             case 2:
                 let day = Days(day: 2, schedule: schedule)
                 DaysController.sharedController.add(day)
@@ -84,7 +98,8 @@ class DaysPickerTableViewController: UITableViewController {
                 let day = Days(day: 3, schedule: schedule)
                 DaysController.sharedController.add(day)
             case 4:
-                DaysController.sharedController.add(thursday)
+                let day = Days(day: 3, schedule: schedule)
+                DaysController.sharedController.add(day)
             case 5:
                 let day = Days(day: 5, schedule: schedule)
                 DaysController.sharedController.add(day)
@@ -94,38 +109,7 @@ class DaysPickerTableViewController: UITableViewController {
             default:
                 print("mistake")
             }
-        } else {
-            switch indexPath.row {
-            case 0:
-                DaysController.sharedController.delete(sunday)
-                
-            case 1:
-                let day = Days(day: 1, schedule: schedule)
-                DaysController.sharedController.delete(day)
-
-            case 2:
-                let day = Days(day: 2, schedule: schedule)
-                DaysController.sharedController.delete(day)
-
-            case 3:
-                let day = Days(day: 3, schedule: schedule)
-                DaysController.sharedController.delete(day)
-
-            case 4:
-                DaysController.sharedController.delete(thursday)
-
-            case 5:
-                let day = Days(day: 5, schedule: schedule)
-                DaysController.sharedController.delete(day)
-
-            case 6:
-                let day = Days(day: 6, schedule: schedule)
-                DaysController.sharedController.delete(day)
-
-            default:
-                print("mistake")
-            }
-        }
+        
         
         cell.checkMarkImage.isHidden = !cell.checkMarkImage.isHidden
         tableView.reloadData()
