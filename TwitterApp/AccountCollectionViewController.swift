@@ -16,9 +16,7 @@ class AccountCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Register cell classes
-        self.collectionView!.register(AccountCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        
     }
 
 
@@ -38,7 +36,7 @@ class AccountCollectionViewController: UICollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? AccountCollectionViewCell else { return UICollectionViewCell() }
         
         cell.backgroundColor = UIColor.red
-        //cell.accountNameLabel.text = "test"
+        cell.accountNameLabel.text = "test"
     
     
         return cell

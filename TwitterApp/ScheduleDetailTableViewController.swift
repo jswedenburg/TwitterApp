@@ -85,7 +85,7 @@ class ScheduleDetailTableViewController: UITableViewController {
         }
         
         if indexPath.row == 5 {
-            height = self.startDatePickerVisable ? 100.0 : 0.0
+            height = self.endDatePickerVisable ? 100.0 : 0.0
         }
         return height
     }
