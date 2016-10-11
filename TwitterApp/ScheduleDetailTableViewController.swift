@@ -52,7 +52,7 @@ class ScheduleDetailTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         setupView()
         
-        setupDayLabel()
+        
     }
     
     // MARK: - Table view data source
@@ -151,7 +151,7 @@ class ScheduleDetailTableViewController: UITableViewController {
         endDatePicker.datePickerMode = .time
         
         if let schedule = schedule{
-            
+            setupDayLabel()
             titleTextField.text = schedule.title
             repeatingSwitch.isOn = schedule.repeating
             startTimeLabel.text = schedule.startTime?.description
@@ -170,14 +170,45 @@ class ScheduleDetailTableViewController: UITableViewController {
     
     func setupDayLabel() {
         
+        var dayLabelText = ""
         guard let schedule = schedule,
             let days = schedule.days else { return }
         var dayIntArray: [Int16] = []
-        for x in 0...(days.count - 1) {
-            let day = days.object(at: x) as! Days
-            dayIntArray.append(day.day)
-            
+        var count = days.count - 1
+        
+        if days.count > 0 {
+            for x in 0...count {
+                let day = days.object(at: x) as! Days
+                dayIntArray.append(day.day)
+                
+                switch day.day {
+                case 0:
+                    dayLabelText += "Sunday, "
+                case 1:
+                    dayLabelText += "Monday, "
+                case 2:
+                    dayLabelText += "Tuesday, "
+                case 3:
+                    dayLabelText += "Wednesday, "
+                case 4:
+                    dayLabelText += "Thursday, "
+                case 5:
+                    dayLabelText += "Friday, "
+                case 6:
+                    dayLabelText += "Saturday, "
+                default:
+                    print("Other day")
+                }
+
+            }
+        
         }
+        
+        daysLabel.text = dayLabelText
+        print(dayIntArray)
+        //print(" Here is the days from core data: \(DaysController.sharedController.days)")
+        
+        
         
        
         

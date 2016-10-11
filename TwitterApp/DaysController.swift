@@ -12,10 +12,12 @@ import CoreData
 class DaysController {
     static let sharedController = DaysController()
     
-    /*
+    
     var days: [Days] {
         
         let request: NSFetchRequest<Days> = Days.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "day", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
         let moc = CoreDataStack.context
         do {
             let result = try moc.fetch(request)
@@ -23,7 +25,9 @@ class DaysController {
         } catch {
             return []
         }
-   }*/
+        
+    }
+   
  
     
     func add(_ day: Days){
