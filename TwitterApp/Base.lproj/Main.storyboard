@@ -449,10 +449,10 @@
             </objects>
             <point key="canvasLocation" x="2832.8000000000002" y="-50.824587706146929"/>
         </scene>
-        <!--View Controller-->
+        <!--Twitter Search Table View Controller-->
         <scene sceneID="tge-EO-8PT">
             <objects>
-                <viewController id="GrW-c5-2jI" sceneMemberID="viewController">
+                <viewController id="GrW-c5-2jI" customClass="TwitterSearchTableViewController" customModule="TwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TGW-Bz-pae"/>
                         <viewControllerLayoutGuide type="bottom" id="M7m-o4-5Nv"/>
@@ -514,6 +514,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="tcy-qh-Yrb" id="ClA-Tt-Rr2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipQ-rw-Yof" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

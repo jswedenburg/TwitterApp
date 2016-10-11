@@ -30,6 +30,8 @@
 		819B3BED1DAC324900D0D674 /* DaysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BEC1DAC324900D0D674 /* DaysController.swift */; };
 		819B3BF91DAC619E00D0D674 /* Schedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BF71DAC619E00D0D674 /* Schedule+CoreDataProperties.swift */; };
 		819B3BFF1DAD536800D0D674 /* Days+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BFE1DAD536800D0D674 /* Days+CoreDataProperties.swift */; };
+		819B3C1F1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */; };
+		819B3C211DAD919F00D0D674 /* TwitterNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C201DAD919F00D0D674 /* TwitterNetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		819B3BEC1DAC324900D0D674 /* DaysController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysController.swift; sourceTree = "<group>"; };
 		819B3BF71DAC619E00D0D674 /* Schedule+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		819B3BFE1DAD536800D0D674 /* Days+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Days+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSearchTableViewController.swift; sourceTree = "<group>"; };
+		819B3C201DAD919F00D0D674 /* TwitterNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterNetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				818AC8FB1DA722F500659821 /* NetworkController.swift */,
 				818AC8E31DA6137900659821 /* ScheduleController.swift */,
 				818AC8FD1DA7D2BD00659821 /* TwitterAccountController.swift */,
+				819B3C201DAD919F00D0D674 /* TwitterNetworkController.swift */,
 				819B3BEC1DAC324900D0D674 /* DaysController.swift */,
 			);
 			name = "Model Controllers";
@@ -137,6 +142,7 @@
 				818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */,
 				818AC9091DA8384F00659821 /* AccountCollectionViewCell.swift */,
 				818AC9071DA837C600659821 /* AccountCollectionViewController.swift */,
+				819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 			files = (
 				819B3BE31DABFC6C00D0D674 /* DaysPickerTableViewController.swift in Sources */,
 				818AC8FC1DA722F500659821 /* NetworkController.swift in Sources */,
+				819B3C211DAD919F00D0D674 /* TwitterNetworkController.swift in Sources */,
 				819B3BED1DAC324900D0D674 /* DaysController.swift in Sources */,
 				818AC8FE1DA7D2BD00659821 /* TwitterAccountController.swift in Sources */,
 				818AC9081DA837C600659821 /* AccountCollectionViewController.swift in Sources */,
@@ -251,6 +258,7 @@
 				818AC9061DA81FD000659821 /* ScheduleDetailTableViewController.swift in Sources */,
 				818AC8DC1DA610CC00659821 /* TwitterAccount+CoreDataClass.swift in Sources */,
 				818AC89C1DA539E500659821 /* AppDelegate.swift in Sources */,
+				819B3C1F1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift in Sources */,
 				818AC8E21DA611E800659821 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
