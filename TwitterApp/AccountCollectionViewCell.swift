@@ -15,9 +15,9 @@ class AccountCollectionViewCell: UICollectionViewCell {
     
     
     
-    @IBOutlet weak var sampleButton: UIButton!
+    //@IBOutlet weak var sampleButton: UIButton!
     
-   // @IBOutlet var accountNameLabel: UILabel!
+    @IBOutlet var accountNameLabel: UILabel!
     
     
     

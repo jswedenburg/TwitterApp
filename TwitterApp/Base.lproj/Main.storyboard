@@ -364,15 +364,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="65" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmL-Q3-wWK">
-                                            <frame key="frameInset" minX="8" minY="6" width="46" height="30"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQk-Eq-wsr">
+                                            <frame key="frameInset" minX="8" minY="12" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button"/>
-                                        </button>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <connections>
-                                    <outlet property="sampleButton" destination="mmL-Q3-wWK" id="JI8-jp-CQ8"/>
+                                    <outlet property="accountNameLabel" destination="rQk-Eq-wsr" id="fZa-pF-l3d"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
