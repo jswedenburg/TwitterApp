@@ -18,15 +18,19 @@ class DaysPickerTableViewController: UITableViewController {
 
            }
     
-    var schedule: Schedule?
+    static var delegate: datePickerDelegate?
     
     var dayArray: [Int16] = []
     
 
     @IBAction func exitButtonPressed(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) { 
+            DaysPickerTableViewController.delegate?.dayArray = self.dayArray
+        }
         
     }
+    
+    
     
     // MARK: - Table view data source
 
@@ -54,7 +58,9 @@ class DaysPickerTableViewController: UITableViewController {
         guard let cell = tableView.cellForRow(at: indexPath) as? DayTableViewCell else { return }
         switch indexPath.row {
             case indexPath.row:
+                
                 if cell.checkMarkImage.isHidden {
+                    
                     dayArray.append(Int16(indexPath.row))
                 } else {
                     guard let index = dayArray.index(of: Int16(indexPath.row)) else { return }
@@ -63,6 +69,7 @@ class DaysPickerTableViewController: UITableViewController {
             default:
                 print("mistake")
             }
+        print(dayArray)
         cell.checkMarkImage.isHidden = !cell.checkMarkImage.isHidden
         tableView.reloadData()
         
@@ -74,6 +81,6 @@ class DaysPickerTableViewController: UITableViewController {
 }
 
 
-protocol <#name#> {
-    <#requirements#>
+protocol datePickerDelegate {
+    var dayArray: [Int16] { get set }
 }

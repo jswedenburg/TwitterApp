@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ScheduleDetailTableViewController: UITableViewController {
+class ScheduleDetailTableViewController: UITableViewController, datePickerDelegate {
     
-        
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var repeatingSwitch: UISwitch!
     @IBOutlet weak var daysLabel: UILabel!
@@ -25,7 +25,16 @@ class ScheduleDetailTableViewController: UITableViewController {
     var startDatePickerVisable: Bool = false
     var endDatePickerVisable: Bool = false
     
+    var dayArray: [Int16] = [] {
+        didSet {
+            print("day array set: \(dayArray)")
+        }
+    }
     
+    override func viewDidLoad() {
+        DaysPickerTableViewController.delegate = self
+        self.setDayArray()
+    }
     
     
     @IBAction func repeatSwitchPressed(_ sender: AnyObject) {
@@ -46,13 +55,13 @@ class ScheduleDetailTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
-       
+        
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         setupView()
         //print(dayIntArray)
-        print(" Here is the days from core data: \(self.schedule?.days)")
+       // print(" Here is the days from core data: \(self.schedule?.days)")
         
     }
     
@@ -127,7 +136,7 @@ class ScheduleDetailTableViewController: UITableViewController {
         self.tableView.endUpdates()
         picker.isHidden = false
         picker.alpha = 0.0
-        UIView.animate(withDuration: 0.25) { 
+        UIView.animate(withDuration: 0.25) {
             picker.alpha = 1.0
         }
     }
@@ -140,10 +149,10 @@ class ScheduleDetailTableViewController: UITableViewController {
         }
         self.tableView.beginUpdates()
         self.tableView.endUpdates()
-        UIView.animate(withDuration: 0.25, animations: { 
+        UIView.animate(withDuration: 0.25, animations: {
             picker.alpha = 0.0
-            }) { (_) in
-                picker.isHidden = true
+        }) { (_) in
+            picker.isHidden = true
         }
     }
     
@@ -200,29 +209,38 @@ class ScheduleDetailTableViewController: UITableViewController {
                 default:
                     print("Other day")
                 }
-
+                
             }
-        
+            
         }
         
         daysLabel.text = dayLabelText
         
+    }
+    
+    func setDayArray() {
+        guard let schedule = schedule,
+            let days = schedule.days else { return }
+        var dayIntArray: [Int16] = []
+        let count = days.count - 1
         
+        if days.count > 0 {
+            for x in 0...count {
+                let day = days.object(at: x) as! Days
+                dayIntArray.append(day.day)
+            }
+        }
         
-        
-       
-        
-        
+        self.dayArray = dayIntArray
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDaysPicker" {
-            guard let destinationVC = segue.destination as? DaysPickerTableViewController else { return }
-            destinationVC.schedule = schedule
-        }
-        
+        guard let daypickerVC = segue.destination as? DaysPickerTableViewController else { return }
+        daypickerVC.dayArray = self.dayArray
     }
+    
+    
     
     //TODO: Function to take a int and turn it into a string label for the days
     
