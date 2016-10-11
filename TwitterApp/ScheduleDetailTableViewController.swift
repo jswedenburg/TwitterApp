@@ -172,9 +172,16 @@ class ScheduleDetailTableViewController: UITableViewController {
         
         guard let schedule = schedule,
             let days = schedule.days else { return }
+        var dayIntArray: [Int16] = []
+        for x in 0...(days.count - 1) {
+            let day = days.object(at: x) as! Days
+            dayIntArray.append(day.day)
+            
+        }
         
-        let daysArray = days.allObjects
-        print(daysArray)
+       
+        
+        
         
     }
     
