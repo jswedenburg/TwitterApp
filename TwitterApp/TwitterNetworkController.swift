@@ -10,5 +10,27 @@ import Foundation
 
 class TwitterNetworkController {
     
-    //MARK
+    //MARK: Properties
+    
+    static let baseSearchURL = URL(string: "https://api.twitter.com/1.1/users/search.json")
+    
+    
+    //MARK Function
+    
+    
+    
+    static func fetchTwitterAccounts(_ searchTerm: String, completion: @escaping (_ twitterAccounts: [TwitterAccount]) -> Void) {
+        guard let url = baseSearchURL  else { return }
+        let urlParameters = ["q": searchTerm, "page" : "1", "count": "10"]
+        
+        NetworkController.performRequestForURL(url: url, httpMethod: .Get, urlParameters: urlParameters, body: nil) { (data, error) in
+            guard let data = data as? Data else { return }
+            guard let jsonDict = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [[String:Any]] else { print("json dict faild")
+                return }
+            
+            let results = jsonDict.flatMap({TwitterAccount(dictionary: $0)})
+            completion(results)
+            
+        }
+    }
 }

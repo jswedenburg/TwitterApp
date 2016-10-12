@@ -15,14 +15,25 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        TwitterNetworkController.fetchTwitterAccounts("nfl") { (accounts) in
+            DispatchQueue.main.async {
+                print(accounts)
+            }
+            
+        }
     }
     
     @IBOutlet weak var tableView: UITableView!
     
     var twitterAccounts: [TwitterAccount] = [] {
         didSet{
+            print(twitterAccounts)
             tableView.reloadData()
         }
+    }
+    
+    @IBAction func exitButtonPressed(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

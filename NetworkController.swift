@@ -10,6 +10,20 @@ import Foundation
 
 class NetworkController {
     
+    static private let consumerKey = "ADeOdA9e5XfjJtchq0iWetwpY"
+    static let accessToken = "45428809-NhJAMwJshILhzUrO16A5pHpgmEbRKbm1KQJwvuB52"
+    static let verson = "1.0"
+    
+    static let temp = UUID.init().uuidString
+    static let nonce = temp.replacingOccurrences(of: "-", with: "")
+    
+    
+    static let signatureMethod = "HMAC-SHA1"
+    
+    static let timeStamp = String(describing: NSDate().timeIntervalSince1970)
+    
+    
+    
     enum HTTPMethod: String {
         case Get = "GET"
         case Put = "PUT"
@@ -19,13 +33,15 @@ class NetworkController {
     }
     
     
-    static func performRequestForURL(url: NSURL, httpMethod: HTTPMethod, urlParameters: [String:String]? = nil, body: NSData? = nil, completion: ((_ data: NSData?, _ error: NSError?) -> Void)?){
+    static func performRequestForURL(url: URL, httpMethod: HTTPMethod, urlParameters: [String:String]? = nil, body: NSData? = nil, completion: ((_ data: NSData?, _ error: NSError?) -> Void)?){
         
         // Creating a request
         let requestURL = urlFromURLParameters(url: url, urlParameters: urlParameters)
         let request = NSMutableURLRequest(url: requestURL as URL)
         request.httpMethod = httpMethod.rawValue
         request.httpBody = body as Data?
+        request.addValue(self.accessToken, forHTTPHeaderField: "Authorization")
+        
         
         //Execute the request
         let session = URLSession.shared
@@ -41,13 +57,25 @@ class NetworkController {
         
     }
     
-    static func urlFromURLParameters(url: NSURL, urlParameters: [String: String]?) -> NSURL {
-        let components = NSURLComponents(url: url as URL, resolvingAgainstBaseURL: true)
+    static func generateSignature(url: URL, httpMethod: HTTPMethod, parameters: [String: String]) {
+        let urlString = String(describing: url)
+        let httpString = httpMethod.rawValue
+        var parameterString = ""
+        for (key, value) in parameters {
+            key.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            value.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        }
+        
+        
+    }
+        
+    static func urlFromURLParameters(url: URL, urlParameters: [String: String]?) -> URL {
+        let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true)
         
         components?.queryItems = urlParameters?.flatMap({(NSURLQueryItem(name: $0.0, value: $0.1) as URLQueryItem)})
         
         if let url = components?.url {
-            return url as NSURL
+            return url
         } else {
             fatalError("URL optional is nil")
         }

@@ -41,7 +41,7 @@ public class TwitterAccount: NSManagedObject {
     func imageDataForURL(urlString: String, completion: @escaping (_ data: NSData) -> Void) {
         guard let url = URL(string: urlString) else { return }
         
-        NetworkController.performRequestForURL(url: url as NSURL, httpMethod: .Get) { (data, error) in
+        NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
             guard let data = data else { return }
             completion(data)
             
