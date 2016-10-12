@@ -14,6 +14,8 @@ class NetworkController {
     
     static private let consumerKey = "ADeOdA9e5XfjJtchq0iWetwpY"
     static let accessToken = "45428809-NhJAMwJshILhzUrO16A5pHpgmEbRKbm1KQJwvuB52"
+    static let consumerSecret = "7XlXJOe97gpqyu5GYtWY5isOwy4YEvnin1Rr8m0g5GMs6pD3WR"
+    static let tokenSecret = "BiTchVQ5V0dE1PxUHIIGFzlCRrh25gaGq1oGPMlbP9yzK"
     static let version = "1.0"
     
     static let temp = UUID.init().uuidString
@@ -42,13 +44,16 @@ class NetworkController {
         //Create a signature
         
         let signature = generateSignature(url: url, httpMethod: httpMethod, parameters: urlParameters)
+        let authHeaderValue = "OAuth oauth_consumer_key=\"\(consumerKey)\", oauth_nonce=\"\(nonce)\", oauth_signature=\"\(signature)\", oauth_signature_method=\"\(signatureMethod)\", oauth_timestamp=\"\(timeStamp)\", oauth_token=\"\(accessToken)\", oauth_version=\"\(version)\""
+        
+        let twitterHeaderAuth = "OAuth oauth_consumer_key=\"ADeOdA9e5XfjJtchq0iWetwpY\", oauth_nonce=\"2932bb1e59311739de386a4dc0818fb7\", oauth_signature=\"\(signature)\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1476299950\", oauth_token=\"45428809-NhJAMwJshILhzUrO16A5pHpgmEbRKbm1KQJwvuB52\", oauth_version=\"1.0\""
         
         // Creating a request
         let requestURL = urlFromURLParameters(url: url, urlParameters: urlParameters)
         let request = NSMutableURLRequest(url: requestURL as URL)
         request.httpMethod = httpMethod.rawValue
         request.httpBody = body as Data?
-        request.addValue(self.accessToken, forHTTPHeaderField: "Authorization")
+        request.addValue(twitterHeaderAuth, forHTTPHeaderField: "Authorization")
         
         
         //Execute the request
@@ -58,18 +63,18 @@ class NetworkController {
                 completion(data as NSData?, error as NSError?)
             }
         }
-        
-        
-        
         dataTask.resume()
         
     }
     
     static func generateSignature(url: URL, httpMethod: HTTPMethod, parameters: [String: String]) -> String {
         let urlString = String(describing: url)
-        let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        var newCharacterSet = CharacterSet.alphanumerics
+        newCharacterSet.formUnion(CharacterSet.init(charactersIn: "."))
+        let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters: newCharacterSet)
+        
         let httpString = httpMethod.rawValue
-        var signatureString = ""
+       
         var firstString = ""
         var secondString = ""
         var thirdString = ""
@@ -90,28 +95,22 @@ class NetworkController {
             
             
         }
-        signatureString += httpString + "&"
-        signatureString += encodedUrlString! + "&"
-        signatureString += firstString
-        signatureString += "oauth_consumer_key" + "=" + consumerKey + "&"
-        signatureString += "oauth_nonce" + "=" + nonce + "&"
-        signatureString += "oauth_signature_method" + "=" + signatureMethod + "&"
-        signatureString += "oauth_timestamp" + "=" + timeStamp + "&"
-        signatureString += "oauth_token" + "=" + accessToken + "&"
-        signatureString += "oauth_version" + "=" + version + "&"
-        signatureString += secondString
-        signatureString += thirdString
         
+        let parameterString = "\(firstString)oauth_consumer_key=\(consumerKey)&oauth_nonce=\(nonce)&oauth_signature_method=\(signatureMethod)&oauth_timestamp=\(timeStamp)&oauth_token=\(accessToken)&oauth_version=\(version)\(secondString)\(thirdString)"
+        let encodedParameterString = parameterString.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
         
-        let hmacString = signatureString.sha1()
+        let signatureBaseString = "\(httpString)&\(encodedUrlString!)&\(encodedParameterString!)"
+        
+        let signingKey = "\(consumerSecret)&\(tokenSecret)"
         
         
         
-        return hmacString
+        let hmacString = signatureBaseString.sha1()
+        
+        return twitterHmac
     }
     
-    static func 
-        
+    
     static func urlFromURLParameters(url: URL, urlParameters: [String: String]?) -> URL {
         let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true)
         
