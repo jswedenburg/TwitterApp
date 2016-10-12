@@ -33,7 +33,11 @@ class NetworkController {
     }
     
     
-    static func performRequestForURL(url: URL, httpMethod: HTTPMethod, urlParameters: [String:String]? = nil, body: NSData? = nil, completion: ((_ data: NSData?, _ error: NSError?) -> Void)?){
+    static func performRequestForURL(url: URL, httpMethod: HTTPMethod, urlParameters: [String:String], body: NSData? = nil, completion: ((_ data: NSData?, _ error: NSError?) -> Void)?){
+        
+        //Create a signature
+        
+        generateSignature(url: url, httpMethod: httpMethod, parameters: urlParameters)
         
         // Creating a request
         let requestURL = urlFromURLParameters(url: url, urlParameters: urlParameters)
@@ -60,13 +64,31 @@ class NetworkController {
     static func generateSignature(url: URL, httpMethod: HTTPMethod, parameters: [String: String]) {
         let urlString = String(describing: url)
         let httpString = httpMethod.rawValue
-        var parameterString = ""
+        var signatureString = ""
+        var firstString = ""
+        var secondString = ""
+        var thirdString = ""
+        let sortedKeyArray = Array(parameters.keys).sorted(by: <)
+        
+        
         for (key, value) in parameters {
-            key.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-            value.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            let encodedKey = key.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            let encodedValue = value.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            
+            if key == sortedKeyArray[0] {
+                firstString += encodedKey! + "=" + encodedValue! + "&"
+            } else if key == sortedKeyArray[1] {
+                secondString += encodedKey! + "=" + encodedValue! + "&"
+            } else {
+                thirdString += encodedKey! + "=" + encodedValue! + "$"
+            }
+            
+            signatureString = firstString + secondString + thirdString
         }
         
+        signatureString += "oauth_consumer_key" + "=" + consumerKey + "&"
         
+        print(signatureString)
     }
         
     static func urlFromURLParameters(url: URL, urlParameters: [String: String]?) -> URL {

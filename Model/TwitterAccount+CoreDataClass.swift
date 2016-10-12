@@ -30,14 +30,14 @@ public class TwitterAccount: NSManagedObject {
         self.screenName = screenName
         self.verified = verified
         self.schedule = schedule
-        imageDataForURL(urlString: profileImageURL) { (data) in
-            self.profileImage = data
-        }
+        //imageDataForURL(urlString: profileImageURL) { (data) in
+            //self.profileImage = data
+        //}
     }
     
     
     
-    
+    /*
     func imageDataForURL(urlString: String, completion: @escaping (_ data: NSData) -> Void) {
         guard let url = URL(string: urlString) else { return }
         
@@ -48,4 +48,6 @@ public class TwitterAccount: NSManagedObject {
             
         }
     }
+ 
+ */
 }

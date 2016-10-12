@@ -21,7 +21,7 @@ class TwitterNetworkController {
     
     static func fetchTwitterAccounts(_ searchTerm: String, completion: @escaping (_ twitterAccounts: [TwitterAccount]) -> Void) {
         guard let url = baseSearchURL  else { return }
-        let urlParameters = ["q": searchTerm, "page" : "1", "count": "10"]
+        let urlParameters = ["count": "3", "page" : "1", "q": searchTerm]
         
         NetworkController.performRequestForURL(url: url, httpMethod: .Get, urlParameters: urlParameters, body: nil) { (data, error) in
             guard let data = data as? Data else { return }
