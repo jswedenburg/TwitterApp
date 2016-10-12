@@ -19,12 +19,13 @@ class NetworkController {
     static let version = "1.0"
     
     static let temp = UUID.init().uuidString
-    static let nonce = temp.replacingOccurrences(of: "-", with: "")
+    static let nonce = temp.replacingOccurrences(of: "-", with: "").lowercased()
+    
     
     
     static let signatureMethod = "HMAC-SHA1"
     
-    static let timeStamp = String(describing: NSDate().timeIntervalSince1970)
+    static let timeStamp = String(describing: Int(NSDate().timeIntervalSince1970))
     
     
     
@@ -53,7 +54,7 @@ class NetworkController {
         let request = NSMutableURLRequest(url: requestURL as URL)
         request.httpMethod = httpMethod.rawValue
         request.httpBody = body as Data?
-        request.addValue(twitterHeaderAuth, forHTTPHeaderField: "Authorization")
+        request.addValue(authHeaderValue, forHTTPHeaderField: "Authorization")
         
         
         //Execute the request
@@ -82,15 +83,15 @@ class NetworkController {
         
         
         for (key, value) in parameters {
-            let encodedKey = key.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-            let encodedValue = value.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            let encodedKey = key.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
+            let encodedValue = value.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
             
             if key == sortedKeyArray[0] {
-                firstString += encodedKey! + "=" + encodedValue! + "&"
+                firstString = "\(encodedKey!)=\(encodedValue!)&"
             } else if key == sortedKeyArray[1] {
-                secondString += encodedKey! + "=" + encodedValue! + "&"
+                secondString = "\(encodedKey!)=\(encodedValue!)&"
             } else {
-                thirdString += encodedKey! + "=" + encodedValue!
+                thirdString = "\(encodedKey!)=\(encodedValue!)&"
             }
             
             
@@ -105,13 +106,16 @@ class NetworkController {
     
         print(signatureBaseString)
         
+        let twitterBaseString = "GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fusers%2Fsearch.json&count%3D3%26oauth_consumer_key%3DADeOdA9e5XfjJtchq0iWetwpY%26oauth_nonce%3D2932bb1e59311739de386a4dc0818fb7%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1476299950%26oauth_token%3D45428809-NhJAMwJshILhzUrO16A5pHpgmEbRKbm1KQJwvuB52%26oauth_version%3D1.0%26page%3D1%26q%3Dnfl"
+        
         let signingKey = "\(consumerSecret)&\(tokenSecret)"
         
-        let combined = "\(signatureBaseString)\(signingKey)"
+        let combined = "\(twitterBaseString)\(signingKey)"
         
-        let hmacString = combined.sha1()
+        let hmacSigningString = signingKey.sha1()
+        let hmacBaseString = twitterBaseString.sha1()
         
-        return hmacString
+        return hmacBaseString + hmacSigningString
     }
     
     
