@@ -110,12 +110,9 @@ class NetworkController {
         
         let signingKey = "\(consumerSecret)&\(tokenSecret)"
         
-        let combined = "\(twitterBaseString)\(signingKey)"
         
-        let hmacSigningString = signingKey.sha1()
-        let hmacBaseString = twitterBaseString.sha1()
         
-        return hmacBaseString + hmacSigningString
+        let signature = CCHmac(<#T##algorithm: CCHmacAlgorithm##CCHmacAlgorithm#>, <#T##key: UnsafeRawPointer!##UnsafeRawPointer!#>, <#T##keyLength: Int##Int#>, <#T##data: UnsafeRawPointer!##UnsafeRawPointer!#>, <#T##dataLength: Int##Int#>, <#T##macOut: UnsafeMutableRawPointer!##UnsafeMutableRawPointer!#>)
     }
     
     
