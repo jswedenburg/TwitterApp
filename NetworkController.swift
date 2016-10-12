@@ -46,7 +46,7 @@ class NetworkController {
         let signature = generateSignature(url: url, httpMethod: httpMethod, parameters: urlParameters)
         let authHeaderValue = "OAuth oauth_consumer_key=\"\(consumerKey)\", oauth_nonce=\"\(nonce)\", oauth_signature=\"\(signature)\", oauth_signature_method=\"\(signatureMethod)\", oauth_timestamp=\"\(timeStamp)\", oauth_token=\"\(accessToken)\", oauth_version=\"\(version)\""
         
-        let twitterHeaderAuth = "OAuth oauth_consumer_key=\"ADeOdA9e5XfjJtchq0iWetwpY\", oauth_nonce=\"2932bb1e59311739de386a4dc0818fb7\", oauth_signature=\"\(signature)\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1476299950\", oauth_token=\"45428809-NhJAMwJshILhzUrO16A5pHpgmEbRKbm1KQJwvuB52\", oauth_version=\"1.0\""
+        let twitterHeaderAuth = "OAuth oauth_consumer_key=\"ADeOdA9e5XfjJtchq0iWetwpY\", oauth_nonce=\"2932bb1e59311739de386a4dc0818fb7\", oauth_signature=\"GAUBccqjeEdd2ZWuYLGp82gkTkg%3D\", oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"1476299950\", oauth_token=\"45428809-NhJAMwJshILhzUrO16A5pHpgmEbRKbm1KQJwvuB52\", oauth_version=\"1.0\""
         
         // Creating a request
         let requestURL = urlFromURLParameters(url: url, urlParameters: urlParameters)
@@ -97,17 +97,21 @@ class NetworkController {
         }
         
         let parameterString = "\(firstString)oauth_consumer_key=\(consumerKey)&oauth_nonce=\(nonce)&oauth_signature_method=\(signatureMethod)&oauth_timestamp=\(timeStamp)&oauth_token=\(accessToken)&oauth_version=\(version)\(secondString)\(thirdString)"
-        let encodedParameterString = parameterString.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
+        var secondCharacterSet = CharacterSet.alphanumerics
+        secondCharacterSet.formUnion(CharacterSet.init(charactersIn: "._-"))
+        let encodedParameterString = parameterString.addingPercentEncoding(withAllowedCharacters: secondCharacterSet)
         
         let signatureBaseString = "\(httpString)&\(encodedUrlString!)&\(encodedParameterString!)"
+    
+        print(signatureBaseString)
         
         let signingKey = "\(consumerSecret)&\(tokenSecret)"
         
+        let combined = "\(signatureBaseString)\(signingKey)"
         
+        let hmacString = combined.sha1()
         
-        let hmacString = signatureBaseString.sha1()
-        
-        return twitterHmac
+        return hmacString
     }
     
     
