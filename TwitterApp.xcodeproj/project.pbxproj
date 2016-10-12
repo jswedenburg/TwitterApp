@@ -32,7 +32,6 @@
 		819B3BFF1DAD536800D0D674 /* Days+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BFE1DAD536800D0D674 /* Days+CoreDataProperties.swift */; };
 		819B3C1F1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */; };
 		819B3C211DAD919F00D0D674 /* TwitterNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C201DAD919F00D0D674 /* TwitterNetworkController.swift */; };
-		819B3C481DAEAAF300D0D674 /* CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C471DAEAAF300D0D674 /* CommonCrypto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,8 +63,6 @@
 		819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSearchTableViewController.swift; sourceTree = "<group>"; };
 		819B3C201DAD919F00D0D674 /* TwitterNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterNetworkController.swift; sourceTree = "<group>"; };
 		819B3C451DAEAAF200D0D674 /* TwitterApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwitterApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		819B3C461DAEAAF300D0D674 /* CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonCrypto.h; sourceTree = "<group>"; };
-		819B3C471DAEAAF300D0D674 /* CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonCrypto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +95,6 @@
 		818AC89A1DA539E500659821 /* TwitterApp */ = {
 			isa = PBXGroup;
 			children = (
-				819B3C461DAEAAF300D0D674 /* CommonCrypto.h */,
-				819B3C471DAEAAF300D0D674 /* CommonCrypto.m */,
 				818AC89B1DA539E500659821 /* AppDelegate.swift */,
 				818AC8E51DA6138200659821 /* Model Controllers */,
 				818AC8E01DA610D400659821 /* Model */,
@@ -266,7 +261,6 @@
 				818AC9061DA81FD000659821 /* ScheduleDetailTableViewController.swift in Sources */,
 				818AC8DC1DA610CC00659821 /* TwitterAccount+CoreDataClass.swift in Sources */,
 				818AC89C1DA539E500659821 /* AppDelegate.swift in Sources */,
-				819B3C481DAEAAF300D0D674 /* CommonCrypto.m in Sources */,
 				819B3C1F1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift in Sources */,
 				818AC8E21DA611E800659821 /* CoreDataStack.swift in Sources */,
 			);
