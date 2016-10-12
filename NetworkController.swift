@@ -8,11 +8,13 @@
 
 import Foundation
 
+
+
 class NetworkController {
     
     static private let consumerKey = "ADeOdA9e5XfjJtchq0iWetwpY"
     static let accessToken = "45428809-NhJAMwJshILhzUrO16A5pHpgmEbRKbm1KQJwvuB52"
-    static let verson = "1.0"
+    static let version = "1.0"
     
     static let temp = UUID.init().uuidString
     static let nonce = temp.replacingOccurrences(of: "-", with: "")
@@ -21,6 +23,8 @@ class NetworkController {
     static let signatureMethod = "HMAC-SHA1"
     
     static let timeStamp = String(describing: NSDate().timeIntervalSince1970)
+    
+    
     
     
     
@@ -63,6 +67,7 @@ class NetworkController {
     
     static func generateSignature(url: URL, httpMethod: HTTPMethod, parameters: [String: String]) {
         let urlString = String(describing: url)
+        let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let httpString = httpMethod.rawValue
         var signatureString = ""
         var firstString = ""
@@ -80,13 +85,27 @@ class NetworkController {
             } else if key == sortedKeyArray[1] {
                 secondString += encodedKey! + "=" + encodedValue! + "&"
             } else {
-                thirdString += encodedKey! + "=" + encodedValue! + "$"
+                thirdString += encodedKey! + "=" + encodedValue!
             }
             
-            signatureString = firstString + secondString + thirdString
+            
         }
-        
+        signatureString += httpString + "&"
+        signatureString += encodedUrlString! + "&"
+        signatureString += firstString
         signatureString += "oauth_consumer_key" + "=" + consumerKey + "&"
+        signatureString += "oauth_nonce" + "=" + nonce + "&"
+        signatureString += "oauth_signature_method" + "=" + signatureMethod + "&"
+        signatureString += "oauth_timestamp" + "=" + timeStamp + "&"
+        signatureString += "oauth_token" + "=" + accessToken + "&"
+        signatureString += "oauth_version" + "=" + version + "&"
+        signatureString += secondString
+        signatureString += thirdString
+        
+        
+        
+        
+        
         
         print(signatureString)
     }
@@ -104,4 +123,16 @@ class NetworkController {
     }
     
     
+}
+
+extension String {
+    func sha1() -> String {
+        let data = self.data(using: String.Encoding.utf8)!
+        var digest = [UInt8](repeating: 0, count:Int(CC_SHA1_DIGEST_LENGTH))
+        data.withUnsafeBytes {
+            _ = CC_SHA1($0, CC_LONG(data.count), &digest)
+        }
+        let hexBytes = digest.map { String(format: "%02hhx", $0) }
+        return hexBytes.joined()
+    }
 }
