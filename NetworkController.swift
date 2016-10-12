@@ -41,7 +41,7 @@ class NetworkController {
         
         //Create a signature
         
-        generateSignature(url: url, httpMethod: httpMethod, parameters: urlParameters)
+        let signature = generateSignature(url: url, httpMethod: httpMethod, parameters: urlParameters)
         
         // Creating a request
         let requestURL = urlFromURLParameters(url: url, urlParameters: urlParameters)
@@ -65,7 +65,7 @@ class NetworkController {
         
     }
     
-    static func generateSignature(url: URL, httpMethod: HTTPMethod, parameters: [String: String]) {
+    static func generateSignature(url: URL, httpMethod: HTTPMethod, parameters: [String: String]) -> String {
         let urlString = String(describing: url)
         let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let httpString = httpMethod.rawValue
@@ -103,12 +103,14 @@ class NetworkController {
         signatureString += thirdString
         
         
+        let hmacString = signatureString.sha1()
         
         
         
-        
-        print(signatureString)
+        return hmacString
     }
+    
+    static func 
         
     static func urlFromURLParameters(url: URL, urlParameters: [String: String]?) -> URL {
         let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true)
