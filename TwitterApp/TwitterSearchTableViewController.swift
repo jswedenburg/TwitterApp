@@ -8,27 +8,51 @@
 
 import UIKit
 
-class TwitterSearchTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TwitterSearchTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TableViewCellDelegate {
     
     var schedule: Schedule?
+    var delegate: TableViewCellDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
         NetworkController.twitterSearch(searchTerm: "nfl") { (accounts) in
             self.twitterAccounts = accounts
         }
+        
     }
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    var followedAccounts: [TwitterAccount] = []
+    
     var twitterAccounts: [TwitterAccount] = [] {
         didSet{
-            print(twitterAccounts)
             tableView.reloadData()
         }
     }
+    
+    func cellButtonPressed(sender: SearchTableViewCell) {
+        guard let index = self.tableView.indexPath(for: sender) else { return }
+        let account = twitterAccounts[index.row]
+        followedAccounts.append(account)
+        
+        /*
+        if let followedAccountIndex = twitterAccounts.index(where: { (account) -> Bool in
+            account.screenName == sender.accountScreenname.text
+        }) {
+            let followedAccount = twitterAccounts[followedAccountIndex]
+            followedAccounts.append(followedAccount)
+
+        }
+ 
+ */
+            }
+    
+    
     
     @IBAction func exitButtonPressed(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
@@ -50,10 +74,15 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         // #warning Incomplete implementation, return the number of rows
         return twitterAccounts.count
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
+    }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
+        cell.delegate = self
         let account = twitterAccounts[indexPath.row]
         cell.updateWithAccount(account: account)
         

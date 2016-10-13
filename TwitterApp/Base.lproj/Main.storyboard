@@ -471,42 +471,62 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="80" id="OEY-lh-bUP" customClass="SearchTableViewCell" customModule="TwitterApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="101" id="OEY-lh-bUP" customClass="SearchTableViewCell" customModule="TwitterApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OEY-lh-bUP" id="Msw-hv-Z8i">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GsH-3g-mXt">
-                                                    <frame key="frameInset" minX="8" minY="8" width="55" height="63"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GsH-3g-mXt">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="GsH-3g-mXt" secondAttribute="height" multiplier="1:1" id="cRX-cD-hLq"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBb-Vh-76e">
-                                                    <frame key="frameInset" minX="82" minY="50" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBb-Vh-76e">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSL-z9-Y0v">
-                                                    <frame key="frameInset" minX="296" minY="24" width="46" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSL-z9-Y0v">
+                                                    <state key="normal" title="Follow"/>
+                                                    <connections>
+                                                        <action selector="followButtonPressed:" destination="OEY-lh-bUP" eventType="touchUpInside" id="3pr-bG-KHB"/>
+                                                    </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42H-Qd-cMm">
-                                                    <frame key="frameInset" minX="82" minY="12" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izg-9s-aUY">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C9v-Zd-9c7">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="C9v-Zd-9c7" secondAttribute="height" multiplier="1:1" id="4Iz-fr-rqp"/>
+                                                        <constraint firstAttribute="height" constant="15" id="ISS-vB-HVd"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GsH-3g-mXt" firstAttribute="leading" secondItem="Msw-hv-Z8i" secondAttribute="leadingMargin" id="0BQ-M7-0wc"/>
+                                                <constraint firstItem="GsH-3g-mXt" firstAttribute="top" secondItem="Msw-hv-Z8i" secondAttribute="topMargin" id="64Q-dW-hYW"/>
+                                                <constraint firstItem="mBb-Vh-76e" firstAttribute="leading" secondItem="GsH-3g-mXt" secondAttribute="trailing" constant="11" id="ILA-SF-Zh4"/>
+                                                <constraint firstAttribute="topMargin" secondItem="C9v-Zd-9c7" secondAttribute="top" id="JQo-nc-tCD"/>
+                                                <constraint firstItem="C9v-Zd-9c7" firstAttribute="leading" secondItem="Izg-9s-aUY" secondAttribute="trailing" constant="8" id="JoR-Qa-YQE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BSL-z9-Y0v" secondAttribute="bottom" constant="17" id="LdK-60-8cU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="mBb-Vh-76e" secondAttribute="bottom" id="MI6-0t-Imp"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GsH-3g-mXt" secondAttribute="bottom" id="Y9t-8e-sDH"/>
+                                                <constraint firstItem="Izg-9s-aUY" firstAttribute="top" secondItem="Msw-hv-Z8i" secondAttribute="topMargin" id="Yyt-a1-e4H"/>
+                                                <constraint firstItem="Izg-9s-aUY" firstAttribute="leading" secondItem="GsH-3g-mXt" secondAttribute="trailing" constant="11" id="cbB-qe-hLA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BSL-z9-Y0v" secondAttribute="trailing" constant="25" id="kUC-UN-djI"/>
+                                                <constraint firstItem="BSL-z9-Y0v" firstAttribute="top" secondItem="Msw-hv-Z8i" secondAttribute="topMargin" constant="16" id="tzu-XW-gh5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="accountImageView" destination="GsH-3g-mXt" id="IPk-8k-NzL"/>
-                                            <outlet property="accountName" destination="42H-Qd-cMm" id="VNH-Zw-T5t"/>
+                                            <outlet property="accountName" destination="Izg-9s-aUY" id="Mn6-wB-cQ0"/>
                                             <outlet property="accountScreenname" destination="mBb-Vh-76e" id="ZjF-mU-VSu"/>
+                                            <outlet property="followButton" destination="BSL-z9-Y0v" id="HVK-iJ-ub9"/>
+                                            <outlet property="verifiedImageView" destination="C9v-Zd-9c7" id="H0T-mr-ST8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -523,12 +543,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="searchCell" destination="OEY-lh-bUP" id="537-R6-Yp1"/>
                         <outlet property="tableView" destination="tcy-qh-Yrb" id="ClA-Tt-Rr2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipQ-rw-Yof" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2834" y="-725"/>
+            <point key="canvasLocation" x="2832.8000000000002" y="-725.48725637181417"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bDU-ae-kgU">
