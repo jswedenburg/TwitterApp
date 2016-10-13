@@ -19,7 +19,7 @@ class SearchTableViewCell: UITableViewCell {
     func updateWithAccount(account: TwitterAccount) {
         self.accountName.text = account.name
         self.accountScreenname.text = account.screenName
-        guard let image = UIImage(data: account.profileImage as! Data) else { return }
+        guard let image = UIImage(data: account.profileImage!) else { return }
         self.accountImageView.image = image
     }
 

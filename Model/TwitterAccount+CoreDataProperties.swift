@@ -17,7 +17,7 @@ extension TwitterAccount {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var profileImage: NSData?
+    @NSManaged public var profileImage: Data?
     @NSManaged public var screenName: String?
     @NSManaged public var verified: Bool
     @NSManaged public var schedule: Schedule?

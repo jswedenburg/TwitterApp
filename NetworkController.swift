@@ -16,44 +16,41 @@ class NetworkController {
     static let accessToken = "45428809-NhJAMwJshILhzUrO16A5pHpgmEbRKbm1KQJwvuB52"
     static let consumerSecret = "7XlXJOe97gpqyu5GYtWY5isOwy4YEvnin1Rr8m0g5GMs6pD3WR"
     static let tokenSecret = "BiTchVQ5V0dE1PxUHIIGFzlCRrh25gaGq1oGPMlbP9yzK"
-    static let version = "1.0"
-    
-    static let temp = UUID.init().uuidString
-    static let nonce = temp.replacingOccurrences(of: "-", with: "").lowercased()
     
     
     
-    static let signatureMethod = "HMAC-SHA1"
-    
-    static let timeStamp = String(describing: Int(NSDate().timeIntervalSince1970))
     
     static func twitterSearch(searchTerm: String, completion: @escaping ([TwitterAccount]) -> Void) {
         var swifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret, oauthToken: accessToken, oauthTokenSecret: tokenSecret)
         
         swifter.searchUsers(using: searchTerm, page: 1, count: 5, includeEntities: nil, success: { (users) in
             var accountArray: [TwitterAccount] = []
+            
             for x in 0...4 {
                 guard let name = users[x]["name"].string,
-                let profileImageString = users[x]["profile_image_url"].string,
-                let screenName = users[x]["screen_name"].string,
+                    let profileImageString = users[x]["profile_image_url"].string,
+                    let screenName = users[x]["screen_name"].string,
                     let verified = users[x]["verified"].bool else { return }
-                let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, profileImageURL: profileImageString)
-                accountArray.append(newAccount)
+                
+                guard let url = URL(string: profileImageString) else { return }
+                
+                
+                NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
+                    guard let data = data else { return }
+                    DispatchQueue.main.async() {
+                        let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, profileImageData: data)
+                        accountArray.insert(newAccount, at: 0)
+                        completion(accountArray)
+                        
+                    }
+                }
             }
-            completion(accountArray)
+        })
             
-            
-            }) { (_) in
-                print("FAIL")
+        { (_) in
+            print("FAIL")
         }
     }
-  
-    
-    
-
-
-    
-
     
     enum HTTPMethod: String {
         case Get = "GET"
@@ -88,7 +85,7 @@ class NetworkController {
         
     }
     
-
+    
     static func urlFromURLParameters(url: URL, urlParameters: [String: String]?) -> URL {
         let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true)
         
