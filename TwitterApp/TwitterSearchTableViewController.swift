@@ -15,12 +15,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        TwitterNetworkController.fetchTwitterAccounts("nfl") { (accounts) in
-            DispatchQueue.main.async {
-                print(accounts)
-            }
-            
-        }
+        NetworkController.authorize()
     }
     
     @IBOutlet weak var tableView: UITableView!

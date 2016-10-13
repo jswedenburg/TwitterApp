@@ -18,7 +18,7 @@ class TwitterNetworkController {
     //MARK Function
     
     
-    
+    /*
     static func fetchTwitterAccounts(_ searchTerm: String, completion: @escaping (_ twitterAccounts: [TwitterAccount]) -> Void) {
         guard let url = baseSearchURL  else { return }
         let urlParameters = ["count": "3", "page" : "1", "q": searchTerm]
@@ -33,4 +33,6 @@ class TwitterNetworkController {
             
         }
     }
+ 
+ */
 }

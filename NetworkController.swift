@@ -27,9 +27,22 @@ class NetworkController {
     
     static let timeStamp = String(describing: Int(NSDate().timeIntervalSince1970))
     
+    static func authorize() {
+        var swifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret, oauthToken: accessToken, oauthTokenSecret: tokenSecret)
+        
+        swifter.searchUsers(using: "nfl", page: 1, count: 5, includeEntities: nil, success: { (_) in
+            print("it worked")
+            }) { (_) in
+                print("FAIL")
+        }
+    }
+  
     
     
+
+}
     
+/*
     
     enum HTTPMethod: String {
         case Get = "GET"
@@ -112,7 +125,10 @@ class NetworkController {
         
         
         
-        let signature = CCHmac(<#T##algorithm: CCHmacAlgorithm##CCHmacAlgorithm#>, <#T##key: UnsafeRawPointer!##UnsafeRawPointer!#>, <#T##keyLength: Int##Int#>, <#T##data: UnsafeRawPointer!##UnsafeRawPointer!#>, <#T##dataLength: Int##Int#>, <#T##macOut: UnsafeMutableRawPointer!##UnsafeMutableRawPointer!#>)
+        let signature = HMAC.sha1(key: signingKey, message: twitterBaseString)
+        
+        return signature
+        
     }
     
     
@@ -129,16 +145,7 @@ class NetworkController {
     }
     
     
-}
+*/
 
-extension String {
-    func sha1() -> String {
-        let data = self.data(using: String.Encoding.utf8)!
-        var digest = [UInt8](repeating: 0, count:Int(CC_SHA1_DIGEST_LENGTH))
-        data.withUnsafeBytes {
-            _ = CC_SHA1($0, CC_LONG(data.count), &digest)
-        }
-        let hexBytes = digest.map { String(format: "%02hhx", $0) }
-        return hexBytes.joined()
-    }
-}
+
+
