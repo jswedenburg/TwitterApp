@@ -27,7 +27,12 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     @IBOutlet weak var tableView: UITableView!
     
     
-    var followedAccounts: [TwitterAccount] = []
+    var followedAccounts: [TwitterAccount] = [] {
+        didSet{
+            print(followedAccounts)
+        }
+    }
+    
     
     var twitterAccounts: [TwitterAccount] = [] {
         didSet{

@@ -543,7 +543,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="searchCell" destination="OEY-lh-bUP" id="537-R6-Yp1"/>
                         <outlet property="tableView" destination="tcy-qh-Yrb" id="ClA-Tt-Rr2"/>
                     </connections>
                 </viewController>
