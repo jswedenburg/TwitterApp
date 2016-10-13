@@ -10,12 +10,15 @@ import UIKit
 
 class TwitterSearchTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var schedule: Schedule?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        NetworkController.authorize()
+        NetworkController.twitterSearch(searchTerm: "nfl") { (accounts) in
+            self.twitterAccounts = accounts
+        }
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -50,9 +53,10 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
+        let account = twitterAccounts[indexPath.row]
+        cell.updateWithAccount(account: account)
+        
 
         return cell
     }

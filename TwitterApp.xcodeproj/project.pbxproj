@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8178BE581DAFFC2B0034FF2E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */; };
 		818AC89C1DA539E500659821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC89B1DA539E500659821 /* AppDelegate.swift */; };
 		818AC8A11DA539E500659821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818AC89F1DA539E500659821 /* Main.storyboard */; };
 		818AC8A41DA539E500659821 /* TwitterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8A21DA539E500659821 /* TwitterApp.xcdatamodeld */; };
@@ -31,7 +32,6 @@
 		819B3BF91DAC619E00D0D674 /* Schedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BF71DAC619E00D0D674 /* Schedule+CoreDataProperties.swift */; };
 		819B3BFF1DAD536800D0D674 /* Days+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BFE1DAD536800D0D674 /* Days+CoreDataProperties.swift */; };
 		819B3C1F1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */; };
-		819B3C211DAD919F00D0D674 /* TwitterNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C201DAD919F00D0D674 /* TwitterNetworkController.swift */; };
 		819B3C971DAF080900D0D674 /* Swifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C7C1DAF080900D0D674 /* Swifter.swift */; };
 		819B3C981DAF080900D0D674 /* SwifterAccountsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C7D1DAF080900D0D674 /* SwifterAccountsClient.swift */; };
 		819B3C991DAF080900D0D674 /* SwifterAppOnlyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C7E1DAF080900D0D674 /* SwifterAppOnlyClient.swift */; };
@@ -83,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		818AC8981DA539E500659821 /* TwitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		818AC89B1DA539E500659821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		818AC8A01DA539E500659821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,7 +110,6 @@
 		819B3BF71DAC619E00D0D674 /* Schedule+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		819B3BFE1DAD536800D0D674 /* Days+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Days+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSearchTableViewController.swift; sourceTree = "<group>"; };
-		819B3C201DAD919F00D0D674 /* TwitterNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterNetworkController.swift; sourceTree = "<group>"; };
 		819B3C451DAEAAF200D0D674 /* TwitterApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwitterApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		819B3C7B1DAF080900D0D674 /* Swifter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Swifter.h; path = "../../../../../../../../Downloads/Swifter-master/Swifter/Swifter.h"; sourceTree = "<group>"; };
 		819B3C7C1DAF080900D0D674 /* Swifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Swifter.swift; path = "../../../../../../../../Downloads/Swifter-master/Swifter/Swifter.swift"; sourceTree = "<group>"; };
@@ -211,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				818AC8FB1DA722F500659821 /* NetworkController.swift */,
-				819B3C201DAD919F00D0D674 /* TwitterNetworkController.swift */,
 				818AC8E31DA6137900659821 /* ScheduleController.swift */,
 				818AC8FD1DA7D2BD00659821 /* TwitterAccountController.swift */,
 				819B3BEC1DAC324900D0D674 /* DaysController.swift */,
@@ -229,6 +228,7 @@
 				818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */,
 				818AC9091DA8384F00659821 /* AccountCollectionViewCell.swift */,
 				818AC9071DA837C600659821 /* AccountCollectionViewController.swift */,
+				8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */,
 				819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */,
 			);
 			name = "View Controllers";
@@ -381,7 +381,6 @@
 				818AC8FC1DA722F500659821 /* NetworkController.swift in Sources */,
 				819B3CBD1DAF082000D0D674 /* Int++.swift in Sources */,
 				819B3CA91DAF080900D0D674 /* SwifterStreaming.swift in Sources */,
-				819B3C211DAD919F00D0D674 /* TwitterNetworkController.swift in Sources */,
 				819B3CA61DAF080900D0D674 /* SwifterSavedSearches.swift in Sources */,
 				819B3BED1DAC324900D0D674 /* DaysController.swift in Sources */,
 				818AC8FE1DA7D2BD00659821 /* TwitterAccountController.swift in Sources */,
@@ -420,6 +419,7 @@
 				819B3CA71DAF080900D0D674 /* SwifterSearch.swift in Sources */,
 				819B3CAB1DAF080900D0D674 /* SwifterTag.swift in Sources */,
 				819B3CAF1DAF080900D0D674 /* SwifterUsers.swift in Sources */,
+				8178BE581DAFFC2B0034FF2E /* SearchTableViewCell.swift in Sources */,
 				819B3CA51DAF080900D0D674 /* SwifterPlaces.swift in Sources */,
 				819B3CA11DAF080900D0D674 /* SwifterHTTPRequest.swift in Sources */,
 				819B3C9B1DAF080900D0D674 /* SwifterClientProtocol.swift in Sources */,

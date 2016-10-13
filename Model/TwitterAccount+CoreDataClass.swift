@@ -17,28 +17,21 @@ public class TwitterAccount: NSManagedObject {
     private let kScreenName = "screen_name"
     private let kVerified = "verified"
 
-    convenience init?(dictionary: [String:Any], schedule: Schedule = Schedule(), context: NSManagedObjectContext = CoreDataStack.context){
+    convenience init(name: String, screenName: String, verified: Bool, schedule: Schedule? = nil, profileImageURL: String, context: NSManagedObjectContext = CoreDataStack.context){
         self.init(context: context)
-        guard let name = dictionary[kName] as? String,
-            let profileImageURL = dictionary[self.kProfileImage] as? String,
-            let screenName = dictionary[self.kScreenName] as? String,
-            let verified = dictionary[self.kVerified] as? Bool else { return nil }
-        
-        
-        
         self.name = name
         self.screenName = screenName
         self.verified = verified
         self.schedule = schedule
-        //imageDataForURL(urlString: profileImageURL) { (data) in
-            //self.profileImage = data
-        //}
+        imageDataForURL(urlString: profileImageURL) { (data) in
+            self.profileImage = data as NSData
+        }
     }
     
     
     
-    /*
-    func imageDataForURL(urlString: String, completion: @escaping (_ data: NSData) -> Void) {
+    
+    func imageDataForURL(urlString: String, completion: @escaping (_ data: Data) -> Void) {
         guard let url = URL(string: urlString) else { return }
         
         NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
@@ -49,5 +42,5 @@ public class TwitterAccount: NSManagedObject {
         }
     }
  
- */
+ 
 }
