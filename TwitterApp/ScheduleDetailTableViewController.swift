@@ -35,9 +35,10 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     override func viewDidLoad() {
         DaysPickerTableViewController.delegate = self
         TwitterSearchTableViewController.delegate = self
-        self.accountCollectionView.register(AccountCollectionViewCell.self, forCellWithReuseIdentifier: "accountCell")
         
         self.setDayArray()
+        setUpAccountArray()
+        
     }
     
     
@@ -160,21 +161,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
                 return 0
             }
     }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == accountTableView {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AccountCell", for: indexPath)
-            let account = accountArray[indexPath.row]
-            cell.textLabel?.text = account.name
-            return cell
-        } else {
-            return UITableViewCell()
-        }
-        
-        
-    }
- 
- */
+    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             var height = self.tableView.rowHeight
@@ -191,7 +178,11 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             if indexPath.row == 5 {
                 height = self.endDatePickerVisable ? 100.0 : 0.0
             }
+        
+        
             return height
+        
+        
     
         
     }
@@ -332,6 +323,12 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         
         self.dayArray = dayIntArray
         
+    }
+    
+    func setUpAccountArray(){
+        if let schedule = schedule, let accounts = schedule.twitterAccounts?.allObjects as? [TwitterAccount] {
+            self.accountArray = accounts
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
