@@ -12,14 +12,14 @@ import CoreData
 
 public class Schedule: NSManagedObject {
 
-    convenience init(repeating: Bool, startTime: NSDate = NSDate(), endTime: NSDate = NSDate(), title: String, enabled: Bool = true, context: NSManagedObjectContext = CoreDataStack.context){
+    convenience init(repeating: Bool, startTime: Date = Date(), endTime: Date = Date(), title: String, enabled: Bool = true, context: NSManagedObjectContext = CoreDataStack.context){
         
         
         
         self.init(context: context)
         self.repeating = repeating
-        self.startTime = startTime as NSDate
-        self.endTime = endTime as NSDate
+        self.startTime = startTime
+        self.endTime = endTime
         self.title = title
         self.enabled = enabled
         

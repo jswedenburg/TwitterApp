@@ -62,15 +62,32 @@ class ScheduleDetailTableViewController: UITableViewController, datePickerDelega
     }
     
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
-        
-    }
-    
-    func saveDays(){
         if let schedule = schedule {
-            dayArray.flatMap({Days(day: $0, schedule: schedule)})
-            schedule.title = titleTextField.text
+            editSchedule(schedule: schedule)
         }
         
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func editSchedule(schedule: Schedule){
+        schedule.title = titleTextField.text
+        schedule.startTime = startDatePicker.date
+        schedule.endTime = endDatePicker.date
+        schedule.repeating = repeatingSwitch.isOn
+        schedule.days = []
+        for day in dayArray {
+            
+                let newDay = Days(day: day, schedule: schedule)
+                DaysController.sharedController.add(newDay)
+            }
+        for account in accountArray {
+            let name = account.name
+            let screenName = account.screenName
+            let newAccount = TwitterAccount(name: , screenName: <#T##String#>, verified: <#T##Bool#>, profileImageData: <#T##Data#>)
+        }
+            
+        
+        ScheduleController.sharedController.saveToPersistentStorage()
     }
     
     override func viewDidAppear(_ animated: Bool) {

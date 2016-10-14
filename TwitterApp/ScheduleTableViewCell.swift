@@ -27,15 +27,7 @@ class ScheduleTableViewCell: UITableViewCell {
     }
 
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+        
+    //TODO: Helper function to take in to take two Dates and the days and return the right String text
 
 }

@@ -27,7 +27,6 @@ class DaysPickerTableViewController: UITableViewController {
         self.dismiss(animated: true) { 
             DaysPickerTableViewController.delegate?.dayArray = self.dayArray
         }
-        
     }
     
     

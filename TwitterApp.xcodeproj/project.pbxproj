@@ -222,10 +222,10 @@
 			isa = PBXGroup;
 			children = (
 				818AC8E61DA6B35100659821 /* ScheduleTableViewController.swift */,
+				818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */,
+				818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */,
 				819B3BE21DABFC6C00D0D674 /* DaysPickerTableViewController.swift */,
 				819B3BE41DAC02E200D0D674 /* DayTableViewCell.swift */,
-				818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */,
-				818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */,
 				818AC9091DA8384F00659821 /* AccountCollectionViewCell.swift */,
 				818AC9071DA837C600659821 /* AccountCollectionViewController.swift */,
 				8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */,

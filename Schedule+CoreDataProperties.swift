@@ -17,9 +17,9 @@ extension Schedule {
     }
 
     @NSManaged public var enabled: Bool
-    @NSManaged public var endTime: NSDate?
+    @NSManaged public var endTime: Date?
     @NSManaged public var repeating: Bool
-    @NSManaged public var startTime: NSDate?
+    @NSManaged public var startTime: Date?
     @NSManaged public var title: String?
     @NSManaged public var twitterAccounts: NSSet?
     @NSManaged public var days: NSOrderedSet?
