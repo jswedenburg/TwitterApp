@@ -33,7 +33,7 @@ class ScheduleDetailTableViewController: UITableViewController, datePickerDelega
     
     var accountArray: [TwitterAccount] = [] {
         didSet {
-            print("account array set: \(accountArray)")
+            print("account array set: \(accountArray.count)")
         }
     }
     
@@ -62,6 +62,14 @@ class ScheduleDetailTableViewController: UITableViewController, datePickerDelega
     }
     
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
+        
+    }
+    
+    func saveDays(){
+        if let schedule = schedule {
+            dayArray.flatMap({Days(day: $0, schedule: schedule)})
+            schedule.title = titleTextField.text
+        }
         
     }
     

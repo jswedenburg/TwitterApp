@@ -12,17 +12,7 @@ import CoreData
 class TwitterAccountController {
     static let sharedController = TwitterAccountController()
     
-    var twitterAccounts: [TwitterAccount] {
-        
-        let request: NSFetchRequest<TwitterAccount> = TwitterAccount.fetchRequest()
-        let moc = CoreDataStack.context
-        do {
-            let result = try moc.fetch(request)
-            return result
-        } catch {
-            return []
-        }
-    }
+    
     
     func add(_ twitterAccount: TwitterAccount){
         self.saveToPersistentStorage()

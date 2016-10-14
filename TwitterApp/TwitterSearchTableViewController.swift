@@ -59,9 +59,11 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     
     @IBAction func exitButtonPressed(_ sender: AnyObject) {
         dismiss(animated: true) { 
-            TwitterSearchTableViewController.delegate?.accountArray = self.followedAccounts
+            TwitterSearchTableViewController.delegate?.accountArray += self.followedAccounts
         }
     }
+    
+    //TODO: Check and make sure the account hasnt already been followed
 
     // MARK: - Table view data source
 
