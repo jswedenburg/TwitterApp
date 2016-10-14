@@ -64,9 +64,37 @@ class ScheduleDetailTableViewController: UITableViewController, datePickerDelega
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
         if let schedule = schedule {
             editSchedule(schedule: schedule)
+        } else {
+            addSchedule()
         }
         
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func addSchedule() {
+        guard let scheduleTitle = titleTextField.text else { return }
+        let scheduleStartTime = startDatePicker.date
+        let scheduleEndTime = endDatePicker.date
+        let scheduleRepeating = repeatingSwitch.isOn
+        let newSchedule = Schedule(repeating: scheduleRepeating, startTime: scheduleStartTime, endTime: scheduleEndTime, title: scheduleTitle)
+        
+        for day in dayArray {
+            
+            let newDay = Days(day: day, schedule: newSchedule)
+            DaysController.sharedController.add(newDay)
+        }
+        for account in accountArray {
+            guard let name = account.name,
+                let screenName = account.screenName,
+                let imageData = account.profileImage else { return }
+            let verified = account.verified
+            let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: newSchedule, profileImageData: imageData)
+            TwitterAccountController.sharedController.add(newAccount)
+        }
+        
+        
+        ScheduleController.sharedController.saveToPersistentStorage()
+        
     }
     
     func editSchedule(schedule: Schedule){
@@ -81,11 +109,14 @@ class ScheduleDetailTableViewController: UITableViewController, datePickerDelega
                 DaysController.sharedController.add(newDay)
             }
         for account in accountArray {
-            let name = account.name
-            let screenName = account.screenName
-            let newAccount = TwitterAccount(name: , screenName: <#T##String#>, verified: <#T##Bool#>, profileImageData: <#T##Data#>)
+            guard let name = account.name,
+            let screenName = account.screenName,
+            let imageData = account.profileImage else { return }
+            let verified = account.verified
+            let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: schedule, profileImageData: imageData)
+            TwitterAccountController.sharedController.add(newAccount)
         }
-            
+        
         
         ScheduleController.sharedController.saveToPersistentStorage()
     }

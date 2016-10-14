@@ -14,7 +14,7 @@ public class TwitterAccount: NSManagedObject {
     
     
 
-    convenience init(name: String, screenName: String, verified: Bool, schedule: Schedule? = nil, profileImageData: Data, context: NSManagedObjectContext = CoreDataStack.context){
+    convenience init(name: String, screenName: String, verified: Bool, schedule: Schedule?, profileImageData: Data, context: NSManagedObjectContext = CoreDataStack.context){
         self.init(context: context)
         self.name = name
         self.screenName = screenName

@@ -38,7 +38,7 @@ class NetworkController {
                 NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
                     guard let data = data else { return }
                     DispatchQueue.main.async() {
-                        let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, profileImageData: data)
+                        let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: nil, profileImageData: data)
                         accountArray.insert(newAccount, at: 0)
                         completion(accountArray)
                         

@@ -22,7 +22,7 @@ class ScheduleTableViewCell: UITableViewCell {
     func updateWithSchedule(schedule: Schedule) {
         
         self.titleLabel.text = schedule.title
-        self.timeAndDateLabel.text = "9:00 AM - 9:00PM, every Sunday"
+        self.timeAndDateLabel.text = String(describing: schedule.startTime!)
         self.enabledSwitch.isOn = schedule.enabled
     }
 

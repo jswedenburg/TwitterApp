@@ -16,6 +16,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
+        print(scheduleArray.count)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
