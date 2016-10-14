@@ -39,6 +39,8 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         self.setDayArray()
         setUpAccountArray()
         
+        
+        
     }
     
     
@@ -101,6 +103,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         schedule.endTime = endDatePicker.date
         schedule.repeating = repeatingSwitch.isOn
         schedule.days = []
+        schedule.twitterAccounts = []
         for day in dayArray {
             
                 let newDay = Days(day: day, schedule: schedule)
@@ -178,6 +181,10 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             if indexPath.row == 5 {
                 height = self.endDatePickerVisable ? 100.0 : 0.0
             }
+        
+        if indexPath.section == 1 && indexPath.row == 0 {
+            height = self.view.frame.height
+        }
         
         
             return height
