@@ -23,8 +23,6 @@
 		818AC8FC1DA722F500659821 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8FB1DA722F500659821 /* NetworkController.swift */; };
 		818AC8FE1DA7D2BD00659821 /* TwitterAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8FD1DA7D2BD00659821 /* TwitterAccountController.swift */; };
 		818AC9061DA81FD000659821 /* ScheduleDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */; };
-		818AC9081DA837C600659821 /* AccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9071DA837C600659821 /* AccountCollectionViewController.swift */; };
-		818AC90A1DA8384F00659821 /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9091DA8384F00659821 /* AccountCollectionViewCell.swift */; };
 		819B3BE31DABFC6C00D0D674 /* DaysPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BE21DABFC6C00D0D674 /* DaysPickerTableViewController.swift */; };
 		819B3BE51DAC02E200D0D674 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BE41DAC02E200D0D674 /* DayTableViewCell.swift */; };
 		819B3BEA1DAC1FD600D0D674 /* Days+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BE71DAC1FD600D0D674 /* Days+CoreDataClass.swift */; };
@@ -101,8 +99,6 @@
 		818AC8FB1DA722F500659821 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkController.swift; path = ../NetworkController.swift; sourceTree = "<group>"; };
 		818AC8FD1DA7D2BD00659821 /* TwitterAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAccountController.swift; sourceTree = "<group>"; };
 		818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetailTableViewController.swift; sourceTree = "<group>"; };
-		818AC9071DA837C600659821 /* AccountCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewController.swift; sourceTree = "<group>"; };
-		818AC9091DA8384F00659821 /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		819B3BE21DABFC6C00D0D674 /* DaysPickerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysPickerTableViewController.swift; sourceTree = "<group>"; };
 		819B3BE41DAC02E200D0D674 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		819B3BE71DAC1FD600D0D674 /* Days+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Days+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -226,8 +222,6 @@
 				818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */,
 				819B3BE21DABFC6C00D0D674 /* DaysPickerTableViewController.swift */,
 				819B3BE41DAC02E200D0D674 /* DayTableViewCell.swift */,
-				818AC9091DA8384F00659821 /* AccountCollectionViewCell.swift */,
-				818AC9071DA837C600659821 /* AccountCollectionViewController.swift */,
 				8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */,
 				819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */,
 			);
@@ -385,7 +379,6 @@
 				819B3BED1DAC324900D0D674 /* DaysController.swift in Sources */,
 				818AC8FE1DA7D2BD00659821 /* TwitterAccountController.swift in Sources */,
 				819B3C991DAF080900D0D674 /* SwifterAppOnlyClient.swift in Sources */,
-				818AC9081DA837C600659821 /* AccountCollectionViewController.swift in Sources */,
 				819B3BF91DAC619E00D0D674 /* Schedule+CoreDataProperties.swift in Sources */,
 				818AC8EE1DA6F14C00659821 /* Schedule+CoreDataClass.swift in Sources */,
 				819B3CC01DAF082000D0D674 /* SHA1.swift in Sources */,
@@ -407,7 +400,6 @@
 				819B3CA41DAF080900D0D674 /* SwifterOAuthClient.swift in Sources */,
 				819B3BE51DAC02E200D0D674 /* DayTableViewCell.swift in Sources */,
 				819B3CC11DAF082000D0D674 /* String++.swift in Sources */,
-				818AC90A1DA8384F00659821 /* AccountCollectionViewCell.swift in Sources */,
 				819B3CB01DAF080900D0D674 /* URL++.swift in Sources */,
 				819B3C981DAF080900D0D674 /* SwifterAccountsClient.swift in Sources */,
 				818AC8F41DA70D4D00659821 /* ScheduleTableViewCell.swift in Sources */,
