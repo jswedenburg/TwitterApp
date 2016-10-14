@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScheduleDetailTableViewController: UITableViewController, datePickerDelegate {
+class ScheduleDetailTableViewController: UITableViewController, datePickerDelegate, searchDelegate {
     
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -31,8 +31,15 @@ class ScheduleDetailTableViewController: UITableViewController, datePickerDelega
         }
     }
     
+    var accountArray: [TwitterAccount] = [] {
+        didSet {
+            print("account array set: \(accountArray)")
+        }
+    }
+    
     override func viewDidLoad() {
         DaysPickerTableViewController.delegate = self
+        TwitterSearchTableViewController.delegate = self
         self.setDayArray()
     }
     
@@ -60,8 +67,7 @@ class ScheduleDetailTableViewController: UITableViewController, datePickerDelega
     
     override func viewDidAppear(_ animated: Bool) {
         setupView()
-        //print(dayIntArray)
-       // print(" Here is the days from core data: \(self.schedule?.days)")
+        print(accountArray)
         
     }
     
