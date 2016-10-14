@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScheduleDetailTableViewController: UITableViewController, datePickerDelegate, searchDelegate {
+class ScheduleDetailTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, datePickerDelegate, searchDelegate {
     
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -20,26 +20,23 @@ class ScheduleDetailTableViewController: UITableViewController, datePickerDelega
     @IBOutlet weak var endDatePicker: UIDatePicker!
     @IBOutlet weak var daysImage: UIImageView!
     @IBOutlet weak var daysCell: UITableViewCell!
+    @IBOutlet weak var accountCollectionView: UICollectionView!
+    //@IBOutlet weak var accountTableView: UITableView!
+    
     
     var schedule: Schedule?
     var startDatePickerVisable: Bool = false
     var endDatePickerVisable: Bool = false
     
-    var dayArray: [Int16] = [] {
-        didSet {
-            print("day array set: \(dayArray)")
-        }
-    }
+    var dayArray: [Int16] = []
     
-    var accountArray: [TwitterAccount] = [] {
-        didSet {
-            print("account array set: \(accountArray.count)")
-        }
-    }
+    var accountArray: [TwitterAccount] = []
     
     override func viewDidLoad() {
         DaysPickerTableViewController.delegate = self
         TwitterSearchTableViewController.delegate = self
+        self.accountCollectionView.register(AccountCollectionViewCell.self, forCellWithReuseIdentifier: "accountCell")
+        
         self.setDayArray()
     }
     
@@ -123,8 +120,28 @@ class ScheduleDetailTableViewController: UITableViewController, datePickerDelega
     
     override func viewDidAppear(_ animated: Bool) {
         setupView()
-        print(accountArray)
+        self.accountCollectionView.reloadData()
         
+        
+    }
+    
+    //MARK: - Collection View Data Source
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return accountArray.count
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = self.accountCollectionView.dequeueReusableCell(withReuseIdentifier: "accountCell", for: indexPath) as? AccountCollectionViewCell else { return UICollectionViewCell()}
+        let account = accountArray[indexPath.row]
+        cell.updateWithAccount(account: account)
+        return cell
     }
     
     // MARK: - Table view data source
@@ -134,50 +151,70 @@ class ScheduleDetailTableViewController: UITableViewController, datePickerDelega
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 7
-        case 1:
-            return 0
-        default:
-            return 0
-        }
+            switch section {
+            case 0:
+                return 7
+            case 1:
+                return 1
+            default:
+                return 0
+            }
     }
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == accountTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AccountCell", for: indexPath)
+            let account = accountArray[indexPath.row]
+            cell.textLabel?.text = account.name
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+        
+        
+    }
+ 
+ */
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height = self.tableView.rowHeight
-        if daysCell.isHidden {
-            if indexPath.row == 1 {
-                return 0.0
+            var height = self.tableView.rowHeight
+            if daysCell.isHidden {
+                if indexPath.row == 1 {
+                    return 0.0
+                }
             }
-        }
+            
+            if indexPath.row == 3 {
+                height = self.startDatePickerVisable ? 100.0 : 0.0
+            }
+            
+            if indexPath.row == 5 {
+                height = self.endDatePickerVisable ? 100.0 : 0.0
+            }
+            return height
+    
         
-        if indexPath.row == 3 {
-            height = self.startDatePickerVisable ? 100.0 : 0.0
-        }
-        
-        if indexPath.row == 5 {
-            height = self.endDatePickerVisable ? 100.0 : 0.0
-        }
-        return height
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 2 {
-            if self.startDatePickerVisable {
-                self.hideDatePicker(picker: startDatePicker, start: true)
-            } else {
-                self.showDatePicker(picker: startDatePicker, start: true)
-            }
-        }
         
-        if indexPath.row == 4 {
-            if self.endDatePickerVisable {
-                self.hideDatePicker(picker: endDatePicker, start: false)
-            } else {
-                self.showDatePicker(picker: endDatePicker, start: false)
+            if indexPath.row == 2 {
+                if self.startDatePickerVisable {
+                    self.hideDatePicker(picker: startDatePicker, start: true)
+                } else {
+                    self.showDatePicker(picker: startDatePicker, start: true)
+                }
             }
-        }
+            
+            if indexPath.row == 4 {
+                if self.endDatePickerVisable {
+                    self.hideDatePicker(picker: endDatePicker, start: false)
+                } else {
+                    self.showDatePicker(picker: endDatePicker, start: false)
+                }
+            }
+        
+        
     }
     
     

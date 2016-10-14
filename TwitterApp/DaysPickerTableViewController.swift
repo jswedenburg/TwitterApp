@@ -68,7 +68,7 @@ class DaysPickerTableViewController: UITableViewController {
             default:
                 print("mistake")
             }
-        print(dayArray)
+        
         cell.checkMarkImage.isHidden = !cell.checkMarkImage.isHidden
         tableView.reloadData()
         
