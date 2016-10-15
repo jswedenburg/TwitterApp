@@ -263,8 +263,8 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             setupDayLabel()
             titleTextField.text = schedule.title
             repeatingSwitch.isOn = schedule.repeating
-            startTimeLabel.text = schedule.startTime?.description
-            endTimeLabel.text = schedule.endTime?.description
+            startTimeLabel.text = dateFormatter(date: schedule.startTime!)
+            endTimeLabel.text = dateFormatter(date: schedule.endTime!)
             daysImage.isHidden = true
         } else {
             repeatingSwitch.isOn = true
@@ -275,6 +275,14 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             
             
         }
+    }
+    
+    func dateFormatter(date: Date) -> String{
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        
+        return formatter.string(from: date)
     }
     
     func setupDayLabel() {
