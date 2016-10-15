@@ -355,7 +355,7 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                     <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="s09-lH-Hgp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="240"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="239.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionReusableView>
                                                     <connections>
@@ -393,9 +393,13 @@
                         <outlet property="daysImage" destination="aL3-XC-roA" id="I7m-Vx-KKe"/>
                         <outlet property="daysLabel" destination="cYz-Oy-VPp" id="3bR-Wc-c8y"/>
                         <outlet property="endDatePicker" destination="MnF-tA-kgx" id="5TE-Wl-mhn"/>
+                        <outlet property="endLabelCell" destination="QJ2-gb-fBd" id="bAE-Su-Uo4"/>
+                        <outlet property="endPickerCell" destination="X0a-bS-mrn" id="Cwt-fI-sCu"/>
                         <outlet property="endTimeLabel" destination="MFs-8U-q4O" id="oIt-0q-tr4"/>
                         <outlet property="repeatingSwitch" destination="Z0i-l0-dOR" id="ys6-kt-ES4"/>
+                        <outlet property="startCell" destination="OrI-ku-NDG" id="6VC-BP-NlU"/>
                         <outlet property="startDatePicker" destination="NSE-KD-1tu" id="Iuu-z9-qc2"/>
+                        <outlet property="startPickerCell" destination="5il-js-UwU" id="2Yt-R7-17v"/>
                         <outlet property="startTimeLabel" destination="orv-KL-Xgr" id="gbx-Kk-jvM"/>
                         <outlet property="titleTextField" destination="d7H-2P-sbb" id="EmV-EA-pBC"/>
                         <segue destination="qad-bh-F6H" kind="unwind" identifier="unwindToScheduleTable" unwindAction="unwindToScheduleTableWithSegue:" id="5Kc-D2-ueQ"/>

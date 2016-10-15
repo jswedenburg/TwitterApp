@@ -21,12 +21,17 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     @IBOutlet weak var daysImage: UIImageView!
     @IBOutlet weak var daysCell: UITableViewCell!
     @IBOutlet weak var accountCollectionView: UICollectionView!
-    //@IBOutlet weak var accountTableView: UITableView!
+    @IBOutlet weak var startCell: UITableViewCell!
+    @IBOutlet weak var startPickerCell: UITableViewCell!
+    @IBOutlet weak var endLabelCell: UITableViewCell!
+    @IBOutlet weak var endPickerCell: UITableViewCell!
+    
     
     
     var schedule: Schedule?
     var startDatePickerVisable: Bool = false
     var endDatePickerVisable: Bool = false
+    var repeating: Bool = true
     
     var dayArray: [Int16] = []
     
@@ -40,24 +45,27 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         setUpAccountArray()
         
         
+        daysCell.isHidden = false
+        startCell.isHidden = true
+        startPickerCell.isHidden = true
+        endLabelCell.isHidden = true
+        endPickerCell.isHidden = true
+        
         
     }
     
     
     @IBAction func repeatSwitchPressed(_ sender: AnyObject) {
         
-        if repeatingSwitch.isOn {
-            startDatePicker.datePickerMode = .time
-            endDatePicker.datePickerMode = .time
-            daysCell.isHidden = false
-            self.tableView.reloadData()
-        } else {
-            startDatePicker.datePickerMode = .dateAndTime
-            endDatePicker.datePickerMode = .dateAndTime
-            daysCell.isHidden = true
-            self.tableView.reloadData()
-            
-        }
+        
+        daysCell.isHidden = !daysCell.isHidden
+        startCell.isHidden = !startCell.isHidden
+        startPickerCell.isHidden = !startPickerCell.isHidden
+        endLabelCell.isHidden = !endLabelCell.isHidden
+        endPickerCell.isHidden = !endPickerCell.isHidden
+        self.repeating = !self.repeating
+        self.tableView.reloadData()
+        
         
     }
     
@@ -108,13 +116,13 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         schedule.twitterAccounts = []
         for day in dayArray {
             
-                let newDay = Days(day: day, schedule: schedule)
-                DaysController.sharedController.add(newDay)
-            }
+            let newDay = Days(day: day, schedule: schedule)
+            DaysController.sharedController.add(newDay)
+        }
         for account in accountArray {
             guard let name = account.name,
-            let screenName = account.screenName,
-            let imageData = account.profileImage else { return }
+                let screenName = account.screenName,
+                let imageData = account.profileImage else { return }
             let verified = account.verified
             let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: schedule, profileImageData: imageData)
             TwitterAccountController.sharedController.add(newAccount)
@@ -157,62 +165,69 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            switch section {
-            case 0:
-                return 7
-            case 1:
-                return 1
-            default:
-                return 0
-            }
+        switch section {
+        case 0:
+            return 7
+        case 1:
+            return 1
+        default:
+            return 0
+        }
     }
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            var height = self.tableView.rowHeight
-            if daysCell.isHidden {
-                if indexPath.row == 1 {
-                    return 0.0
-                }
+        var height = self.tableView.rowHeight
+        if repeating == false {
+            if indexPath.row == 1 {
+                return 0.0
             }
-            
-            if indexPath.row == 3 {
-                height = self.startDatePickerVisable ? 100.0 : 0.0
+        }
+        
+        if repeating == true{
+            if indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 5 {
+                height = 0.0
+                
             }
-            
-            if indexPath.row == 5 {
-                height = self.endDatePickerVisable ? 100.0 : 0.0
-            }
+        }
         
-            if indexPath.section == 1 && indexPath.row == 0 {
-                height = 150
-            }
+        if indexPath.row == 3 {
+            height = self.startDatePickerVisable ? 100.0 : 0.0
+        }
+        
+        if indexPath.row == 5 {
+            height = self.endDatePickerVisable ? 100.0 : 0.0
+        }
+        
+        if indexPath.section == 1 && indexPath.row == 0 {
+            height = 150
+        }
         
         
-            return height
+        return height
         
- 
-    
+        
+        
         
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-            if indexPath.row == 2 {
-                if self.startDatePickerVisable {
-                    self.hideDatePicker(picker: startDatePicker, start: true)
-                } else {
-                    self.showDatePicker(picker: startDatePicker, start: true)
-                }
+        if indexPath.row == 2 {
+            if self.startDatePickerVisable {
+                self.hideDatePicker(picker: startDatePicker, start: true)
+            } else {
+                self.showDatePicker(picker: startDatePicker, start: true)
             }
-            
-            if indexPath.row == 4 {
-                if self.endDatePickerVisable {
-                    self.hideDatePicker(picker: endDatePicker, start: false)
-                } else {
-                    self.showDatePicker(picker: endDatePicker, start: false)
-                }
+        }
+        
+        if indexPath.row == 4 {
+            if self.endDatePickerVisable {
+                self.hideDatePicker(picker: endDatePicker, start: false)
+            } else {
+                self.showDatePicker(picker: endDatePicker, start: false)
             }
+        }
         
         
     }
@@ -252,24 +267,35 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             picker.alpha = 0.0
         }) { (_) in
             picker.isHidden = true
+            if picker == self.startDatePicker {
+                self.startTimeLabel.text = self.dateFormatter(date: picker.date)
+            } else {
+                self.endTimeLabel.text = self.dateFormatter(date: picker.date)
+            }
+            
         }
     }
     
     func setupView(){
-        startDatePicker.datePickerMode = .time
-        endDatePicker.datePickerMode = .time
+        startDatePicker.datePickerMode = .date
+        endDatePicker.datePickerMode = .date
+        guard let startDate = schedule?.startTime else { return }
+        guard let endDate = schedule?.endTime else { return }
         
         if let schedule = schedule{
             setupDayLabel()
             titleTextField.text = schedule.title
             repeatingSwitch.isOn = schedule.repeating
+            endDatePicker.date = endDate
+            startDatePicker.date = startDate
             startTimeLabel.text = dateFormatter(date: schedule.startTime!)
             endTimeLabel.text = dateFormatter(date: schedule.endTime!)
+            
             daysImage.isHidden = true
         } else {
-            repeatingSwitch.isOn = true
+            
             daysImage.image = #imageLiteral(resourceName: "calendar")
-            daysLabel.isHidden = true
+            
             startTimeLabel.text = "Select Start Time"
             endTimeLabel.text = "Select End Time"
             
