@@ -249,7 +249,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFs-8U-q4O">
-                                                    <frame key="frameInset" minX="301" minY="9" width="42" height="21"/>
+                                                    <frame key="frameInset" minX="113" minY="9" width="230" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -507,6 +507,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSL-z9-Y0v">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <state key="normal" title="Follow"/>
                                                     <connections>
                                                         <action selector="followButtonPressed:" destination="OEY-lh-bUP" eventType="touchUpInside" id="3pr-bG-KHB"/>
@@ -530,13 +531,13 @@
                                                 <constraint firstItem="mBb-Vh-76e" firstAttribute="leading" secondItem="GsH-3g-mXt" secondAttribute="trailing" constant="11" id="ILA-SF-Zh4"/>
                                                 <constraint firstAttribute="topMargin" secondItem="C9v-Zd-9c7" secondAttribute="top" id="JQo-nc-tCD"/>
                                                 <constraint firstItem="C9v-Zd-9c7" firstAttribute="leading" secondItem="Izg-9s-aUY" secondAttribute="trailing" constant="8" id="JoR-Qa-YQE"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="BSL-z9-Y0v" secondAttribute="bottom" constant="17" id="LdK-60-8cU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BSL-z9-Y0v" secondAttribute="bottom" id="LdK-60-8cU"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="mBb-Vh-76e" secondAttribute="bottom" id="MI6-0t-Imp"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GsH-3g-mXt" secondAttribute="bottom" id="Y9t-8e-sDH"/>
                                                 <constraint firstItem="Izg-9s-aUY" firstAttribute="top" secondItem="Msw-hv-Z8i" secondAttribute="topMargin" id="Yyt-a1-e4H"/>
                                                 <constraint firstItem="Izg-9s-aUY" firstAttribute="leading" secondItem="GsH-3g-mXt" secondAttribute="trailing" constant="11" id="cbB-qe-hLA"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="BSL-z9-Y0v" secondAttribute="trailing" constant="25" id="kUC-UN-djI"/>
-                                                <constraint firstItem="BSL-z9-Y0v" firstAttribute="top" secondItem="Msw-hv-Z8i" secondAttribute="topMargin" constant="16" id="tzu-XW-gh5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BSL-z9-Y0v" secondAttribute="trailing" id="kUC-UN-djI"/>
+                                                <constraint firstItem="BSL-z9-Y0v" firstAttribute="top" secondItem="Msw-hv-Z8i" secondAttribute="topMargin" id="tzu-XW-gh5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -561,6 +562,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="bPj-z5-FSg" id="uzg-dO-Kqo"/>
                         <outlet property="tableView" destination="tcy-qh-Yrb" id="ClA-Tt-Rr2"/>
                     </connections>
                 </viewController>

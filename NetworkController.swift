@@ -23,10 +23,10 @@ class NetworkController {
     static func twitterSearch(searchTerm: String, completion: @escaping ([TwitterAccount]) -> Void) {
         var swifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret, oauthToken: accessToken, oauthTokenSecret: tokenSecret)
         
-        swifter.searchUsers(using: searchTerm, page: 1, count: 5, includeEntities: nil, success: { (users) in
+        swifter.searchUsers(using: searchTerm, page: 1, count: 20, includeEntities: nil, success: { (users) in
             var accountArray: [TwitterAccount] = []
             
-            for x in 0...4 {
+            for x in 0...19 {
                 guard let name = users[x]["name"].string,
                     let profileImageString = users[x]["profile_image_url"].string,
                     let screenName = users[x]["screen_name"].string,

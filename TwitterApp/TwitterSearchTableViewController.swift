@@ -12,11 +12,14 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     
     var schedule: Schedule?
     static var delegate: searchDelegate?
+    @IBOutlet weak var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
+        
         
         
         
@@ -47,6 +50,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         guard let index = self.tableView.indexPath(for: sender) else { return }
         let account = twitterAccounts[index.row]
         followedAccounts.append(account)
+        sender.backgroundColor = UIColor.red
         
         /*
         if let followedAccountIndex = twitterAccounts.index(where: { (account) -> Bool in
