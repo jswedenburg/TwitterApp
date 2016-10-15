@@ -1,4 +1,4 @@
-//
+ //
 //  ScheduleTableViewController.swift
 //  TwitterApp
 //
@@ -10,13 +10,19 @@ import UIKit
 
 class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let scheduleArray = ScheduleController.sharedController.schedules
-
+    var scheduleArray: [Schedule] {
+        return ScheduleController.sharedController.schedules
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
+    
+    
+    @IBAction func unwindToScheduleTable(segue: UIStoryboardSegue){}
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return scheduleArray.count
@@ -35,6 +41,15 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let schedule = scheduleArray[indexPath.row]
+            ScheduleController.sharedController.delete(schedule)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
     

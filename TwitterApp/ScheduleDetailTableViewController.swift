@@ -68,7 +68,9 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             addSchedule()
         }
         
-        self.navigationController?.popViewController(animated: true)
+        self.performSegue(withIdentifier: "unwindToScheduleTable", sender: self)
+        
+        //_ = self.navigationController?.popToRootViewController(animated: true)
     }
     
     func addSchedule() {
@@ -182,14 +184,14 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
                 height = self.endDatePickerVisable ? 100.0 : 0.0
             }
         
-        if indexPath.section == 1 && indexPath.row == 0 {
-            height = self.view.frame.height
-        }
+            if indexPath.section == 1 && indexPath.row == 0 {
+                height = 150
+            }
         
         
             return height
         
-        
+ 
     
         
     }

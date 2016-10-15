@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TwitterSearchTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TableViewCellDelegate {
+class TwitterSearchTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TableViewCellDelegate, UISearchBarDelegate {
     
     var schedule: Schedule?
     static var delegate: searchDelegate?
@@ -18,9 +18,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         tableView.delegate = self
         tableView.dataSource = self
         
-        NetworkController.twitterSearch(searchTerm: "nfl") { (accounts) in
-            self.twitterAccounts = accounts
-        }
+        
         
     }
     
@@ -35,7 +33,14 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         }
     }
     
+    //MARK: Search Delegate
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text else { return }
+        NetworkController.twitterSearch(searchTerm: searchTerm) { (accounts) in
+            self.twitterAccounts = accounts
+        }
+    }
     
     
     func cellButtonPressed(sender: SearchTableViewCell) {

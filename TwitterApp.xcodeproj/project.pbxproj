@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8178BE581DAFFC2B0034FF2E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */; };
 		8178BE7F1DB17A930034FF2E /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */; };
+		8178BE811DB1AA400034FF2E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BE801DB1AA400034FF2E /* TableViewController.swift */; };
 		818AC89C1DA539E500659821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC89B1DA539E500659821 /* AppDelegate.swift */; };
 		818AC8A11DA539E500659821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818AC89F1DA539E500659821 /* Main.storyboard */; };
 		818AC8A41DA539E500659821 /* TwitterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8A21DA539E500659821 /* TwitterApp.xcdatamodeld */; };
@@ -84,6 +85,7 @@
 /* Begin PBXFileReference section */
 		8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
+		8178BE801DB1AA400034FF2E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		818AC8981DA539E500659821 /* TwitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		818AC89B1DA539E500659821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		818AC8A01DA539E500659821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				818AC8E61DA6B35100659821 /* ScheduleTableViewController.swift */,
+				8178BE801DB1AA400034FF2E /* TableViewController.swift */,
 				818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */,
 				818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */,
 				8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */,
@@ -381,6 +384,7 @@
 				819B3CA61DAF080900D0D674 /* SwifterSavedSearches.swift in Sources */,
 				819B3BED1DAC324900D0D674 /* DaysController.swift in Sources */,
 				818AC8FE1DA7D2BD00659821 /* TwitterAccountController.swift in Sources */,
+				8178BE811DB1AA400034FF2E /* TableViewController.swift in Sources */,
 				819B3C991DAF080900D0D674 /* SwifterAppOnlyClient.swift in Sources */,
 				819B3BF91DAC619E00D0D674 /* Schedule+CoreDataProperties.swift in Sources */,
 				818AC8EE1DA6F14C00659821 /* Schedule+CoreDataClass.swift in Sources */,
