@@ -33,7 +33,11 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     var endDatePickerVisable: Bool = false
     var repeating: Bool = true
     
-    var dayArray: [Int16] = []
+    var dayArray: [Int16] = [] {
+        didSet {
+            setupDayLabel()
+        }
+    }
     
     var accountArray: [TwitterAccount] = []
     
@@ -43,6 +47,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         
         self.setDayArray()
         setUpAccountArray()
+        setupView()
         
         
         daysCell.isHidden = false
@@ -53,6 +58,13 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.tableView.reloadData()
+    }
+    
+    
     
     
     @IBAction func repeatSwitchPressed(_ sender: AnyObject) {
@@ -279,11 +291,11 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     func setupView(){
         startDatePicker.datePickerMode = .date
         endDatePicker.datePickerMode = .date
-        guard let startDate = schedule?.startTime else { return }
-        guard let endDate = schedule?.endTime else { return }
         
         if let schedule = schedule{
-            setupDayLabel()
+            guard let startDate = schedule.startTime else { return }
+            guard let endDate = schedule.endTime else { return }
+            
             titleTextField.text = schedule.title
             repeatingSwitch.isOn = schedule.repeating
             endDatePicker.date = endDate
@@ -295,6 +307,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         } else {
             
             daysImage.image = #imageLiteral(resourceName: "calendar")
+            daysLabel.isHidden = true
             
             startTimeLabel.text = "Select Start Time"
             endTimeLabel.text = "Select End Time"
@@ -313,18 +326,17 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     
     func setupDayLabel() {
         
-        var dayLabelText = ""
-        guard let schedule = schedule,
-            let days = schedule.days else { return }
-        var dayIntArray: [Int16] = []
-        var count = days.count - 1
-        
-        if days.count > 0 {
-            for x in 0...count {
-                let day = days.object(at: x) as! Days
-                dayIntArray.append(day.day)
+        if dayArray.count > 0 {
+            daysLabel.isHidden = false
+            daysImage.isHidden = true
+            
+            var dayLabelText = ""
+            
+            
+            for day in dayArray {
                 
-                switch day.day {
+                
+                switch day  {
                 case 0:
                     dayLabelText += "Sunday, "
                 case 1:
@@ -345,9 +357,13 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
                 
             }
             
+            
+            
+            daysLabel.text = dayLabelText
         }
         
-        daysLabel.text = dayLabelText
+        
+        
         
     }
     
