@@ -308,6 +308,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             
             daysImage.image = #imageLiteral(resourceName: "calendar")
             daysLabel.isHidden = true
+            titleTextField.placeholder = "Title"
             
             startTimeLabel.text = "Select Start Time"
             endTimeLabel.text = "Select End Time"
@@ -332,34 +333,47 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             
             var dayLabelText = ""
             
-            
-            for day in dayArray {
+            if dayArray.count == 2 && dayArray.contains(0) && dayArray.contains(6) {
+                daysLabel.text = "Weekend"
+            } else if dayArray.count == 5 && dayArray.contains(1) && dayArray.contains(2) && dayArray.contains(3) && dayArray.contains(4) && dayArray.contains(5) {
+                daysLabel.text = "Weekdays"
+            } else {
                 
-                
-                switch day  {
-                case 0:
-                    dayLabelText += "Sunday, "
-                case 1:
-                    dayLabelText += "Monday, "
-                case 2:
-                    dayLabelText += "Tuesday, "
-                case 3:
-                    dayLabelText += "Wednesday, "
-                case 4:
-                    dayLabelText += "Thursday, "
-                case 5:
-                    dayLabelText += "Friday, "
-                case 6:
-                    dayLabelText += "Saturday, "
-                default:
-                    print("Other day")
+                for day in dayArray {
+                    
+                    
+                    switch day  {
+                    case 0:
+                        dayLabelText += "Sun "
+                    case 1:
+                        dayLabelText += "Mon "
+                    case 2:
+                        dayLabelText += "Tue "
+                    case 3:
+                        dayLabelText += "Wed "
+                    case 4:
+                        dayLabelText += "Thu "
+                    case 5:
+                        dayLabelText += "Fri "
+                    case 6:
+                        dayLabelText += "Sat "
+                    default:
+                        print("Other day")
+                    }
+                    
+                    
+                    
                 }
+            daysLabel.text = dayLabelText
                 
             }
             
             
             
-            daysLabel.text = dayLabelText
+            
+            
+            
+            
         }
         
         

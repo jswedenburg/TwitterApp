@@ -16,12 +16,22 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var tableView: UITableView!
     
+    var dayLabelText: String = ""
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
     
     
-    @IBAction func unwindToScheduleTable(segue: UIStoryboardSegue){}
+    @IBAction func unwindToScheduleTable(segue: UIStoryboardSegue){
+        if segue.source.isKind(of: ScheduleDetailTableViewController.self){
+            guard let detailVC = segue.source as? ScheduleDetailTableViewController else { return }
+            guard let text = detailVC.daysLabel.text else { return }
+            self.dayLabelText = text
+            print(dayLabelText)
+            
+        }
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,7 +41,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as? ScheduleTableViewCell else { return UITableViewCell() }
         let schedule = scheduleArray[indexPath.row]
-        cell.updateWithSchedule(schedule: schedule)
+        cell.updateWithSchedule(schedule: schedule, dayLabelText: self.dayLabelText)
         
         
         

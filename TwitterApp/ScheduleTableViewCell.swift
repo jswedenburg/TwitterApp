@@ -17,13 +17,31 @@ class ScheduleTableViewCell: UITableViewCell {
     @IBOutlet weak var timeAndDateLabel: UILabel!
     @IBOutlet weak var enabledSwitch: UISwitch!
     
+    
     //MARK: Helper Functions
     
-    func updateWithSchedule(schedule: Schedule) {
+    func updateWithSchedule(schedule: Schedule, dayLabelText: String) {
         
-        self.titleLabel.text = schedule.title
-        self.timeAndDateLabel.text = String(describing: schedule.startTime!)
+       
+        if schedule.repeating {
+            self.timeAndDateLabel.text = dayLabelText
+        }else {
+            self.timeAndDateLabel.text = setDateLabel(date1: schedule.startTime!, date2: schedule.endTime!)
+            
+        }
+        
         self.enabledSwitch.isOn = schedule.enabled
+    }
+    
+    func setDateLabel(date1: Date, date2: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        
+        let string1 = formatter.string(from: date1)
+        let string2 = formatter.string(from: date2)
+        
+        return string1 + " " + "-" + " " + string2
+        
     }
 
     
