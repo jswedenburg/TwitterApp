@@ -16,7 +16,7 @@ class AccountCollectionViewCell: UICollectionViewCell {
     
     func updateWithAccount(account: TwitterAccount){
         self.nameLabel.text = account.name
-        self.screenNameLabel.text = account.screenName
+        self.screenNameLabel.text = "@" + (account.screenName ?? "")
         guard let data = account.profileImage else { return }
         self.accountImage.image = UIImage(data: data)
     }

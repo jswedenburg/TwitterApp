@@ -20,7 +20,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         tableView.dataSource = self
         searchBar.delegate = self
         //tap.delegate = self.view
-        self.view.addGestureRecognizer(tap)
+        //self.view.addGestureRecognizer(tap)
         
         }
     
@@ -35,12 +35,14 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         }
     }
     
+    /* HOW TO DO A TAP GESTURE?????
     let tap  = UITapGestureRecognizer(target: self, action: #selector(handleTap))
     
     
     func handleTap(sender: UITapGestureRecognizer? = nil) {
         self.resignFirstResponder()
     }
+ */
     
     //MARK: Search Delegate
     
@@ -49,7 +51,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         NetworkController.twitterSearch(searchTerm: searchTerm) { (accounts) in
             self.twitterAccounts = accounts
         }
-        self.resignFirstResponder()
+        self.searchBar.endEditing(true)
     }
     
     
@@ -57,8 +59,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         guard let index = self.tableView.indexPath(for: sender) else { return }
         let account = twitterAccounts[index.row]
         followedAccounts.append(account)
-        sender.backgroundColor = UIColor.red
-        
+        sender.followButton.setImage(#imageLiteral(resourceName: "blueFollowMan"), for: .normal)
         /*
         if let followedAccountIndex = twitterAccounts.index(where: { (account) -> Bool in
             account.screenName == sender.accountScreenname.text
@@ -99,13 +100,20 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
         cell.delegate = self
+        cell.followButton.setImage(#imageLiteral(resourceName: "followMan"), for: .normal)
         let account = twitterAccounts[indexPath.row]
         cell.updateWithAccount(account: account)
+        
         
 
         return cell
     }
+    
+    
+    
+    
 }
+
 
 protocol searchDelegate {
     var accountArray: [TwitterAccount] { get set }

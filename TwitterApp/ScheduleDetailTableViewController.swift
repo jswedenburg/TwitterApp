@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScheduleDetailTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, datePickerDelegate, searchDelegate {
+class ScheduleDetailTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, datePickerDelegate, searchDelegate, UITextFieldDelegate {
     
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -47,6 +47,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     override func viewDidLoad() {
         DaysPickerTableViewController.delegate = self
         TwitterSearchTableViewController.delegate = self
+        titleTextField.delegate = self
         
         self.setDayArray()
         setUpAccountArray()
@@ -67,7 +68,11 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         self.tableView.reloadData()
     }
     
-    
+    //MARK: Text Field Delegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     
     @IBAction func repeatSwitchPressed(_ sender: AnyObject) {

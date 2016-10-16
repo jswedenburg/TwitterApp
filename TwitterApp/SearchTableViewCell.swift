@@ -15,13 +15,21 @@ class SearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var accountName: UILabel!
     @IBOutlet weak var accountScreenname: UILabel!
+    
     @IBOutlet weak var followButton: UIButton!
+    
+    
     
     var delegate: TableViewCellDelegate?
     
-    @IBAction func followButtonPressed(_ sender: AnyObject) {
+    
+    
+    @IBAction func cellButtonPressed(_ sender: AnyObject) {
         delegate?.cellButtonPressed(sender: self)
     }
+    
+    
+    
     
     func updateWithAccount(account: TwitterAccount) {
         self.accountName.text = account.name
