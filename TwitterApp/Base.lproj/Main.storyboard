@@ -149,48 +149,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="48" id="K7j-Du-64o">
-                                        <rect key="frame" x="0.0" y="152" width="375" height="48"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K7j-Du-64o" id="Ga7-yJ-bgc">
-                                            <frame key="frameInset" width="375" height="47"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhI-VB-AE9">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYz-Oy-VPp">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aL3-XC-roA">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="aL3-XC-roA" secondAttribute="height" multiplier="1:1" id="5i3-x3-Jjw"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="aL3-XC-roA" secondAttribute="bottom" id="0Wj-oj-gFG"/>
-                                                <constraint firstItem="UhI-VB-AE9" firstAttribute="leading" secondItem="Ga7-yJ-bgc" secondAttribute="leadingMargin" id="2UE-zx-2ws"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="UhI-VB-AE9" secondAttribute="bottom" id="7ha-Zb-qK9"/>
-                                                <constraint firstItem="cYz-Oy-VPp" firstAttribute="leading" secondItem="UhI-VB-AE9" secondAttribute="trailing" constant="100" id="8Ys-au-VPs"/>
-                                                <constraint firstItem="cYz-Oy-VPp" firstAttribute="top" secondItem="Ga7-yJ-bgc" secondAttribute="topMargin" id="EKc-lX-vpE"/>
-                                                <constraint firstItem="UhI-VB-AE9" firstAttribute="top" secondItem="Ga7-yJ-bgc" secondAttribute="topMargin" id="XED-at-JOk"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="cYz-Oy-VPp" secondAttribute="bottom" id="biB-b1-j4m"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cYz-Oy-VPp" secondAttribute="trailing" id="cnb-1b-3WJ"/>
-                                                <constraint firstItem="aL3-XC-roA" firstAttribute="top" secondItem="Ga7-yJ-bgc" secondAttribute="topMargin" id="k4G-Ck-V07"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="aL3-XC-roA" secondAttribute="trailing" id="u1t-52-z3r"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="JcD-wV-dmu" kind="presentation" identifier="toDaysPicker" id="Yhi-cl-AXY"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="OrI-ku-NDG">
-                                        <rect key="frame" x="0.0" y="200" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="152" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OrI-ku-NDG" id="7jJ-2f-zWM">
                                             <frame key="frameInset" width="375" height="39"/>
@@ -214,7 +174,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="5il-js-UwU">
-                                        <rect key="frame" x="0.0" y="240" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="192" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5il-js-UwU" id="oxE-CR-cp1">
                                             <frame key="frameInset" width="375" height="39"/>
@@ -235,7 +195,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="QJ2-gb-fBd">
-                                        <rect key="frame" x="0.0" y="280" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="232" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QJ2-gb-fBd" id="dER-oD-1zP">
                                             <frame key="frameInset" width="375" height="39"/>
@@ -259,7 +219,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="X0a-bS-mrn">
-                                        <rect key="frame" x="0.0" y="320" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="272" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X0a-bS-mrn" id="yoO-Ci-irP">
                                             <frame key="frameInset" width="375" height="39"/>
@@ -280,7 +240,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="pjm-wo-cpj">
-                                        <rect key="frame" x="0.0" y="360" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="312" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pjm-wo-cpj" id="Y5k-9J-rnc">
                                             <frame key="frameInset" width="375" height="39"/>
@@ -304,7 +264,7 @@
                             <tableViewSection headerTitle="Accounts" id="XeI-Ye-dzz">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="J2G-xO-0Ze">
-                                        <rect key="frame" x="0.0" y="457" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="409" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J2G-xO-0Ze" id="ABy-uC-kp4">
                                             <frame key="frameInset" width="375" height="99"/>
@@ -381,13 +341,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="xB4-jB-IkU">
-                                        <rect key="frame" x="0.0" y="557" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="509" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xB4-jB-IkU" id="30j-ZT-Wx1">
                                             <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koK-ri-Brr">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <state key="normal" title="Edit"/>
                                                     <connections>
                                                         <action selector="editButttonPressed:" destination="EHh-cD-QrP" eventType="touchUpInside" id="xD0-fE-2RG"/>
@@ -402,6 +363,53 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Accounts" id="BnI-1h-cD6">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="48" id="K7j-Du-64o">
+                                        <rect key="frame" x="0.0" y="610" width="375" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K7j-Du-64o" id="Ga7-yJ-bgc">
+                                            <frame key="frameInset" width="375" height="47"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhI-VB-AE9">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYz-Oy-VPp">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aL3-XC-roA">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="aL3-XC-roA" secondAttribute="height" multiplier="1:1" id="5i3-x3-Jjw"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="aL3-XC-roA" secondAttribute="bottom" id="0Wj-oj-gFG"/>
+                                                <constraint firstItem="UhI-VB-AE9" firstAttribute="leading" secondItem="Ga7-yJ-bgc" secondAttribute="leadingMargin" id="2UE-zx-2ws"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UhI-VB-AE9" secondAttribute="bottom" id="7ha-Zb-qK9"/>
+                                                <constraint firstItem="cYz-Oy-VPp" firstAttribute="leading" secondItem="UhI-VB-AE9" secondAttribute="trailing" constant="100" id="8Ys-au-VPs"/>
+                                                <constraint firstItem="cYz-Oy-VPp" firstAttribute="top" secondItem="Ga7-yJ-bgc" secondAttribute="topMargin" id="EKc-lX-vpE"/>
+                                                <constraint firstItem="UhI-VB-AE9" firstAttribute="top" secondItem="Ga7-yJ-bgc" secondAttribute="topMargin" id="XED-at-JOk"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cYz-Oy-VPp" secondAttribute="bottom" id="biB-b1-j4m"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cYz-Oy-VPp" secondAttribute="trailing" id="cnb-1b-3WJ"/>
+                                                <constraint firstItem="aL3-XC-roA" firstAttribute="top" secondItem="Ga7-yJ-bgc" secondAttribute="topMargin" id="k4G-Ck-V07"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="aL3-XC-roA" secondAttribute="trailing" id="u1t-52-z3r"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="JcD-wV-dmu" kind="presentation" identifier="toDaysPicker" id="Yhi-cl-AXY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Accounts" id="1K6-Ci-4ZF">
+                                <cells/>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="EHh-cD-QrP" id="Wpp-ki-RbN"/>
@@ -412,6 +420,12 @@
                         <barButtonItem systemItem="trash" id="nJg-nA-rDY">
                             <connections>
                                 <action selector="deleteCells:" destination="EHh-cD-QrP" id="AvT-WZ-MTB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Rt8-mL-q8m"/>
+                        <barButtonItem systemItem="cancel" id="YaO-CP-hWp">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="EHh-cD-QrP" id="IKn-M1-jUf"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -430,6 +444,7 @@
                         <outlet property="daysCell" destination="K7j-Du-64o" id="K6g-WK-mMO"/>
                         <outlet property="daysImage" destination="aL3-XC-roA" id="I7m-Vx-KKe"/>
                         <outlet property="daysLabel" destination="cYz-Oy-VPp" id="3bR-Wc-c8y"/>
+                        <outlet property="editCell" destination="xB4-jB-IkU" id="T1L-F1-ZcH"/>
                         <outlet property="endDatePicker" destination="MnF-tA-kgx" id="5TE-Wl-mhn"/>
                         <outlet property="endLabelCell" destination="QJ2-gb-fBd" id="bAE-Su-Uo4"/>
                         <outlet property="endPickerCell" destination="X0a-bS-mrn" id="Cwt-fI-sCu"/>

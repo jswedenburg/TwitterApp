@@ -28,6 +28,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     @IBOutlet weak var repeatingCell: UITableViewCell!
     @IBOutlet weak var addAccountCell: UITableViewCell!
     @IBOutlet weak var addAccountLabel: UILabel!
+    @IBOutlet weak var editCell: UITableViewCell!
     
     
     
@@ -52,6 +53,8 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         self.setDayArray()
         setUpAccountArray()
         setupView()
+        accountCollectionView.allowsSelection = false
+        editCell.selectionStyle = UITableViewCellSelectionStyle.none
         
         
         daysCell.isHidden = false
@@ -177,28 +180,55 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         guard let cell = self.accountCollectionView.dequeueReusableCell(withReuseIdentifier: "accountCell", for: indexPath) as? AccountCollectionViewCell else { return UICollectionViewCell()}
         let account = accountArray[indexPath.row]
         cell.updateWithAccount(account: account)
+        
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderWidth = 2.0
+        cell?.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
     @IBAction func editButttonPressed(_ sender: AnyObject) {
         self.navigationController?.setToolbarHidden(false, animated: true)
         
-    }
-    
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-        accountCollectionView.allowsMultipleSelection = editing
+        accountCollectionView.allowsMultipleSelection = true
         
     }
+    
+    @IBAction func cancelButtonPressed(_ sender: AnyObject) {
+        self.navigationController?.setToolbarHidden(true, animated: true)
+        guard let indexPaths = accountCollectionView.indexPathsForSelectedItems else { return }
+        for indexPath in indexPaths {
+            let cell = accountCollectionView.cellForItem(at: indexPath)
+            cell?.isSelected = false
+            cell?.layer.borderWidth = 0
+            cell?.layer.borderColor = UIColor.clear.cgColor
+            
+        }
+        accountCollectionView.allowsSelection = false
+        
+    }
+    
+        
+    
     @IBAction func deleteCells(_ sender: AnyObject) {
         guard let indexPaths = accountCollectionView.indexPathsForSelectedItems else { return }
         
         for indexPath in indexPaths {
             let index = indexPath.row
             accountArray.remove(at: index)
+            let cell = accountCollectionView.cellForItem(at: indexPath)
+            cell?.isSelected = false
             
         }
         
         accountCollectionView.deleteItems(at: indexPaths)
+        accountCollectionView.allowsSelection = false
+        self.navigationController?.setToolbarHidden(true, animated: true)
+        
     }
     
     
