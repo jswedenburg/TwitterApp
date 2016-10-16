@@ -19,11 +19,10 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        //tap.delegate = self.view
+        self.view.addGestureRecognizer(tap)
         
-        
-        
-        
-    }
+        }
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,6 +35,13 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         }
     }
     
+    let tap  = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+    
+    
+    func handleTap(sender: UITapGestureRecognizer? = nil) {
+        self.resignFirstResponder()
+    }
+    
     //MARK: Search Delegate
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -43,6 +49,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         NetworkController.twitterSearch(searchTerm: searchTerm) { (accounts) in
             self.twitterAccounts = accounts
         }
+        self.resignFirstResponder()
     }
     
     
