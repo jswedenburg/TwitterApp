@@ -100,12 +100,12 @@
             </objects>
             <point key="canvasLocation" x="1080.8" y="-545.57721139430294"/>
         </scene>
-        <!--Title-->
+        <!--Groups-->
         <scene sceneID="RaP-Ho-aEP">
             <objects>
                 <tableViewController id="EHh-cD-QrP" customClass="ScheduleDetailTableViewController" customModule="TwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="pKc-6k-hrL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="OiO-sI-v0I">
@@ -303,11 +303,11 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Accounts" id="XeI-Ye-dzz">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="240" id="J2G-xO-0Ze">
-                                        <rect key="frame" x="0.0" y="456" width="375" height="240"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="J2G-xO-0Ze">
+                                        <rect key="frame" x="0.0" y="457" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J2G-xO-0Ze" id="ABy-uC-kp4">
-                                            <frame key="frameInset" width="375" height="239"/>
+                                            <frame key="frameInset" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OAX-IT-slF">
@@ -363,7 +363,7 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                     <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="s09-lH-Hgp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="239.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="99.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionReusableView>
                                                     <connections>
@@ -380,6 +380,26 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="xB4-jB-IkU">
+                                        <rect key="frame" x="0.0" y="557" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xB4-jB-IkU" id="30j-ZT-Wx1">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koK-ri-Brr">
+                                                    <state key="normal" title="Edit"/>
+                                                    <connections>
+                                                        <action selector="editButttonPressed:" destination="EHh-cD-QrP" eventType="touchUpInside" id="xD0-fE-2RG"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="koK-ri-Brr" firstAttribute="centerY" secondItem="30j-ZT-Wx1" secondAttribute="centerY" id="KMR-5S-N30"/>
+                                                <constraint firstItem="koK-ri-Brr" firstAttribute="centerX" secondItem="30j-ZT-Wx1" secondAttribute="centerX" id="Lxj-fB-NU2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -388,13 +408,21 @@
                             <outlet property="delegate" destination="EHh-cD-QrP" id="8M6-Iw-PHV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="Ytn-ZS-LCs">
+                    <toolbarItems>
+                        <barButtonItem systemItem="trash" id="nJg-nA-rDY">
+                            <connections>
+                                <action selector="deleteCells:" destination="EHh-cD-QrP" id="AvT-WZ-MTB"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Groups" id="Ytn-ZS-LCs">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="fR8-rp-kM7">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="EHh-cD-QrP" id="h7t-Xx-SSr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="accountCollectionView" destination="OAX-IT-slF" id="INx-Gd-Pme"/>
                         <outlet property="addAccountCell" destination="pjm-wo-cpj" id="uIO-Ip-Wzf"/>
@@ -434,9 +462,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="678-VO-5xH">
-                                    <frame key="frameInset" minX="16" minY="7" width="30" height="30"/>
+                                    <frame key="frameInset" minX="13" minY="7" width="37" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Exit"/>
+                                    <state key="normal" title="Done"/>
                                     <connections>
                                         <action selector="exitButtonPressed:" destination="JcD-wV-dmu" eventType="touchUpInside" id="Q77-pA-D5Z"/>
                                     </connections>
@@ -568,9 +596,9 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRu-hd-V6F">
-                                <frame key="frameInset" minX="16" minY="28" width="30" height="30"/>
+                                <frame key="frameInset" minX="13" minY="28" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Exit"/>
+                                <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="exitButtonPressed:" destination="GrW-c5-2jI" eventType="touchUpInside" id="lrz-c7-t14"/>
                                 </connections>

@@ -48,7 +48,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         DaysPickerTableViewController.delegate = self
         TwitterSearchTableViewController.delegate = self
         titleTextField.delegate = self
-        
+        self.navigationController?.setToolbarHidden(true, animated: true)
         self.setDayArray()
         setUpAccountArray()
         setupView()
@@ -179,6 +179,29 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         cell.updateWithAccount(account: account)
         return cell
     }
+    @IBAction func editButttonPressed(_ sender: AnyObject) {
+        self.navigationController?.setToolbarHidden(false, animated: true)
+        
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        accountCollectionView.allowsMultipleSelection = editing
+        
+    }
+    @IBAction func deleteCells(_ sender: AnyObject) {
+        guard let indexPaths = accountCollectionView.indexPathsForSelectedItems else { return }
+        
+        for indexPath in indexPaths {
+            let index = indexPath.row
+            accountArray.remove(at: index)
+            
+        }
+        
+        accountCollectionView.deleteItems(at: indexPaths)
+    }
+    
+    
     
     // MARK: - Table view data source
     
@@ -191,7 +214,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         case 0:
             return 7
         case 1:
-            return 1
+            return 2
         default:
             return 0
         }

@@ -58,8 +58,15 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     func cellButtonPressed(sender: SearchTableViewCell) {
         guard let index = self.tableView.indexPath(for: sender) else { return }
         let account = twitterAccounts[index.row]
-        followedAccounts.append(account)
-        sender.followButton.setImage(#imageLiteral(resourceName: "blueFollowMan"), for: .normal)
+        if followedAccounts.contains(account) {
+            guard let index = followedAccounts.index(of: account) else { return }
+            followedAccounts.remove(at: index)
+            sender.followButton.setImage(#imageLiteral(resourceName: "followMan"), for: .normal)
+        } else {
+            followedAccounts.append(account)
+            sender.followButton.setImage(#imageLiteral(resourceName: "blueFollowMan"), for: .normal)
+        }
+        
         /*
         if let followedAccountIndex = twitterAccounts.index(where: { (account) -> Bool in
             account.screenName == sender.accountScreenname.text
@@ -101,6 +108,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
         cell.delegate = self
         cell.followButton.setImage(#imageLiteral(resourceName: "followMan"), for: .normal)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         let account = twitterAccounts[indexPath.row]
         cell.updateWithAccount(account: account)
         
