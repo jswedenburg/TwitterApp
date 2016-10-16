@@ -21,7 +21,7 @@ class ScheduleTableViewCell: UITableViewCell {
     //MARK: Helper Functions
     
     func updateWithSchedule(schedule: Schedule, dayLabelText: String) {
-        
+        self.titleLabel.text = schedule.title
        
         if schedule.repeating {
             self.timeAndDateLabel.text = dayLabelText

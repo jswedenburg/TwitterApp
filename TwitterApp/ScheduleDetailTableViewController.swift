@@ -25,6 +25,9 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     @IBOutlet weak var startPickerCell: UITableViewCell!
     @IBOutlet weak var endLabelCell: UITableViewCell!
     @IBOutlet weak var endPickerCell: UITableViewCell!
+    @IBOutlet weak var repeatingCell: UITableViewCell!
+    @IBOutlet weak var addAccountCell: UITableViewCell!
+    @IBOutlet weak var addAccountLabel: UILabel!
     
     
     
@@ -77,6 +80,8 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         endPickerCell.isHidden = !endPickerCell.isHidden
         self.repeating = !self.repeating
         self.tableView.reloadData()
+        //addAccountLabel.isEnabled = false
+        //addAccountCell.isUserInteractionEnabled = false
         
         
     }
@@ -224,6 +229,8 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
         
         if indexPath.row == 2 {
             if self.startDatePickerVisable {

@@ -389,6 +389,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="accountCollectionView" destination="OAX-IT-slF" id="INx-Gd-Pme"/>
+                        <outlet property="addAccountCell" destination="pjm-wo-cpj" id="uIO-Ip-Wzf"/>
+                        <outlet property="addAccountLabel" destination="tzi-bn-FNn" id="o3I-UV-E0b"/>
                         <outlet property="daysCell" destination="K7j-Du-64o" id="K6g-WK-mMO"/>
                         <outlet property="daysImage" destination="aL3-XC-roA" id="I7m-Vx-KKe"/>
                         <outlet property="daysLabel" destination="cYz-Oy-VPp" id="3bR-Wc-c8y"/>
@@ -396,6 +398,7 @@
                         <outlet property="endLabelCell" destination="QJ2-gb-fBd" id="bAE-Su-Uo4"/>
                         <outlet property="endPickerCell" destination="X0a-bS-mrn" id="Cwt-fI-sCu"/>
                         <outlet property="endTimeLabel" destination="MFs-8U-q4O" id="oIt-0q-tr4"/>
+                        <outlet property="repeatingCell" destination="ueo-YG-Ngu" id="40V-pW-uFj"/>
                         <outlet property="repeatingSwitch" destination="Z0i-l0-dOR" id="ys6-kt-ES4"/>
                         <outlet property="startCell" destination="OrI-ku-NDG" id="6VC-BP-NlU"/>
                         <outlet property="startDatePicker" destination="NSE-KD-1tu" id="Iuu-z9-qc2"/>
