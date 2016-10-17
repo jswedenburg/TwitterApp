@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import GameKit
 
 class ScheduleTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var scheduleImageView: UIImageView!
+    @IBOutlet weak var topLeftImage: UIImageView!
+    @IBOutlet weak var topRightImage: UIImageView!
+    @IBOutlet weak var bottomLeftImage: UIImageView!
+    @IBOutlet weak var bottomRightImage: UIImageView!
+    
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -20,8 +25,24 @@ class ScheduleTableViewCell: UITableViewCell {
     
     //MARK: Helper Functions
     
-    func updateWithSchedule(schedule: Schedule, dayLabelText: String) {
+    func updateWithSchedule(schedule: Schedule, dayLabelText: String, accounts: [TwitterAccount]) {
         self.titleLabel.text = schedule.title
+        
+        if accounts.count > 0 {
+            
+                let randomNumber1 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
+                let randomNumber2 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
+                let randomNumber3 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
+                let randomNumber4 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
+                
+                self.topRightImage.image = UIImage(data: accounts[randomNumber1].profileImage!) ?? #imageLiteral(resourceName: "followMan")
+                self.topLeftImage.image = UIImage(data: accounts[randomNumber2].profileImage!) ?? #imageLiteral(resourceName: "followMan")
+                self.bottomLeftImage.image = UIImage(data: accounts[randomNumber3].profileImage!) ?? #imageLiteral(resourceName: "followMan")
+                self.bottomRightImage.image = UIImage(data: accounts[randomNumber4].profileImage!) ?? #imageLiteral(resourceName: "followMan")
+            
+        }
+        
+        
        
         if schedule.repeating {
             self.timeAndDateLabel.text = dayLabelText

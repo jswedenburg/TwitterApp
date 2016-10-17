@@ -17,6 +17,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
     
     var dayLabelText: String = ""
+    var accountArray: [TwitterAccount] = []
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
@@ -27,6 +28,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         if segue.source.isKind(of: ScheduleDetailTableViewController.self){
             guard let detailVC = segue.source as? ScheduleDetailTableViewController else { return }
             guard let text = detailVC.daysLabel.text else { return }
+            accountArray = detailVC.accountArray
             self.dayLabelText = text
             print(dayLabelText)
             
@@ -41,7 +43,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as? ScheduleTableViewCell else { return UITableViewCell() }
         let schedule = scheduleArray[indexPath.row]
-        cell.updateWithSchedule(schedule: schedule, dayLabelText: self.dayLabelText)
+        cell.updateWithSchedule(schedule: schedule, dayLabelText: self.dayLabelText, accounts: accountArray)
         
         
         

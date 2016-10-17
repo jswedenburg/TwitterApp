@@ -117,13 +117,18 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     }
     
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
-        if let schedule = schedule {
-            editSchedule(schedule: schedule)
-        } else {
-            addSchedule()
+        guard let text = titleTextField.text, text.characters.count > 0 else { return }
+        if accountArray.count > 0, dayArray.count > 0 {
+            if let schedule = schedule  {
+                editSchedule(schedule: schedule)
+            } else {
+                addSchedule()
+            }
+            self.performSegue(withIdentifier: "unwindToScheduleTable", sender: self)
         }
         
-        self.performSegue(withIdentifier: "unwindToScheduleTable", sender: self)
+        
+        
         
         
     }
@@ -400,10 +405,14 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             
             var dayLabelText = ""
             
+            //TODO: Make this a switch
+            
             if dayArray.count == 2 && dayArray.contains(0) && dayArray.contains(6) {
                 daysLabel.text = "Weekend"
             } else if dayArray.count == 5 && dayArray.contains(1) && dayArray.contains(2) && dayArray.contains(3) && dayArray.contains(4) && dayArray.contains(5) {
                 daysLabel.text = "Weekdays"
+            } else if dayArray.count == 7 && dayArray.contains(1) && dayArray.contains(2) && dayArray.contains(3) && dayArray.contains(4) && dayArray.contains(5) && dayArray.contains(6) && dayArray.contains(7) {
+                daysLabel.text = "Every day"
             } else {
                 
                 for day in dayArray {
