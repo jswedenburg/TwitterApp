@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8178BE581DAFFC2B0034FF2E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */; };
 		8178BE7F1DB17A930034FF2E /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */; };
+		8178BEA61DB52DAF0034FF2E /* FriendshipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BEA51DB52DAF0034FF2E /* FriendshipController.swift */; };
+		8178BEA81DB52E0C0034FF2E /* TwitterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BEA71DB52E0C0034FF2E /* TwitterProtocol.swift */; };
 		818AC89C1DA539E500659821 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC89B1DA539E500659821 /* AppDelegate.swift */; };
 		818AC8A11DA539E500659821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818AC89F1DA539E500659821 /* Main.storyboard */; };
 		818AC8A41DA539E500659821 /* TwitterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8A21DA539E500659821 /* TwitterApp.xcdatamodeld */; };
@@ -84,6 +86,8 @@
 /* Begin PBXFileReference section */
 		8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
+		8178BEA51DB52DAF0034FF2E /* FriendshipController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendshipController.swift; sourceTree = "<group>"; };
+		8178BEA71DB52E0C0034FF2E /* TwitterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterProtocol.swift; sourceTree = "<group>"; };
 		818AC8981DA539E500659821 /* TwitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		818AC89B1DA539E500659821 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		818AC8A01DA539E500659821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 		818AC89A1DA539E500659821 /* TwitterApp */ = {
 			isa = PBXGroup;
 			children = (
+				8178BEA51DB52DAF0034FF2E /* FriendshipController.swift */,
+				8178BEA71DB52E0C0034FF2E /* TwitterProtocol.swift */,
 				818AC89B1DA539E500659821 /* AppDelegate.swift */,
 				818AC8E51DA6138200659821 /* Model Controllers */,
 				818AC8E01DA610D400659821 /* Model */,
@@ -383,6 +389,7 @@
 				819B3BF91DAC619E00D0D674 /* Schedule+CoreDataProperties.swift in Sources */,
 				818AC8EE1DA6F14C00659821 /* Schedule+CoreDataClass.swift in Sources */,
 				819B3CC01DAF082000D0D674 /* SHA1.swift in Sources */,
+				8178BEA81DB52E0C0034FF2E /* TwitterProtocol.swift in Sources */,
 				818AC8E71DA6B35100659821 /* ScheduleTableViewController.swift in Sources */,
 				819B3BFF1DAD536800D0D674 /* Days+CoreDataProperties.swift in Sources */,
 				819B3C9A1DAF080900D0D674 /* SwifterAuth.swift in Sources */,
@@ -393,6 +400,7 @@
 				819B3BEA1DAC1FD600D0D674 /* Days+CoreDataClass.swift in Sources */,
 				819B3CAE1DAF080900D0D674 /* SwifterTweets.swift in Sources */,
 				818AC8DD1DA610CC00659821 /* TwitterAccount+CoreDataProperties.swift in Sources */,
+				8178BEA61DB52DAF0034FF2E /* FriendshipController.swift in Sources */,
 				819B3CB11DAF080900D0D674 /* Utils.swift in Sources */,
 				819B3C9F1DAF080900D0D674 /* SwifterFollowers.swift in Sources */,
 				819B3C9D1DAF080900D0D674 /* SwifterError.swift in Sources */,

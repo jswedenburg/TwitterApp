@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class NetworkController {
+class NetworkController: TwitterProtocol {
     
     static let consumerKey = "ADeOdA9e5XfjJtchq0iWetwpY"
     static let accessToken = "45428809-NhJAMwJshILhzUrO16A5pHpgmEbRKbm1KQJwvuB52"
