@@ -17,10 +17,17 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
     
     var dayLabelText: String = ""
-    var accountArray: [TwitterAccount] = []
+    var accountArray: [TwitterAccount] = [] {
+        didSet{
+            self.tableView.reloadData()
+        }
+    }
     
-    override func viewWillAppear(_ animated: Bool) {
+   
+    
+    override func viewDidLoad() {
         self.tableView.reloadData()
+        
     }
     
     
@@ -43,7 +50,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as? ScheduleTableViewCell else { return UITableViewCell() }
         let schedule = scheduleArray[indexPath.row]
-        cell.updateWithSchedule(schedule: schedule, dayLabelText: self.dayLabelText, accounts: accountArray)
+        let accountArray2 = schedule.twitterAccounts?.allObjects as! [TwitterAccount]
+        cell.updateWithSchedule(schedule: schedule, dayLabelText: self.dayLabelText, accounts: accountArray2)
         
         
         

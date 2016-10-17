@@ -60,7 +60,6 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         setUpAccountArray()
         setupView()
         accountCollectionView.allowsSelection = false
-        //editCell.selectionStyle = UITableViewCellSelectionStyle.none
         
         startCell.isUserInteractionEnabled = false
         startRowLabel.isEnabled = false
@@ -118,7 +117,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
         guard let text = titleTextField.text, text.characters.count > 0 else { return }
-        if accountArray.count > 0, dayArray.count > 0 {
+        if accountArray.count > 0 {
             if let schedule = schedule  {
                 editSchedule(schedule: schedule)
             } else {
