@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var scheduleArray: [Schedule] {
@@ -29,6 +30,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         self.tableView.reloadData()
         
     }
+    
+    
     
     
     @IBAction func unwindToScheduleTable(segue: UIStoryboardSegue){

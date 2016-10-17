@@ -11,7 +11,7 @@ import CoreData
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             if granted {
-                FriendshipController.sharedController.scheduleNotificationRequest(title: "NBA", interval: 5.0)
+                
+                // do nothing
                 
             }
         }
@@ -52,6 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    
 
     // MARK: - Core Data stack
 

@@ -119,7 +119,9 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         guard let text = titleTextField.text, text.characters.count > 0 else { return }
         if accountArray.count > 0 {
             if let schedule = schedule  {
+                
                 editSchedule(schedule: schedule)
+                
             } else {
                 addSchedule()
             }
@@ -159,7 +161,9 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     }
     
     func editSchedule(schedule: Schedule){
-        schedule.title = titleTextField.text
+        guard let scheduleTitle = titleTextField.text else { print("title?")
+            return }
+        schedule.title = scheduleTitle
         schedule.startTime = startDatePicker.date
         schedule.endTime = endDatePicker.date
         schedule.repeating = repeatingSwitch.isOn
@@ -181,6 +185,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         
         
         ScheduleController.sharedController.saveToPersistentStorage()
+        NotificationController.sharedController.scheduleNotificationRequest(schedule: schedule)
     }
     
     override func viewDidAppear(_ animated: Bool) {
