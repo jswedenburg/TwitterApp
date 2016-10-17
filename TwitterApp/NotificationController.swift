@@ -9,26 +9,14 @@
 import UIKit
 import UserNotifications
 
-class NotificationController: NSObject, UNUserNotificationCenterDelegate {
+class NotificationController: NSObject {
     
     var window: UIWindow?
     
     static let sharedController = NotificationController()
     
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-        guard let userNameArray = userInfo["userNames"] as? [String] else { return }
-        if response.notification.request.content.categoryIdentifier == "follow" {
-            let alert = UIAlertController(title: "Follow Accounts", message: "Test", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Follow", style: .default) { (_) in
-                FriendshipController.sharedController.followAccounts(userNames: userNameArray)
-            }
-            alert.addAction(action)
-            window?.rootViewController?.present(alert, animated: true, completion: nil)
-        }
-        
-    }
+    
     
    
     
@@ -36,8 +24,23 @@ class NotificationController: NSObject, UNUserNotificationCenterDelegate {
     
     func scheduleNotificationRequest(schedule: Schedule) {
         guard let accountArray = schedule.twitterAccounts?.allObjects as? [TwitterAccount] else { return }
-        let userNameArray = accountArray.flatMap({$0.screenName})
+        var userNameArray: [String] = []
+        for account in accountArray {
+            guard let screenName = account.screenName else { print("no screenname")
+                return }
+            userNameArray.append(screenName)
+        }
         guard let title = schedule.title else { return }
+        
+        
+        if let days = schedule.days, days.count > 0 {
+            var dateComponents = DateComponents()
+            dateComponents.weekday = 1
+            dateComponents.weekday = 2
+            let trigger = UNCalendarNotificationTrigger
+        } else {
+            print("no days")
+        }
         
         //let follow = UNNotificationAction(identifier: "follow", title: "follow", options: [])
         let category = UNNotificationCategory(identifier: "follow", actions: [], intentIdentifiers: [], options: [])
@@ -56,8 +59,9 @@ class NotificationController: NSObject, UNUserNotificationCenterDelegate {
         let identifier = title
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
+        
         center.add(request) { (error) in
-            UNUserNotificationCenter.current().delegate = self
+            
             if error != nil {
                 print(error?.localizedDescription)
                 

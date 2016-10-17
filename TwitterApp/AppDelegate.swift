@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             if granted {
-                
+                UNUserNotificationCenter.current().delegate = self
                 // do nothing
                 
             }
@@ -52,6 +52,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        guard let userNameArray = userInfo["userNames"] as? [String] else { return }
+        if response.notification.request.content.categoryIdentifier == "follow" {
+            let alert = UIAlertController(title: "Follow Accounts", message: "Test", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Follow", style: .default) { (_) in
+                FriendshipController.sharedController.followAccounts(userNames: userNameArray)
+            }
+            alert.addAction(action)
+            window?.rootViewController?.present(alert, animated: true, completion: nil)
+        }
+        
     }
     
     
