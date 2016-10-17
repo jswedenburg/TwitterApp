@@ -324,7 +324,7 @@
 				TargetAttributes = {
 					818AC8971DA539E500659821 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = K723TX5AY3;
+						DevelopmentTeam = 8V7ERX2APN;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -546,10 +546,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = K723TX5AY3;
+				DEVELOPMENT_TEAM = 8V7ERX2APN;
 				INFOPLIST_FILE = TwitterApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jakeswedenburg.TwitterApp;
+				PRODUCT_BUNDLE_IDENTIFIER = comjakeswedenburgtwitterapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -562,10 +562,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = K723TX5AY3;
+				DEVELOPMENT_TEAM = 8V7ERX2APN;
 				INFOPLIST_FILE = TwitterApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jakeswedenburg.TwitterApp;
+				PRODUCT_BUNDLE_IDENTIFIER = comjakeswedenburgtwitterapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
