@@ -14,7 +14,7 @@ class DaysPickerTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.edgesForExtendedLayout = []
 
            }
     

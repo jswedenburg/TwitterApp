@@ -29,6 +29,10 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     @IBOutlet weak var addAccountCell: UITableViewCell!
     @IBOutlet weak var addAccountLabel: UILabel!
     @IBOutlet weak var editCell: UITableViewCell!
+    @IBOutlet weak var daysRowLabel: UILabel!
+    @IBOutlet weak var startRowLabel: UILabel!
+    @IBOutlet weak var endRowLabel: UILabel!
+    
     
     
     
@@ -43,6 +47,8 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         }
     }
     
+    
+    
     var accountArray: [TwitterAccount] = []
     
     override func viewDidLoad() {
@@ -54,14 +60,20 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         setUpAccountArray()
         setupView()
         accountCollectionView.allowsSelection = false
-        editCell.selectionStyle = UITableViewCellSelectionStyle.none
+        //editCell.selectionStyle = UITableViewCellSelectionStyle.none
+        
+        startCell.isUserInteractionEnabled = false
+        startRowLabel.isEnabled = false
+        startTimeLabel.isEnabled = false
+        endLabelCell.isUserInteractionEnabled = false
+        endRowLabel.isEnabled = false
+        endTimeLabel.isEnabled = false
         
         
-        daysCell.isHidden = false
-        startCell.isHidden = true
-        startPickerCell.isHidden = true
-        endLabelCell.isHidden = true
-        endPickerCell.isHidden = true
+        
+        
+        
+        
         
         
     }
@@ -81,16 +93,26 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     @IBAction func repeatSwitchPressed(_ sender: AnyObject) {
         
         
-        daysCell.isHidden = !daysCell.isHidden
-        startCell.isHidden = !startCell.isHidden
-        startPickerCell.isHidden = !startPickerCell.isHidden
-        endLabelCell.isHidden = !endLabelCell.isHidden
-        endPickerCell.isHidden = !endPickerCell.isHidden
         self.repeating = !self.repeating
-        self.tableView.reloadData()
+        daysCell.isUserInteractionEnabled = !daysCell.isUserInteractionEnabled
+        daysLabel.isEnabled = !daysLabel.isEnabled
+        daysImage.isHidden = !daysImage.isHidden
+        daysRowLabel.isEnabled = !daysRowLabel.isEnabled
+        startCell.isUserInteractionEnabled = !startCell.isUserInteractionEnabled
+        startRowLabel.isEnabled = !startRowLabel.isEnabled
+        startTimeLabel.isEnabled = !startTimeLabel.isEnabled
+        endLabelCell.isUserInteractionEnabled = !endLabelCell.isUserInteractionEnabled
+        endRowLabel.isEnabled = !endRowLabel.isEnabled
+        endTimeLabel.isEnabled = !endTimeLabel.isEnabled
+
+        
+        
+        
+        
+        
         //addAccountLabel.isEnabled = false
         //addAccountCell.isUserInteractionEnabled = false
-        
+        self.tableView.reloadData()
         
     }
     
@@ -103,7 +125,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         
         self.performSegue(withIdentifier: "unwindToScheduleTable", sender: self)
         
-        //_ = self.navigationController?.popToRootViewController(animated: true)
+        
     }
     
     func addSchedule() {
@@ -236,15 +258,17 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 7
-        case 1:
             return 2
+        case 1:
+            return 4
+        case 2:
+            return 3
         default:
             return 0
         }
@@ -253,60 +277,38 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var height = self.tableView.rowHeight
-        if repeating == false {
-            if indexPath.row == 1 {
-                return 0.0
-            }
+        
+        switch (indexPath.section, indexPath.row) {
+        case (1,1):
+            height = self.startDatePickerVisable ? 150.0 : 0.0
+        case (1, 3):
+            height = self.endDatePickerVisable ? 150.0 : 0.0
+        case (2, 1):
+            height = 150.0
+        default:
+            return height
         }
-        
-        if repeating == true{
-            if indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 5 {
-                height = 0.0
-                
-            }
-        }
-        
-        if indexPath.row == 3 {
-            height = self.startDatePickerVisable ? 100.0 : 0.0
-        }
-        
-        if indexPath.row == 5 {
-            height = self.endDatePickerVisable ? 100.0 : 0.0
-        }
-        
-        if indexPath.section == 1 && indexPath.row == 0 {
-            height = 150
-        }
-        
-        
         return height
-        
-        
-        
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
-        
-        if indexPath.row == 2 {
+        switch (indexPath.section, indexPath.row) {
+        case (1, 0):
             if self.startDatePickerVisable {
                 self.hideDatePicker(picker: startDatePicker, start: true)
             } else {
                 self.showDatePicker(picker: startDatePicker, start: true)
             }
-        }
-        
-        if indexPath.row == 4 {
+        case (1, 2):
             if self.endDatePickerVisable {
                 self.hideDatePicker(picker: endDatePicker, start: false)
             } else {
                 self.showDatePicker(picker: endDatePicker, start: false)
             }
+        default:
+            break
         }
-        
-        
     }
     
     
@@ -385,7 +387,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     func dateFormatter(date: Date) -> String{
         let formatter = DateFormatter()
         formatter.dateStyle = .short
-        formatter.timeStyle = .short
+        
         
         return formatter.string(from: date)
     }
