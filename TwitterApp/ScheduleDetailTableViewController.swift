@@ -387,8 +387,8 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     }
     
     func setupView(){
-        startDatePicker.datePickerMode = .date
-        endDatePicker.datePickerMode = .date
+        startDatePicker.datePickerMode = .dateAndTime
+        endDatePicker.datePickerMode = .dateAndTime
         
         if let schedule = schedule{
             repeatingSwitch.isOn = schedule.repeating

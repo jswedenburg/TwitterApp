@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwitterApp/NotificationController.swift"
-            timestampString = "498501488.831624"
+            timestampString = "498504715.779662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "scheduleFollowNotificationRequest(schedule:)"
             landmarkType = "7">
          </BreakpointContent>
