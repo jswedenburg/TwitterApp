@@ -50,19 +50,26 @@ class DaysPickerTableViewController: UITableViewController {
                 cell.updateWithRow(row: indexPath.row, included: false)
             }
         
+        if dayArray.contains(Int16(indexPath.row)) {
+            cell.checkMarkImage.isHidden = false
+        } else {
+            cell.checkMarkImage.isHidden = true
+        }
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? DayTableViewCell else { return }
-        if dayArray.count <= 1 {
+        
         switch indexPath.row {
             case indexPath.row:
                 
                 if cell.checkMarkImage.isHidden {
-                    
+                    dayArray = []
                     dayArray.append(Int16(indexPath.row))
                 } else {
+                    
                     guard let index = dayArray.index(of: Int16(indexPath.row)) else { return }
                     dayArray.remove(at: index)
                 }
@@ -70,11 +77,11 @@ class DaysPickerTableViewController: UITableViewController {
                 print("mistake")
             }
         
-        cell.checkMarkImage.isHidden = !cell.checkMarkImage.isHidden
+        
         tableView.reloadData()
         
     }
-    }
+    
 
    
  
