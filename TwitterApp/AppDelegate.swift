@@ -55,16 +55,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
         let userInfo = response.notification.request.content.userInfo
         guard let userNameArray = userInfo["userNames"] as? [String] else { return }
-        if response.notification.request.content.categoryIdentifier == "follow" {
-            let alert = UIAlertController(title: "Follow Accounts", message: "Test", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Follow", style: .default) { (_) in
-                FriendshipController.sharedController.followAccounts(userNames: userNameArray)
-            }
-            alert.addAction(action)
-            window?.rootViewController?.present(alert, animated: true, completion: nil)
+        
+        if response.notification.request.content.categoryIdentifier == "test" {
+           FriendshipController.sharedController.followAccounts(userNames: userNameArray)
         }
+        
         
     }
     

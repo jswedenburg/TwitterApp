@@ -45,7 +45,10 @@ func scheduleFollowNotificationRequest(schedule: Schedule) {
     //WHY is days never nil?
     if schedule.days!.count > 0 {
         var followDateComponents = DateComponents()
-        followDateComponents.weekday = 1
+        guard let day = schedule.days?.firstObject as? Days else { return }
+        let number = Int(day.day)
+        followDateComponents.weekday = number + 1
+        followDateComponents.hour = 0
         
         
         
@@ -54,7 +57,8 @@ func scheduleFollowNotificationRequest(schedule: Schedule) {
         
         
         var unfollowDateComponents = DateComponents()
-        unfollowDateComponents.weekday = 3
+        unfollowDateComponents.weekday = number
+        unfollowDateComponents.hour = 24
         
         unfollowDateComponents.timeZone = TimeZone(abbreviation: "MST")
         unfollowTrigger = UNCalendarNotificationTrigger(dateMatching: unfollowDateComponents, repeats: true)
@@ -102,8 +106,12 @@ func scheduleFollowNotificationRequest(schedule: Schedule) {
     let followRequest = UNNotificationRequest(identifier: identifier, content: followContent, trigger: followTrigger)
     let unfollowRequest = UNNotificationRequest(identifier: identifier, content: unfollowContent, trigger: unfollowTrigger)
     
+    
+    
     center.add(followRequest, withCompletionHandler: nil)
     center.add(unfollowRequest, withCompletionHandler: nil)
+    
+    
    
     
     }

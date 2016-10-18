@@ -55,6 +55,7 @@ class DaysPickerTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? DayTableViewCell else { return }
+        if dayArray.count <= 1 {
         switch indexPath.row {
             case indexPath.row:
                 
@@ -72,6 +73,7 @@ class DaysPickerTableViewController: UITableViewController {
         cell.checkMarkImage.isHidden = !cell.checkMarkImage.isHidden
         tableView.reloadData()
         
+    }
     }
 
    
