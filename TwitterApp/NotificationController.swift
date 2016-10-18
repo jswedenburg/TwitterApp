@@ -48,14 +48,14 @@ func scheduleFollowNotificationRequest(schedule: Schedule) {
         followDateComponents.weekday = 1
         
         
-        followDateComponents.timeZone = TimeZone(abbreviation: "MT")
+        followDateComponents.timeZone = TimeZone(abbreviation: "MST")
         followTrigger = UNCalendarNotificationTrigger(dateMatching: followDateComponents, repeats: true)
         
         
         var unfollowDateComponents = DateComponents()
         unfollowDateComponents.weekday = 1
         
-        unfollowDateComponents.timeZone = TimeZone(abbreviation: "MT")
+        unfollowDateComponents.timeZone = TimeZone(abbreviation: "MST")
         unfollowTrigger = UNCalendarNotificationTrigger(dateMatching: unfollowDateComponents, repeats: true)
         
         
@@ -63,8 +63,12 @@ func scheduleFollowNotificationRequest(schedule: Schedule) {
     } else {
         let calendar = NSCalendar.current
         guard let startDate = schedule.startTime, let endDate = schedule.endTime else { return }
-        let followComponents = calendar.dateComponents([.month, .day], from: startDate)
-        let unfollowComponents = calendar.dateComponents([.month, .day], from: endDate)
+        var followComponents = calendar.dateComponents([.month, .day], from: startDate)
+        followComponents.hour = 0
+        followComponents.timeZone = TimeZone(abbreviation: "MST")
+        var unfollowComponents = calendar.dateComponents([.month, .day], from: endDate)
+        unfollowComponents.hour = 23
+        unfollowComponents.timeZone = TimeZone(abbreviation: "MST")
         
         followTrigger = UNCalendarNotificationTrigger(dateMatching: followComponents, repeats: false)
         unfollowTrigger = UNCalendarNotificationTrigger(dateMatching: unfollowComponents, repeats: false)

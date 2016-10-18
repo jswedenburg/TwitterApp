@@ -59,14 +59,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         self.setDayArray()
         setUpAccountArray()
         setupView()
-        accountCollectionView.allowsSelection = false
         
-        startCell.isUserInteractionEnabled = false
-        startRowLabel.isEnabled = false
-        startTimeLabel.isEnabled = false
-        endLabelCell.isUserInteractionEnabled = false
-        endRowLabel.isEnabled = false
-        endTimeLabel.isEnabled = false
         
         
         
@@ -80,6 +73,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     override func viewWillAppear(_ animated: Bool) {
         
         self.tableView.reloadData()
+        setupDayLabel()
     }
     
     //MARK: Text Field Delegate
@@ -91,35 +85,41 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     
     @IBAction func repeatSwitchPressed(_ sender: AnyObject) {
         
-        if repeatingSwitch.isOn {
-            startCell.isUserInteractionEnabled = !startCell.isUserInteractionEnabled
-            startRowLabel.isEnabled = !startRowLabel.isEnabled
-            startTimeLabel.isEnabled = !startTimeLabel.isEnabled
-            endLabelCell.isUserInteractionEnabled = !endLabelCell.isUserInteractionEnabled
-            endRowLabel.isEnabled = !endRowLabel.isEnabled
-            endTimeLabel.isEnabled = !endTimeLabel.isEnabled
-            self.repeating = true
-
-        } else {
-            daysCell.isUserInteractionEnabled = !daysCell.isUserInteractionEnabled
-            daysLabel.isEnabled = !daysLabel.isEnabled
-            daysImage.isHidden = !daysImage.isHidden
-            daysRowLabel.isEnabled = !daysRowLabel.isEnabled
-            self.repeating = false
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        updateEnabledDisabledCells()
         //addAccountLabel.isEnabled = false
         //addAccountCell.isUserInteractionEnabled = false
         self.tableView.reloadData()
         
+    }
+    
+    func updateEnabledDisabledCells() {
+        if repeatingSwitch.isOn {
+            daysCell.isUserInteractionEnabled = true
+            daysLabel.isEnabled = true
+            daysImage.isHidden = true
+            daysRowLabel.isEnabled = true
+            startCell.isUserInteractionEnabled = false
+            startRowLabel.isEnabled = false
+            startTimeLabel.isEnabled = false
+            endLabelCell.isUserInteractionEnabled = false
+            endRowLabel.isEnabled = false
+            endTimeLabel.isEnabled = false
+            self.repeating = true
+            
+        } else {
+            startCell.isUserInteractionEnabled = true
+            startRowLabel.isEnabled = true
+            startTimeLabel.isEnabled = true
+            endLabelCell.isUserInteractionEnabled = true
+            endRowLabel.isEnabled = true
+            endTimeLabel.isEnabled = true
+            startRowLabel.isEnabled = true
+            daysCell.isUserInteractionEnabled = false
+            daysLabel.isEnabled = false
+            daysImage.isHidden = false
+            daysRowLabel.isEnabled = false
+            self.repeating = false
+        }
     }
     
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
@@ -391,11 +391,15 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         endDatePicker.datePickerMode = .date
         
         if let schedule = schedule{
+            repeatingSwitch.isOn = schedule.repeating
+            
+            updateEnabledDisabledCells()
+            
             guard let startDate = schedule.startTime else { return }
             guard let endDate = schedule.endTime else { return }
             
             titleTextField.text = schedule.title
-            repeatingSwitch.isOn = schedule.repeating
+            
             endDatePicker.date = endDate
             startDatePicker.date = startDate
             startTimeLabel.text = dateFormatter(date: schedule.startTime!)
@@ -403,6 +407,8 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             
             
         } else {
+            
+            updateEnabledDisabledCells()
             
             
             daysLabel.isHidden = true
