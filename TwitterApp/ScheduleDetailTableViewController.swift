@@ -91,19 +91,26 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     
     @IBAction func repeatSwitchPressed(_ sender: AnyObject) {
         
-        
-        self.repeating = !self.repeating
-        daysCell.isUserInteractionEnabled = !daysCell.isUserInteractionEnabled
-        daysLabel.isEnabled = !daysLabel.isEnabled
-        daysImage.isHidden = !daysImage.isHidden
-        daysRowLabel.isEnabled = !daysRowLabel.isEnabled
-        startCell.isUserInteractionEnabled = !startCell.isUserInteractionEnabled
-        startRowLabel.isEnabled = !startRowLabel.isEnabled
-        startTimeLabel.isEnabled = !startTimeLabel.isEnabled
-        endLabelCell.isUserInteractionEnabled = !endLabelCell.isUserInteractionEnabled
-        endRowLabel.isEnabled = !endRowLabel.isEnabled
-        endTimeLabel.isEnabled = !endTimeLabel.isEnabled
+        if repeatingSwitch.isOn {
+            startCell.isUserInteractionEnabled = !startCell.isUserInteractionEnabled
+            startRowLabel.isEnabled = !startRowLabel.isEnabled
+            startTimeLabel.isEnabled = !startTimeLabel.isEnabled
+            endLabelCell.isUserInteractionEnabled = !endLabelCell.isUserInteractionEnabled
+            endRowLabel.isEnabled = !endRowLabel.isEnabled
+            endTimeLabel.isEnabled = !endTimeLabel.isEnabled
+            self.repeating = true
 
+        } else {
+            daysCell.isUserInteractionEnabled = !daysCell.isUserInteractionEnabled
+            daysLabel.isEnabled = !daysLabel.isEnabled
+            daysImage.isHidden = !daysImage.isHidden
+            daysRowLabel.isEnabled = !daysRowLabel.isEnabled
+            self.repeating = false
+        }
+        
+        
+        
+        
         
         
         
@@ -136,16 +143,25 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     
     func addSchedule() {
         guard let scheduleTitle = titleTextField.text else { return }
+        
+        var newSchedule: Schedule?
+        
         let scheduleStartTime = startDatePicker.date
         let scheduleEndTime = endDatePicker.date
-        let scheduleRepeating = repeatingSwitch.isOn
-        let newSchedule = Schedule(repeating: scheduleRepeating, startTime: scheduleStartTime, endTime: scheduleEndTime, title: scheduleTitle)
         
-        for day in dayArray {
+        if repeatingSwitch.isOn {
+            newSchedule = Schedule(repeating: true, startTime: scheduleStartTime , endTime: scheduleEndTime, title: scheduleTitle)
             
-            let newDay = Days(day: day, schedule: newSchedule)
-            DaysController.sharedController.add(newDay)
+            for day in dayArray {
+                
+                let newDay = Days(day: day, schedule: newSchedule!)
+                DaysController.sharedController.add(newDay)
+            }
+            
+        } else {
+            newSchedule = Schedule(repeating: false, startTime: scheduleStartTime, endTime: scheduleEndTime, title: scheduleTitle)
         }
+        
         for account in accountArray {
             guard let name = account.name,
                 let screenName = account.screenName,
@@ -157,24 +173,29 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         
         
         ScheduleController.sharedController.saveToPersistentStorage()
-        NotificationController.sharedController.scheduleFollowNotificationRequest(schedule: newSchedule)
+        NotificationController.sharedController.scheduleFollowNotificationRequest(schedule: newSchedule!)
         
     }
     
     func editSchedule(schedule: Schedule){
+        
         guard let scheduleTitle = titleTextField.text else { print("title?")
             return }
         schedule.title = scheduleTitle
         schedule.startTime = startDatePicker.date
         schedule.endTime = endDatePicker.date
         schedule.repeating = repeatingSwitch.isOn
-        schedule.days = []
-        schedule.twitterAccounts = []
-        for day in dayArray {
-            
-            let newDay = Days(day: day, schedule: schedule)
-            DaysController.sharedController.add(newDay)
+        schedule.days = nil
+        if repeatingSwitch.isOn {
+            for day in dayArray {
+                
+                let newDay = Days(day: day, schedule: schedule)
+                DaysController.sharedController.add(newDay)
+            }
         }
+        
+        schedule.twitterAccounts = []
+        
         for account in accountArray {
             guard let name = account.name,
                 let screenName = account.screenName,
@@ -380,10 +401,10 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             startTimeLabel.text = dateFormatter(date: schedule.startTime!)
             endTimeLabel.text = dateFormatter(date: schedule.endTime!)
             
-            daysImage.isHidden = true
+            
         } else {
             
-            daysImage.image = #imageLiteral(resourceName: "calendar")
+            
             daysLabel.isHidden = true
             titleTextField.placeholder = "Title"
             

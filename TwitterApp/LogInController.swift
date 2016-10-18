@@ -12,8 +12,4 @@ class LogInController: TwitterProtocol {
     
     
     
-    func login {
-        let swifterLogin = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret)
-        swifterLogin.authorize(with: <#T##URL#>, presentFrom: <#T##UIViewController?#>, success: <#T##Swifter.TokenSuccessHandler?##Swifter.TokenSuccessHandler?##(Credential.OAuthAccessToken?, URLResponse) -> Void#>, failure: <#T##Swifter.FailureHandler?##Swifter.FailureHandler?##(Error) -> Void#>)
-    }
 }

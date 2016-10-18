@@ -42,18 +42,19 @@ func scheduleFollowNotificationRequest(schedule: Schedule) {
     unfollowContent.body = "\(title) unfollow"
     
     
-    
-    if let days = schedule.days, days.count > 0 {
+    //WHY is days never nil?
+    if schedule.days!.count > 0 {
         var followDateComponents = DateComponents()
         followDateComponents.weekday = 1
-        followDateComponents.hour = 0
+        
+        
         followDateComponents.timeZone = TimeZone(abbreviation: "MT")
         followTrigger = UNCalendarNotificationTrigger(dateMatching: followDateComponents, repeats: true)
         
         
         var unfollowDateComponents = DateComponents()
         unfollowDateComponents.weekday = 1
-        unfollowDateComponents.hour = 23
+        
         unfollowDateComponents.timeZone = TimeZone(abbreviation: "MT")
         unfollowTrigger = UNCalendarNotificationTrigger(dateMatching: unfollowDateComponents, repeats: true)
         
