@@ -157,6 +157,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         
         
         ScheduleController.sharedController.saveToPersistentStorage()
+        NotificationController.sharedController.scheduleFollowNotificationRequest(schedule: newSchedule)
         
     }
     

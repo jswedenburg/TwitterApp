@@ -38,8 +38,8 @@ func scheduleFollowNotificationRequest(schedule: Schedule) {
     
     var followTrigger: UNCalendarNotificationTrigger?
     var unfollowTrigger: UNCalendarNotificationTrigger?
-    
-    
+    followContent.body = "\(title) followed"
+    unfollowContent.body = "\(title) unfollow"
     
     
     
@@ -47,23 +47,32 @@ func scheduleFollowNotificationRequest(schedule: Schedule) {
         var followDateComponents = DateComponents()
         followDateComponents.weekday = 1
         followDateComponents.hour = 0
+        followDateComponents.timeZone = TimeZone(abbreviation: "MT")
         followTrigger = UNCalendarNotificationTrigger(dateMatching: followDateComponents, repeats: true)
-        followContent.body = "\(title) followed"
+        
         
         var unfollowDateComponents = DateComponents()
         unfollowDateComponents.weekday = 1
-        unfollowDateComponents.hour = 24
+        unfollowDateComponents.hour = 23
+        unfollowDateComponents.timeZone = TimeZone(abbreviation: "MT")
         unfollowTrigger = UNCalendarNotificationTrigger(dateMatching: unfollowDateComponents, repeats: true)
-        unfollowContent.body = "\(title) unfollow"
+        
         
         
     } else {
-        print("no days")
+        let calendar = NSCalendar.current
+        guard let startDate = schedule.startTime, let endDate = schedule.endTime else { return }
+        let followComponents = calendar.dateComponents([.month, .day], from: startDate)
+        let unfollowComponents = calendar.dateComponents([.month, .day], from: endDate)
+        
+        followTrigger = UNCalendarNotificationTrigger(dateMatching: followComponents, repeats: false)
+        unfollowTrigger = UNCalendarNotificationTrigger(dateMatching: unfollowComponents, repeats: false)
+
     }
     
     //let follow = UNNotificationAction(identifier: "follow", title: "follow", options: [])
-    let followCategory = UNNotificationCategory(identifier: "follow", actions: [], intentIdentifiers: [], options: [])
-    let unfollowCategory = UNNotificationCategory(identifier: "unfollow", actions: [], intentIdentifiers: [], options: [])
+    let followCategory = UNNotificationCategory(identifier: "\(title)follow", actions: [], intentIdentifiers: [], options: [])
+    let unfollowCategory = UNNotificationCategory(identifier: "\(title)unfollow", actions: [], intentIdentifiers: [], options: [])
     
     let center = UNUserNotificationCenter.current()
     center.setNotificationCategories([followCategory, unfollowCategory])
