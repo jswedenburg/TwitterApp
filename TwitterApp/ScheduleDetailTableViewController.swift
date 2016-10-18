@@ -185,7 +185,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         
         
         ScheduleController.sharedController.saveToPersistentStorage()
-        NotificationController.sharedController.scheduleNotificationRequest(schedule: schedule)
+        NotificationController.sharedController.scheduleFollowNotificationRequest(schedule: schedule)
     }
     
     override func viewDidAppear(_ animated: Bool) {
