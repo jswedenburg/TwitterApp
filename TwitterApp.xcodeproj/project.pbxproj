@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		812D83CA1DB5BEAA00FFF883 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D83C91DB5BEAA00FFF883 /* LogInController.swift */; };
+		8131484A1DB729CB008C701D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813148491DB729CB008C701D /* LoginViewController.swift */; };
 		8178BE581DAFFC2B0034FF2E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */; };
 		8178BE7F1DB17A930034FF2E /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */; };
 		8178BEA61DB52DAF0034FF2E /* FriendshipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BEA51DB52DAF0034FF2E /* FriendshipController.swift */; };
@@ -84,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		812D83C91DB5BEAA00FFF883 /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
+		813148491DB729CB008C701D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		8178BEA51DB52DAF0034FF2E /* FriendshipController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendshipController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */,
 				8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */,
 				819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */,
+				813148491DB729CB008C701D /* LoginViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				818AC8E41DA6137900659821 /* ScheduleController.swift in Sources */,
 				819B3CA31DAF080900D0D674 /* SwifterMessages.swift in Sources */,
 				819B3CA41DAF080900D0D674 /* SwifterOAuthClient.swift in Sources */,
+				8131484A1DB729CB008C701D /* LoginViewController.swift in Sources */,
 				812D83CA1DB5BEAA00FFF883 /* LogInController.swift in Sources */,
 				819B3CC11DAF082000D0D674 /* String++.swift in Sources */,
 				819B3CB01DAF080900D0D674 /* URL++.swift in Sources */,

@@ -95,7 +95,6 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         
         
         ScheduleController.sharedController.saveToPersistentStorage()
-        NotificationController.sharedController.scheduleFollowNotificationRequest(schedule: newSchedule)
         
     }
     
@@ -118,7 +117,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         
         
         ScheduleController.sharedController.saveToPersistentStorage()
-        NotificationController.sharedController.scheduleFollowNotificationRequest(schedule: schedule)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -204,15 +203,15 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var height = self.tableView.rowHeight
         
-        switch (indexPath.section, indexPath.row) {
-        case (2, 1):
+        switch indexPath.row {
+        case 1:
             height = 150.0
         default:
             return height
