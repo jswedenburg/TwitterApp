@@ -44,11 +44,11 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         let accounts = schedule.twitterAccounts?.allObjects as? [TwitterAccount] ?? []
         
         if schedule.enabled {
-            FriendshipController.sharedController.unfollowAccounts(accounts: accounts)
+           // FriendshipController.sharedController.unfollowAccounts(accounts: accounts)
             schedule.enabled = false
             cell.followButton.setImage(#imageLiteral(resourceName: "followMan"), for: .normal)
         } else {
-            FriendshipController.sharedController.followAccounts(accounts: accounts)
+            //FriendshipController.sharedController.followAccounts(accounts: accounts)
             cell.followButton.setImage(#imageLiteral(resourceName: "blueFollowMan"), for: .normal)
             schedule.enabled = true
         }

@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import UserNotifications
+import Fabric
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -17,14 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        Fabric.with([Twitter.self])
         
         // Override point for customization after application launch.
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        Swifter.handleOpenURL(url)
+        //Swifter.handleOpenURL(url)
         return true
     }
 

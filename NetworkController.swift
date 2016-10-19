@@ -18,7 +18,7 @@ class NetworkController: TwitterProtocol {
     static let tokenSecret = "BiTchVQ5V0dE1PxUHIIGFzlCRrh25gaGq1oGPMlbP9yzK"
     
     
-    
+    /*
     
     static func twitterSearch(searchTerm: String, completion: @escaping ([TwitterAccount]) -> Void) {
         let swifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret, oauthToken: accessToken, oauthTokenSecret: tokenSecret)
@@ -51,7 +51,7 @@ class NetworkController: TwitterProtocol {
             print("FAIL")
         }
     }
-    
+    */
     enum HTTPMethod: String {
         case Get = "GET"
         case Put = "PUT"

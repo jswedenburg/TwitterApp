@@ -22,7 +22,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.jakeswedenburg.twitterapp</string>
+			<string>comjakeswedenburgtwitterapp</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>twitterapp</string>
@@ -31,6 +31,25 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>5</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>1b2eda1e1ad9f1c42e2180348ac5cbe355066cec</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>wakTUJSUOqJ6grJn3Y32s3Pgl</string>
+					<key>consumerSecret</key>
+					<string>o3bc8FX8VGbpOI1xVV4WUYQhvxPIM4tmmqAwYOv4k8od5n39ny</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

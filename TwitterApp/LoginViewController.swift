@@ -8,14 +8,20 @@
 
 import UIKit
 import SafariServices
+import TwitterKit
 
 
 class LoginViewController: UIViewController, TwitterProtocol, SFSafariViewControllerDelegate {
+    
+    
+    
+    
+    /*
     var loginSwifter: Swifter
     
     required init?(coder aDecoder: NSCoder) {
         
-        self.loginSwifter = Swifter(consumerKey: "ADeOdA9e5XfjJtchq0iWetwpY" , consumerSecret: "7XlXJOe97gpqyu5GYtWY5isOwy4YEvnin1Rr8m0g5GMs6pD3WR")
+        self.loginSwifter = Swifter(consumerKey: "50rD7EZObZk07pIr2wOjT18DT" , consumerSecret: "t7wfSf8x4vXgD7s9UtyRFsfQnR8qAdlyddJbTpv4E1fhD7d2Qd")
         super.init(coder: aDecoder)
         
     }
@@ -24,22 +30,46 @@ class LoginViewController: UIViewController, TwitterProtocol, SFSafariViewContro
         
         //let loginSwifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret)
         guard let url = URL(string: "twitterapp://success") else { return }
-        loginSwifter.authorize(with: url, presentFrom: self, success: { (token, response) in
-            print(token?.key)
+        loginSwifter.authorize(with: url, presentFrom: self, success: { (_) in
             print("success")
-        }) { (error) in
-            print("FAIL \(error.localizedDescription)")
+            }) { (error) in
+                print("\(error)")
         }
         
         
     }
+ 
+ */
     
     @IBAction func loginButtonPressed(_ sender: AnyObject) {
-        self.login()
+        //self.login()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "scheduleTVC") as? ScheduleTableViewController else { return }
+        let logInButton = TWTRLogInButton { (session, error) in
+            if let unwrappedSession = session {
+                let alert = UIAlertController(title: "Logged In",
+                                              message: "User \(unwrappedSession.userName) has logged in",
+                    preferredStyle: UIAlertControllerStyle.alert
+                )
+                let action = UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
+                    self.present(vc, animated: true, completion: nil)
+                })
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+                //self.present(ScheduleTableViewController(), animated: true, completion: nil)
+            } else {
+                NSLog("Login error: %@", error!.localizedDescription);
+            }
+            
+            
+        }
+        
+        // TODO: Change where the log in button is positioned in your view
+        logInButton.center = self.view.center
+        self.view.addSubview(logInButton)
 
         // Do any additional setup after loading the view.
     }

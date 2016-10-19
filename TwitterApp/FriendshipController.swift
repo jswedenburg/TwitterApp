@@ -16,7 +16,7 @@ class FriendshipController: NSObject, TwitterProtocol {
     
     static let sharedController = FriendshipController()
     
-    
+    /*
     
     func followAccounts(accounts: [TwitterAccount]) {
         let swifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret, oauthToken: accessToken, oauthTokenSecret: tokenSecret)
@@ -51,7 +51,7 @@ class FriendshipController: NSObject, TwitterProtocol {
     
    
         
-        
+        */
     
     
    
@@ -69,4 +69,4 @@ class FriendshipController: NSObject, TwitterProtocol {
     
 }
 
-}
+

@@ -48,9 +48,9 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text else { return }
-        NetworkController.twitterSearch(searchTerm: searchTerm) { (accounts) in
-            self.twitterAccounts = accounts
-        }
+        //NetworkController.twitterSearch(searchTerm: searchTerm) { (accounts) in
+            //self.twitterAccounts = accounts
+        //}
         self.searchBar.endEditing(true)
     }
     
