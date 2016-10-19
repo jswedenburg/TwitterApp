@@ -35,7 +35,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Lf-RA-1S3"/>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shN-Ms-cYI">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -61,17 +60,22 @@
                                                         <constraint firstAttribute="width" secondItem="ccN-RG-qzw" secondAttribute="height" multiplier="1:1" id="6ME-0O-tTc"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ5-cU-41c">
+                                                    <frame key="frameInset" minX="292" minY="9" width="58" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="followMan"/>
+                                                    <connections>
+                                                        <action selector="cellButtonPressed:" destination="fEN-1n-LFU" eventType="touchUpInside" id="WYx-QB-ntl"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ws1-VO-LWd" firstAttribute="top" secondItem="shN-Ms-cYI" secondAttribute="bottom" constant="10" id="11N-qa-tzD"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="svf-jL-OsN" secondAttribute="leading" id="2e6-Om-Hqz"/>
-                                                <constraint firstItem="0Lf-RA-1S3" firstAttribute="top" secondItem="wUR-Aa-ptC" secondAttribute="topMargin" id="5kl-F5-qaL"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="0Lf-RA-1S3" secondAttribute="bottom" id="5tO-Y3-5HT"/>
                                                 <constraint firstAttribute="topMargin" secondItem="KYd-Bk-XFB" secondAttribute="top" id="9Uv-JJ-4ad"/>
                                                 <constraint firstItem="svf-jL-OsN" firstAttribute="top" secondItem="tcj-eq-64S" secondAttribute="bottom" id="CmB-6r-Q8q"/>
                                                 <constraint firstItem="svf-jL-OsN" firstAttribute="width" secondItem="tcj-eq-64S" secondAttribute="width" id="HDw-KL-k4M"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ccN-RG-qzw" secondAttribute="bottom" id="HX5-rb-lmX"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="0Lf-RA-1S3" secondAttribute="trailing" id="Jkl-Wh-9ic"/>
                                                 <constraint firstItem="ccN-RG-qzw" firstAttribute="leading" secondItem="svf-jL-OsN" secondAttribute="trailing" id="PdF-ja-ygu"/>
                                                 <constraint firstItem="KYd-Bk-XFB" firstAttribute="width" secondItem="tcj-eq-64S" secondAttribute="width" id="eGQ-gq-iS0"/>
                                                 <constraint firstItem="shN-Ms-cYI" firstAttribute="leading" secondItem="KYd-Bk-XFB" secondAttribute="trailing" constant="24" id="feH-xL-vXi"/>
@@ -88,7 +92,6 @@
                                         <connections>
                                             <outlet property="bottomLeftImage" destination="svf-jL-OsN" id="9XS-38-ayT"/>
                                             <outlet property="bottomRightImage" destination="ccN-RG-qzw" id="wVB-4n-uZT"/>
-                                            <outlet property="enabledSwitch" destination="0Lf-RA-1S3" id="40w-qs-eNf"/>
                                             <outlet property="timeAndDateLabel" destination="ws1-VO-LWd" id="L6v-JX-72M"/>
                                             <outlet property="titleLabel" destination="shN-Ms-cYI" id="HzN-Kr-8qm"/>
                                             <outlet property="topLeftImage" destination="tcj-eq-64S" id="cm9-aZ-cp9"/>
@@ -124,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1215" y="-546"/>
+            <point key="canvasLocation" x="1213.5999999999999" y="-546.47676161919048"/>
         </scene>
         <!--Group-->
         <scene sceneID="RaP-Ho-aEP">
@@ -611,7 +614,7 @@
                                                         <constraint firstAttribute="width" constant="50" id="Uot-d3-NvS"/>
                                                         <constraint firstAttribute="width" secondItem="T7t-r3-BwU" secondAttribute="height" multiplier="1:1" id="v74-qz-9oj"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button" image="Add User Male-50"/>
+                                                    <state key="normal" title="Button" image="followMan"/>
                                                     <connections>
                                                         <action selector="cellButtonPressed:" destination="OEY-lh-bUP" eventType="touchUpInside" id="JAs-ki-AO2"/>
                                                     </connections>
@@ -680,8 +683,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Add User Male-50" width="50" height="50"/>
         <image name="calendar" width="50" height="50"/>
+        <image name="followMan" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0gf-Qn-fbk"/>

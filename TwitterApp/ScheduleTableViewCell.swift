@@ -9,7 +9,9 @@
 import UIKit
 import GameKit
 
-class ScheduleTableViewCell: UITableViewCell {
+class ScheduleTableViewCell: UITableViewCell{
+    
+    var delegate: TableViewCellDelegate?
 
     @IBOutlet weak var topLeftImage: UIImageView!
     @IBOutlet weak var topRightImage: UIImageView!
@@ -20,8 +22,10 @@ class ScheduleTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var timeAndDateLabel: UILabel!
-    @IBOutlet weak var enabledSwitch: UISwitch!
     
+    @IBAction func cellButtonPressed(_ sender: AnyObject) {
+        delegate?.cellButtonPressed(sender: self)
+    }
     
     //MARK: Helper Functions
     
@@ -51,7 +55,7 @@ class ScheduleTableViewCell: UITableViewCell {
             
         }
         
-        self.enabledSwitch.isOn = schedule.enabled
+        
     }
     
     func setDateLabel(date1: Date, date2: Date) -> String {
@@ -64,9 +68,4 @@ class ScheduleTableViewCell: UITableViewCell {
         return string1 + " " + "-" + " " + string2
         
     }
-
-    
-        
-    //TODO: Helper function to take in to take two Dates and the days and return the right String text
-
 }

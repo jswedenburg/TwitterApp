@@ -41,5 +41,5 @@ class SearchTableViewCell: UITableViewCell {
 }
 
 protocol TableViewCellDelegate {
-    func cellButtonPressed(sender: SearchTableViewCell)
+    func cellButtonPressed(sender: UITableViewCell)
 }

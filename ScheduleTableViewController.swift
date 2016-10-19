@@ -9,7 +9,9 @@
 import UIKit
 
 
-class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TableViewCellDelegate {
+    
+    var following: Bool = true
     
     var scheduleArray: [Schedule] {
         return ScheduleController.sharedController.schedules
@@ -29,6 +31,22 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         self.tableView.reloadData()
         
+    }
+    
+    
+    
+    
+    func cellButtonPressed(sender: UITableViewCell) {
+        if following{
+            self.following = false
+        } else {
+            guard let sender = sender as? ScheduleTableViewCell else { return }
+            guard let index = self.tableView.indexPath(for: sender)?.row else { return }
+            let schedule = scheduleArray[index]
+            let accounts = schedule.twitterAccounts?.allObjects as? [TwitterAccount] ?? []
+            FriendshipController.sharedController.followAccounts(accounts: accounts)
+            self.following = true
+        }
     }
     
     
@@ -55,6 +73,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         let schedule = scheduleArray[indexPath.row]
         let accountArray2 = schedule.twitterAccounts?.allObjects as! [TwitterAccount]
         cell.updateWithSchedule(schedule: schedule, dayLabelText: self.dayLabelText, accounts: accountArray2)
+        cell.delegate = self
         
         
         

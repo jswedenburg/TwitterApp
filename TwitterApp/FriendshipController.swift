@@ -17,13 +17,13 @@ class FriendshipController: NSObject, TwitterProtocol {
     
     
     
-    func followAccounts(userNames: [String]) {
+    func followAccounts(accounts: [TwitterAccount]) {
         let swifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret, oauthToken: accessToken, oauthTokenSecret: tokenSecret)
         
         
-        for userName in userNames {
-            //guard let screenName = account.screenName else { return }
-            swifter.followUser(for: .screenName(userName), follow: nil, success: { (_) in
+        for account in accounts {
+            guard let screenName = account.screenName else { return }
+            swifter.followUser(for: .screenName(screenName), follow: nil, success: { (_) in
                 //
             }) { (_) in
                 print("fail")

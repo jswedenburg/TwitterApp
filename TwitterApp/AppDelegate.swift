@@ -54,17 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         self.saveContext()
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-        let userInfo = response.notification.request.content.userInfo
-        guard let userNameArray = userInfo["userNames"] as? [String] else { return }
-        
-        if response.notification.request.content.categoryIdentifier == "test" {
-           FriendshipController.sharedController.followAccounts(userNames: userNameArray)
-        }
-        
-        
-    }
+    
     
     
 

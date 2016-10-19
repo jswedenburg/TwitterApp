@@ -55,7 +55,8 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     }
     
     
-    func cellButtonPressed(sender: SearchTableViewCell) {
+    func cellButtonPressed(sender: UITableViewCell) {
+        guard let sender = sender as? SearchTableViewCell else { return }
         guard let index = self.tableView.indexPath(for: sender) else { return }
         let account = twitterAccounts[index.row]
         if followedAccounts.contains(account) {
