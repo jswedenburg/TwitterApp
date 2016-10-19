@@ -50,40 +50,16 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text, let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }
-        var accounts: [TwitterAccount] = []
-        let client = TWTRAPIClient(userID: userID)
-        let searchEndPoint = "https://api.twitter.com/1.1/users/search.json"
-        let params = ["q": "\(searchTerm)", "page": "1", "count": "1"]
-        var clientError: NSErrorPointer
+        guard let searchTerm = searchBar.text else { return }
         
-        let request = client.urlRequest(withMethod: "GET", url: searchEndPoint, parameters: params, error: clientError)
-        client.sendTwitterRequest(request) { (response, data, error) in
-            guard let data = data else { return }
-            
-            guard let jsonDict = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [[String: Any]] else { return }
-            for x in 0...jsonDict.count {
-                guard let name = jsonDict[x]["name"] as? String, let screenName = jsonDict[x]["screen_name"] as? String, let imageURL = jsonDict[x]["profile_image_url"] as? String else { return }
-                
-                guard let url = URL(string: imageURL) else { return }
-                
-                
-                NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
-                    guard let data = data else { return }
-                    DispatchQueue.main.async() {
-                        let newAccount = TwitterAccount(name: name, screenName: screenName, verified: true, schedule: nil, profileImageData: data)
-                        accountArray.append(newAccount)
-                        completion(accountArray)
-            }
-            
+        NetworkController.searchRequest(searchTerm: searchTerm) { (accounts) in
             self.twitterAccounts = accounts
-            
         }
         
+        
         self.searchBar.endEditing(true)
+       
     }
-    
-    
     
     func cellButtonPressed(sender: UITableViewCell) {
         guard let sender = sender as? SearchTableViewCell else { return }

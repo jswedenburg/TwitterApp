@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import TwitterKit
 
 
 
@@ -19,39 +20,82 @@ class NetworkController {
     
     
     /*
+     
+     static func twitterSearch(searchTerm: String, completion: @escaping ([TwitterAccount]) -> Void) {
+     let swifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret, oauthToken: accessToken, oauthTokenSecret: tokenSecret)
+     
+     swifter.searchUsers(using: searchTerm, page: 1, count: 20, includeEntities: nil, success: { (users) in
+     var accountArray: [TwitterAccount] = []
+     
+     for x in 0...19 {
+     guard let name = users[x]["name"].string,
+     let profileImageString = users[x]["profile_image_url"].string,
+     let screenName = users[x]["screen_name"].string,
+     let verified = users[x]["verified"].bool else { return }
+     
+     guard let url = URL(string: profileImageString) else { return }
+     
+     
+     NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
+     guard let data = data else { return }
+     DispatchQueue.main.async() {
+     let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: nil, profileImageData: data)
+     accountArray.append(newAccount)
+     completion(accountArray)
+     
+     }
+     }
+     }
+     })
+     
+     { (_) in
+     print("FAIL")
+     }
+     }
+     */
     
-    static func twitterSearch(searchTerm: String, completion: @escaping ([TwitterAccount]) -> Void) {
-        let swifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret, oauthToken: accessToken, oauthTokenSecret: tokenSecret)
+    static func searchRequest(searchTerm: String, completion: @escaping ([TwitterAccount]) -> Void) {
+        guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }
+        let client = TWTRAPIClient(userID: userID)
+        let searchEndPoint = "https://api.twitter.com/1.1/users/search.json"
+        let params = ["q": "\(searchTerm)", "page": "1", "count": "20"]
+        var clientError: NSErrorPointer
         
-        swifter.searchUsers(using: searchTerm, page: 1, count: 20, includeEntities: nil, success: { (users) in
+        
+        
+        let request = client.urlRequest(withMethod: "GET", url: searchEndPoint, parameters: params, error: clientError)
+        client.sendTwitterRequest(request) { (response, data, error) in
             var accountArray: [TwitterAccount] = []
+            guard let data = data else { return }
             
-            for x in 0...19 {
-                guard let name = users[x]["name"].string,
-                    let profileImageString = users[x]["profile_image_url"].string,
-                    let screenName = users[x]["screen_name"].string,
-                    let verified = users[x]["verified"].bool else { return }
+            guard let jsonDict = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [[String: Any]] else { return }
+            
+            for x in 0...(jsonDict.count - 1) {
+                guard let name = jsonDict[x]["name"] as? String, let screenName = jsonDict[x]["screen_name"] as? String, let imageURL = jsonDict[x]["profile_image_url"] as? String else { return }
                 
-                guard let url = URL(string: profileImageString) else { return }
+                guard let url = URL(string: imageURL) else { return }
+                
+                var imageData: Data?
                 
                 
                 NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
                     guard let data = data else { return }
-                    DispatchQueue.main.async() {
-                        let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: nil, profileImageData: data)
+                    
+                    DispatchQueue.main.async {
+                        let newAccount = TwitterAccount(name: name, screenName: screenName, verified: true, schedule: nil, profileImageData: data)
                         accountArray.append(newAccount)
                         completion(accountArray)
-                        
                     }
+                    
                 }
+                
+                
             }
-        })
             
-        { (_) in
-            print("FAIL")
         }
+        
+        
     }
-    */
     
     
     static func imageDataForURL(urlString: String, completon: @escaping ((_ data: Data) -> Void)) {

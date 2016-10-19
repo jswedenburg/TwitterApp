@@ -48,7 +48,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             schedule.enabled = false
             cell.followButton.setImage(#imageLiteral(resourceName: "followMan"), for: .normal)
         } else {
-            //FriendshipController.sharedController.followAccounts(accounts: accounts)
+            
+            FriendshipController.sharedController.followAccounts(accounts: accounts)
             cell.followButton.setImage(#imageLiteral(resourceName: "blueFollowMan"), for: .normal)
             schedule.enabled = true
         }
