@@ -40,7 +40,7 @@ class FriendshipController: NSObject, TwitterProtocol {
         for account in accounts {
             guard let screenName = account.screenName else { return }
             swifter.unfollowUser(for: .screenName(screenName), success: { (_) in
-                print("works")
+                //
                 }, failure: { (_) in
                     print("fail")
             })

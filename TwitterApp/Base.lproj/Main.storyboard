@@ -63,7 +63,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ5-cU-41c">
                                                     <frame key="frameInset" minX="292" minY="9" width="58" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="blueFollowMan"/>
+                                                    <state key="normal" title="Button" image="followMan"/>
                                                     <connections>
                                                         <action selector="cellButtonPressed:" destination="fEN-1n-LFU" eventType="touchUpInside" id="WYx-QB-ntl"/>
                                                     </connections>
@@ -156,7 +156,7 @@
                             <tableViewSection headerTitle="Repeat Weekly" id="1K6-Ci-4ZF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ueo-YG-Ngu">
-                                        <rect key="frame" x="0.0" y="164" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="163.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ueo-YG-Ngu" id="N9O-bn-BzY">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -180,7 +180,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="48" id="K7j-Du-64o">
-                                        <rect key="frame" x="0.0" y="208" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="207.5" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K7j-Du-64o" id="Ga7-yJ-bgc">
                                             <frame key="frameInset" width="375" height="47"/>
@@ -224,7 +224,7 @@
                             <tableViewSection headerTitle="Start and End Date" id="o3h-f9-SO2">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="OrI-ku-NDG">
-                                        <rect key="frame" x="0.0" y="312" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="311.5" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OrI-ku-NDG" id="7jJ-2f-zWM">
                                             <frame key="frameInset" width="375" height="39"/>
@@ -248,7 +248,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="5il-js-UwU">
-                                        <rect key="frame" x="0.0" y="352" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="351.5" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5il-js-UwU" id="oxE-CR-cp1">
                                             <frame key="frameInset" width="375" height="39"/>
@@ -269,7 +269,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="QJ2-gb-fBd">
-                                        <rect key="frame" x="0.0" y="392" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="391.5" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QJ2-gb-fBd" id="dER-oD-1zP">
                                             <frame key="frameInset" width="375" height="39"/>
@@ -293,7 +293,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="X0a-bS-mrn">
-                                        <rect key="frame" x="0.0" y="432" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="431.5" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X0a-bS-mrn" id="yoO-Ci-irP">
                                             <frame key="frameInset" width="375" height="39"/>
@@ -318,7 +318,7 @@
                             <tableViewSection headerTitle="Accounts" id="XeI-Ye-dzz">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="pjm-wo-cpj">
-                                        <rect key="frame" x="0.0" y="528" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="527.5" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pjm-wo-cpj" id="Y5k-9J-rnc">
                                             <frame key="frameInset" width="375" height="39"/>
@@ -338,7 +338,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="J2G-xO-0Ze">
-                                        <rect key="frame" x="0.0" y="568" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="567.5" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J2G-xO-0Ze" id="ABy-uC-kp4">
                                             <frame key="frameInset" width="375" height="99"/>
@@ -355,7 +355,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="accountCell" id="rio-A5-GZU" customClass="AccountCollectionViewCell" customModule="TwitterApp" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="0.0" width="125" height="100"/>
+                                                            <rect key="frame" x="10" y="-1" width="125" height="100"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="100"/>
@@ -397,7 +397,7 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                     <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addAccountView" id="s09-lH-Hgp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="99"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionReusableView>
                                                     <connections>
@@ -415,7 +415,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="xB4-jB-IkU">
-                                        <rect key="frame" x="0.0" y="668" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="667.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xB4-jB-IkU" id="30j-ZT-Wx1">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -684,7 +684,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blueFollowMan" width="75" height="75"/>
         <image name="calendar" width="50" height="50"/>
         <image name="followMan" width="50" height="50"/>
     </resources>

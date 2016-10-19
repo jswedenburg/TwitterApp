@@ -43,18 +43,18 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         let schedule = scheduleArray[index]
         let accounts = schedule.twitterAccounts?.allObjects as? [TwitterAccount] ?? []
         
-        if cell.following{
+        if schedule.enabled {
             FriendshipController.sharedController.unfollowAccounts(accounts: accounts)
-            cell.following = false
+            schedule.enabled = false
             cell.followButton.setImage(#imageLiteral(resourceName: "followMan"), for: .normal)
-            
         } else {
-            
             FriendshipController.sharedController.followAccounts(accounts: accounts)
             cell.followButton.setImage(#imageLiteral(resourceName: "blueFollowMan"), for: .normal)
-            cell.following = true
+            schedule.enabled = true
         }
-        self.tableView.reloadData()
+        
+        ScheduleController.sharedController.saveToPersistentStorage()
+        
     }
     
     

@@ -11,7 +11,7 @@ import GameKit
 
 class ScheduleTableViewCell: UITableViewCell{
     
-    var following: Bool = false
+    
     
     var delegate: TableViewCellDelegate?
 
