@@ -63,7 +63,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ5-cU-41c">
                                                     <frame key="frameInset" minX="292" minY="9" width="58" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="followMan"/>
+                                                    <state key="normal" title="Button" image="blueFollowMan"/>
                                                     <connections>
                                                         <action selector="cellButtonPressed:" destination="fEN-1n-LFU" eventType="touchUpInside" id="WYx-QB-ntl"/>
                                                     </connections>
@@ -92,6 +92,7 @@
                                         <connections>
                                             <outlet property="bottomLeftImage" destination="svf-jL-OsN" id="9XS-38-ayT"/>
                                             <outlet property="bottomRightImage" destination="ccN-RG-qzw" id="wVB-4n-uZT"/>
+                                            <outlet property="followButton" destination="GQ5-cU-41c" id="p6D-UQ-3XS"/>
                                             <outlet property="timeAndDateLabel" destination="ws1-VO-LWd" id="L6v-JX-72M"/>
                                             <outlet property="titleLabel" destination="shN-Ms-cYI" id="HzN-Kr-8qm"/>
                                             <outlet property="topLeftImage" destination="tcj-eq-64S" id="cm9-aZ-cp9"/>
@@ -683,6 +684,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blueFollowMan" width="75" height="75"/>
         <image name="calendar" width="50" height="50"/>
         <image name="followMan" width="50" height="50"/>
     </resources>

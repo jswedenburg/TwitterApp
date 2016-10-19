@@ -11,6 +11,8 @@ import GameKit
 
 class ScheduleTableViewCell: UITableViewCell{
     
+    var following: Bool = false
+    
     var delegate: TableViewCellDelegate?
 
     @IBOutlet weak var topLeftImage: UIImageView!
@@ -18,6 +20,7 @@ class ScheduleTableViewCell: UITableViewCell{
     @IBOutlet weak var bottomLeftImage: UIImageView!
     @IBOutlet weak var bottomRightImage: UIImageView!
     
+    @IBOutlet weak var followButton: UIButton!
     
     @IBOutlet weak var titleLabel: UILabel!
     

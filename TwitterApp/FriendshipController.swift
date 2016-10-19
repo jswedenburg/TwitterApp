@@ -33,6 +33,21 @@ class FriendshipController: NSObject, TwitterProtocol {
 
         }
     
+    func unfollowAccounts(accounts: [TwitterAccount]) {
+        let swifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret, oauthToken: accessToken, oauthTokenSecret: tokenSecret)
+        
+        
+        for account in accounts {
+            guard let screenName = account.screenName else { return }
+            swifter.unfollowUser(for: .screenName(screenName), success: { (_) in
+                print("works")
+                }, failure: { (_) in
+                    print("fail")
+            })
+        
+        
+    }
+    
    
         
         
@@ -53,3 +68,4 @@ class FriendshipController: NSObject, TwitterProtocol {
     
 }
 
+}

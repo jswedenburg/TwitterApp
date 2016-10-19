@@ -11,7 +11,7 @@ import UIKit
 
 class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TableViewCellDelegate {
     
-    var following: Bool = true
+    
     
     var scheduleArray: [Schedule] {
         return ScheduleController.sharedController.schedules
@@ -37,16 +37,24 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     func cellButtonPressed(sender: UITableViewCell) {
-        if following{
-            self.following = false
+        guard let cell = sender as? ScheduleTableViewCell else { return }
+        guard let sender = sender as? ScheduleTableViewCell else { return }
+        guard let index = self.tableView.indexPath(for: sender)?.row else { return }
+        let schedule = scheduleArray[index]
+        let accounts = schedule.twitterAccounts?.allObjects as? [TwitterAccount] ?? []
+        
+        if cell.following{
+            FriendshipController.sharedController.unfollowAccounts(accounts: accounts)
+            cell.following = false
+            cell.followButton.setImage(#imageLiteral(resourceName: "followMan"), for: .normal)
+            
         } else {
-            guard let sender = sender as? ScheduleTableViewCell else { return }
-            guard let index = self.tableView.indexPath(for: sender)?.row else { return }
-            let schedule = scheduleArray[index]
-            let accounts = schedule.twitterAccounts?.allObjects as? [TwitterAccount] ?? []
+            
             FriendshipController.sharedController.followAccounts(accounts: accounts)
-            self.following = true
+            cell.followButton.setImage(#imageLiteral(resourceName: "blueFollowMan"), for: .normal)
+            cell.following = true
         }
+        self.tableView.reloadData()
     }
     
     
