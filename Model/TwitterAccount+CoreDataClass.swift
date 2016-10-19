@@ -23,4 +23,5 @@ public class TwitterAccount: NSManagedObject {
         self.profileImage = profileImageData
         
     }
+    
 }

@@ -12,7 +12,7 @@ import UserNotifications
 
 
 
-class FriendshipController: NSObject, TwitterProtocol {
+class FriendshipController: NSObject{
     
     static let sharedController = FriendshipController()
     
@@ -52,21 +52,6 @@ class FriendshipController: NSObject, TwitterProtocol {
    
         
         */
-    
-    
-   
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
-        print("did present")
-        completionHandler([.badge,.alert,.sound])
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-        completionHandler()
-    }
-    
 }
 
 

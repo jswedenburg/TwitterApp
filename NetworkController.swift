@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class NetworkController: TwitterProtocol {
+class NetworkController {
     
     static let consumerKey = "ADeOdA9e5XfjJtchq0iWetwpY"
     static let accessToken = "45428809-NhJAMwJshILhzUrO16A5pHpgmEbRKbm1KQJwvuB52"
@@ -52,6 +52,18 @@ class NetworkController: TwitterProtocol {
         }
     }
     */
+    
+    
+    static func imageDataForURL(urlString: String, completon: @escaping ((_ data: Data) -> Void)) {
+        guard let url = URL(string: urlString) else { return }
+        NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
+            guard let data = data else { return }
+            DispatchQueue.main.async {
+                completon(data)
+            }
+            
+        }
+    }
     enum HTTPMethod: String {
         case Get = "GET"
         case Put = "PUT"

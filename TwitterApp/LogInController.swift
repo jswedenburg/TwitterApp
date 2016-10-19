@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class LogInController: TwitterProtocol{
+class LogInController{
     
     static let sharedController = LogInController()
     

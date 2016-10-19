@@ -11,7 +11,7 @@ import SafariServices
 import TwitterKit
 
 
-class LoginViewController: UIViewController, TwitterProtocol, SFSafariViewControllerDelegate {
+class LoginViewController: UIViewController {
     
     
     
@@ -47,7 +47,7 @@ class LoginViewController: UIViewController, TwitterProtocol, SFSafariViewContro
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "scheduleTVC") as? ScheduleTableViewController else { return }
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "navcontroller") as? UINavigationController else { return }
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
                 let alert = UIAlertController(title: "Logged In",
