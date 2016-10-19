@@ -9,10 +9,20 @@
 import UIKit
 import SafariServices
 
+
 class LoginViewController: UIViewController, TwitterProtocol, SFSafariViewControllerDelegate {
+    var loginSwifter: Swifter
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        self.loginSwifter = Swifter(consumerKey: "ADeOdA9e5XfjJtchq0iWetwpY" , consumerSecret: "7XlXJOe97gpqyu5GYtWY5isOwy4YEvnin1Rr8m0g5GMs6pD3WR")
+        super.init(coder: aDecoder)
+        
+    }
     
     func login() {
-        let loginSwifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret)
+        
+        //let loginSwifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret)
         guard let url = URL(string: "twitterapp://success") else { return }
         loginSwifter.authorize(with: url, presentFrom: self, success: { (token, response) in
             print(token?.key)
