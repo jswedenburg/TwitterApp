@@ -12,7 +12,7 @@ import CoreData
 
 public class Schedule: NSManagedObject {
 
-    convenience init(repeating: Bool, startTime: Date, endTime: Date, title: String, enabled: Bool = false, context: NSManagedObjectContext = CoreDataStack.context){
+    convenience init(repeating: Bool = false, startTime: Date = Date(), endTime: Date = Date(), title: String, enabled: Bool = false, context: NSManagedObjectContext = CoreDataStack.context){
         
         
         

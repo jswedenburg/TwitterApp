@@ -24,7 +24,7 @@ class ScheduleTableViewCell: UITableViewCell{
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var timeAndDateLabel: UILabel!
+    
     
     @IBAction func cellButtonPressed(_ sender: AnyObject) {
         delegate?.cellButtonPressed(sender: self)
@@ -32,7 +32,7 @@ class ScheduleTableViewCell: UITableViewCell{
     
     //MARK: Helper Functions
     
-    func updateWithSchedule(schedule: Schedule, dayLabelText: String, accounts: [TwitterAccount]) {
+    func updateWithSchedule(schedule: Schedule, accounts: [TwitterAccount]) {
         self.titleLabel.text = schedule.title
         
         if accounts.count > 0 {
@@ -49,26 +49,6 @@ class ScheduleTableViewCell: UITableViewCell{
             
         }
         
-        
-       
-        if schedule.repeating {
-            self.timeAndDateLabel.text = dayLabelText
-        }else {
-            self.timeAndDateLabel.text = setDateLabel(date1: schedule.startTime!, date2: schedule.endTime!)
-            
-        }
-        
-        
-    }
-    
-    func setDateLabel(date1: Date, date2: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        
-        let string1 = formatter.string(from: date1)
-        let string2 = formatter.string(from: date2)
-        
-        return string1 + " " + "-" + " " + string2
         
     }
 }

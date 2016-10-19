@@ -28,8 +28,6 @@
 		818AC8FC1DA722F500659821 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8FB1DA722F500659821 /* NetworkController.swift */; };
 		818AC8FE1DA7D2BD00659821 /* TwitterAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8FD1DA7D2BD00659821 /* TwitterAccountController.swift */; };
 		818AC9061DA81FD000659821 /* ScheduleDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */; };
-		819B3BE31DABFC6C00D0D674 /* DaysPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BE21DABFC6C00D0D674 /* DaysPickerTableViewController.swift */; };
-		819B3BE51DAC02E200D0D674 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BE41DAC02E200D0D674 /* DayTableViewCell.swift */; };
 		819B3BEA1DAC1FD600D0D674 /* Days+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BE71DAC1FD600D0D674 /* Days+CoreDataClass.swift */; };
 		819B3BED1DAC324900D0D674 /* DaysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BEC1DAC324900D0D674 /* DaysController.swift */; };
 		819B3BF91DAC619E00D0D674 /* Schedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BF71DAC619E00D0D674 /* Schedule+CoreDataProperties.swift */; };
@@ -109,8 +107,6 @@
 		818AC8FB1DA722F500659821 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkController.swift; path = ../NetworkController.swift; sourceTree = "<group>"; };
 		818AC8FD1DA7D2BD00659821 /* TwitterAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAccountController.swift; sourceTree = "<group>"; };
 		818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetailTableViewController.swift; sourceTree = "<group>"; };
-		819B3BE21DABFC6C00D0D674 /* DaysPickerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysPickerTableViewController.swift; sourceTree = "<group>"; };
-		819B3BE41DAC02E200D0D674 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		819B3BE71DAC1FD600D0D674 /* Days+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Days+CoreDataClass.swift"; sourceTree = "<group>"; };
 		819B3BEC1DAC324900D0D674 /* DaysController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysController.swift; sourceTree = "<group>"; };
 		819B3BF71DAC619E00D0D674 /* Schedule+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -233,8 +229,6 @@
 				818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */,
 				818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */,
 				8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */,
-				819B3BE21DABFC6C00D0D674 /* DaysPickerTableViewController.swift */,
-				819B3BE41DAC02E200D0D674 /* DayTableViewCell.swift */,
 				8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */,
 				819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */,
 			);
@@ -383,7 +377,6 @@
 				819B3CA81DAF080900D0D674 /* SwifterSpam.swift in Sources */,
 				8178BEAA1DB568A60034FF2E /* NotificationController.swift in Sources */,
 				819B3C9E1DAF080900D0D674 /* SwifterFavorites.swift in Sources */,
-				819B3BE31DABFC6C00D0D674 /* DaysPickerTableViewController.swift in Sources */,
 				819B3C971DAF080900D0D674 /* Swifter.swift in Sources */,
 				819B3CBC1DAF082000D0D674 /* HMAC.swift in Sources */,
 				818AC8FC1DA722F500659821 /* NetworkController.swift in Sources */,
@@ -414,7 +407,6 @@
 				818AC8E41DA6137900659821 /* ScheduleController.swift in Sources */,
 				819B3CA31DAF080900D0D674 /* SwifterMessages.swift in Sources */,
 				819B3CA41DAF080900D0D674 /* SwifterOAuthClient.swift in Sources */,
-				819B3BE51DAC02E200D0D674 /* DayTableViewCell.swift in Sources */,
 				812D83CA1DB5BEAA00FFF883 /* LogInController.swift in Sources */,
 				819B3CC11DAF082000D0D674 /* String++.swift in Sources */,
 				819B3CB01DAF080900D0D674 /* URL++.swift in Sources */,
