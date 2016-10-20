@@ -66,13 +66,13 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             } else {
                 addSchedule()
             }
-            self.performSegue(withIdentifier: "unwindToScheduleTable", sender: self)
+            
         }
         
     }
     
-    @IBAction func cancelButtonPressed(_ sender: AnyObject) {
-        
+    @IBAction func cancelScheduleButtonPressed(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "unwindToScheduleTable", sender: self)
     }
     
     func addSchedule() {

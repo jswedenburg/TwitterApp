@@ -136,7 +136,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let detailVC = segue.destination as? ScheduleDetailTableViewController, let index = tableView.indexPathForSelectedRow?.row else {return}
+        guard let navVC = segue.destination as? UINavigationController, let detailVC = navVC.topViewController as? ScheduleDetailTableViewController, let index = tableView.indexPathForSelectedRow?.row else {return}
+        
         if segue.identifier == "editSchedule"{
                 detailVC.schedule = scheduleArray[index]
             }

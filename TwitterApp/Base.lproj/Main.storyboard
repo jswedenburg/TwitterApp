@@ -303,10 +303,24 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Group" id="Ytn-ZS-LCs">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="suT-XO-34x"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="fR8-rp-kM7">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="2Ui-Px-YuL">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lJB-u6-Jyr">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelScheduleButtonPressed:" destination="EHh-cD-QrP" eventType="touchUpInside" id="csK-xC-TyT"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="fLI-nD-mj4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fyO-jP-SLM">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                            </button>
                             <connections>
-                                <action selector="saveButtonPressed:" destination="EHh-cD-QrP" id="h7t-Xx-SSr"/>
+                                <action selector="saveButtonPressed:" destination="EHh-cD-QrP" id="YKm-fF-fW4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
