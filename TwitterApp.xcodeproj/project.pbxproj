@@ -36,6 +36,9 @@
 		819B3BF91DAC619E00D0D674 /* Schedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BF71DAC619E00D0D674 /* Schedule+CoreDataProperties.swift */; };
 		819B3BFF1DAD536800D0D674 /* Days+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BFE1DAD536800D0D674 /* Days+CoreDataProperties.swift */; };
 		819B3C1F1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */; };
+		81C55B551DB93AB800874E48 /* PaulGrotesk-Bold-Trail.otf in Resources */ = {isa = PBXBuildFile; fileRef = 81C55B521DB93AB800874E48 /* PaulGrotesk-Bold-Trail.otf */; };
+		81C55B561DB93AB800874E48 /* PaulGrotesk-Regular-Trail.otf in Resources */ = {isa = PBXBuildFile; fileRef = 81C55B531DB93AB800874E48 /* PaulGrotesk-Regular-Trail.otf */; };
+		81C55B571DB93AB800874E48 /* PaulGrotesk-Thin-Trail.otf in Resources */ = {isa = PBXBuildFile; fileRef = 81C55B541DB93AB800874E48 /* PaulGrotesk-Thin-Trail.otf */; };
 		81E552BB1DB87B2700E66301 /* Answers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E552BA1DB87B2700E66301 /* Answers.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +87,9 @@
 		819B3BF71DAC619E00D0D674 /* Schedule+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		819B3BFE1DAD536800D0D674 /* Days+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Days+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSearchTableViewController.swift; sourceTree = "<group>"; };
+		81C55B521DB93AB800874E48 /* PaulGrotesk-Bold-Trail.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PaulGrotesk-Bold-Trail.otf"; path = "../../../../../../../../Downloads/Paul_Grotesk_Trail/PaulGrotesk-Bold-Trail.otf"; sourceTree = "<group>"; };
+		81C55B531DB93AB800874E48 /* PaulGrotesk-Regular-Trail.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PaulGrotesk-Regular-Trail.otf"; path = "../../../../../../../../Downloads/Paul_Grotesk_Trail/PaulGrotesk-Regular-Trail.otf"; sourceTree = "<group>"; };
+		81C55B541DB93AB800874E48 /* PaulGrotesk-Thin-Trail.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PaulGrotesk-Thin-Trail.otf"; path = "../../../../../../../../Downloads/Paul_Grotesk_Trail/PaulGrotesk-Thin-Trail.otf"; sourceTree = "<group>"; };
 		81E552BA1DB87B2700E66301 /* Answers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Answers.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +197,9 @@
 		818AC8F21DA70CFB00659821 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				81C55B521DB93AB800874E48 /* PaulGrotesk-Bold-Trail.otf */,
+				81C55B531DB93AB800874E48 /* PaulGrotesk-Regular-Trail.otf */,
+				81C55B541DB93AB800874E48 /* PaulGrotesk-Thin-Trail.otf */,
 				818AC8A51DA539E500659821 /* Assets.xcassets */,
 				818AC8AA1DA539E500659821 /* Info.plist */,
 			);
@@ -260,10 +269,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C55B571DB93AB800874E48 /* PaulGrotesk-Thin-Trail.otf in Resources */,
 				8131493C1DB7E3E8008C701D /* TwitterKitResources.bundle in Resources */,
 				818AC8A91DA539E500659821 /* LaunchScreen.storyboard in Resources */,
+				81C55B551DB93AB800874E48 /* PaulGrotesk-Bold-Trail.otf in Resources */,
 				818AC8A61DA539E500659821 /* Assets.xcassets in Resources */,
 				818AC8A11DA539E500659821 /* Main.storyboard in Resources */,
+				81C55B561DB93AB800874E48 /* PaulGrotesk-Regular-Trail.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

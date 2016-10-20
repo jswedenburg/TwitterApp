@@ -84,5 +84,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>PaulGrotesk-Thin-Trail.otf</string>
+		<string>PaulGrotesk-Regular-Trail.otf</string>
+		<string>PaulGrotesk-Bold-Trail.otf</string>
+	</array>
 </dict>
 </plist>

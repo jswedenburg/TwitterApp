@@ -13,6 +13,7 @@ import UIKit
 class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TableViewCellDelegate {
     
     
+   
     
     var scheduleArray: [Schedule] {
         return ScheduleController.sharedController.schedules
@@ -25,6 +26,10 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         didSet{
             self.tableView.reloadData()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
     
    
@@ -66,7 +71,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         } else {
             
             FriendshipController.sharedController.followAccounts(accounts: accounts)
-            cell.followButton.setImage(#imageLiteral(resourceName: "filledtwitterbird"), for: .normal)
+            cell.followButton.setImage(#imageLiteral(resourceName: "graybird"), for: .normal)
             schedule.enabled = true
         }
         
@@ -97,9 +102,9 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         let accountArray2 = schedule.twitterAccounts?.allObjects as! [TwitterAccount]
         cell.updateWithSchedule(schedule: schedule, accounts: accountArray2)
         if schedule.enabled {
-            cell.followButton.setImage(#imageLiteral(resourceName: "twitterbird"), for: .normal)
+            cell.followButton.setImage(#imageLiteral(resourceName: "graybird"), for: .normal)
         } else {
-            cell.followButton.setImage(#imageLiteral(resourceName: "filledtwitterbird"), for: .normal)
+            cell.followButton.setImage(#imageLiteral(resourceName: "twitterbird"), for: .normal)
         }
         cell.delegate = self
         
@@ -110,7 +115,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 90
     }
     
     

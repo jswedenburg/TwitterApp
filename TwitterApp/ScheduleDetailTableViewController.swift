@@ -69,9 +69,9 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             self.performSegue(withIdentifier: "unwindToScheduleTable", sender: self)
         }
         
-        
-        
-        
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: AnyObject) {
         
     }
     

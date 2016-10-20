@@ -7,6 +7,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PaulGrotesk-Regular-Trail.otf">
+            <string>PaulGrotesk-Regular-Trail</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Groups-->
         <scene sceneID="tne-QT-ifu">
@@ -23,11 +28,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Us0-eX-yMG">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scheduleCell" rowHeight="80" id="fEN-1n-LFU" customClass="ScheduleTableViewCell" customModule="TwitterApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scheduleCell" rowHeight="90" id="fEN-1n-LFU" customClass="ScheduleTableViewCell" customModule="TwitterApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fEN-1n-LFU" id="wUR-Aa-ptC">
-                                            <frame key="frameInset" width="375" height="79"/>
+                                            <frame key="frameInset" width="375" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tcj-eq-64S">
@@ -60,8 +65,8 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsH-bE-mZk">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="30"/>
+                                                    <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -74,7 +79,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="GQ5-cU-41c" secondAttribute="trailing" constant="5" id="LnH-ww-sH7"/>
                                                 <constraint firstItem="ccN-RG-qzw" firstAttribute="leading" secondItem="svf-jL-OsN" secondAttribute="trailing" id="PdF-ja-ygu"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GQ5-cU-41c" secondAttribute="bottom" id="WhZ-uS-TMO"/>
-                                                <constraint firstItem="tsH-bE-mZk" firstAttribute="leading" secondItem="KYd-Bk-XFB" secondAttribute="trailing" constant="8" id="aP2-sJ-gQJ"/>
+                                                <constraint firstItem="tsH-bE-mZk" firstAttribute="leading" secondItem="KYd-Bk-XFB" secondAttribute="trailing" constant="20" id="aP2-sJ-gQJ"/>
                                                 <constraint firstItem="KYd-Bk-XFB" firstAttribute="width" secondItem="tcj-eq-64S" secondAttribute="width" id="eGQ-gq-iS0"/>
                                                 <constraint firstAttribute="topMargin" secondItem="tsH-bE-mZk" secondAttribute="top" id="eP8-Xw-RSe"/>
                                                 <constraint firstItem="ccN-RG-qzw" firstAttribute="width" secondItem="KYd-Bk-XFB" secondAttribute="width" id="gyV-3E-LTu"/>
@@ -93,7 +98,7 @@
                                             <outlet property="titleLabel" destination="tsH-bE-mZk" id="td0-Zi-EeB"/>
                                             <outlet property="topLeftImage" destination="tcj-eq-64S" id="cm9-aZ-cp9"/>
                                             <outlet property="topRightImage" destination="KYd-Bk-XFB" id="Q3l-sD-1IW"/>
-                                            <segue destination="EHh-cD-QrP" kind="show" identifier="editSchedule" id="3x4-In-AK8"/>
+                                            <segue destination="UF7-oI-mMZ" kind="presentation" identifier="editSchedule" id="3x4-In-AK8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -119,7 +124,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j6s-LU-9lg">
                             <connections>
-                                <segue destination="EHh-cD-QrP" kind="show" identifier="addSchedule" id="0gf-Qn-fbk"/>
+                                <segue destination="UF7-oI-mMZ" kind="presentation" identifier="addSchedule" id="0gf-Qn-fbk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -298,6 +303,7 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Group" id="Ytn-ZS-LCs">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="suT-XO-34x"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="fR8-rp-kM7">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="EHh-cD-QrP" id="h7t-Xx-SSr"/>
@@ -317,7 +323,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ct-pt-KIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="qad-bh-F6H" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4837.6000000000004" y="-545.57721139430294"/>
+            <point key="canvasLocation" x="5776.8000000000002" y="-545.57721139430294"/>
         </scene>
         <!--Twitter Search Table View Controller-->
         <scene sceneID="tge-EO-8PT">
@@ -427,7 +433,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipQ-rw-Yof" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5650.3999999999996" y="-725.48725637181417"/>
+            <point key="canvasLocation" x="6589.6000000000004" y="-725.48725637181417"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="wjy-dD-gMU">
@@ -466,7 +472,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navcontroller" automaticallyAdjustsScrollViewInsets="NO" id="75u-pf-1q4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jdM-Xd-YJv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jdM-Xd-YJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -479,12 +485,30 @@
             </objects>
             <point key="canvasLocation" x="3092" y="-546.47676161919048"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qJN-wv-QId">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UF7-oI-mMZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WaC-Re-BxE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EHh-cD-QrP" kind="relationship" relationship="rootViewController" id="jvi-sk-s2d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xYi-2f-qna" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4837.6000000000004" y="-545.57721139430294"/>
+        </scene>
     </scenes>
     <resources>
         <image name="followMan" width="50" height="50"/>
-        <image name="twitterbird" width="500" height="500"/>
+        <image name="twitterbird" width="1500" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0gf-Qn-fbk"/>
+        <segue reference="3x4-In-AK8"/>
     </inferredMetricsTieBreakers>
 </document>

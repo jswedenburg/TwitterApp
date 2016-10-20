@@ -24,7 +24,17 @@ class ScheduleTableViewCell: UITableViewCell{
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    
+    func setupImages(){
+        let topLeftMaskLayer = CAShapeLayer()
+        topLeftMaskLayer.path = UIBezierPath(roundedRect: topLeftImage.bounds, byRoundingCorners: [.topLeft], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+        topLeftImage.layer.mask = topLeftMaskLayer
+        
+        let topRightMaskLayer = CAShapeLayer()
+        topRightMaskLayer.path = UIBezierPath(roundedRect: topRightImage.bounds, byRoundingCorners: [.topRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+        topRightImage.layer.mask = topRightMaskLayer
+        
+        
+    }
     
     @IBAction func cellButtonPressed(_ sender: AnyObject) {
         delegate?.cellButtonPressed(sender: self)
@@ -33,6 +43,8 @@ class ScheduleTableViewCell: UITableViewCell{
     //MARK: Helper Functions
     
     func updateWithSchedule(schedule: Schedule, accounts: [TwitterAccount]) {
+        
+        setupImages()
         self.titleLabel.text = schedule.title
         
         if accounts.count > 0 {
