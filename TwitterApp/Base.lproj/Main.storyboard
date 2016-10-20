@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Groups-->
+        <!--Schedule Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="scheduleTVC" id="BYZ-38-t0r" customClass="ScheduleTableViewController" customModule="TwitterApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,16 +116,25 @@
                             <constraint firstItem="Us0-eX-yMG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xZn-qK-Jbg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Groups" id="Ugt-hO-n4i">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="25b-0o-LZA">
-                            <connections>
-                                <action selector="logoutButtonPressed:" destination="BYZ-38-t0r" id="twP-aw-TOe"/>
-                            </connections>
+                    <navigationItem key="navigationItem" id="Ugt-hO-n4i">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="mEX-8c-M3e">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yEl-wY-noR">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="j6s-LU-9lg">
-                            <connections>
-                                <segue destination="UF7-oI-mMZ" kind="presentation" identifier="addSchedule" id="0gf-Qn-fbk"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="mK2-C9-Fg3">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Xg-JR-TIp">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -201,7 +210,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="accountCell" id="rio-A5-GZU" customClass="AccountCollectionViewCell" customModule="TwitterApp" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="0.0" width="125" height="100"/>
+                                                            <rect key="frame" x="10" y="-1" width="125" height="100"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="100"/>
@@ -243,7 +252,7 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                     <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addAccountView" id="s09-lH-Hgp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="99.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="99"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionReusableView>
                                                     <connections>
@@ -307,7 +316,9 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lJB-u6-Jyr">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="cancelScheduleButtonPressed:" destination="EHh-cD-QrP" eventType="touchUpInside" id="csK-xC-TyT"/>
                                 </connections>
@@ -317,10 +328,12 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fyO-jP-SLM">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                             <connections>
-                                <action selector="saveButtonPressed:" destination="EHh-cD-QrP" id="YKm-fF-fW4"/>
+                                <action selector="saveButtonPressed:" destination="EHh-cD-QrP" id="iNK-fR-TWR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -522,7 +535,4 @@
         <image name="followMan" width="50" height="50"/>
         <image name="twitterbird" width="1500" height="1500"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="3x4-In-AK8"/>
-    </inferredMetricsTieBreakers>
 </document>

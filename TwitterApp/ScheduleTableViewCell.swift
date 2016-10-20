@@ -25,13 +25,25 @@ class ScheduleTableViewCell: UITableViewCell{
     @IBOutlet weak var titleLabel: UILabel!
     
     func setupImages(){
+        let bottomRightMaskLayer = CAShapeLayer()
+        bottomRightMaskLayer.path = UIBezierPath(roundedRect: bottomRightImage.bounds, byRoundingCorners: [.bottomRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+        bottomRightImage.layer.mask = bottomRightMaskLayer
+        
         let topLeftMaskLayer = CAShapeLayer()
         topLeftMaskLayer.path = UIBezierPath(roundedRect: topLeftImage.bounds, byRoundingCorners: [.topLeft], cornerRadii: CGSize(width: 10, height: 10)).cgPath
         topLeftImage.layer.mask = topLeftMaskLayer
         
+        let bottomLeftMaskLayer = CAShapeLayer()
+        bottomLeftMaskLayer.path = UIBezierPath(roundedRect: bottomLeftImage.bounds, byRoundingCorners: [.bottomLeft], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+        bottomLeftImage.layer.mask = bottomLeftMaskLayer
+        
         let topRightMaskLayer = CAShapeLayer()
         topRightMaskLayer.path = UIBezierPath(roundedRect: topRightImage.bounds, byRoundingCorners: [.topRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
         topRightImage.layer.mask = topRightMaskLayer
+        
+       
+        
+        
         
         
     }
@@ -44,7 +56,7 @@ class ScheduleTableViewCell: UITableViewCell{
     
     func updateWithSchedule(schedule: Schedule, accounts: [TwitterAccount]) {
         
-        setupImages()
+        
         self.titleLabel.text = schedule.title
         
         if accounts.count > 0 {
@@ -60,6 +72,8 @@ class ScheduleTableViewCell: UITableViewCell{
                 self.bottomRightImage.image = UIImage(data: accounts[randomNumber4].profileImage!) ?? #imageLiteral(resourceName: "followMan")
             
         }
+        
+        setupImages()
         
         
     }

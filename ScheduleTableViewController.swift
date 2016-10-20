@@ -34,13 +34,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     
    
     
-    override func viewDidLoad() {
-        Twitter.sharedInstance().logIn { (session, error) in
-            //
-        }
-        self.tableView.reloadData()
-        
-    }
+    
     
     
     @IBAction func logoutButtonPressed(_ sender: AnyObject) {
