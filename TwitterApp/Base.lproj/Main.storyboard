@@ -137,10 +137,10 @@
                                 <state key="normal" title="Add">
                                     <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="UF7-oI-mMZ" kind="presentation" id="8XK-QC-KA1"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="UF7-oI-mMZ" kind="presentation" id="QEa-9S-NAu"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
