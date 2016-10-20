@@ -30,7 +30,7 @@
 		818AC8F41DA70D4D00659821 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */; };
 		818AC8FC1DA722F500659821 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8FB1DA722F500659821 /* NetworkController.swift */; };
 		818AC8FE1DA7D2BD00659821 /* TwitterAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC8FD1DA7D2BD00659821 /* TwitterAccountController.swift */; };
-		818AC9061DA81FD000659821 /* ScheduleDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */; };
+		818AC9061DA81FD000659821 /* ScheduleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9051DA81FD000659821 /* ScheduleDetailViewController.swift */; };
 		819B3BEA1DAC1FD600D0D674 /* Days+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BE71DAC1FD600D0D674 /* Days+CoreDataClass.swift */; };
 		819B3BED1DAC324900D0D674 /* DaysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BEC1DAC324900D0D674 /* DaysController.swift */; };
 		819B3BF91DAC619E00D0D674 /* Schedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BF71DAC619E00D0D674 /* Schedule+CoreDataProperties.swift */; };
@@ -81,7 +81,7 @@
 		818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		818AC8FB1DA722F500659821 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkController.swift; path = ../NetworkController.swift; sourceTree = "<group>"; };
 		818AC8FD1DA7D2BD00659821 /* TwitterAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAccountController.swift; sourceTree = "<group>"; };
-		818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetailTableViewController.swift; sourceTree = "<group>"; };
+		818AC9051DA81FD000659821 /* ScheduleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetailViewController.swift; sourceTree = "<group>"; };
 		819B3BE71DAC1FD600D0D674 /* Days+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Days+CoreDataClass.swift"; sourceTree = "<group>"; };
 		819B3BEC1DAC324900D0D674 /* DaysController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysController.swift; sourceTree = "<group>"; };
 		819B3BF71DAC619E00D0D674 /* Schedule+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 			children = (
 				818AC8E61DA6B35100659821 /* ScheduleTableViewController.swift */,
 				818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */,
-				818AC9051DA81FD000659821 /* ScheduleDetailTableViewController.swift */,
+				818AC9051DA81FD000659821 /* ScheduleDetailViewController.swift */,
 				8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */,
 				8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */,
 				819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */,
@@ -317,7 +317,7 @@
 				8131484A1DB729CB008C701D /* LoginViewController.swift in Sources */,
 				812D83CA1DB5BEAA00FFF883 /* LogInController.swift in Sources */,
 				818AC8F41DA70D4D00659821 /* ScheduleTableViewCell.swift in Sources */,
-				818AC9061DA81FD000659821 /* ScheduleDetailTableViewController.swift in Sources */,
+				818AC9061DA81FD000659821 /* ScheduleDetailViewController.swift in Sources */,
 				818AC8DC1DA610CC00659821 /* TwitterAccount+CoreDataClass.swift in Sources */,
 				8178BE581DAFFC2B0034FF2E /* SearchTableViewCell.swift in Sources */,
 				818AC89C1DA539E500659821 /* AppDelegate.swift in Sources */,

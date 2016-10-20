@@ -23,31 +23,8 @@ class ScheduleTableViewCell: UITableViewCell{
     @IBOutlet weak var followButton: UIButton!
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageContainer: UIView!
     
-    func setupImages(){
-        let bottomRightMaskLayer = CAShapeLayer()
-        bottomRightMaskLayer.path = UIBezierPath(roundedRect: bottomRightImage.bounds, byRoundingCorners: [.bottomRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
-        bottomRightImage.layer.mask = bottomRightMaskLayer
-        
-        
-        let topLeftMaskLayer = CAShapeLayer()
-        topLeftMaskLayer.path = UIBezierPath(roundedRect: topLeftImage.bounds, byRoundingCorners: [.topLeft], cornerRadii: CGSize(width: 10, height: 10)).cgPath
-        topLeftImage.layer.mask = topLeftMaskLayer
-        
-        let bottomLeftMaskLayer = CAShapeLayer()
-        bottomLeftMaskLayer.path = UIBezierPath(roundedRect: bottomLeftImage.bounds, byRoundingCorners: [.bottomLeft], cornerRadii: CGSize(width: 10, height: 10)).cgPath
-        bottomLeftImage.layer.mask = bottomLeftMaskLayer
-        
-        let topRightMaskLayer = CAShapeLayer()
-        topRightMaskLayer.path = UIBezierPath(roundedRect: topRightImage.bounds, byRoundingCorners: [.topRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
-        topRightImage.layer.mask = topRightMaskLayer
-        
-       
-        
-        
-        
-        
-    }
     
     @IBAction func cellButtonPressed(_ sender: AnyObject) {
         delegate?.cellButtonPressed(sender: self)
@@ -59,6 +36,7 @@ class ScheduleTableViewCell: UITableViewCell{
         
         
         self.titleLabel.text = schedule.title
+        self.imageContainer.layer.cornerRadius = 10.0
         
         if accounts.count > 0 {
             
@@ -74,7 +52,7 @@ class ScheduleTableViewCell: UITableViewCell{
             
         }
         
-        setupImages()
+        
         
         
     }

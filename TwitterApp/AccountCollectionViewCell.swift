@@ -11,11 +11,10 @@ import UIKit
 class AccountCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var accountImage: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var screenNameLabel: UILabel!
     
     func updateWithAccount(account: TwitterAccount){
-        self.nameLabel.text = account.name
         self.screenNameLabel.text = "@" + (account.screenName ?? "")
         guard let data = account.profileImage else { return }
         self.accountImage.image = UIImage(data: data)

@@ -15,6 +15,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     
    
     
+    
     var scheduleArray: [Schedule] {
         return ScheduleController.sharedController.schedules
     }
@@ -77,8 +78,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     @IBAction func unwindToScheduleTable(segue: UIStoryboardSegue){
-        if segue.source.isKind(of: ScheduleDetailTableViewController.self){
-            guard let detailVC = segue.source as? ScheduleDetailTableViewController else { return }
+        if segue.source.isKind(of: ScheduleDetailViewController.self){
+            guard let detailVC = segue.source as? ScheduleDetailViewController else { return }
             
             accountArray = detailVC.accountArray
             
@@ -130,7 +131,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let navVC = segue.destination as? UINavigationController, let detailVC = navVC.topViewController as? ScheduleDetailTableViewController, let index = tableView.indexPathForSelectedRow?.row else {return}
+        guard let navVC = segue.destination as? UINavigationController, let detailVC = navVC.topViewController as? ScheduleDetailViewController, let index = tableView.indexPathForSelectedRow?.row else {return}
         
         if segue.identifier == "editSchedule"{
                 detailVC.schedule = scheduleArray[index]

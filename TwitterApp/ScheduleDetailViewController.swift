@@ -8,26 +8,16 @@
 
 import UIKit
 
-class ScheduleDetailTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource,  searchDelegate, UITextFieldDelegate {
+class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,  searchDelegate, UITextFieldDelegate {
+    
+   
+    @IBOutlet weak var accountCollectionView: UICollectionView!
     
     
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var accountCollectionView: UICollectionView!
-    @IBOutlet weak var addAccountCell: UITableViewCell!
-    @IBOutlet weak var addAccountLabel: UILabel!
-    @IBOutlet weak var editCell: UITableViewCell!
+    
    
-    
-    
-    
-    
     var schedule: Schedule?
-    
-   
-    
-    
-    
-    
     
     var accountArray: [TwitterAccount] = []
     
@@ -40,11 +30,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         setupView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        self.tableView.reloadData()
-        
-    }
+    
     
     //MARK: Text Field Delegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -198,26 +184,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height = self.tableView.rowHeight
-        
-        switch indexPath.row {
-        case 1:
-            height = 200.0
-        default:
-            return height
-        }
-        return height
-    }
+   
     
     //MARK: Helper Functions
     
