@@ -189,7 +189,8 @@
                                     <segue destination="GrW-c5-2jI" kind="presentation" id="upb-j1-phC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koK-ri-Brr">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koK-ri-Brr">
+                                <frame key="frameInset" minX="167" minY="371" width="41" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Edit">
                                     <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
@@ -198,67 +199,14 @@
                                     <action selector="editButttonPressed:" destination="5mS-9y-UxZ" eventType="touchUpInside" id="adx-9D-mNf"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CLt-iE-b22">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Msv-Cs-A8o"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FO4-IV-1g1">
-                                    <size key="itemSize" width="120" height="120"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KSR-p4-ior" customClass="AccountCollectionViewCell" customModule="TwitterApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4" width="120" height="120"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d4x-wS-oXe">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="ANi-Af-Z0I"/>
-                                                        <constraint firstAttribute="width" secondItem="d4x-wS-oXe" secondAttribute="height" multiplier="1:1" id="HOd-XU-Lge"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNs-LF-Ruc">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="d4x-wS-oXe" firstAttribute="top" secondItem="KSR-p4-ior" secondAttribute="top" id="EQr-6s-vOj"/>
-                                            <constraint firstItem="GNs-LF-Ruc" firstAttribute="centerX" secondItem="KSR-p4-ior" secondAttribute="centerX" id="hRz-3S-syz"/>
-                                            <constraint firstItem="GNs-LF-Ruc" firstAttribute="top" secondItem="d4x-wS-oXe" secondAttribute="bottom" id="l83-jU-tfA"/>
-                                            <constraint firstItem="d4x-wS-oXe" firstAttribute="centerX" secondItem="KSR-p4-ior" secondAttribute="centerX" id="pg3-PP-hDM"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="accountImage" destination="d4x-wS-oXe" id="mQl-8g-k0x"/>
-                                            <outlet property="screenNameLabel" destination="GNs-LF-Ruc" id="SS5-lH-I5H"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="5mS-9y-UxZ" id="ogM-d6-nbQ"/>
-                                    <outlet property="delegate" destination="5mS-9y-UxZ" id="gyQ-9G-HmI"/>
-                                </connections>
-                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="d7H-2P-sbb" secondAttribute="leading" id="6Sc-tX-ZwN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="CLt-iE-b22" secondAttribute="trailing" id="GX5-Pt-9dc"/>
                             <constraint firstItem="koK-ri-Brr" firstAttribute="centerX" secondItem="zlw-aY-ypv" secondAttribute="centerX" id="ISm-ml-Cif"/>
                             <constraint firstItem="D3k-rO-VMp" firstAttribute="centerX" secondItem="zlw-aY-ypv" secondAttribute="centerX" id="LDH-aj-6sh"/>
-                            <constraint firstItem="koK-ri-Brr" firstAttribute="top" secondItem="CLt-iE-b22" secondAttribute="bottom" constant="16" id="VBG-xH-cFt"/>
-                            <constraint firstItem="CLt-iE-b22" firstAttribute="top" secondItem="D3k-rO-VMp" secondAttribute="bottom" constant="8" id="ZYk-cD-0EJ"/>
                             <constraint firstItem="d7H-2P-sbb" firstAttribute="top" secondItem="ZOE-md-vkO" secondAttribute="bottom" constant="25" id="a82-HE-jGe"/>
                             <constraint firstItem="D3k-rO-VMp" firstAttribute="top" secondItem="d7H-2P-sbb" secondAttribute="bottom" constant="44" id="cxP-l4-Dgg"/>
-                            <constraint firstItem="CLt-iE-b22" firstAttribute="leading" secondItem="zlw-aY-ypv" secondAttribute="leadingMargin" id="knq-23-eoq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TPJ-Hd-Iez">
@@ -290,7 +238,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="accountCollectionView" destination="CLt-iE-b22" id="Ut1-Gy-7bd"/>
                         <outlet property="titleTextField" destination="d7H-2P-sbb" id="zcW-1C-4e8"/>
                         <segue destination="msN-K4-AaP" kind="unwind" identifier="unwindToScheduleTable" unwindAction="unwindToScheduleTableWithSegue:" id="bCc-LP-XdS"/>
                     </connections>
