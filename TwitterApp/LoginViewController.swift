@@ -48,6 +48,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "navcontroller") as? UINavigationController else { return }
+        Twitter.sharedInstance().logIn { (session, error) in
+            //
+        }
+        /*
         let logInButton = TWTRLogInButton { (session, error) in
             if let unwrappedSession = session {
                 let alert = UIAlertController(title: "Logged In",
@@ -66,10 +70,11 @@ class LoginViewController: UIViewController {
             
             
         }
+ */
         
         // TODO: Change where the log in button is positioned in your view
-        logInButton.center = self.view.center
-        self.view.addSubview(logInButton)
+        //logInButton.center = self.view.center
+        //self.view.addSubview(logInButton)
 
         // Do any additional setup after loading the view.
     }

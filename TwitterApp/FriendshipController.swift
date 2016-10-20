@@ -23,14 +23,14 @@ class FriendshipController: NSObject{
         guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }
         let client = TWTRAPIClient(userID: userID)
         let followEndPoint = "https://api.twitter.com/1.1/friendships/create.json"
-        var clientError: NSErrorPointer?
+        var clientError: NSError?
         
         
         
         for account in accounts {
             guard let screenName = account.screenName else { return }
             let params = ["screen_name": "\(screenName)"]
-            let request = client.urlRequest(withMethod: "POST", url: followEndPoint, parameters: params, error: clientError!)
+            let request = client.urlRequest(withMethod: "POST", url: followEndPoint, parameters: params, error: &clientError)
             client.sendTwitterRequest(request, completion: { (response, data, error) in
                 if error != nil {
                     print("Error following: \(error?.localizedDescription)")
@@ -39,25 +39,28 @@ class FriendshipController: NSObject{
             
 
         }
-        /*
-    
-    func unfollowAccounts(accounts: [TwitterAccount]) {
-        let swifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret, oauthToken: accessToken, oauthTokenSecret: tokenSecret)
-        
-        
-        for account in accounts {
-            guard let screenName = account.screenName else { return }
-            swifter.unfollowUser(for: .screenName(screenName), success: { (_) in
-                //
-                }, failure: { (_) in
-                    print("fail")
-            })
-        
         
     }
-    
-   
-    */    
+        func unfollowAccounts(accounts: [TwitterAccount]) {
+            guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }
+            let client = TWTRAPIClient(userID: userID)
+            let followEndPoint = "https://api.twitter.com/1.1/friendships/destroy.json"
+            var clientError: NSError?
+            
+            
+            
+            for account in accounts {
+                guard let screenName = account.screenName else { return }
+                let params = ["screen_name": "\(screenName)"]
+                let request = client.urlRequest(withMethod: "POST", url: followEndPoint, parameters: params, error: &clientError)
+                client.sendTwitterRequest(request, completion: { (response, data, error) in
+                    if error != nil {
+                        print("Error following: \(error?.localizedDescription)")
+                    }
+                })
+                
+                
+            }
         
 }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+ import TwitterKit
 
 
 class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TableViewCellDelegate {
@@ -29,6 +30,9 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
    
     
     override func viewDidLoad() {
+        Twitter.sharedInstance().logIn { (session, error) in
+            //
+        }
         self.tableView.reloadData()
         
     }
@@ -44,7 +48,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         let accounts = schedule.twitterAccounts?.allObjects as? [TwitterAccount] ?? []
         
         if schedule.enabled {
-           // FriendshipController.sharedController.unfollowAccounts(accounts: accounts)
+            FriendshipController.sharedController.unfollowAccounts(accounts: accounts)
             schedule.enabled = false
             cell.followButton.setImage(#imageLiteral(resourceName: "followMan"), for: .normal)
         } else {

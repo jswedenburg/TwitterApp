@@ -75,9 +75,6 @@ class NetworkController {
                 
                 guard let url = URL(string: imageURL) else { return }
                 
-                var imageData: Data?
-                
-                
                 NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
                     guard let data = data else { return }
                     
