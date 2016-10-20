@@ -36,6 +36,7 @@
 		819B3BF91DAC619E00D0D674 /* Schedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BF71DAC619E00D0D674 /* Schedule+CoreDataProperties.swift */; };
 		819B3BFF1DAD536800D0D674 /* Days+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3BFE1DAD536800D0D674 /* Days+CoreDataProperties.swift */; };
 		819B3C1F1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */; };
+		81E552BB1DB87B2700E66301 /* Answers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E552BA1DB87B2700E66301 /* Answers.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +84,7 @@
 		819B3BF71DAC619E00D0D674 /* Schedule+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		819B3BFE1DAD536800D0D674 /* Days+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Days+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSearchTableViewController.swift; sourceTree = "<group>"; };
+		81E552BA1DB87B2700E66301 /* Answers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Answers.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81E552BB1DB87B2700E66301 /* Answers.framework in Frameworks */,
 				8131493A1DB7E3E8008C701D /* Fabric.framework in Frameworks */,
 				8131493D1DB7E3E8008C701D /* TwitterCore.framework in Frameworks */,
 				8131493B1DB7E3E8008C701D /* TwitterKit.framework in Frameworks */,
@@ -102,6 +105,7 @@
 		818AC88F1DA539E500659821 = {
 			isa = PBXGroup;
 			children = (
+				81E552BA1DB87B2700E66301 /* Answers.framework */,
 				813149361DB7E3E8008C701D /* Fabric.framework */,
 				813149371DB7E3E8008C701D /* TwitterKit.framework */,
 				813149381DB7E3E8008C701D /* TwitterKitResources.bundle */,

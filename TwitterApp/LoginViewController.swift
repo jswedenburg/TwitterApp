@@ -9,6 +9,8 @@
 import UIKit
 import SafariServices
 import TwitterKit
+import Answers
+
 
 
 class LoginViewController: UIViewController {
@@ -41,43 +43,28 @@ class LoginViewController: UIViewController {
  
  */
     
+    func navigateToScheduleScreen() {
+        performSegue(withIdentifier: "toScheduleView", sender: self)
+    }
+    
     @IBAction func loginButtonPressed(_ sender: AnyObject) {
-        //self.login()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "navcontroller") as? UINavigationController else { return }
         Twitter.sharedInstance().logIn { (session, error) in
-            //
-        }
-        /*
-        let logInButton = TWTRLogInButton { (session, error) in
-            if let unwrappedSession = session {
-                let alert = UIAlertController(title: "Logged In",
-                                              message: "User \(unwrappedSession.userName) has logged in",
-                    preferredStyle: UIAlertControllerStyle.alert
-                )
-                let action = UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
-                    self.present(vc, animated: true, completion: nil)
-                })
-                alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
-                //self.present(ScheduleTableViewController(), animated: true, completion: nil)
-            } else {
-                NSLog("Login error: %@", error!.localizedDescription);
+            if session != nil {
+            
+                //guard let userID = session.userID else { return }
+                self.navigateToScheduleScreen()
+                UserDefaults.standard.set(session?.userID, forKey: "userID")
+                
+                
+               Answers.logLogin(withMethod: "Twitter", success: true, customAttributes: ["User ID": session!.userID])
+                
             }
-            
-            
         }
- */
-        
-        // TODO: Change where the log in button is positioned in your view
-        //logInButton.center = self.view.center
-        //self.view.addSubview(logInButton)
-
-        // Do any additional setup after loading the view.
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+            }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

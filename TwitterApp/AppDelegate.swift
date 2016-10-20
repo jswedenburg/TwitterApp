@@ -11,6 +11,9 @@ import CoreData
 import UserNotifications
 import Fabric
 import TwitterKit
+import Fabric
+import Answers
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -19,7 +22,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        Fabric.with([Twitter.self])
+       // Fabric.with([Twitter.self])
+        Fabric.with([Twitter.self, Answers.self])
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC") as? LoginViewController,
+            let navVC = storyboard.instantiateViewController(withIdentifier: "navcontroller") as? UINavigationController else { return true }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        if UserDefaults.standard.value(forKey: "userID") != nil {
+            appDelegate.window?.rootViewController = navVC
+            appDelegate.window?.makeKeyAndVisible()
+        } else {
+            appDelegate.window?.rootViewController = loginVC
+            appDelegate.window?.makeKeyAndVisible()
+        }
+            
+
         
         // Override point for customization after application launch.
         return true

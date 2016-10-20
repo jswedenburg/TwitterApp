@@ -38,6 +38,18 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
+    @IBAction func logoutButtonPressed(_ sender: AnyObject) {
+        let sessionStore = Twitter.sharedInstance().sessionStore
+        if let userID = sessionStore.session()?.userID {
+            sessionStore.logOutUserID(userID)
+        }
+        UserDefaults.standard.removeObject(forKey: "userID")
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginVC") as? LoginViewController else { return }
+        
+        present(loginVC, animated: true, completion: nil)
+    }
     
     
     func cellButtonPressed(sender: UITableViewCell) {

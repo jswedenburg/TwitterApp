@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="75u-pf-1q4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ydE-oY-pI5">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fEN-1n-LFU" id="wUR-Aa-ptC">
-                                            <frame key="frameInset" width="375" height="70"/>
+                                            <frame key="frameInset" width="375" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tcj-eq-64S">
@@ -107,6 +107,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Groups" id="Ugt-hO-n4i">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="25b-0o-LZA">
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="BYZ-38-t0r" id="twP-aw-TOe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j6s-LU-9lg">
                             <connections>
                                 <segue destination="EHh-cD-QrP" kind="show" identifier="addSchedule" id="0gf-Qn-fbk"/>
@@ -150,7 +155,7 @@
                                         <rect key="frame" x="0.0" y="164" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pjm-wo-cpj" id="Y5k-9J-rnc">
-                                            <frame key="frameInset" width="375" height="40"/>
+                                            <frame key="frameInset" width="375" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzi-bn-FNn">
@@ -170,7 +175,7 @@
                                         <rect key="frame" x="0.0" y="204" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J2G-xO-0Ze" id="ABy-uC-kp4">
-                                            <frame key="frameInset" width="375" height="100"/>
+                                            <frame key="frameInset" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OAX-IT-slF">
@@ -184,7 +189,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="accountCell" id="rio-A5-GZU" customClass="AccountCollectionViewCell" customModule="TwitterApp" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="-0.5" width="125" height="100"/>
+                                                            <rect key="frame" x="10" y="0.0" width="125" height="100"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="100"/>
@@ -226,7 +231,7 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                     <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addAccountView" id="s09-lH-Hgp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="99.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionReusableView>
                                                     <connections>
@@ -247,7 +252,7 @@
                                         <rect key="frame" x="0.0" y="304" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xB4-jB-IkU" id="30j-ZT-Wx1">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koK-ri-Brr">
@@ -337,7 +342,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OEY-lh-bUP" id="Msw-hv-Z8i">
-                                            <frame key="frameInset" width="375" height="101"/>
+                                            <frame key="frameInset" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GsH-3g-mXt">
@@ -418,7 +423,7 @@
         <!--Login View Controller-->
         <scene sceneID="wjy-dD-gMU">
             <objects>
-                <viewController id="ydE-oY-pI5" customClass="LoginViewController" customModule="TwitterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="ydE-oY-pI5" customClass="LoginViewController" customModule="TwitterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="clM-Zw-Jec"/>
                         <viewControllerLayoutGuide type="bottom" id="wQ4-Qx-Xkd"/>
@@ -426,13 +431,26 @@
                     <view key="view" contentMode="scaleToFill" id="XgM-Qo-utN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4a-9N-ZHC">
+                                <state key="normal" title="Sign In with Twitter"/>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="ydE-oY-pI5" eventType="touchUpInside" id="kkd-JE-Aaa"/>
+                                    <segue destination="75u-pf-1q4" kind="presentation" identifier="toScheduleView" id="eUK-yj-b8d"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H4a-9N-ZHC" firstAttribute="centerX" secondItem="XgM-Qo-utN" secondAttribute="centerX" id="FvV-nZ-gck"/>
+                            <constraint firstItem="H4a-9N-ZHC" firstAttribute="centerY" secondItem="XgM-Qo-utN" secondAttribute="centerY" id="iGS-Uu-PRt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yce-qG-zdi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAC-nu-Xgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2009" y="-546"/>
+            <point key="canvasLocation" x="2008.8" y="-546.47676161919048"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DRt-hS-Qpw">
