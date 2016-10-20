@@ -29,6 +29,7 @@ class ScheduleTableViewCell: UITableViewCell{
         bottomRightMaskLayer.path = UIBezierPath(roundedRect: bottomRightImage.bounds, byRoundingCorners: [.bottomRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
         bottomRightImage.layer.mask = bottomRightMaskLayer
         
+        
         let topLeftMaskLayer = CAShapeLayer()
         topLeftMaskLayer.path = UIBezierPath(roundedRect: topLeftImage.bounds, byRoundingCorners: [.topLeft], cornerRadii: CGSize(width: 10, height: 10)).cgPath
         topLeftImage.layer.mask = topLeftMaskLayer

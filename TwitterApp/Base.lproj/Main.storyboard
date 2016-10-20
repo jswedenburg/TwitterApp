@@ -124,6 +124,9 @@
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rh4-P7-ERT"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="mK2-C9-Fg3">
@@ -135,6 +138,9 @@
                                     <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <connections>
+                                <segue destination="UF7-oI-mMZ" kind="presentation" id="QEa-9S-NAu"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -331,10 +337,10 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="EHh-cD-QrP" eventType="touchUpInside" id="xki-fv-Yid"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="EHh-cD-QrP" id="iNK-fR-TWR"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
@@ -535,4 +541,7 @@
         <image name="followMan" width="50" height="50"/>
         <image name="twitterbird" width="1500" height="1500"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3x4-In-AK8"/>
+    </inferredMetricsTieBreakers>
 </document>

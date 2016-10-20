@@ -66,7 +66,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
             } else {
                 addSchedule()
             }
-            
+            self.performSegue(withIdentifier: "unwindToScheduleTable", sender: self)
         }
         
     }
@@ -212,7 +212,7 @@ class ScheduleDetailTableViewController: UITableViewController, UICollectionView
         
         switch indexPath.row {
         case 1:
-            height = 150.0
+            height = 200.0
         default:
             return height
         }
