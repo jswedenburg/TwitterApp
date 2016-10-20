@@ -62,11 +62,11 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         if schedule.enabled {
             FriendshipController.sharedController.unfollowAccounts(accounts: accounts)
             schedule.enabled = false
-            cell.followButton.setImage(#imageLiteral(resourceName: "followMan"), for: .normal)
+            cell.followButton.setImage(#imageLiteral(resourceName: "twitterbird"), for: .normal)
         } else {
             
             FriendshipController.sharedController.followAccounts(accounts: accounts)
-            cell.followButton.setImage(#imageLiteral(resourceName: "blueFollowMan"), for: .normal)
+            cell.followButton.setImage(#imageLiteral(resourceName: "filledtwitterbird"), for: .normal)
             schedule.enabled = true
         }
         
@@ -97,9 +97,9 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         let accountArray2 = schedule.twitterAccounts?.allObjects as! [TwitterAccount]
         cell.updateWithSchedule(schedule: schedule, accounts: accountArray2)
         if schedule.enabled {
-            cell.followButton.setImage(#imageLiteral(resourceName: "blueFollowMan"), for: .normal)
+            cell.followButton.setImage(#imageLiteral(resourceName: "twitterbird"), for: .normal)
         } else {
-            cell.followButton.setImage(#imageLiteral(resourceName: "followMan"), for: .normal)
+            cell.followButton.setImage(#imageLiteral(resourceName: "filledtwitterbird"), for: .normal)
         }
         cell.delegate = self
         
@@ -110,7 +110,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
+        return 100
     }
     
     

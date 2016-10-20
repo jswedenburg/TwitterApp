@@ -16,42 +16,16 @@ import Answers
 class LoginViewController: UIViewController {
     
     
-    
-    
-    /*
-    var loginSwifter: Swifter
-    
-    required init?(coder aDecoder: NSCoder) {
-        
-        self.loginSwifter = Swifter(consumerKey: "50rD7EZObZk07pIr2wOjT18DT" , consumerSecret: "t7wfSf8x4vXgD7s9UtyRFsfQnR8qAdlyddJbTpv4E1fhD7d2Qd")
-        super.init(coder: aDecoder)
-        
-    }
-    
-    func login() {
-        
-        //let loginSwifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret)
-        guard let url = URL(string: "twitterapp://success") else { return }
-        loginSwifter.authorize(with: url, presentFrom: self, success: { (_) in
-            print("success")
-            }) { (error) in
-                print("\(error)")
-        }
-        
-        
-    }
- 
- */
-    
     func navigateToScheduleScreen() {
         performSegue(withIdentifier: "toScheduleView", sender: self)
+        
     }
     
     @IBAction func loginButtonPressed(_ sender: AnyObject) {
         Twitter.sharedInstance().logIn { (session, error) in
             if session != nil {
             
-                //guard let userID = session.userID else { return }
+               
                 self.navigateToScheduleScreen()
                 UserDefaults.standard.set(session?.userID, forKey: "userID")
                 
@@ -63,8 +37,7 @@ class LoginViewController: UIViewController {
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-            }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
