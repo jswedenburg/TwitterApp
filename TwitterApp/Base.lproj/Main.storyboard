@@ -123,6 +123,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="GQ5-cU-41c" secondAttribute="trailing" constant="5" id="LnH-ww-sH7"/>
                                                 <constraint firstItem="D4q-z5-poH" firstAttribute="leading" secondItem="wUR-Aa-ptC" secondAttribute="leading" constant="10" id="Zcu-Hu-77Y"/>
                                                 <constraint firstItem="tsH-bE-mZk" firstAttribute="leading" secondItem="KYd-Bk-XFB" secondAttribute="trailing" constant="18" id="cN1-lu-1eM"/>
+                                                <constraint firstItem="GQ5-cU-41c" firstAttribute="leading" secondItem="tsH-bE-mZk" secondAttribute="trailing" constant="5" id="hAS-dn-Uk1"/>
                                                 <constraint firstItem="D4q-z5-poH" firstAttribute="centerY" secondItem="wUR-Aa-ptC" secondAttribute="centerY" id="hoK-mn-8k6"/>
                                                 <constraint firstItem="GQ5-cU-41c" firstAttribute="centerY" secondItem="wUR-Aa-ptC" secondAttribute="centerY" id="mep-Mw-FMm"/>
                                                 <constraint firstItem="tsH-bE-mZk" firstAttribute="centerY" secondItem="wUR-Aa-ptC" secondAttribute="centerY" id="uhO-zG-GOP"/>
@@ -218,17 +219,17 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vGX-h2-F5g">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1hF-2H-Ztd">
-                                    <size key="itemSize" width="120" height="137"/>
+                                    <size key="itemSize" width="110" height="127"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="accountCell" id="VO4-X8-UcY" customClass="AccountCollectionViewCell" customModule="TwitterApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="137"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="127"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="137"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="127"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="acM-eK-5UA">
@@ -312,6 +313,7 @@
                             <constraint firstItem="koK-ri-Brr" firstAttribute="centerX" secondItem="zlw-aY-ypv" secondAttribute="centerX" constant="107.5" id="ISm-ml-Cif"/>
                             <constraint firstItem="D3k-rO-VMp" firstAttribute="centerX" secondItem="zlw-aY-ypv" secondAttribute="centerX" constant="-124.5" id="LDH-aj-6sh"/>
                             <constraint firstAttribute="trailing" secondItem="4I9-dA-NE2" secondAttribute="trailing" id="Vp2-Uh-VbO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d7H-2P-sbb" secondAttribute="trailing" constant="10" id="YTc-Uf-P9o"/>
                             <constraint firstItem="d7H-2P-sbb" firstAttribute="top" secondItem="ZOE-md-vkO" secondAttribute="bottom" constant="25" id="a82-HE-jGe"/>
                             <constraint firstItem="D3k-rO-VMp" firstAttribute="top" secondItem="d7H-2P-sbb" secondAttribute="bottom" constant="40" id="cxP-l4-Dgg"/>
                             <constraint firstItem="vGX-h2-F5g" firstAttribute="leading" secondItem="zlw-aY-ypv" secondAttribute="leading" id="ePx-BM-3EK"/>
@@ -507,7 +509,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navcontroller" automaticallyAdjustsScrollViewInsets="NO" id="75u-pf-1q4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jdM-Xd-YJv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jdM-Xd-YJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -525,7 +527,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UF7-oI-mMZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WaC-Re-BxE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WaC-Re-BxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

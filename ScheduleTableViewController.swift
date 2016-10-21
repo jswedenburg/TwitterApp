@@ -62,7 +62,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         if schedule.enabled {
             FriendshipController.sharedController.unfollowAccounts(accounts: accounts)
             schedule.enabled = false
-            cell.followButton.setImage(#imageLiteral(resourceName: "twtr-icn-logo-white.png"), for: .normal)
+            cell.followButton.setImage(#imageLiteral(resourceName: "Twitter_Logo_Blue"), for: .normal)
         } else {
             
             FriendshipController.sharedController.followAccounts(accounts: accounts)
@@ -111,9 +111,9 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             let accountArray2 = schedule.twitterAccounts?.allObjects as! [TwitterAccount]
             scheduleCell.updateWithSchedule(schedule: schedule, accounts: accountArray2)
             if schedule.enabled {
-                scheduleCell.followButton.setImage(#imageLiteral(resourceName: "bluetwitterlogo"), for: .normal)
+                scheduleCell.followButton.setImage(#imageLiteral(resourceName: "Twitter_Logo_Blue"), for: .normal)
             } else {
-                scheduleCell.followButton.setImage(#imageLiteral(resourceName: "whittertwitterbird"), for: .normal)
+                scheduleCell.followButton.setImage(#imageLiteral(resourceName: "bluetwitterlogo"), for: .normal)
             }
             scheduleCell.delegate = self
             
