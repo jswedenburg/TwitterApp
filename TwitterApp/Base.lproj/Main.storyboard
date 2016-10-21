@@ -242,9 +242,17 @@
                                                     <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0CP-pi-Pam">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="YAy-4e-ecU"/>
+                                                        <constraint firstAttribute="width" constant="22" id="tan-zG-1dV"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="0CP-pi-Pam" firstAttribute="trailing" secondItem="acM-eK-5UA" secondAttribute="trailing" constant="-5" id="0Gm-zM-EF1"/>
+                                            <constraint firstItem="0CP-pi-Pam" firstAttribute="bottom" secondItem="acM-eK-5UA" secondAttribute="bottom" constant="-5" id="7Rx-MF-uqy"/>
                                             <constraint firstItem="EP9-BZ-VOD" firstAttribute="leading" secondItem="VO4-X8-UcY" secondAttribute="leadingMargin" id="HPJ-rv-EDd"/>
                                             <constraint firstItem="acM-eK-5UA" firstAttribute="top" secondItem="VO4-X8-UcY" secondAttribute="top" id="MY6-jp-VCD"/>
                                             <constraint firstItem="acM-eK-5UA" firstAttribute="leading" secondItem="VO4-X8-UcY" secondAttribute="leading" id="Pql-uQ-97p"/>
@@ -256,6 +264,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="accountImageView" destination="acM-eK-5UA" id="VRQ-CJ-r8b"/>
+                                            <outlet property="checkMarkImageView" destination="0CP-pi-Pam" id="Vst-SM-YAL"/>
                                             <outlet property="usernameLabel" destination="EP9-BZ-VOD" id="2Gx-g0-2Fg"/>
                                         </connections>
                                     </collectionViewCell>
@@ -376,7 +385,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bPj-z5-FSg">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="bPj-z5-FSg">
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tcy-qh-Yrb">
@@ -444,8 +453,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRu-hd-V6F">
-                                <state key="normal" title="Done"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRu-hd-V6F">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="XLf-eN-Ivu"/>
+                                    <constraint firstAttribute="height" constant="21" id="a5t-zb-Gr8"/>
+                                </constraints>
+                                <state key="normal" title="Done" image="exit"/>
                                 <connections>
                                     <action selector="exitButtonPressed:" destination="GrW-c5-2jI" eventType="touchUpInside" id="lrz-c7-t14"/>
                                 </connections>
@@ -455,10 +468,10 @@
                         <constraints>
                             <constraint firstItem="M7m-o4-5Nv" firstAttribute="top" secondItem="tcy-qh-Yrb" secondAttribute="bottom" id="66o-PF-qqi"/>
                             <constraint firstAttribute="trailing" secondItem="bPj-z5-FSg" secondAttribute="trailing" id="Fb5-5G-2KX"/>
-                            <constraint firstItem="LRu-hd-V6F" firstAttribute="top" secondItem="TGW-Bz-pae" secondAttribute="bottom" id="Pu9-jv-M8x"/>
+                            <constraint firstItem="LRu-hd-V6F" firstAttribute="top" secondItem="TGW-Bz-pae" secondAttribute="bottom" constant="5" id="Pu9-jv-M8x"/>
                             <constraint firstItem="tcy-qh-Yrb" firstAttribute="leading" secondItem="rtS-M7-sey" secondAttribute="leading" id="Rw4-v9-BKT"/>
                             <constraint firstAttribute="leadingMargin" secondItem="LRu-hd-V6F" secondAttribute="leading" id="c5M-V6-083"/>
-                            <constraint firstItem="bPj-z5-FSg" firstAttribute="top" secondItem="LRu-hd-V6F" secondAttribute="bottom" constant="10" id="h8R-H9-XlN"/>
+                            <constraint firstItem="bPj-z5-FSg" firstAttribute="top" secondItem="LRu-hd-V6F" secondAttribute="bottom" constant="19" id="h8R-H9-XlN"/>
                             <constraint firstItem="tcy-qh-Yrb" firstAttribute="top" secondItem="bPj-z5-FSg" secondAttribute="bottom" constant="10" id="kRI-ot-BLm"/>
                             <constraint firstItem="bPj-z5-FSg" firstAttribute="leading" secondItem="rtS-M7-sey" secondAttribute="leading" id="rgp-n9-iEB"/>
                             <constraint firstAttribute="trailing" secondItem="tcy-qh-Yrb" secondAttribute="trailing" id="rms-5T-NLz"/>
@@ -510,7 +523,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navcontroller" automaticallyAdjustsScrollViewInsets="NO" id="75u-pf-1q4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jdM-Xd-YJv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jdM-Xd-YJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -528,7 +541,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UF7-oI-mMZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WaC-Re-BxE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WaC-Re-BxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -544,6 +557,7 @@
     </scenes>
     <resources>
         <image name="blueborderbird" width="1482" height="1209"/>
+        <image name="exit" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3x4-In-AK8"/>

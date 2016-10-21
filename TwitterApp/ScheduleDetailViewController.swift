@@ -186,6 +186,7 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         accountCollectionView.allowsMultipleSelection = true
         
         
+        
     }
     
     @IBAction func cancelButtonPressed(_ sender: AnyObject) {

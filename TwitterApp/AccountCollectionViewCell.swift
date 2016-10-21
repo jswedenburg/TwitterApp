@@ -12,6 +12,7 @@ class AccountCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var accountImageView: UIImageView!
+    @IBOutlet weak var checkMarkImageView: UIImageView!
     
     
     

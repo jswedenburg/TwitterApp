@@ -15,6 +15,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     @IBOutlet weak var searchBar: UISearchBar!
     
     let grayColor = UIColor(red: 71, green: 71, blue: 71, alpha: 1.0)
+    let twitterColor = UIColor(red: 0, green: 172, blue: 237, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +56,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     }
     
     func cellButtonPressed(sender: UITableViewCell) {
-        let twitterColor = UIColor(red: 0, green: 172, blue: 237, alpha: 1.0)
+        
         guard let sender = sender as? SearchTableViewCell else { return }
         guard let index = self.tableView.indexPath(for: sender) else { return }
         let account = twitterAccounts[index.row]
