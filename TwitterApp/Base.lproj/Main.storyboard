@@ -270,14 +270,15 @@
                                     <action selector="editButttonPressed:" destination="5mS-9y-UxZ" eventType="touchUpInside" id="adx-9D-mNf"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4I9-dA-NE2">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4I9-dA-NE2">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="KMr-qQ-EZs"/>
+                                    <constraint firstAttribute="height" constant="125" id="KMr-qQ-EZs"/>
                                 </constraints>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="4NG-sn-b6W"/>
                                     <barButtonItem style="plain" id="Wdj-KP-vb4">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WCI-eB-BVh">
-                                            <rect key="frame" x="16" y="35" width="61" height="30"/>
+                                            <rect key="frame" x="79" y="48" width="61" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="PaulGrotesk-Bold-Trail" family="Paul Grotesk" pointSize="17"/>
                                             <state key="normal" title="Cancel">
@@ -289,12 +290,14 @@
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="YT2-Wj-eFO"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8yg-Jy-ZYw"/>
                                     <barButtonItem title="Item" systemItem="trash" id="GgN-CP-UEW">
                                         <color key="tintColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="deleteCells:" destination="5mS-9y-UxZ" id="Mhv-tf-6er"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KOo-yF-B50"/>
                                 </items>
                             </toolbar>
                         </subviews>
