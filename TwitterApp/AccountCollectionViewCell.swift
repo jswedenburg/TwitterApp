@@ -10,15 +10,15 @@ import UIKit
 
 class AccountCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var accountImageView: UIImageView!
     
-    @IBOutlet weak var accountImage: UIImageView!
     
     
     func updateWithAccount(account: TwitterAccount){
-        self.userNameLabel.text = "@" + (account.screenName ?? "")
+        self.usernameLabel.text = "@" + (account.screenName ?? "")
         guard let data = account.profileImage else { return }
-        self.accountImage.image = UIImage(data: data)
+        self.accountImageView.image = UIImage(data: data)
     }
     
     

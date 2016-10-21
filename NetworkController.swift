@@ -73,7 +73,9 @@ class NetworkController {
             for x in 0...(jsonDict.count - 1) {
                 guard let name = jsonDict[x]["name"] as? String, let screenName = jsonDict[x]["screen_name"] as? String, let imageURL = jsonDict[x]["profile_image_url"] as? String else { return }
                 
-                guard let url = URL(string: imageURL) else { return }
+                let biggerImage = imageURL.replacingOccurrences(of: "_normal", with: "")
+                
+                guard let url = URL(string: biggerImage) else { return }
                 
                 NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
                     guard let data = data else { return }
