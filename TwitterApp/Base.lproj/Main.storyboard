@@ -108,7 +108,7 @@
                                                         <constraint firstAttribute="height" constant="80" id="yEX-QY-A6o"/>
                                                     </constraints>
                                                     <inset key="imageEdgeInsets" minX="25" minY="25" maxX="25" maxY="25"/>
-                                                    <state key="normal" title="Button" image="twitterbird"/>
+                                                    <state key="normal" title="Button" image="blueborderbird"/>
                                                     <connections>
                                                         <action selector="cellButtonPressed:" destination="fEN-1n-LFU" eventType="touchUpInside" id="WYx-QB-ntl"/>
                                                     </connections>
@@ -544,8 +544,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blueborderbird" width="1482" height="1209"/>
         <image name="followMan" width="50" height="50"/>
-        <image name="twitterbird" width="1500" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3x4-In-AK8"/>
