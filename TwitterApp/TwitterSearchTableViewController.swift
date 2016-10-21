@@ -14,6 +14,8 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     static var delegate: searchDelegate?
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let grayColor = UIColor(red: 71, green: 71, blue: 71, alpha: 1.0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -36,15 +38,6 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         }
     }
     
-    /* HOW TO DO A TAP GESTURE?????
-     let tap  = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-     
-     
-     func handleTap(sender: UITapGestureRecognizer? = nil) {
-     self.resignFirstResponder()
-     }
-     */
-    
     
     //MARK: Search Delegate
     
@@ -62,28 +55,18 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     }
     
     func cellButtonPressed(sender: UITableViewCell) {
+        let twitterColor = UIColor(red: 0, green: 172, blue: 237, alpha: 1.0)
         guard let sender = sender as? SearchTableViewCell else { return }
         guard let index = self.tableView.indexPath(for: sender) else { return }
         let account = twitterAccounts[index.row]
         if followedAccounts.contains(account) {
             guard let index = followedAccounts.index(of: account) else { return }
             followedAccounts.remove(at: index)
-            sender.followButton.setImage(#imageLiteral(resourceName: "followMan"), for: .normal)
+            sender.followButton.setTitleColor(grayColor, for: .normal)
         } else {
             followedAccounts.append(account)
-            sender.followButton.setImage(#imageLiteral(resourceName: "blueFollowMan"), for: .normal)
+            sender.followButton.setTitleColor(twitterColor, for: .normal)
         }
-        
-        /*
-         if let followedAccountIndex = twitterAccounts.index(where: { (account) -> Bool in
-         account.screenName == sender.accountScreenname.text
-         }) {
-         let followedAccount = twitterAccounts[followedAccountIndex]
-         followedAccounts.append(followedAccount)
-         
-         }
-         
-         */
     }
     
     
@@ -94,7 +77,6 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         }
     }
     
-    //TODO: Check and make sure the account hasnt already been followed
     
     // MARK: - Table view data source
     
@@ -114,7 +96,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
         cell.delegate = self
-        cell.followButton.setImage(#imageLiteral(resourceName: "followMan"), for: .normal)
+        cell.followButton.setTitleColor(grayColor, for: .normal)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         let account = twitterAccounts[indexPath.row]
         cell.updateWithAccount(account: account)

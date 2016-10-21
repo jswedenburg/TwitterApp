@@ -410,36 +410,35 @@
                                                         <constraint firstAttribute="height" constant="15" id="ISS-vB-HVd"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7t-r3-BwU">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ib-kW-zzX">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="Uot-d3-NvS"/>
-                                                        <constraint firstAttribute="width" secondItem="T7t-r3-BwU" secondAttribute="height" multiplier="1:1" id="v74-qz-9oj"/>
+                                                        <constraint firstAttribute="width" constant="100" id="QP6-vV-hGt"/>
+                                                        <constraint firstAttribute="height" constant="75" id="asp-JH-DJX"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button" image="followMan"/>
-                                                    <connections>
-                                                        <action selector="cellButtonPressed:" destination="OEY-lh-bUP" eventType="touchUpInside" id="JAs-ki-AO2"/>
-                                                    </connections>
+                                                    <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
+                                                    <state key="normal" title="Follow">
+                                                        <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GsH-3g-mXt" firstAttribute="leading" secondItem="Msw-hv-Z8i" secondAttribute="leadingMargin" id="0BQ-M7-0wc"/>
                                                 <constraint firstItem="GsH-3g-mXt" firstAttribute="top" secondItem="Msw-hv-Z8i" secondAttribute="topMargin" id="64Q-dW-hYW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5Ib-kW-zzX" secondAttribute="trailing" constant="5" id="F1M-1U-dPM"/>
+                                                <constraint firstItem="5Ib-kW-zzX" firstAttribute="centerY" secondItem="Msw-hv-Z8i" secondAttribute="centerY" id="H22-q0-FR1"/>
                                                 <constraint firstItem="mBb-Vh-76e" firstAttribute="leading" secondItem="GsH-3g-mXt" secondAttribute="trailing" constant="11" id="ILA-SF-Zh4"/>
                                                 <constraint firstAttribute="topMargin" secondItem="C9v-Zd-9c7" secondAttribute="top" id="JQo-nc-tCD"/>
                                                 <constraint firstItem="C9v-Zd-9c7" firstAttribute="leading" secondItem="Izg-9s-aUY" secondAttribute="trailing" constant="8" id="JoR-Qa-YQE"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="mBb-Vh-76e" secondAttribute="bottom" id="MI6-0t-Imp"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GsH-3g-mXt" secondAttribute="bottom" id="Y9t-8e-sDH"/>
                                                 <constraint firstItem="Izg-9s-aUY" firstAttribute="top" secondItem="Msw-hv-Z8i" secondAttribute="topMargin" id="Yyt-a1-e4H"/>
-                                                <constraint firstItem="T7t-r3-BwU" firstAttribute="centerY" secondItem="Msw-hv-Z8i" secondAttribute="centerY" id="a2w-Xs-Eb7"/>
                                                 <constraint firstItem="Izg-9s-aUY" firstAttribute="leading" secondItem="GsH-3g-mXt" secondAttribute="trailing" constant="11" id="cbB-qe-hLA"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="T7t-r3-BwU" secondAttribute="trailing" constant="10" id="efP-HD-GdC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="accountImageView" destination="GsH-3g-mXt" id="IPk-8k-NzL"/>
                                             <outlet property="accountName" destination="Izg-9s-aUY" id="Mn6-wB-cQ0"/>
                                             <outlet property="accountScreenname" destination="mBb-Vh-76e" id="ZjF-mU-VSu"/>
-                                            <outlet property="followButton" destination="T7t-r3-BwU" id="mGu-cI-kQD"/>
                                             <outlet property="verifiedImageView" destination="C9v-Zd-9c7" id="H0T-mr-ST8"/>
                                         </connections>
                                     </tableViewCell>
@@ -511,7 +510,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navcontroller" automaticallyAdjustsScrollViewInsets="NO" id="75u-pf-1q4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jdM-Xd-YJv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jdM-Xd-YJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -529,7 +528,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UF7-oI-mMZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WaC-Re-BxE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WaC-Re-BxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -545,7 +544,6 @@
     </scenes>
     <resources>
         <image name="blueborderbird" width="1482" height="1209"/>
-        <image name="followMan" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3x4-In-AK8"/>
