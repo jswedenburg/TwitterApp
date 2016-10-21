@@ -19,7 +19,7 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
     
     @IBOutlet weak var titleTextField: UITextField!
     
-   
+    var editingMode: Bool = false
     var schedule: Schedule?
     
     var accountArray: [TwitterAccount] = []
@@ -155,6 +155,14 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         let account = accountArray[indexPath.row]
         cell.updateWithAccount(account: account)
         
+        if editingMode {
+            cell.checkMarkImageView.backgroundColor = UIColor.white
+            cell.checkMarkImageView.isHidden = false
+            
+        } else {
+            cell.checkMarkImageView.isHidden = true
+        }
+        
         return cell
     }
     
@@ -164,19 +172,24 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.layer.borderWidth = 2.0
-        cell?.layer.borderColor = UIColor.red.cgColor
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell else { return }
+        
+        cell.checkMarkImageView.image = #imageLiteral(resourceName: "checkmark-1")
+        cell.layer.borderWidth = 0.5
+        cell.layer.borderColor = UIColor.red.cgColor
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.layer.borderWidth = 0
+        guard let cell = collectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell else { return }
+        cell.layer.borderWidth = 0
+        cell.checkMarkImageView.image = nil
         
     }
     
     @IBAction func editButttonPressed(_ sender: AnyObject) {
-        
+        self.editingMode = true
+        self.accountCollectionView.reloadData()
         self.toolBar.isHidden = false
         self.toolBar.isTranslucent = true
         
@@ -184,6 +197,8 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         
         
         accountCollectionView.allowsMultipleSelection = true
+        
+        
         
         
         
@@ -200,7 +215,8 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
             
         }
         accountCollectionView.allowsSelection = false
-        
+        self.editingMode = false
+        self.accountCollectionView.reloadData()
         
     }
     
@@ -222,6 +238,8 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         accountCollectionView.allowsSelection = false
         
         self.toolBar.isHidden = true
+        self.editingMode = false
+        self.accountCollectionView.reloadData()
         
     }
     

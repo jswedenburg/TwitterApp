@@ -20,6 +20,13 @@ class AccountCollectionViewCell: UICollectionViewCell {
         self.usernameLabel.text = "@" + (account.screenName ?? "")
         guard let data = account.profileImage else { return }
         self.accountImageView.image = UIImage(data: data)
+        
+        checkMarkImageView.layer.borderWidth=1.0
+        checkMarkImageView.layer.masksToBounds = false
+        checkMarkImageView.layer.borderColor = UIColor.white.cgColor
+        checkMarkImageView.layer.cornerRadius = 13
+        checkMarkImageView.layer.cornerRadius = checkMarkImageView.frame.size.height/2
+        checkMarkImageView.clipsToBounds = true
     }
     
     
