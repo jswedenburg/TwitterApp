@@ -100,7 +100,9 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         if indexPath.row == 0 {
             guard let titleCell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as? TitleTableViewCell else { return UITableViewCell()}
             titleCell.titleLabel.text = "Groups"
+            
             titleCell.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 300)
+            self.tableView.separatorStyle = .singleLine
             
             return titleCell
         } else {

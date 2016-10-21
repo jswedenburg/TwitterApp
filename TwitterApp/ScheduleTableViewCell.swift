@@ -34,7 +34,6 @@ class ScheduleTableViewCell: UITableViewCell{
     
     func updateWithSchedule(schedule: Schedule, accounts: [TwitterAccount]) {
         
-        
         self.titleLabel.text = schedule.title
         self.imageContainer.layer.cornerRadius = 10.0
         

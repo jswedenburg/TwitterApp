@@ -28,15 +28,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Us0-eX-yMG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Us0-eX-yMG">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="separatorInset" minX="500" minY="0.0" maxX="500" maxY="0.0"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" rowHeight="90" id="Tae-vw-pd0" customClass="TitleTableViewCell" customModule="TwitterApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tae-vw-pd0" id="6zC-41-iNW">
-                                            <frame key="frameInset" width="375" height="89"/>
+                                            <frame key="frameInset" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahu-bf-WZa">
@@ -58,10 +58,10 @@
                                         <rect key="frame" x="0.0" y="182" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fEN-1n-LFU" id="wUR-Aa-ptC">
-                                            <frame key="frameInset" width="375" height="89"/>
+                                            <frame key="frameInset" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4q-z5-poH">
+                                                <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4q-z5-poH">
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tcj-eq-64S">
                                                             <constraints>
@@ -105,6 +105,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ5-cU-41c">
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="GQ5-cU-41c" secondAttribute="height" multiplier="1:1" id="s6Q-9g-qrz"/>
+                                                        <constraint firstAttribute="height" constant="50" id="yEX-QY-A6o"/>
                                                     </constraints>
                                                     <state key="normal" title="Button" image="twitterbird"/>
                                                     <connections>
@@ -119,13 +120,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="GQ5-cU-41c" secondAttribute="trailing" constant="5" id="LnH-ww-sH7"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="GQ5-cU-41c" secondAttribute="bottom" id="WhZ-uS-TMO"/>
                                                 <constraint firstItem="D4q-z5-poH" firstAttribute="leading" secondItem="wUR-Aa-ptC" secondAttribute="leading" constant="10" id="Zcu-Hu-77Y"/>
                                                 <constraint firstItem="tsH-bE-mZk" firstAttribute="leading" secondItem="KYd-Bk-XFB" secondAttribute="trailing" constant="18" id="cN1-lu-1eM"/>
                                                 <constraint firstAttribute="topMargin" secondItem="tsH-bE-mZk" secondAttribute="top" id="eP8-Xw-RSe"/>
                                                 <constraint firstItem="D4q-z5-poH" firstAttribute="centerY" secondItem="wUR-Aa-ptC" secondAttribute="centerY" id="hoK-mn-8k6"/>
                                                 <constraint firstItem="GQ5-cU-41c" firstAttribute="centerY" secondItem="wUR-Aa-ptC" secondAttribute="centerY" id="mep-Mw-FMm"/>
-                                                <constraint firstItem="GQ5-cU-41c" firstAttribute="top" secondItem="wUR-Aa-ptC" secondAttribute="topMargin" id="nU9-zD-Ehe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -203,7 +202,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d7H-2P-sbb">
                                 <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="44"/>
+                                <fontDescription key="fontDescription" name="PaulGrotesk-Bold-Trail" family="Paul Grotesk" pointSize="50"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3k-rO-VMp">
@@ -218,35 +217,36 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vGX-h2-F5g">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1hF-2H-Ztd">
-                                    <size key="itemSize" width="120" height="120"/>
+                                    <size key="itemSize" width="120" height="137"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="accountCell" id="VO4-X8-UcY" customClass="AccountCollectionViewCell" customModule="TwitterApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="137"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="137"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="acM-eK-5UA">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="Hi9-sN-T6c"/>
                                                         <constraint firstAttribute="width" secondItem="acM-eK-5UA" secondAttribute="height" multiplier="1:1" id="ZP5-J6-249"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EP9-BZ-VOD">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="14"/>
+                                                    <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="acM-eK-5UA" firstAttribute="top" secondItem="VO4-X8-UcY" secondAttribute="top" id="MY6-jp-VCD"/>
+                                            <constraint firstItem="acM-eK-5UA" firstAttribute="leading" secondItem="VO4-X8-UcY" secondAttribute="leading" id="Pql-uQ-97p"/>
                                             <constraint firstItem="EP9-BZ-VOD" firstAttribute="top" secondItem="acM-eK-5UA" secondAttribute="bottom" constant="-1" id="Vmq-XL-nQ1"/>
+                                            <constraint firstAttribute="trailing" secondItem="acM-eK-5UA" secondAttribute="trailing" id="j5r-Wp-hha"/>
                                             <constraint firstItem="EP9-BZ-VOD" firstAttribute="centerX" secondItem="VO4-X8-UcY" secondAttribute="centerX" id="oxV-XR-s8z"/>
                                             <constraint firstItem="acM-eK-5UA" firstAttribute="centerX" secondItem="VO4-X8-UcY" secondAttribute="centerX" id="rkn-9m-BNb"/>
                                         </constraints>
@@ -262,7 +262,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koK-ri-Brr">
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
                                 <state key="normal" title="Edit">
                                     <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -270,19 +270,49 @@
                                     <action selector="editButttonPressed:" destination="5mS-9y-UxZ" eventType="touchUpInside" id="adx-9D-mNf"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4I9-dA-NE2">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="KMr-qQ-EZs"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" id="Wdj-KP-vb4">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WCI-eB-BVh">
+                                            <rect key="frame" x="16" y="35" width="61" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="PaulGrotesk-Bold-Trail" family="Paul Grotesk" pointSize="17"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="5mS-9y-UxZ" eventType="touchUpInside" id="zwc-uB-LrH"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="YT2-Wj-eFO"/>
+                                    <barButtonItem title="Item" systemItem="trash" id="GgN-CP-UEW">
+                                        <color key="tintColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="deleteCells:" destination="5mS-9y-UxZ" id="Mhv-tf-6er"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vGX-h2-F5g" secondAttribute="trailing" id="5mX-jd-zUP"/>
                             <constraint firstAttribute="leadingMargin" secondItem="d7H-2P-sbb" secondAttribute="leading" id="6Sc-tX-ZwN"/>
                             <constraint firstItem="GSd-hV-fwk" firstAttribute="top" secondItem="vGX-h2-F5g" secondAttribute="bottom" id="Cwx-lf-nPn"/>
-                            <constraint firstItem="vGX-h2-F5g" firstAttribute="top" secondItem="koK-ri-Brr" secondAttribute="bottom" constant="12" id="HsT-GD-3ad"/>
-                            <constraint firstItem="koK-ri-Brr" firstAttribute="centerX" secondItem="zlw-aY-ypv" secondAttribute="centerX" constant="106" id="ISm-ml-Cif"/>
-                            <constraint firstItem="D3k-rO-VMp" firstAttribute="centerX" secondItem="zlw-aY-ypv" secondAttribute="centerX" id="LDH-aj-6sh"/>
+                            <constraint firstItem="vGX-h2-F5g" firstAttribute="top" secondItem="koK-ri-Brr" secondAttribute="bottom" constant="20" id="HsT-GD-3ad"/>
+                            <constraint firstItem="GSd-hV-fwk" firstAttribute="top" secondItem="4I9-dA-NE2" secondAttribute="bottom" id="I3i-md-1mU"/>
+                            <constraint firstItem="koK-ri-Brr" firstAttribute="centerX" secondItem="zlw-aY-ypv" secondAttribute="centerX" constant="107.5" id="ISm-ml-Cif"/>
+                            <constraint firstItem="D3k-rO-VMp" firstAttribute="centerX" secondItem="zlw-aY-ypv" secondAttribute="centerX" constant="-124.5" id="LDH-aj-6sh"/>
+                            <constraint firstAttribute="trailing" secondItem="4I9-dA-NE2" secondAttribute="trailing" id="Vp2-Uh-VbO"/>
                             <constraint firstItem="d7H-2P-sbb" firstAttribute="top" secondItem="ZOE-md-vkO" secondAttribute="bottom" constant="25" id="a82-HE-jGe"/>
-                            <constraint firstItem="D3k-rO-VMp" firstAttribute="top" secondItem="d7H-2P-sbb" secondAttribute="bottom" constant="44" id="cxP-l4-Dgg"/>
+                            <constraint firstItem="D3k-rO-VMp" firstAttribute="top" secondItem="d7H-2P-sbb" secondAttribute="bottom" constant="40" id="cxP-l4-Dgg"/>
                             <constraint firstItem="vGX-h2-F5g" firstAttribute="leading" secondItem="zlw-aY-ypv" secondAttribute="leading" id="ePx-BM-3EK"/>
-                            <constraint firstItem="vGX-h2-F5g" firstAttribute="top" secondItem="D3k-rO-VMp" secondAttribute="bottom" constant="16" id="sKT-3N-lBd"/>
+                            <constraint firstItem="vGX-h2-F5g" firstAttribute="top" secondItem="D3k-rO-VMp" secondAttribute="bottom" constant="20" id="sKT-3N-lBd"/>
+                            <constraint firstItem="4I9-dA-NE2" firstAttribute="leading" secondItem="zlw-aY-ypv" secondAttribute="leading" id="vXe-VQ-coE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TPJ-Hd-Iez">
@@ -315,14 +345,16 @@
                     </navigationItem>
                     <connections>
                         <outlet property="accountCollectionView" destination="vGX-h2-F5g" id="Fee-8W-yKp"/>
+                        <outlet property="editButton" destination="koK-ri-Brr" id="plV-e2-s7b"/>
                         <outlet property="titleTextField" destination="d7H-2P-sbb" id="zcW-1C-4e8"/>
+                        <outlet property="toolBar" destination="4I9-dA-NE2" id="Yrw-hW-ZAi"/>
                         <segue destination="msN-K4-AaP" kind="unwind" identifier="unwindToScheduleTable" unwindAction="unwindToScheduleTableWithSegue:" id="bCc-LP-XdS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzP-2n-KQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="msN-K4-AaP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5719" y="-725"/>
+            <point key="canvasLocation" x="5717.6000000000004" y="-725.48725637181417"/>
         </scene>
         <!--Twitter Search Table View Controller-->
         <scene sceneID="tge-EO-8PT">

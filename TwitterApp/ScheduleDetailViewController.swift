@@ -13,6 +13,9 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
    
     @IBOutlet weak var accountCollectionView: UICollectionView!
     
+    @IBOutlet weak var toolBar: UIToolbar!
+   
+    @IBOutlet weak var editButton: UIButton!
     
     @IBOutlet weak var titleTextField: UITextField!
     
@@ -28,9 +31,25 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         self.navigationController?.setToolbarHidden(true, animated: true)
         setUpAccountArray()
         setupView()
+        setUpFlow()
+        self.accountCollectionView.allowsSelection = false
+        self.toolBar.isHidden = true
         
-        self.accountCollectionView.addSubview(titleTextField)
-        self.accountCollectionView.sendSubview(toBack: titleTextField)
+        
+        
+        
+        
+    }
+    
+    func setUpFlow() {
+        let flow = UICollectionViewFlowLayout()
+        
+        flow.itemSize = CGSize(width: 123, height: 137)
+        flow.minimumLineSpacing = 1
+        flow.minimumInteritemSpacing = 1
+        flow.sectionInset = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
+        
+        self.accountCollectionView.collectionViewLayout = flow
     }
     
     
@@ -136,31 +155,46 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         return cell
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderWidth = 2.0
-        cell?.layer.borderColor = UIColor.lightGray.cgColor
+        cell?.layer.borderColor = UIColor.red.cgColor
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderWidth = 0
+        
     }
     
     @IBAction func editButttonPressed(_ sender: AnyObject) {
-        self.navigationController?.setToolbarHidden(false, animated: true)
+        
+        self.toolBar.isHidden = false
+        self.toolBar.isTranslucent = true
+        
+        
+        
         
         accountCollectionView.allowsMultipleSelection = true
+        
         
     }
     
     @IBAction func cancelButtonPressed(_ sender: AnyObject) {
-        self.navigationController?.setToolbarHidden(true, animated: true)
+        self.toolBar.isHidden = true
         guard let indexPaths = accountCollectionView.indexPathsForSelectedItems else { return }
         for indexPath in indexPaths {
             let cell = accountCollectionView.cellForItem(at: indexPath)
             cell?.isSelected = false
             cell?.layer.borderWidth = 0
-            cell?.layer.borderColor = UIColor.clear.cgColor
+            
             
         }
         accountCollectionView.allowsSelection = false
+        
         
     }
     
@@ -174,12 +208,14 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
             accountArray.remove(at: index)
             let cell = accountCollectionView.cellForItem(at: indexPath)
             cell?.isSelected = false
+            cell?.layer.borderWidth = 0
             
         }
         
         accountCollectionView.deleteItems(at: indexPaths)
         accountCollectionView.allowsSelection = false
-        self.navigationController?.setToolbarHidden(true, animated: true)
+        
+        self.toolBar.isHidden = true
         
     }
     
