@@ -87,30 +87,52 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return scheduleArray.count
+        
+            return scheduleArray.count
+
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as? ScheduleTableViewCell else { return UITableViewCell() }
-        let schedule = scheduleArray[indexPath.row]
-        let accountArray2 = schedule.twitterAccounts?.allObjects as! [TwitterAccount]
-        cell.updateWithSchedule(schedule: schedule, accounts: accountArray2)
-        if schedule.enabled {
-            cell.followButton.setImage(#imageLiteral(resourceName: "graybird"), for: .normal)
+        if indexPath.row == 0 {
+            guard let titleCell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as? TitleTableViewCell else { return UITableViewCell()}
+            titleCell.titleLabel.text = "Groups"
+            titleCell.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 300)
+            
+            return titleCell
         } else {
-            cell.followButton.setImage(#imageLiteral(resourceName: "twitterbird"), for: .normal)
+            guard let scheduleCell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as? ScheduleTableViewCell else { return UITableViewCell() }
+            let schedule = scheduleArray[indexPath.row]
+            let accountArray2 = schedule.twitterAccounts?.allObjects as! [TwitterAccount]
+            scheduleCell.updateWithSchedule(schedule: schedule, accounts: accountArray2)
+            if schedule.enabled {
+                scheduleCell.followButton.setImage(#imageLiteral(resourceName: "graybird"), for: .normal)
+            } else {
+                scheduleCell.followButton.setImage(#imageLiteral(resourceName: "twitterbird"), for: .normal)
+            }
+            scheduleCell.delegate = self
+            
+            scheduleCell.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+            
+            
+            
+            return scheduleCell
         }
-        cell.delegate = self
         
-        
-        
-        return cell
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        if indexPath.row == 0  {
+            return 100
+        } else if indexPath.row == 1{
+            return 90
+        }else {
+            return 90
+        }
     }
     
     

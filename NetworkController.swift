@@ -65,6 +65,9 @@ class NetworkController {
         
         let request = client.urlRequest(withMethod: "GET", url: searchEndPoint, parameters: params, error: clientError)
         client.sendTwitterRequest(request) { (response, data, error) in
+            if error != nil {
+                print("\(error?.localizedDescription)")
+            }
             var accountArray: [TwitterAccount] = []
             guard let data = data else { return }
             

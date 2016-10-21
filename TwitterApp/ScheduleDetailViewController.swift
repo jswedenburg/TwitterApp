@@ -28,6 +28,9 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         self.navigationController?.setToolbarHidden(true, animated: true)
         setUpAccountArray()
         setupView()
+        
+        self.accountCollectionView.addSubview(titleTextField)
+        self.accountCollectionView.sendSubview(toBack: titleTextField)
     }
     
     
