@@ -33,7 +33,8 @@ class FriendshipController: NSObject{
             let request = client.urlRequest(withMethod: "POST", url: followEndPoint, parameters: params, error: &clientError)
             client.sendTwitterRequest(request, completion: { (response, data, error) in
                 if error != nil {
-                    print("Error following: \(error?.localizedDescription)")
+                    //DO something
+                    //print("Error following: \(error?.localizedDescription)")
                 }
             })
             
@@ -55,7 +56,9 @@ class FriendshipController: NSObject{
                 let request = client.urlRequest(withMethod: "POST", url: followEndPoint, parameters: params, error: &clientError)
                 client.sendTwitterRequest(request, completion: { (response, data, error) in
                     if error != nil {
-                        print("Error following: \(error?.localizedDescription)")
+                        
+                        //Do something
+                        //print("Error following: \(error?.localizedDescription)")
                     }
                 })
                 

@@ -43,11 +43,14 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
     
     func setUpFlow() {
         let flow = UICollectionViewFlowLayout()
-        
-        flow.itemSize = CGSize(width: 123, height: 137)
+        //flow.estimatedItemSize = CGSize(width: 110, height: 127)
+        let width = self.view.frame.width / 3
+        let height = self.view.frame.height / 5
+        flow.itemSize = CGSize(width: width - 3, height: height + 4)
         flow.minimumLineSpacing = 1
         flow.minimumInteritemSpacing = 1
         flow.sectionInset = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
+        
         
         self.accountCollectionView.collectionViewLayout = flow
     }
@@ -154,6 +157,8 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         
         return cell
     }
+    
+    
     
     
     

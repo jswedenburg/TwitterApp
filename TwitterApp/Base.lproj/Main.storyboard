@@ -245,9 +245,11 @@
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="EP9-BZ-VOD" firstAttribute="leading" secondItem="VO4-X8-UcY" secondAttribute="leadingMargin" id="HPJ-rv-EDd"/>
                                             <constraint firstItem="acM-eK-5UA" firstAttribute="top" secondItem="VO4-X8-UcY" secondAttribute="top" id="MY6-jp-VCD"/>
                                             <constraint firstItem="acM-eK-5UA" firstAttribute="leading" secondItem="VO4-X8-UcY" secondAttribute="leading" id="Pql-uQ-97p"/>
                                             <constraint firstItem="EP9-BZ-VOD" firstAttribute="top" secondItem="acM-eK-5UA" secondAttribute="bottom" constant="-1" id="Vmq-XL-nQ1"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="EP9-BZ-VOD" secondAttribute="trailing" id="b5e-tO-EpR"/>
                                             <constraint firstAttribute="trailing" secondItem="acM-eK-5UA" secondAttribute="trailing" id="j5r-Wp-hha"/>
                                             <constraint firstItem="EP9-BZ-VOD" firstAttribute="centerX" secondItem="VO4-X8-UcY" secondAttribute="centerX" id="oxV-XR-s8z"/>
                                             <constraint firstItem="acM-eK-5UA" firstAttribute="centerX" secondItem="VO4-X8-UcY" secondAttribute="centerX" id="rkn-9m-BNb"/>
@@ -307,11 +309,11 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vGX-h2-F5g" secondAttribute="trailing" id="5mX-jd-zUP"/>
                             <constraint firstAttribute="leadingMargin" secondItem="d7H-2P-sbb" secondAttribute="leading" id="6Sc-tX-ZwN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="koK-ri-Brr" secondAttribute="trailing" constant="49" id="98z-5Y-MrZ"/>
                             <constraint firstItem="GSd-hV-fwk" firstAttribute="top" secondItem="vGX-h2-F5g" secondAttribute="bottom" id="Cwx-lf-nPn"/>
                             <constraint firstItem="vGX-h2-F5g" firstAttribute="top" secondItem="koK-ri-Brr" secondAttribute="bottom" constant="20" id="HsT-GD-3ad"/>
                             <constraint firstItem="GSd-hV-fwk" firstAttribute="top" secondItem="4I9-dA-NE2" secondAttribute="bottom" id="I3i-md-1mU"/>
-                            <constraint firstItem="koK-ri-Brr" firstAttribute="centerX" secondItem="zlw-aY-ypv" secondAttribute="centerX" constant="107.5" id="ISm-ml-Cif"/>
-                            <constraint firstItem="D3k-rO-VMp" firstAttribute="centerX" secondItem="zlw-aY-ypv" secondAttribute="centerX" constant="-124.5" id="LDH-aj-6sh"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="D3k-rO-VMp" secondAttribute="leading" id="VQA-q7-hQI"/>
                             <constraint firstAttribute="trailing" secondItem="4I9-dA-NE2" secondAttribute="trailing" id="Vp2-Uh-VbO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d7H-2P-sbb" secondAttribute="trailing" constant="10" id="YTc-Uf-P9o"/>
                             <constraint firstItem="d7H-2P-sbb" firstAttribute="top" secondItem="ZOE-md-vkO" secondAttribute="bottom" constant="25" id="a82-HE-jGe"/>
@@ -509,7 +511,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navcontroller" automaticallyAdjustsScrollViewInsets="NO" id="75u-pf-1q4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jdM-Xd-YJv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jdM-Xd-YJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -527,7 +529,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UF7-oI-mMZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WaC-Re-BxE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WaC-Re-BxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

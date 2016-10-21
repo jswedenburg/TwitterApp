@@ -19,40 +19,7 @@ class NetworkController {
     static let tokenSecret = "BiTchVQ5V0dE1PxUHIIGFzlCRrh25gaGq1oGPMlbP9yzK"
     
     
-    /*
-     
-     static func twitterSearch(searchTerm: String, completion: @escaping ([TwitterAccount]) -> Void) {
-     let swifter = Swifter(consumerKey: consumerKey, consumerSecret: consumerSecret, oauthToken: accessToken, oauthTokenSecret: tokenSecret)
-     
-     swifter.searchUsers(using: searchTerm, page: 1, count: 20, includeEntities: nil, success: { (users) in
-     var accountArray: [TwitterAccount] = []
-     
-     for x in 0...19 {
-     guard let name = users[x]["name"].string,
-     let profileImageString = users[x]["profile_image_url"].string,
-     let screenName = users[x]["screen_name"].string,
-     let verified = users[x]["verified"].bool else { return }
-     
-     guard let url = URL(string: profileImageString) else { return }
-     
-     
-     NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
-     guard let data = data else { return }
-     DispatchQueue.main.async() {
-     let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: nil, profileImageData: data)
-     accountArray.append(newAccount)
-     completion(accountArray)
-     
-     }
-     }
-     }
-     })
-     
-     { (_) in
-     print("FAIL")
-     }
-     }
-     */
+    
     
     static func searchRequest(searchTerm: String, completion: @escaping ([TwitterAccount]) -> Void) {
         guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }
@@ -66,7 +33,8 @@ class NetworkController {
         let request = client.urlRequest(withMethod: "GET", url: searchEndPoint, parameters: params, error: clientError)
         client.sendTwitterRequest(request) { (response, data, error) in
             if error != nil {
-                print("\(error?.localizedDescription)")
+                //Handle Error
+                //print("\(error?.localizedDescription)")
             }
             var accountArray: [TwitterAccount] = []
             guard let data = data else { return }
