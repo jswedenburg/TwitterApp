@@ -46,8 +46,8 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="ahu-bf-WZa" firstAttribute="centerY" secondItem="6zC-41-iNW" secondAttribute="centerY" id="SaE-88-aCR"/>
                                                 <constraint firstItem="ahu-bf-WZa" firstAttribute="leading" secondItem="6zC-41-iNW" secondAttribute="leadingMargin" id="UAd-66-KXf"/>
-                                                <constraint firstItem="ahu-bf-WZa" firstAttribute="top" secondItem="6zC-41-iNW" secondAttribute="topMargin" id="dCT-3V-jM5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -105,8 +105,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ5-cU-41c">
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="GQ5-cU-41c" secondAttribute="height" multiplier="1:1" id="s6Q-9g-qrz"/>
-                                                        <constraint firstAttribute="height" constant="50" id="yEX-QY-A6o"/>
+                                                        <constraint firstAttribute="height" constant="80" id="yEX-QY-A6o"/>
                                                     </constraints>
+                                                    <inset key="imageEdgeInsets" minX="25" minY="25" maxX="25" maxY="25"/>
                                                     <state key="normal" title="Button" image="twitterbird"/>
                                                     <connections>
                                                         <action selector="cellButtonPressed:" destination="fEN-1n-LFU" eventType="touchUpInside" id="WYx-QB-ntl"/>
@@ -122,9 +123,9 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="GQ5-cU-41c" secondAttribute="trailing" constant="5" id="LnH-ww-sH7"/>
                                                 <constraint firstItem="D4q-z5-poH" firstAttribute="leading" secondItem="wUR-Aa-ptC" secondAttribute="leading" constant="10" id="Zcu-Hu-77Y"/>
                                                 <constraint firstItem="tsH-bE-mZk" firstAttribute="leading" secondItem="KYd-Bk-XFB" secondAttribute="trailing" constant="18" id="cN1-lu-1eM"/>
-                                                <constraint firstAttribute="topMargin" secondItem="tsH-bE-mZk" secondAttribute="top" id="eP8-Xw-RSe"/>
                                                 <constraint firstItem="D4q-z5-poH" firstAttribute="centerY" secondItem="wUR-Aa-ptC" secondAttribute="centerY" id="hoK-mn-8k6"/>
                                                 <constraint firstItem="GQ5-cU-41c" firstAttribute="centerY" secondItem="wUR-Aa-ptC" secondAttribute="centerY" id="mep-Mw-FMm"/>
+                                                <constraint firstItem="tsH-bE-mZk" firstAttribute="centerY" secondItem="wUR-Aa-ptC" secondAttribute="centerY" id="uhO-zG-GOP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -270,7 +271,7 @@
                                     <action selector="editButttonPressed:" destination="5mS-9y-UxZ" eventType="touchUpInside" id="adx-9D-mNf"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4I9-dA-NE2">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4I9-dA-NE2">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="KMr-qQ-EZs"/>
                                 </constraints>
