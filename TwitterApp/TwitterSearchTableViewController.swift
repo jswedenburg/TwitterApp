@@ -14,18 +14,16 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     static var delegate: searchDelegate?
     @IBOutlet weak var searchBar: UISearchBar!
     
-    let grayColor = UIColor(red: 71, green: 71, blue: 71, alpha: 1.0)
-    let twitterColor = UIColor(red: 0, green: 172, blue: 237, alpha: 1.0)
+    let twitterBlack = UIColor(red: CGFloat(20.0/255.0), green: CGFloat(23.0/255.0), blue: CGFloat(26.0/255.0), alpha: 1.0)
+    let twitterBlue = UIColor(red: CGFloat(29.0/255.0), green: CGFloat(161.0/255.0), blue: CGFloat(242.0/255.0), alpha: 1.0)
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-        //tap.delegate = self.view
-        //self.view.addGestureRecognizer(tap)
-        
-        
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -63,10 +61,10 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         if followedAccounts.contains(account) {
             guard let index = followedAccounts.index(of: account) else { return }
             followedAccounts.remove(at: index)
-            sender.followButton.setTitleColor(grayColor, for: .normal)
+            sender.followButton.setTitleColor(twitterBlack, for: .normal)
         } else {
             followedAccounts.append(account)
-            sender.followButton.setTitleColor(twitterColor, for: .normal)
+            sender.followButton.setTitleColor(twitterBlue, for: .normal)
         }
     }
     
@@ -81,9 +79,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     
     // MARK: - Table view data source
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return twitterAccounts.count
@@ -97,7 +93,6 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
         cell.delegate = self
-        cell.followButton.setTitleColor(grayColor, for: .normal)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         let account = twitterAccounts[indexPath.row]
         cell.updateWithAccount(account: account)

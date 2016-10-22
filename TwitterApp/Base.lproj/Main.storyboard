@@ -107,8 +107,10 @@
                                                         <constraint firstAttribute="width" secondItem="GQ5-cU-41c" secondAttribute="height" multiplier="1:1" id="s6Q-9g-qrz"/>
                                                         <constraint firstAttribute="height" constant="80" id="yEX-QY-A6o"/>
                                                     </constraints>
-                                                    <inset key="imageEdgeInsets" minX="25" minY="25" maxX="25" maxY="25"/>
-                                                    <state key="normal" title="Button" image="blueborderbird"/>
+                                                    <inset key="imageEdgeInsets" minX="18" minY="24" maxX="18" maxY="24"/>
+                                                    <state key="normal" title="Follow" image="blueborderbird">
+                                                        <color key="titleColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="cellButtonPressed:" destination="fEN-1n-LFU" eventType="touchUpInside" id="WYx-QB-ntl"/>
                                                     </connections>
@@ -312,6 +314,9 @@
                                             <state key="normal" title="Remove">
                                                 <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="deleteCells:" destination="5mS-9y-UxZ" eventType="touchUpInside" id="JuL-lD-Mo7"/>
+                                            </connections>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KOo-yF-B50"/>
@@ -429,9 +434,12 @@
                                                         <constraint firstAttribute="height" constant="75" id="asp-JH-DJX"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
-                                                    <state key="normal" title="Follow">
-                                                        <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Add">
+                                                        <color key="titleColor" red="0.078431372549019607" green="0.090196078431372548" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="cellButtonPressed:" destination="OEY-lh-bUP" eventType="touchUpInside" id="oxt-qj-Fh1"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -452,6 +460,7 @@
                                             <outlet property="accountImageView" destination="GsH-3g-mXt" id="IPk-8k-NzL"/>
                                             <outlet property="accountName" destination="Izg-9s-aUY" id="Mn6-wB-cQ0"/>
                                             <outlet property="accountScreenname" destination="mBb-Vh-76e" id="ZjF-mU-VSu"/>
+                                            <outlet property="followButton" destination="5Ib-kW-zzX" id="PI7-WB-6q2"/>
                                             <outlet property="verifiedImageView" destination="C9v-Zd-9c7" id="H0T-mr-ST8"/>
                                         </connections>
                                     </tableViewCell>
@@ -527,7 +536,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navcontroller" automaticallyAdjustsScrollViewInsets="NO" id="75u-pf-1q4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jdM-Xd-YJv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jdM-Xd-YJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -545,7 +554,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UF7-oI-mMZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WaC-Re-BxE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WaC-Re-BxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

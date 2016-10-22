@@ -134,9 +134,8 @@
 		818AC89A1DA539E500659821 /* TwitterApp */ = {
 			isa = PBXGroup;
 			children = (
-				8178BEA51DB52DAF0034FF2E /* FriendshipController.swift */,
-				812D83C91DB5BEAA00FFF883 /* LogInController.swift */,
 				818AC89B1DA539E500659821 /* AppDelegate.swift */,
+				81C55B5C1DBBFB2200874E48 /* Network Controllers */,
 				818AC8E51DA6138200659821 /* Model Controllers */,
 				818AC8E01DA610D400659821 /* Model */,
 				818AC8F01DA70CD700659821 /* View Controllers */,
@@ -165,7 +164,6 @@
 		818AC8E51DA6138200659821 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				818AC8FB1DA722F500659821 /* NetworkController.swift */,
 				818AC8E31DA6137900659821 /* ScheduleController.swift */,
 				818AC8FD1DA7D2BD00659821 /* TwitterAccountController.swift */,
 				819B3BEC1DAC324900D0D674 /* DaysController.swift */,
@@ -176,6 +174,7 @@
 		818AC8F01DA70CD700659821 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				812D83C91DB5BEAA00FFF883 /* LogInController.swift */,
 				818AC8E61DA6B35100659821 /* ScheduleTableViewController.swift */,
 				818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */,
 				81C55B5A1DB999E600874E48 /* TitleTableViewCell.swift */,
@@ -207,6 +206,15 @@
 				818AC8AA1DA539E500659821 /* Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		81C55B5C1DBBFB2200874E48 /* Network Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8178BEA51DB52DAF0034FF2E /* FriendshipController.swift */,
+				818AC8FB1DA722F500659821 /* NetworkController.swift */,
+			);
+			name = "Network Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

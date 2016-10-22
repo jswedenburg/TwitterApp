@@ -198,6 +198,8 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         
         accountCollectionView.allowsMultipleSelection = true
         
+        self.editButton.isEnabled = false
+        
         
         
         
@@ -217,29 +219,42 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         accountCollectionView.allowsSelection = false
         self.editingMode = false
         self.accountCollectionView.reloadData()
-        
+        self.editButton.isEnabled = true
     }
     
         
     
     @IBAction func deleteCells(_ sender: AnyObject) {
-        guard let indexPaths = accountCollectionView.indexPathsForSelectedItems else { return }
+        self.toolBar.isHidden = true
+        
+        
+        
+        guard let indexPaths = self.accountCollectionView.indexPathsForSelectedItems else { return }
         
         for indexPath in indexPaths {
             let index = indexPath.row
-            accountArray.remove(at: index)
-            let cell = accountCollectionView.cellForItem(at: indexPath)
+            self.accountArray.remove(at: index)
+            let cell = self.accountCollectionView.cellForItem(at: indexPath)
             cell?.isSelected = false
             cell?.layer.borderWidth = 0
             
         }
         
-        accountCollectionView.deleteItems(at: indexPaths)
+        self.accountCollectionView.performBatchUpdates({
+            
+            
+            self.accountCollectionView.deleteItems(at: indexPaths)
+            }) { (_) in
+                self.accountCollectionView.reloadData()
+        }
+        
         accountCollectionView.allowsSelection = false
         
-        self.toolBar.isHidden = true
+        
         self.editingMode = false
-        self.accountCollectionView.reloadData()
+        
+        self.editButton.isEnabled = true
+        
         
     }
     

@@ -111,9 +111,9 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             let accountArray2 = schedule.twitterAccounts?.allObjects as! [TwitterAccount]
             scheduleCell.updateWithSchedule(schedule: schedule, accounts: accountArray2)
             if schedule.enabled {
-                scheduleCell.followButton.setImage(#imageLiteral(resourceName: "blueborderbird"), for: .normal)
-            } else {
                 scheduleCell.followButton.setImage(#imageLiteral(resourceName: "bluetwitterlogo"), for: .normal)
+            } else {
+                scheduleCell.followButton.setImage(#imageLiteral(resourceName: "blueborderbird"), for: .normal)
             }
             scheduleCell.delegate = self
             

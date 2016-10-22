@@ -33,8 +33,11 @@ class FriendshipController: NSObject{
             let request = client.urlRequest(withMethod: "POST", url: followEndPoint, parameters: params, error: &clientError)
             client.sendTwitterRequest(request, completion: { (response, data, error) in
                 if error != nil {
-                    //DO something
-                    //print("Error following: \(error?.localizedDescription)")
+                    let alertController = UIAlertController()
+                    alertController.title = "error following "
+                    let action = UIAlertAction(title: "ok", style: .default, handler: nil)
+                    alertController.addAction(action)
+                    
                 }
             })
             
