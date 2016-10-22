@@ -19,11 +19,13 @@ import Answers
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        // Fabric.with([Twitter.self])
         Fabric.with([Twitter.self, Answers.self])
+        
+        
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC") as? LoginViewController,
@@ -31,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
         
-        if UserDefaults.standard.value(forKey: "userID") != nil {
+        if UserDefaults.standard.value(forKey: "userID") != nil || hasAppBeenUpdatedSinceLastRun() == false {
             appDelegate.window?.rootViewController = navVC
             appDelegate.window?.makeKeyAndVisible()
         } else {
@@ -44,6 +46,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         return true
     }
+    
+    func hasAppBeenUpdatedSinceLastRun() -> Bool {
+        var bundleInfo = Bundle.main.infoDictionary!
+        let userDefaults = UserDefaults.standard
+        if let currentVersion = bundleInfo["CFBundleShortVersionString"] as? String {
+            if userDefaults.string(forKey: "currentVersion") == currentVersion {
+                return false
+            } else {
+                userDefaults.set(currentVersion, forKey: "currentVersion")
+                userDefaults.synchronize()
+                return true
+            }
+        }
+        return true
+    }
+        
+    
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         //Swifter.handleOpenURL(url)

@@ -34,6 +34,13 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
    
+        
+        
+        
+        
+    
+    
+   
     
     
     
@@ -53,7 +60,9 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     func cellButtonPressed(sender: UITableViewCell) {
+        
         guard let cell = sender as? ScheduleTableViewCell else { return }
+        cell.followButton.isEnabled = false
         guard let sender = sender as? ScheduleTableViewCell else { return }
         guard let index = self.tableView.indexPath(for: sender)?.row else { return }
         let schedule = scheduleArray[index]
@@ -61,7 +70,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         if schedule.enabled {
             FriendshipController.sharedController.unfollowAccounts(accounts: accounts, completion: { (error) in
-                if error != nil {
+                if error == true {
                     let alertController = UIAlertController(title: "Unfollowing Failed", message: "Please attempt at a later time", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
                     alertController.addAction(action)
@@ -71,12 +80,10 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
                     schedule.enabled = false
                 }
             })
-            schedule.enabled = false
-            cell.followButton.setImage(#imageLiteral(resourceName: "blueborderbird"), for: .normal)
         } else {
             
             FriendshipController.sharedController.followAccounts(accounts: accounts, completion: { (error) in
-                if error != nil {
+                if error == true {
                     let alertController = UIAlertController(title: "Following Failed", message: "Please attempt at a later time", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
                     alertController.addAction(action)
@@ -91,6 +98,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
         
         ScheduleController.sharedController.saveToPersistentStorage()
+        cell.followButton.isEnabled = true
         
     }
     
