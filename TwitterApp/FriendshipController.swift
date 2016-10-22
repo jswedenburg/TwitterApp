@@ -19,7 +19,7 @@ class FriendshipController: NSObject{
     
     
     
-    func followAccounts(accounts: [TwitterAccount]) {
+    func followAccounts(accounts: [TwitterAccount], completion: @escaping ((_ error: Error?) -> Void)){
         guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }
         let client = TWTRAPIClient(userID: userID)
         let followEndPoint = "https://api.twitter.com/1.1/friendships/create.json"
@@ -32,20 +32,20 @@ class FriendshipController: NSObject{
             let params = ["screen_name": "\(screenName)"]
             let request = client.urlRequest(withMethod: "POST", url: followEndPoint, parameters: params, error: &clientError)
             client.sendTwitterRequest(request, completion: { (response, data, error) in
-                if error != nil {
-                    let alertController = UIAlertController()
-                    alertController.title = "error following "
-                    let action = UIAlertAction(title: "ok", style: .default, handler: nil)
-                    alertController.addAction(action)
+                
+                    DispatchQueue.main.async {
+                        completion(error)
+                    
                     
                 }
+               
             })
             
 
         }
         
     }
-        func unfollowAccounts(accounts: [TwitterAccount]) {
+        func unfollowAccounts(accounts: [TwitterAccount], completion: @escaping ((_ error: Error?) -> Void)) {
             guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }
             let client = TWTRAPIClient(userID: userID)
             let followEndPoint = "https://api.twitter.com/1.1/friendships/destroy.json"
@@ -58,16 +58,14 @@ class FriendshipController: NSObject{
                 let params = ["screen_name": "\(screenName)"]
                 let request = client.urlRequest(withMethod: "POST", url: followEndPoint, parameters: params, error: &clientError)
                 client.sendTwitterRequest(request, completion: { (response, data, error) in
-                    if error != nil {
-                        
-                        //Do something
-                        //print("Error following: \(error?.localizedDescription)")
-                    }
-                })
+                    DispatchQueue.main.async {
+                        completion(error)
+                }
                 
                 
-            }
+            })
         
 }
 
+}
 }

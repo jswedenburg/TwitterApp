@@ -60,14 +60,34 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         let accounts = schedule.twitterAccounts?.allObjects as? [TwitterAccount] ?? []
         
         if schedule.enabled {
-            FriendshipController.sharedController.unfollowAccounts(accounts: accounts)
+            FriendshipController.sharedController.unfollowAccounts(accounts: accounts, completion: { (error) in
+                if error != nil {
+                    let alertController = UIAlertController(title: "Unfollowing Failed", message: "Please attempt at a later time", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
+                } else {
+                    cell.followButton.setImage(#imageLiteral(resourceName: "Twitter_Logo_Blue"), for: .normal)
+                    schedule.enabled = false
+                }
+            })
             schedule.enabled = false
             cell.followButton.setImage(#imageLiteral(resourceName: "blueborderbird"), for: .normal)
         } else {
             
-            FriendshipController.sharedController.followAccounts(accounts: accounts)
-            cell.followButton.setImage(#imageLiteral(resourceName: "bluetwitterlogo"), for: .normal)
-            schedule.enabled = true
+            FriendshipController.sharedController.followAccounts(accounts: accounts, completion: { (error) in
+                if error != nil {
+                    let alertController = UIAlertController(title: "Following Failed", message: "Please attempt at a later time", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
+                } else {
+                    cell.followButton.setImage(#imageLiteral(resourceName: "bluetwitterlogo"), for: .normal)
+                    schedule.enabled = true
+                }
+                
+            })
+            
         }
         
         ScheduleController.sharedController.saveToPersistentStorage()
