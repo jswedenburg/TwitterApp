@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: AnyObject) {
         Twitter.sharedInstance().logIn { (session, error) in
+            print(error?.localizedDescription)
             if session != nil {
             
                
@@ -30,7 +31,7 @@ class LoginViewController: UIViewController {
                 UserDefaults.standard.set(session?.userID, forKey: "userID")
                 
                 
-               Answers.logLogin(withMethod: "Twitter", success: true, customAttributes: ["User ID": session!.userID])
+               
                 
             }
         }
@@ -39,20 +40,6 @@ class LoginViewController: UIViewController {
     
     
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

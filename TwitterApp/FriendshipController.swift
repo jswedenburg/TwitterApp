@@ -39,6 +39,7 @@ class FriendshipController: NSObject{
                 
                 
                     if error != nil {
+                        print(response?.description)
                         print(error?.localizedDescription)
                         isError = true
                     

@@ -102,7 +102,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="ccN-RG-qzw" secondAttribute="trailing" id="yc3-8T-7Pl"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ5-cU-41c">
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ5-cU-41c">
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="GQ5-cU-41c" secondAttribute="height" multiplier="1:1" id="s6Q-9g-qrz"/>
                                                         <constraint firstAttribute="height" constant="80" id="yEX-QY-A6o"/>

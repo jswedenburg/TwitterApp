@@ -72,7 +72,12 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             FriendshipController.sharedController.unfollowAccounts(accounts: accounts, completion: { (error) in
                 if error == true {
                     let alertController = UIAlertController(title: "Unfollowing Failed", message: "Please attempt at a later time", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    let action = UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                        guard let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginVC") as? LoginViewController else { return }
+                        
+                        self.present(loginVC, animated: true, completion: nil)
+                    })
                     alertController.addAction(action)
                     self.present(alertController, animated: true, completion: nil)
                 } else {
@@ -85,7 +90,12 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             FriendshipController.sharedController.followAccounts(accounts: accounts, completion: { (error) in
                 if error == true {
                     let alertController = UIAlertController(title: "Following Failed", message: "Please attempt at a later time", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    let action = UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                        guard let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginVC") as? LoginViewController else { return }
+                        
+                        self.present(loginVC, animated: true, completion: nil)
+                    })
                     alertController.addAction(action)
                     self.present(alertController, animated: true, completion: nil)
                 } else {
