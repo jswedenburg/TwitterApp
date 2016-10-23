@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		812D83CA1DB5BEAA00FFF883 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D83C91DB5BEAA00FFF883 /* LogInController.swift */; };
 		8131484A1DB729CB008C701D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813148491DB729CB008C701D /* LoginViewController.swift */; };
 		8131493A1DB7E3E8008C701D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813149361DB7E3E8008C701D /* Fabric.framework */; };
 		8131493B1DB7E3E8008C701D /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813149371DB7E3E8008C701D /* TwitterKit.framework */; };
@@ -57,7 +56,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		812D83C91DB5BEAA00FFF883 /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		813148491DB729CB008C701D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		813149361DB7E3E8008C701D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		813149371DB7E3E8008C701D /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 		818AC8F01DA70CD700659821 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				812D83C91DB5BEAA00FFF883 /* LogInController.swift */,
 				818AC8E61DA6B35100659821 /* ScheduleTableViewController.swift */,
 				818AC8F31DA70D4D00659821 /* ScheduleTableViewCell.swift */,
 				81C55B5A1DB999E600874E48 /* TitleTableViewCell.swift */,
@@ -326,7 +323,6 @@
 				8178BEA61DB52DAF0034FF2E /* FriendshipController.swift in Sources */,
 				818AC8E41DA6137900659821 /* ScheduleController.swift in Sources */,
 				8131484A1DB729CB008C701D /* LoginViewController.swift in Sources */,
-				812D83CA1DB5BEAA00FFF883 /* LogInController.swift in Sources */,
 				818AC8F41DA70D4D00659821 /* ScheduleTableViewCell.swift in Sources */,
 				818AC9061DA81FD000659821 /* ScheduleDetailViewController.swift in Sources */,
 				818AC8DC1DA610CC00659821 /* TwitterAccount+CoreDataClass.swift in Sources */,

@@ -13,13 +13,6 @@ import TwitterKit
 
 class NetworkController {
     
-    static let consumerKey = "ADeOdA9e5XfjJtchq0iWetwpY"
-    static let accessToken = "45428809-NhJAMwJshILhzUrO16A5pHpgmEbRKbm1KQJwvuB52"
-    static let consumerSecret = "7XlXJOe97gpqyu5GYtWY5isOwy4YEvnin1Rr8m0g5GMs6pD3WR"
-    static let tokenSecret = "BiTchVQ5V0dE1PxUHIIGFzlCRrh25gaGq1oGPMlbP9yzK"
-    
-    
-    
     
     static func searchRequest(searchTerm: String, completion: @escaping ([TwitterAccount]) -> Void) {
         guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }

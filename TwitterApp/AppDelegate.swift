@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-       // Fabric.with([Twitter.self])
+       
         Fabric.with([Twitter.self, Answers.self])
         
         
@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
         
-        if UserDefaults.standard.value(forKey: "userID") != nil || hasAppBeenUpdatedSinceLastRun() == false {
+        if UserDefaults.standard.value(forKey: "userID") != nil  {
             appDelegate.window?.rootViewController = navVC
             appDelegate.window?.makeKeyAndVisible()
         } else {
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         return true
     }
-    
+    /*
     func hasAppBeenUpdatedSinceLastRun() -> Bool {
         var bundleInfo = Bundle.main.infoDictionary!
         let userDefaults = UserDefaults.standard
@@ -62,12 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
         
+ */
     
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        //Swifter.handleOpenURL(url)
-        return true
-    }
+    
 
     
     

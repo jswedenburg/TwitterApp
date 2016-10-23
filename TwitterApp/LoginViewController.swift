@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
             
                
                 self.navigateToScheduleScreen()
-                UserDefaults.standard.set(session?.userID, forKey: "userID")
+                //UserDefaults.standard.set(session?.userID, forKey: "userID")
                 
                 
                
