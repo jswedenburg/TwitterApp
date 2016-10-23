@@ -48,7 +48,7 @@ class NetworkController {
                     guard let data = data else { return }
                     
                     DispatchQueue.main.async {
-                        let newAccount = TwitterAccount(name: name, screenName: screenName, verified: true, schedule: nil, profileImageData: data)
+                        let newAccount = TwitterAccount(name: name, screenName: screenName, verified: false, schedule: nil, profileImageData: data)
                         accountArray.append(newAccount)
                         completion(accountArray)
                     }

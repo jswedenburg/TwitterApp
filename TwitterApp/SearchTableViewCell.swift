@@ -20,6 +20,11 @@ class SearchTableViewCell: UITableViewCell {
     
     
     
+    let twitterBlack = UIColor(red: CGFloat(20.0/255.0), green: CGFloat(23.0/255.0), blue: CGFloat(26.0/255.0), alpha: 1.0)
+    let twitterBlue = UIColor(red: CGFloat(29.0/255.0), green: CGFloat(161.0/255.0), blue: CGFloat(242.0/255.0), alpha: 1.0)
+    
+    
+    
     var delegate: TableViewCellDelegate?
     
     
@@ -36,6 +41,11 @@ class SearchTableViewCell: UITableViewCell {
         self.accountScreenname.text = "@" + (account.screenName ?? "")
         guard let image = UIImage(data: account.profileImage!) else { return }
         self.accountImageView.image = image
+        if account.verified{
+            followButton.setTitleColor(twitterBlue, for: .normal)
+        } else {
+            followButton.setTitleColor(twitterBlack, for: .normal)
+        }
     }
 
 }

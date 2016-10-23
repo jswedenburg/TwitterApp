@@ -74,9 +74,12 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
             guard let index = followedAccounts.index(of: account) else { return }
             followedAccounts.remove(at: index)
             sender.followButton.setTitleColor(twitterBlack, for: .normal)
+            account.verified = false
+            
         } else {
             followedAccounts.append(account)
             sender.followButton.setTitleColor(twitterBlue, for: .normal)
+            account.verified = true
         }
     }
     
