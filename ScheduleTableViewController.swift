@@ -32,6 +32,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
         
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
     }
     
    
@@ -139,9 +141,10 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         if indexPath.row == 0 {
             guard let titleCell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as? TitleTableViewCell else { return UITableViewCell()}
             titleCell.titleLabel.text = "Groups"
+            titleCell.isUserInteractionEnabled = false
             
-            titleCell.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 300)
-            self.tableView.separatorStyle = .singleLine
+            //titleCell.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 300)
+            //self.tableView.separatorStyle = .singleLine
             
             return titleCell
         } else {
@@ -155,8 +158,9 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
                 scheduleCell.followButton.setImage(#imageLiteral(resourceName: "borderbird"), for: .normal)
             }
             scheduleCell.delegate = self
+            scheduleCell.backgroundColor = UIColor.white
             
-            scheduleCell.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+            //scheduleCell.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
             
             
             
@@ -176,6 +180,26 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row != 0 {
+            cell.contentView.backgroundColor = UIColor.clear
+            
+            let whiteRoundedView : UIView = UIView(frame: CGRect(x: 0, y: 3, width: self.view.frame.size.width, height: self.view.frame.size.height))
+            
+            whiteRoundedView.layer.backgroundColor = UIColor.white.cgColor
+            whiteRoundedView.layer.masksToBounds = false
+            whiteRoundedView.layer.cornerRadius = 2.0
+            
+            whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: -10)
+            whiteRoundedView.layer.shadowOpacity = 0.2
+            whiteRoundedView.layer.shadowColor = UIColor(red: 170/255, green: 184/255, blue: 194/255, alpha: 1).cgColor
+            
+            cell.contentView.addSubview(whiteRoundedView)
+            cell.contentView.sendSubview(toBack: whiteRoundedView)
+        }
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -184,6 +208,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    
     
     
     //MARK: Helper Functions

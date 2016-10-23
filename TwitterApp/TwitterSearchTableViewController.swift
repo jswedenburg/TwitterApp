@@ -84,7 +84,16 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     
     @IBAction func exitButtonPressed(_ sender: AnyObject) {
         dismiss(animated: true) {
-            TwitterSearchTableViewController.delegate?.accountArray += self.followedAccounts
+            for account in self.followedAccounts {
+                let contains = TwitterSearchTableViewController.delegate?.accountArray.contains(where: {account.screenName == $0.screenName})
+                guard let append = contains else { return }
+                if append {
+                    
+                } else {
+                    TwitterSearchTableViewController.delegate?.accountArray.append(account)
+                }
+            }
+            
         }
     }
     

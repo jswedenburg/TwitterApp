@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Us0-eX-yMG">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" rowHeight="90" id="Tae-vw-pd0" customClass="TitleTableViewCell" customModule="TwitterApp" customModuleProvider="target">
@@ -50,6 +50,7 @@
                                                 <constraint firstItem="ahu-bf-WZa" firstAttribute="leading" secondItem="6zC-41-iNW" secondAttribute="leadingMargin" id="UAd-66-KXf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="titleLabel" destination="ahu-bf-WZa" id="mfb-6e-sxe"/>
                                         </connections>
@@ -149,7 +150,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Us0-eX-yMG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="7d8-gp-YBm"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Us0-eX-yMG" secondAttribute="bottom" id="UVr-wf-pJp"/>
@@ -481,7 +481,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="M7m-o4-5Nv" firstAttribute="top" secondItem="tcy-qh-Yrb" secondAttribute="bottom" id="66o-PF-qqi"/>
                             <constraint firstAttribute="trailing" secondItem="bPj-z5-FSg" secondAttribute="trailing" id="Fb5-5G-2KX"/>
@@ -543,7 +543,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navcontroller" automaticallyAdjustsScrollViewInsets="NO" id="75u-pf-1q4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jdM-Xd-YJv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jdM-Xd-YJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -561,7 +561,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UF7-oI-mMZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WaC-Re-BxE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WaC-Re-BxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
