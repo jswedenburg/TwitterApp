@@ -10,6 +10,7 @@ import UIKit
 
 class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,  searchDelegate, UITextFieldDelegate {
     
+    let twitterBlue = UIColor(red: CGFloat(29.0/255.0), green: CGFloat(161.0/255.0), blue: CGFloat(242.0/255.0), alpha: 1.0)
    
     @IBOutlet weak var accountCollectionView: UICollectionView!
     
@@ -35,8 +36,11 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         self.accountCollectionView.allowsSelection = false
         self.toolBar.isHidden = true
         
+        self.navigationController?.navigationBar.barTintColor = twitterBlue
         
-        
+        if let titleFont = UIFont(name: "PaulGrotesk-Bold-Trail", size: 25) {
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: titleFont]
+        }
         
         
     }

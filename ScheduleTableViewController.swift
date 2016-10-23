@@ -41,10 +41,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
-        
-        
-        
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        //self.tableView.contentInset = UIEdgeInsetsMake(-10, 0, 0, 0)
+    
         
     }
     
@@ -181,6 +179,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             scheduleCell.layer.cornerRadius = 10
             
             return scheduleCell
+            
         }
         
         
@@ -196,13 +195,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "footer"
-    }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "header"
-    }
     
     
     
@@ -216,6 +209,22 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 20
+        }
+        return 1.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 20
+        }
+        return 5.0
+    }
+    
+   
     
     
     //MARK: Helper Functions

@@ -34,10 +34,10 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" rowHeight="90" id="Tae-vw-pd0" customClass="TitleTableViewCell" customModule="TwitterApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="120" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="120" width="365" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tae-vw-pd0" id="6zC-41-iNW">
-                                            <frame key="frameInset" width="375" height="90"/>
+                                            <frame key="frameInset" width="365" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahu-bf-WZa">
@@ -57,10 +57,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scheduleCell" rowHeight="90" id="fEN-1n-LFU" customClass="ScheduleTableViewCell" customModule="TwitterApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="210" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="210" width="365" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fEN-1n-LFU" id="wUR-Aa-ptC">
-                                            <frame key="frameInset" width="375" height="90"/>
+                                            <frame key="frameInset" width="365" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4q-z5-poH">
@@ -106,11 +106,11 @@
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ5-cU-41c">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="GQ5-cU-41c" secondAttribute="height" multiplier="1:1" id="s6Q-9g-qrz"/>
+                                                        <constraint firstAttribute="width" constant="100" id="PIh-Ql-Cpv"/>
                                                         <constraint firstAttribute="height" constant="80" id="yEX-QY-A6o"/>
                                                     </constraints>
-                                                    <inset key="contentEdgeInsets" minX="22" minY="24" maxX="18" maxY="24"/>
-                                                    <state key="normal" title="Follow" image="blueborderbird">
+                                                    <inset key="contentEdgeInsets" minX="25" minY="24" maxX="21" maxY="24"/>
+                                                    <state key="normal" title="Follow" image="borderbird">
                                                         <color key="titleColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
@@ -151,11 +151,12 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Us0-eX-yMG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="7d8-gp-YBm"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Us0-eX-yMG" secondAttribute="bottom" id="UVr-wf-pJp"/>
-                            <constraint firstAttribute="trailing" secondItem="Us0-eX-yMG" secondAttribute="trailing" id="YKa-kZ-2v1"/>
-                            <constraint firstItem="Us0-eX-yMG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xZn-qK-Jbg"/>
+                            <constraint firstAttribute="trailing" secondItem="Us0-eX-yMG" secondAttribute="trailing" constant="5" id="gUK-kh-Hc2"/>
+                            <constraint firstItem="Us0-eX-yMG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="qLb-Ao-q4t"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="breezy" id="Ugt-hO-n4i">
@@ -193,7 +194,7 @@
             </objects>
             <point key="canvasLocation" x="4031.1999999999998" y="-546.47676161919048"/>
         </scene>
-        <!--Schedule Detail View Controller-->
+        <!--breezy-->
         <scene sceneID="CmF-vQ-Tl3">
             <objects>
                 <viewController id="5mS-9y-UxZ" customClass="ScheduleDetailViewController" customModule="TwitterApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -342,14 +343,14 @@
                             <constraint firstItem="4I9-dA-NE2" firstAttribute="leading" secondItem="zlw-aY-ypv" secondAttribute="leading" id="vXe-VQ-coE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TPJ-Hd-Iez">
+                    <navigationItem key="navigationItem" title="breezy" id="TPJ-Hd-Iez">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="dcL-4F-XFI">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hxm-39-3Lh">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
                                 <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelScheduleButtonPressed:" destination="5mS-9y-UxZ" eventType="touchUpInside" id="hKY-f8-8s1"/>
@@ -362,7 +363,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
                                 <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="5mS-9y-UxZ" eventType="touchUpInside" id="Ymq-Y6-2yf"/>
@@ -433,13 +434,12 @@
                                                         <constraint firstAttribute="height" constant="15" id="ISS-vB-HVd"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ib-kW-zzX">
+                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ib-kW-zzX">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="QP6-vV-hGt"/>
                                                         <constraint firstAttribute="height" constant="75" id="asp-JH-DJX"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
-                                                    <state key="normal" title="Add">
+                                                    <state key="normal" image="plus">
                                                         <color key="titleColor" red="0.078431372549019607" green="0.090196078431372548" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
@@ -450,12 +450,12 @@
                                             <constraints>
                                                 <constraint firstItem="GsH-3g-mXt" firstAttribute="leading" secondItem="Msw-hv-Z8i" secondAttribute="leadingMargin" id="0BQ-M7-0wc"/>
                                                 <constraint firstItem="GsH-3g-mXt" firstAttribute="top" secondItem="Msw-hv-Z8i" secondAttribute="topMargin" id="64Q-dW-hYW"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="5Ib-kW-zzX" secondAttribute="trailing" constant="5" id="F1M-1U-dPM"/>
                                                 <constraint firstItem="5Ib-kW-zzX" firstAttribute="centerY" secondItem="Msw-hv-Z8i" secondAttribute="centerY" id="H22-q0-FR1"/>
                                                 <constraint firstItem="mBb-Vh-76e" firstAttribute="leading" secondItem="GsH-3g-mXt" secondAttribute="trailing" constant="11" id="ILA-SF-Zh4"/>
                                                 <constraint firstAttribute="topMargin" secondItem="C9v-Zd-9c7" secondAttribute="top" id="JQo-nc-tCD"/>
                                                 <constraint firstItem="C9v-Zd-9c7" firstAttribute="leading" secondItem="Izg-9s-aUY" secondAttribute="trailing" constant="8" id="JoR-Qa-YQE"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="mBb-Vh-76e" secondAttribute="bottom" id="MI6-0t-Imp"/>
+                                                <constraint firstAttribute="trailing" secondItem="5Ib-kW-zzX" secondAttribute="trailing" id="V2H-L5-byd"/>
+                                                <constraint firstItem="mBb-Vh-76e" firstAttribute="top" secondItem="Izg-9s-aUY" secondAttribute="bottom" constant="1" id="WfQ-5i-uXE"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GsH-3g-mXt" secondAttribute="bottom" id="Y9t-8e-sDH"/>
                                                 <constraint firstItem="Izg-9s-aUY" firstAttribute="top" secondItem="Msw-hv-Z8i" secondAttribute="topMargin" id="Yyt-a1-e4H"/>
                                                 <constraint firstItem="Izg-9s-aUY" firstAttribute="leading" secondItem="GsH-3g-mXt" secondAttribute="trailing" constant="11" id="cbB-qe-hLA"/>
@@ -473,10 +473,13 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRu-hd-V6F">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="21" id="XLf-eN-Ivu"/>
-                                    <constraint firstAttribute="height" constant="21" id="a5t-zb-Gr8"/>
+                                    <constraint firstAttribute="width" constant="50" id="XLf-eN-Ivu"/>
+                                    <constraint firstAttribute="height" constant="30" id="a5t-zb-Gr8"/>
                                 </constraints>
-                                <state key="normal" title="Done" image="exit"/>
+                                <fontDescription key="fontDescription" name="PaulGrotesk-Bold-Trail" family="Paul Grotesk" pointSize="19"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="exitButtonPressed:" destination="GrW-c5-2jI" eventType="touchUpInside" id="lrz-c7-t14"/>
                                 </connections>
@@ -486,10 +489,10 @@
                         <constraints>
                             <constraint firstItem="M7m-o4-5Nv" firstAttribute="top" secondItem="tcy-qh-Yrb" secondAttribute="bottom" id="66o-PF-qqi"/>
                             <constraint firstAttribute="trailing" secondItem="bPj-z5-FSg" secondAttribute="trailing" id="Fb5-5G-2KX"/>
-                            <constraint firstItem="LRu-hd-V6F" firstAttribute="top" secondItem="TGW-Bz-pae" secondAttribute="bottom" constant="5" id="Pu9-jv-M8x"/>
+                            <constraint firstAttribute="trailing" secondItem="LRu-hd-V6F" secondAttribute="trailing" constant="10" id="JEQ-mI-7pz"/>
+                            <constraint firstItem="bPj-z5-FSg" firstAttribute="top" secondItem="LRu-hd-V6F" secondAttribute="bottom" constant="10" id="PqU-T6-RmP"/>
                             <constraint firstItem="tcy-qh-Yrb" firstAttribute="leading" secondItem="rtS-M7-sey" secondAttribute="leading" id="Rw4-v9-BKT"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="LRu-hd-V6F" secondAttribute="leading" id="c5M-V6-083"/>
-                            <constraint firstItem="bPj-z5-FSg" firstAttribute="top" secondItem="LRu-hd-V6F" secondAttribute="bottom" constant="19" id="h8R-H9-XlN"/>
+                            <constraint firstItem="LRu-hd-V6F" firstAttribute="top" secondItem="TGW-Bz-pae" secondAttribute="bottom" constant="10" id="a87-fc-3Bw"/>
                             <constraint firstItem="tcy-qh-Yrb" firstAttribute="top" secondItem="bPj-z5-FSg" secondAttribute="bottom" constant="10" id="kRI-ot-BLm"/>
                             <constraint firstItem="bPj-z5-FSg" firstAttribute="leading" secondItem="rtS-M7-sey" secondAttribute="leading" id="rgp-n9-iEB"/>
                             <constraint firstAttribute="trailing" secondItem="tcy-qh-Yrb" secondAttribute="trailing" id="rms-5T-NLz"/>
@@ -544,7 +547,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navcontroller" automaticallyAdjustsScrollViewInsets="NO" id="75u-pf-1q4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jdM-Xd-YJv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jdM-Xd-YJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -562,7 +565,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UF7-oI-mMZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WaC-Re-BxE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WaC-Re-BxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -577,8 +580,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blueborderbird" width="528" height="528"/>
-        <image name="exit" width="180" height="180"/>
+        <image name="borderbird" width="1482" height="1209"/>
+        <image name="plus" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3x4-In-AK8"/>

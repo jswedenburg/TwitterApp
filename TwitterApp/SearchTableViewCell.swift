@@ -37,14 +37,16 @@ class SearchTableViewCell: UITableViewCell {
     
     
     func updateWithAccount(account: TwitterAccount) {
+        
+        followButton.imageEdgeInsets = UIEdgeInsetsMake(25.0, 55.0, 25.0, 15.0)
         self.accountName.text = account.name
         self.accountScreenname.text = "@" + (account.screenName ?? "")
         guard let image = UIImage(data: account.profileImage!) else { return }
         self.accountImageView.image = image
         if account.verified{
-            followButton.setTitleColor(twitterBlue, for: .normal)
+            followButton.setImage(#imageLiteral(resourceName: "bluecheckmark"), for: .normal)
         } else {
-            followButton.setTitleColor(twitterBlack, for: .normal)
+            followButton.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
         }
     }
 

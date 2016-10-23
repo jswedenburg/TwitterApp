@@ -73,12 +73,12 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         if followedAccounts.contains(account) {
             guard let index = followedAccounts.index(of: account) else { return }
             followedAccounts.remove(at: index)
-            sender.followButton.setTitleColor(twitterBlack, for: .normal)
+            sender.followButton.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
             account.verified = false
             
         } else {
             followedAccounts.append(account)
-            sender.followButton.setTitleColor(twitterBlue, for: .normal)
+            sender.followButton.setImage(#imageLiteral(resourceName: "bluecheckmark"), for: .normal)
             account.verified = true
         }
     }
@@ -110,7 +110,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
+        return 70.0
     }
     
     

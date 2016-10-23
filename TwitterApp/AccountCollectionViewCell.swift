@@ -21,9 +21,9 @@ class AccountCollectionViewCell: UICollectionViewCell {
         guard let data = account.profileImage else { return }
         self.accountImageView.image = UIImage(data: data)
         
-        checkMarkImageView.layer.borderWidth=1.0
+        checkMarkImageView.layer.borderWidth = 0.5
         checkMarkImageView.layer.masksToBounds = false
-        checkMarkImageView.layer.borderColor = UIColor.white.cgColor
+        checkMarkImageView.layer.borderColor = UIColor.black.cgColor
         checkMarkImageView.layer.cornerRadius = 13
         checkMarkImageView.layer.cornerRadius = checkMarkImageView.frame.size.height/2
         checkMarkImageView.clipsToBounds = true

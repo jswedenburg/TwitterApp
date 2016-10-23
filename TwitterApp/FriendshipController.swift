@@ -51,7 +51,7 @@ class FriendshipController: NSObject{
         }
         
         
-        dispatchGroup.notify(queue: DispatchQueue.main) { 
+        dispatchGroup.notify(queue: DispatchQueue.main) {
             completion(isError)
         }
         
