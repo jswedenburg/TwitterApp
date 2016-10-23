@@ -573,7 +573,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blueborderbird" width="1482" height="1209"/>
+        <image name="blueborderbird" width="528" height="528"/>
         <image name="exit" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
