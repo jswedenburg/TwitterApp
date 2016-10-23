@@ -12,7 +12,8 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     
     var schedule: Schedule?
     static var delegate: searchDelegate?
-    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var searchBar: CustomSearchBar!
     
     let twitterBlack = UIColor(red: CGFloat(20.0/255.0), green: CGFloat(23.0/255.0), blue: CGFloat(26.0/255.0), alpha: 1.0)
     let twitterBlue = UIColor(red: CGFloat(29.0/255.0), green: CGFloat(161.0/255.0), blue: CGFloat(242.0/255.0), alpha: 1.0)
@@ -24,6 +25,10 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        
+        
+        
+        
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -37,8 +42,15 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
         }
     }
     
+   
+    
+        
+    
+    
     
     //MARK: Search Delegate
+    
+    
     
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -104,7 +116,7 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     
     
     
-    
+
 }
 
 

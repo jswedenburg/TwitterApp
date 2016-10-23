@@ -394,7 +394,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="bPj-z5-FSg">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="bPj-z5-FSg" customClass="CustomSearchBar" customModule="TwitterApp" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="B6Y-DJ-San"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tcy-qh-Yrb">
@@ -491,7 +495,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="searchBar" destination="bPj-z5-FSg" id="uzg-dO-Kqo"/>
+                        <outlet property="searchBar" destination="bPj-z5-FSg" id="zqW-od-rBM"/>
                         <outlet property="tableView" destination="tcy-qh-Yrb" id="ClA-Tt-Rr2"/>
                     </connections>
                 </viewController>

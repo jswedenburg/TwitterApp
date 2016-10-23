@@ -14,6 +14,9 @@ import TwitterKit
 class NetworkController {
     
     
+   
+    
+    
     static func searchRequest(searchTerm: String, completion: @escaping ([TwitterAccount]) -> Void) {
         guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }
         let client = TWTRAPIClient(userID: userID)

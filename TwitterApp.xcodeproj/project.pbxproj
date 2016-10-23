@@ -12,6 +12,7 @@
 		8131493B1DB7E3E8008C701D /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813149371DB7E3E8008C701D /* TwitterKit.framework */; };
 		8131493C1DB7E3E8008C701D /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 813149381DB7E3E8008C701D /* TwitterKitResources.bundle */; };
 		8131493D1DB7E3E8008C701D /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813149391DB7E3E8008C701D /* TwitterCore.framework */; };
+		8158FD781DBD161D0007676F /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8158FD771DBD161D0007676F /* CustomSearchBar.swift */; };
 		8178BE581DAFFC2B0034FF2E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */; };
 		8178BE7F1DB17A930034FF2E /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */; };
 		8178BEA61DB52DAF0034FF2E /* FriendshipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178BEA51DB52DAF0034FF2E /* FriendshipController.swift */; };
@@ -61,6 +62,7 @@
 		813149371DB7E3E8008C701D /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		813149381DB7E3E8008C701D /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		813149391DB7E3E8008C701D /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		8158FD771DBD161D0007676F /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		8178BEA51DB52DAF0034FF2E /* FriendshipController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendshipController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				8178BE7E1DB17A930034FF2E /* AccountCollectionViewCell.swift */,
 				8178BE571DAFFC2B0034FF2E /* SearchTableViewCell.swift */,
 				819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */,
+				8158FD771DBD161D0007676F /* CustomSearchBar.swift */,
 				813148491DB729CB008C701D /* LoginViewController.swift */,
 			);
 			name = "View Controllers";
@@ -312,6 +315,7 @@
 			files = (
 				818AC8FC1DA722F500659821 /* NetworkController.swift in Sources */,
 				819B3BED1DAC324900D0D674 /* DaysController.swift in Sources */,
+				8158FD781DBD161D0007676F /* CustomSearchBar.swift in Sources */,
 				818AC8FE1DA7D2BD00659821 /* TwitterAccountController.swift in Sources */,
 				819B3BF91DAC619E00D0D674 /* Schedule+CoreDataProperties.swift in Sources */,
 				818AC8EE1DA6F14C00659821 /* Schedule+CoreDataClass.swift in Sources */,
