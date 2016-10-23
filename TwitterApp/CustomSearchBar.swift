@@ -11,7 +11,7 @@ import UIKit
 class CustomSearchBar: UISearchBar {
     var preferredFont: UIFont = UIFont.systemFont(ofSize: 34)
     
-    var preferredTextColor = UIColor.black
+    var preferredTextColor = UIColor(red: 20/270, green: 23/270, blue: 26/270, alpha: 1)
     
     init(frame: CGRect, font: UIFont, textColor: UIColor) {
         super.init(frame: frame)

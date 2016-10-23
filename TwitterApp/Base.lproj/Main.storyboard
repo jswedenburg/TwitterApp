@@ -417,13 +417,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBb-Vh-76e">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
+                                                    <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izg-9s-aUY">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
+                                                    <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C9v-Zd-9c7">
@@ -516,7 +516,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4a-9N-ZHC">
-                                <state key="normal" title="Sign In with Twitter"/>
+                                <fontDescription key="fontDescription" name="PaulGrotesk-Bold-Trail" family="Paul Grotesk" pointSize="24"/>
+                                <state key="normal" title="Sign In with Twitter">
+                                    <color key="titleColor" red="0.11372549019607843" green="0.63137254901960782" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="ydE-oY-pI5" eventType="touchUpInside" id="kkd-JE-Aaa"/>
                                     <segue destination="75u-pf-1q4" kind="presentation" identifier="toScheduleView" id="eUK-yj-b8d"/>
@@ -540,7 +543,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navcontroller" automaticallyAdjustsScrollViewInsets="NO" id="75u-pf-1q4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jdM-Xd-YJv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jdM-Xd-YJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -558,7 +561,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UF7-oI-mMZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WaC-Re-BxE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WaC-Re-BxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
