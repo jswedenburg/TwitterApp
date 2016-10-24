@@ -10,7 +10,7 @@
  import TwitterKit
  
  
- class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TableViewCellDelegate {
+ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TableViewCellDelegate, UINavigationControllerDelegate {
     
     
     let twitterBlue = UIColor(red: 29/255, green: 161/255, blue: 242/155, alpha: 1.0)
@@ -40,12 +40,12 @@
         self.navigationController?.navigationBar.barTintColor = twitterBlue
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         self.tableView.reloadData()
-        //self.tableView.contentInset = UIEdgeInsetsMake(-10, 0, 0, 0)
-        
-        
     }
+    
+    
+    
     
     
     
@@ -207,12 +207,27 @@
     
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        
         if editingStyle == .delete {
+            
             let schedule = scheduleArray[indexPath.section - 1]
             ScheduleController.sharedController.delete(schedule)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let indexSet = NSMutableIndexSet()
+            indexSet.add(indexPath.section)
+            self.tableView.deleteSections(indexSet as IndexSet, with: .bottom)
+            
+           
+           
         }
+        
+        
+        
+       
     }
+  
+    
+    
     
     
     

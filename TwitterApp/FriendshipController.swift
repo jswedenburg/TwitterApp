@@ -26,13 +26,13 @@ class FriendshipController: NSObject{
         let followEndPoint = "https://api.twitter.com/1.1/friendships/create.json"
         var clientError: NSError?
         var isError: Bool = false
-        let dispatchGroup = DispatchGroup()
+        
         
         
         
         
         for account in accounts {
-            dispatchGroup.enter()
+            
             guard let screenName = account.screenName else { return }
             let params = ["screen_name": "\(screenName)"]
             let request = client.urlRequest(withMethod: "POST", url: followEndPoint, parameters: params, error: &clientError)
@@ -45,19 +45,19 @@ class FriendshipController: NSObject{
                         isError = true
                     
                 }
-              dispatchGroup.leave()
+              
             })
             
            
         }
         
         
-        dispatchGroup.notify(queue: DispatchQueue.main) {
+        
             
-                completion(isError)
+        completion(isError)
             
             
-        }
+        
         
         
         
@@ -69,10 +69,10 @@ class FriendshipController: NSObject{
         let followEndPoint = "https://api.twitter.com/1.1/friendships/destroy.json"
         var clientError: NSError?
         var isError: Bool = false
-        let dispatchGroup = DispatchGroup()
+        
         
         for account in accounts {
-            dispatchGroup.enter()
+            
             guard let screenName = account.screenName else { return }
             let params = ["screen_name": "\(screenName)"]
             let request = client.urlRequest(withMethod: "POST", url: followEndPoint, parameters: params, error: &clientError)
@@ -80,16 +80,16 @@ class FriendshipController: NSObject{
                 if error != nil {
                         isError = true
                     }
-                dispatchGroup.leave()
+                
                 
                 
             })
             
         }
         
-        dispatchGroup.notify(queue: DispatchQueue.main) {
+        
             completion(isError)
-        }
+        
         
     }
 }
