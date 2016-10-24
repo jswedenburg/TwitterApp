@@ -109,7 +109,7 @@
                                                         <constraint firstAttribute="width" constant="100" id="PIh-Ql-Cpv"/>
                                                         <constraint firstAttribute="height" constant="80" id="yEX-QY-A6o"/>
                                                     </constraints>
-                                                    <inset key="contentEdgeInsets" minX="25" minY="24" maxX="21" maxY="24"/>
+                                                    <inset key="contentEdgeInsets" minX="34" minY="26" maxX="30" maxY="26"/>
                                                     <state key="normal" title="Follow" image="borderbird">
                                                         <color key="titleColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>

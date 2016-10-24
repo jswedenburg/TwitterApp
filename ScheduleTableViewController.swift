@@ -1,19 +1,19 @@
  //
-//  ScheduleTableViewController.swift
-//  TwitterApp
-//
-//  Created by Jake SWEDENBURG on 10/6/16.
-//  Copyright © 2016 Jake Swedenbug. All rights reserved.
-//
-
-import UIKit
+ //  ScheduleTableViewController.swift
+ //  TwitterApp
+ //
+ //  Created by Jake SWEDENBURG on 10/6/16.
+ //  Copyright © 2016 Jake Swedenbug. All rights reserved.
+ //
+ 
+ import UIKit
  import TwitterKit
-
-
-class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TableViewCellDelegate {
+ 
+ 
+ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TableViewCellDelegate {
     
     
-   let twitterBlue = UIColor(red: 29/255, green: 161/255, blue: 242/155, alpha: 1.0)
+    let twitterBlue = UIColor(red: 29/255, green: 161/255, blue: 242/155, alpha: 1.0)
     
     
     var scheduleArray: [Schedule] {
@@ -30,11 +30,12 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     override func viewDidLoad() {
+        self.tableView.reloadData()
         if let titleFont = UIFont(name: "PaulGrotesk-Bold-Trail", size: 25) {
             self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: titleFont]
         }
         
-        print(UIFont.fontNames(forFamilyName: "Paul Grotesk"))
+        
         
         self.navigationController?.navigationBar.barTintColor = twitterBlue
     }
@@ -42,18 +43,20 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
         //self.tableView.contentInset = UIEdgeInsetsMake(-10, 0, 0, 0)
-    
+        
         
     }
     
-   
-        
-        
-        
-        
     
     
-   
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -67,7 +70,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         if let userID = sessionStore.session()?.userID {
             sessionStore.logOutUserID(userID)
         }
-        //UserDefaults.standard.removeObject(forKey: "userID")
+        UserDefaults.standard.removeObject(forKey: "userID")
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginVC") as? LoginViewController else { return }
@@ -86,35 +89,40 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         let accounts = schedule.twitterAccounts?.allObjects as? [TwitterAccount] ?? []
         
         if schedule.enabled {
+            cell.followButton.setImage(#imageLiteral(resourceName: "borderbird"), for: .normal)
             FriendshipController.sharedController.unfollowAccounts(accounts: accounts, completion: { (error) in
                 if error == true {
                     let alertController = UIAlertController(title: "Unfollowing Failed", message: "Please attempt at a later time", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                        cell.followButton.setImage(#imageLiteral(resourceName: "bluebird"), for: .normal)
                         self.logOut()
                     })
                     alertController.addAction(action)
                     self.present(alertController, animated: true, completion: nil)
                 } else {
-                    cell.followButton.setImage(#imageLiteral(resourceName: "borderbird"), for: .normal)
                     schedule.enabled = false
+                    print("diabled")
                 }
             })
-        } else {
             
+        } else {
+            cell.followButton.setImage(#imageLiteral(resourceName: "bluebird"), for: .normal)
             FriendshipController.sharedController.followAccounts(accounts: accounts, completion: { (error) in
                 if error == true {
                     let alertController = UIAlertController(title: "Following Failed", message: "Please attempt at a later time", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                        cell.followButton.setImage(#imageLiteral(resourceName: "borderbird"), for: .normal)
                         self.logOut()
                     })
                     alertController.addAction(action)
                     self.present(alertController, animated: true, completion: nil)
                 } else {
-                    cell.followButton.setImage(#imageLiteral(resourceName: "bluebird"), for: .normal)
                     schedule.enabled = true
+                    print("enabled")
                 }
                 
             })
+            
             
         }
         
@@ -142,8 +150,8 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-            return 1
-
+        return 1
+        
         
     }
     
@@ -153,15 +161,13 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
             titleCell.titleLabel.text = "Groups"
             titleCell.isUserInteractionEnabled = false
             
-            //titleCell.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 300)
-            //self.tableView.separatorStyle = .singleLine
-            
             return titleCell
         } else {
             guard let scheduleCell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as? ScheduleTableViewCell else { return UITableViewCell() }
             let schedule = scheduleArray[indexPath.section - 1]
             let accountArray2 = schedule.twitterAccounts?.allObjects as! [TwitterAccount]
             scheduleCell.updateWithSchedule(schedule: schedule, accounts: accountArray2)
+            print(schedule.enabled)
             if schedule.enabled {
                 scheduleCell.followButton.setImage(#imageLiteral(resourceName: "bluebird"), for: .normal)
             } else {
@@ -224,7 +230,7 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
         return 5.0
     }
     
-   
+    
     
     
     //MARK: Helper Functions
@@ -232,14 +238,14 @@ class ScheduleTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navVC = segue.destination as? UINavigationController, let detailVC = navVC.topViewController as? ScheduleDetailViewController, let index = tableView.indexPathForSelectedRow?.section else {return}
         
         if segue.identifier == "editSchedule"{
-                detailVC.schedule = scheduleArray[index - 1]
-            }
-    
+            detailVC.schedule = scheduleArray[index - 1]
+        }
+        
     }
-}
+ }

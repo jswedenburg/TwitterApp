@@ -115,8 +115,7 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
     
     func editSchedule(schedule: Schedule){
         
-        guard let scheduleTitle = titleTextField.text else { print("title?")
-            return }
+        guard let scheduleTitle = titleTextField.text else { return }
         schedule.title = scheduleTitle
         
         schedule.twitterAccounts = []

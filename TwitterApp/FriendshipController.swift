@@ -20,7 +20,8 @@ class FriendshipController: NSObject{
     
     
     func followAccounts(accounts: [TwitterAccount], completion: @escaping ((_ error: Bool) -> Void)){
-        guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }
+        guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { completion(true)
+            return }
         let client = TWTRAPIClient(userID: userID)
         let followEndPoint = "https://api.twitter.com/1.1/friendships/create.json"
         var clientError: NSError?
@@ -52,14 +53,18 @@ class FriendshipController: NSObject{
         
         
         dispatchGroup.notify(queue: DispatchQueue.main) {
-            completion(isError)
+            
+                completion(isError)
+            
+            
         }
         
         
         
     }
     func unfollowAccounts(accounts: [TwitterAccount], completion: @escaping ((_ error: Bool) -> Void)) {
-        guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }
+        guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { completion(true)
+            return }
         let client = TWTRAPIClient(userID: userID)
         let followEndPoint = "https://api.twitter.com/1.1/friendships/destroy.json"
         var clientError: NSError?
