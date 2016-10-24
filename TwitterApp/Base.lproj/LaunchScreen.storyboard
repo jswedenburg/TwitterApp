@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BreezeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="rZE-dw-gjc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BreezeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="rZE-dw-gjc">
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rZE-dw-gjc" secondAttribute="height" multiplier="12:9" id="dtf-Ln-deV"/>
                                     <constraint firstAttribute="height" constant="275" id="mD2-vN-8i1"/>

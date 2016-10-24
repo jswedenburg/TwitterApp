@@ -277,7 +277,7 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
             titleTextField.text = schedule.title
         } else {
             
-            titleTextField.placeholder = "Title"
+            titleTextField.placeholder = "title"
         }
     }
     
