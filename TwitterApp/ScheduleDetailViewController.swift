@@ -213,9 +213,11 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         self.toolBar.isHidden = true
         guard let indexPaths = accountCollectionView.indexPathsForSelectedItems else { return }
         for indexPath in indexPaths {
-            let cell = accountCollectionView.cellForItem(at: indexPath)
-            cell?.isSelected = false
-            cell?.layer.borderWidth = 0
+            guard let cell = self.accountCollectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell else { return }
+            cell.isSelected = false
+            cell.layer.borderWidth = 0
+            cell.checkMarkImageView.image = nil
+           
             
             
         }
@@ -228,19 +230,35 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         
     
     @IBAction func deleteCells(_ sender: AnyObject) {
+        
+        
+       
         self.toolBar.isHidden = true
         
         
         
         guard let indexPaths = self.accountCollectionView.indexPathsForSelectedItems else { return }
         
+        var accountsToDelete: [TwitterAccount] = []
+        
         for indexPath in indexPaths {
-            let index = indexPath.row
-            self.accountArray.remove(at: index)
-            let cell = self.accountCollectionView.cellForItem(at: indexPath)
-            cell?.isSelected = false
-            cell?.layer.borderWidth = 0
+            guard let cell = self.accountCollectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell else { return }
             
+            let index = indexPath.row
+            accountsToDelete.append(accountArray[index])
+            print(indexPath.row)
+            cell.isSelected = false
+            cell.layer.borderWidth = 0
+            cell.checkMarkImageView.image = nil
+            
+        }
+        
+        if accountsToDelete.count > 0 {
+            for account in accountsToDelete {
+                if let index = accountArray.index(of: account) {
+                    accountArray.remove(at: index)
+                }
+            }
         }
         
         self.accountCollectionView.performBatchUpdates({

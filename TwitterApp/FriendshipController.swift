@@ -17,8 +17,6 @@ class FriendshipController: NSObject{
     
     static let sharedController = FriendshipController()
     
-    
-    
     func followAccounts(accounts: [TwitterAccount], completion: @escaping ((_ error: Bool) -> Void)){
         guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { completion(true)
             return }
@@ -26,10 +24,6 @@ class FriendshipController: NSObject{
         let followEndPoint = "https://api.twitter.com/1.1/friendships/create.json"
         var clientError: NSError?
         var isError: Bool = false
-        
-        
-        
-        
         
         for account in accounts {
             
