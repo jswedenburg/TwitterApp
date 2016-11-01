@@ -26,9 +26,6 @@
         }
     }
     
-    
-    
-    
     //MARK: View Overriding Methods
     override func viewDidLoad() {
         self.tableView.reloadData()
@@ -37,10 +34,7 @@
             self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: titleFont]
         }
         self.navigationController?.navigationBar.barTintColor = twitterBlue
-        
-        
-        
-    }
+     }
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         self.tableView.reloadData()
@@ -65,14 +59,10 @@
             sessionStore.logOutUserID(userID)
         }
         UserDefaults.standard.removeObject(forKey: "userID")
-        
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginVC") as? LoginViewController else { return }
-        
         present(loginVC, animated: true, completion: nil)
     }
-    
-    
     
     //MARK: TableViewCellDelegate
     func cellButtonPressed(sender: UITableViewCell) {

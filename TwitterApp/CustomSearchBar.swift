@@ -9,19 +9,19 @@
 import UIKit
 
 class CustomSearchBar: UISearchBar {
-    var preferredFont: UIFont = UIFont.systemFont(ofSize: 34)
     
+    //MARK: Properties
+    var preferredFont: UIFont = UIFont.systemFont(ofSize: 34)
     var preferredTextColor = UIColor(red: 20/270, green: 23/270, blue: 26/270, alpha: 1)
     
+    
+    //MARK: Initializer
     init(frame: CGRect, font: UIFont, textColor: UIColor) {
         super.init(frame: frame)
-        
         self.frame = frame
         preferredFont = font
         preferredTextColor = textColor
         barTintColor = UIColor.black
-        
-        
         searchBarStyle = UISearchBarStyle.prominent
         isTranslucent = false
     }
@@ -35,21 +35,15 @@ class CustomSearchBar: UISearchBar {
         if let index = indexOfSearchFieldInSubviews() {
             // Access the search field
             let searchField: UITextField = (subviews[0]).subviews[index] as! UITextField
-            
             // Set its frame.
-            
             searchField.frame = CGRect(x: 5, y: 5, width: frame.size.width - 10, height: 75)
-            
             // Set the font and text color of the search field.
             searchField.font = preferredFont
             searchField.textColor = preferredTextColor
             searchField.tintColor = UIColor.black
-            
-            
             // Set the background color of the search field.
             searchField.backgroundColor = barTintColor
         }
-        
         super.draw(rect)
     }
     
