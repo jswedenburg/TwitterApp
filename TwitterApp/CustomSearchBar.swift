@@ -30,6 +30,7 @@ class CustomSearchBar: UISearchBar {
         super.init(coder: aDecoder)
     }
 
+    //MARK: SearchBar Override
     override func draw(_ rect: CGRect) {
         // Find the index of the search field in the search bar subviews.
         if let index = indexOfSearchFieldInSubviews() {
@@ -47,20 +48,15 @@ class CustomSearchBar: UISearchBar {
         super.draw(rect)
     }
     
-    
     func indexOfSearchFieldInSubviews() -> Int! {
         var index: Int!
         let searchBarView = self.subviews[0]
-        
         for i in 0 ..< searchBarView.subviews.count {
             if searchBarView.subviews[i].isKind(of: UITextField.self){
                 index = i
                 break
             }
         }
-        
         return index
-        
-
-}
+    }
 }

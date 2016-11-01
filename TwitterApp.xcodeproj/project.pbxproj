@@ -14,6 +14,7 @@
 		812954491DC6D7A900AAD024 /* PaulGrotesk-Thin-Trail.otf in Resources */ = {isa = PBXBuildFile; fileRef = 812954461DC6D7A900AAD024 /* PaulGrotesk-Thin-Trail.otf */; };
 		812A11C71DC84B2F00031C5E /* Schedule+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812A11C51DC84B2F00031C5E /* Schedule+CoreDataClass.swift */; };
 		812A11C81DC84B2F00031C5E /* Schedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812A11C61DC84B2F00031C5E /* Schedule+CoreDataProperties.swift */; };
+		812A11CB1DC84F9D00031C5E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812A11CA1DC84F9D00031C5E /* Crashlytics.framework */; };
 		8131484A1DB729CB008C701D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813148491DB729CB008C701D /* LoginViewController.swift */; };
 		8131493A1DB7E3E8008C701D /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813149361DB7E3E8008C701D /* Fabric.framework */; };
 		8131493B1DB7E3E8008C701D /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813149371DB7E3E8008C701D /* TwitterKit.framework */; };
@@ -37,7 +38,6 @@
 		818AC9061DA81FD000659821 /* ScheduleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818AC9051DA81FD000659821 /* ScheduleDetailViewController.swift */; };
 		819B3C1F1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */; };
 		81C55B5B1DB999E600874E48 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C55B5A1DB999E600874E48 /* TitleTableViewCell.swift */; };
-		81E552BB1DB87B2700E66301 /* Answers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E552BA1DB87B2700E66301 /* Answers.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +61,7 @@
 		812954461DC6D7A900AAD024 /* PaulGrotesk-Thin-Trail.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PaulGrotesk-Thin-Trail.otf"; path = "../../../../../Fonts/Paul_Grotesk_Trail/PaulGrotesk-Thin-Trail.otf"; sourceTree = "<group>"; };
 		812A11C51DC84B2F00031C5E /* Schedule+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataClass.swift"; sourceTree = "<group>"; };
 		812A11C61DC84B2F00031C5E /* Schedule+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Schedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		812A11CA1DC84F9D00031C5E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		813148491DB729CB008C701D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		813149361DB7E3E8008C701D /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		813149371DB7E3E8008C701D /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		818AC9051DA81FD000659821 /* ScheduleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetailViewController.swift; sourceTree = "<group>"; };
 		819B3C1E1DAD8EE800D0D674 /* TwitterSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSearchTableViewController.swift; sourceTree = "<group>"; };
 		81C55B5A1DB999E600874E48 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
-		81E552BA1DB87B2700E66301 /* Answers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Answers.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81E552BB1DB87B2700E66301 /* Answers.framework in Frameworks */,
 				8131493A1DB7E3E8008C701D /* Fabric.framework in Frameworks */,
 				8131493D1DB7E3E8008C701D /* TwitterCore.framework in Frameworks */,
+				812A11CB1DC84F9D00031C5E /* Crashlytics.framework in Frameworks */,
 				8131493B1DB7E3E8008C701D /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,14 +104,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		818AC88F1DA539E500659821 = {
+		812A11C91DC84EF800031C5E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				81E552BA1DB87B2700E66301 /* Answers.framework */,
+				812954441DC6D7A900AAD024 /* PaulGrotesk-Bold-Trail.otf */,
+				812954451DC6D7A900AAD024 /* PaulGrotesk-Regular-Trail.otf */,
+				812954461DC6D7A900AAD024 /* PaulGrotesk-Thin-Trail.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		812A11CC1DC8504000031C5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				812A11CA1DC84F9D00031C5E /* Crashlytics.framework */,
 				813149361DB7E3E8008C701D /* Fabric.framework */,
 				813149371DB7E3E8008C701D /* TwitterKit.framework */,
 				813149381DB7E3E8008C701D /* TwitterKitResources.bundle */,
 				813149391DB7E3E8008C701D /* TwitterCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		818AC88F1DA539E500659821 = {
+			isa = PBXGroup;
+			children = (
+				812A11CC1DC8504000031C5E /* Frameworks */,
 				818AC89A1DA539E500659821 /* TwitterApp */,
 				818AC8991DA539E500659821 /* Products */,
 			);
@@ -190,9 +208,7 @@
 		818AC8F21DA70CFB00659821 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				812954441DC6D7A900AAD024 /* PaulGrotesk-Bold-Trail.otf */,
-				812954451DC6D7A900AAD024 /* PaulGrotesk-Regular-Trail.otf */,
-				812954461DC6D7A900AAD024 /* PaulGrotesk-Thin-Trail.otf */,
+				812A11C91DC84EF800031C5E /* Fonts */,
 				818AC8A51DA539E500659821 /* Assets.xcassets */,
 				818AC8AA1DA539E500659821 /* Info.plist */,
 			);

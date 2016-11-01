@@ -8,26 +8,20 @@
 
 import UIKit
 import CoreData
-import UserNotifications
-import Fabric
 import TwitterKit
 import Fabric
-import Answers
+import Crashlytics
+
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    
     var window: UIWindow?
     
-    
-    
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-       
-        Fabric.with([Twitter.self, Answers.self])
-    
         
+        Fabric.with([Twitter.self, Crashlytics.self])
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC") as? LoginViewController,
@@ -42,53 +36,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             appDelegate.window?.rootViewController = loginVC
             appDelegate.window?.makeKeyAndVisible()
         }
-            
-
         
         // Override point for customization after application launch.
         return true
     }
-    /*
-    func hasAppBeenUpdatedSinceLastRun() -> Bool {
-        var bundleInfo = Bundle.main.infoDictionary!
-        let userDefaults = UserDefaults.standard
-        if let currentVersion = bundleInfo["CFBundleShortVersionString"] as? String {
-            if userDefaults.string(forKey: "currentVersion") == currentVersion {
-                return false
-            } else {
-                userDefaults.set(currentVersion, forKey: "currentVersion")
-                userDefaults.synchronize()
-                return true
-            }
-        }
-        return true
-    }
-        
- */
     
-    
-    
-
-    
-    
-    
-    
-
     // MARK: - Core Data stack
-
+    
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
-        */
+         */
         let container = NSPersistentContainer(name: "TwitterApp")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
+                
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -102,9 +69,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         })
         return container
     }()
-
+    
     // MARK: - Core Data Saving support
-
+    
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -118,6 +85,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
     }
-
+    
 }
 

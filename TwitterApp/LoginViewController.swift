@@ -9,18 +9,13 @@
 import UIKit
 import SafariServices
 import TwitterKit
-import Answers
+
 
 
 
 class LoginViewController: UIViewController {
     
-    
-    func navigateToScheduleScreen() {
-        performSegue(withIdentifier: "toScheduleView", sender: self)
-        
-    }
-    
+    //MARK: IBActions
     @IBAction func loginButtonPressed(_ sender: AnyObject) {
         Twitter.sharedInstance().logIn(with: self, completion: { (session, error) in
             if session != nil {
@@ -29,4 +24,11 @@ class LoginViewController: UIViewController {
             self.navigateToScheduleScreen()
         })
     }
+    
+    //MARK: Helper Functions
+    func navigateToScheduleScreen() {
+        performSegue(withIdentifier: "toScheduleView", sender: self)
+    }
+    
+    
 }
