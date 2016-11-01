@@ -38,6 +38,8 @@
         }
         self.navigationController?.navigationBar.barTintColor = twitterBlue
         
+        
+        
     }
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
@@ -69,6 +71,8 @@
         
         present(loginVC, animated: true, completion: nil)
     }
+    
+    
     
     //MARK: TableViewCellDelegate
     func cellButtonPressed(sender: UITableViewCell) {

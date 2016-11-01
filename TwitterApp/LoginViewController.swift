@@ -22,19 +22,34 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: AnyObject) {
+        loginTwitter {
+            self.navigateToScheduleScreen()
+        }
+    }
+    
+    func loginTwitter(completion: (() -> Void)) {
+        
+        
+        
+        
         Twitter.sharedInstance().logIn { (session, error) in
-            
+           
             if session != nil {
-            
-               
-                self.navigateToScheduleScreen()
+                
+                
+                
                 UserDefaults.standard.set(session?.userID, forKey: "userID")
                 
                 
-               
+                
                 
             }
+            
         }
+        
+        
+        completion()
+        
     }
     
     

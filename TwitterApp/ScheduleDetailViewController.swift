@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TwitterKit
 
 class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,  searchDelegate, UITextFieldDelegate {
     
@@ -39,6 +40,11 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         if let titleFont = UIFont(name: "PaulGrotesk-Bold-Trail", size: 25) {
             self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: titleFont]
         }
+        if let _ = Twitter.sharedInstance().sessionStore.session()?.userID {
+            // do nothing
+        } else {
+            presentAlertController(title: "No Twitter Account found", message: "Please sign in ")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,6 +53,14 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     //MARK: Helper Methods
+    func presentAlertController(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+            self.logOut()
+        })
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
+    }
     func setUpFlow() {
         let flow = UICollectionViewFlowLayout()
         let width = self.view.frame.width / 3
@@ -99,6 +113,17 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
         if let schedule = schedule, let accounts = schedule.twitterAccounts?.allObjects as? [TwitterAccount] {
             self.accountArray = accounts
         }
+    }
+    
+    func logOut() {
+        let sessionStore = Twitter.sharedInstance().sessionStore
+        if let userID = sessionStore.session()?.userID {
+            sessionStore.logOutUserID(userID)
+        }
+        UserDefaults.standard.removeObject(forKey: "userID")
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginVC") as? LoginViewController else { return }
+        present(loginVC, animated: true, completion: nil)
     }
     
     //MARK: Text Field Delegate

@@ -18,7 +18,8 @@ class NetworkController {
     
     
     static func searchRequest(searchTerm: String, completion: @escaping (_ accounts: [TwitterAccount], _ error: Bool) -> Void) {
-        guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }
+        guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { completion([], true)
+            return }
         let client = TWTRAPIClient(userID: userID)
         let searchEndPoint = "https://api.twitter.com/1.1/users/search.json"
         let params = ["q": "\(searchTerm)", "page": "1", "count": "20"]
