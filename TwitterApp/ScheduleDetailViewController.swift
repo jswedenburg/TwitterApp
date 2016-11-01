@@ -65,7 +65,7 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
                 let screenName = account.screenName,
                 let imageData = account.profileImage else { return }
             let verified = account.verified
-            let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: newSchedule, profileImageData: imageData)
+            let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: newSchedule, profileImageData: imageData as Data)
             TwitterAccountController.sharedController.add(newAccount)
         }
         ScheduleController.sharedController.saveToPersistentStorage()
@@ -80,7 +80,7 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
                 let screenName = account.screenName,
                 let imageData = account.profileImage else { return }
             let verified = account.verified
-            let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: schedule, profileImageData: imageData)
+            let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: schedule, profileImageData: imageData as Data)
             TwitterAccountController.sharedController.add(newAccount)
         }
         ScheduleController.sharedController.saveToPersistentStorage()
@@ -155,7 +155,7 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
             guard let cell = self.accountCollectionView.cellForItem(at: indexPath) as? AccountCollectionViewCell else { return }
             let index = indexPath.row
             accountsToDelete.append(accountArray[index])
-            print(indexPath.row)
+            
             cell.isSelected = false
             cell.layer.borderWidth = 0
             cell.checkMarkImageView.image = nil

@@ -74,12 +74,12 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
             guard let index = followedAccounts.index(of: account) else { return }
             followedAccounts.remove(at: index)
             sender.followButton.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
-            account.verified = false
+            account.followed = false
             
         } else {
             followedAccounts.append(account)
             sender.followButton.setImage(#imageLiteral(resourceName: "bluecheckmark"), for: .normal)
-            account.verified = true
+            account.followed = true
         }
     }
     

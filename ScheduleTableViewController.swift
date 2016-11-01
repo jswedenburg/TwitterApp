@@ -134,7 +134,7 @@
             let schedule = scheduleArray[indexPath.section - 1]
             let accountArray2 = schedule.twitterAccounts?.allObjects as! [TwitterAccount]
             scheduleCell.updateWithSchedule(schedule: schedule, accounts: accountArray2)
-            print(schedule.enabled)
+            
             if schedule.enabled {
                 scheduleCell.followButton.setImage(#imageLiteral(resourceName: "bluebird"), for: .normal)
             } else {

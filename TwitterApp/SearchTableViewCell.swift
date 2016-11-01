@@ -41,12 +41,16 @@ class SearchTableViewCell: UITableViewCell {
         followButton.imageEdgeInsets = UIEdgeInsetsMake(25.0, 55.0, 25.0, 15.0)
         self.accountName.text = account.name
         self.accountScreenname.text = "@" + (account.screenName ?? "")
-        guard let image = UIImage(data: account.profileImage!) else { return }
+        guard let image = UIImage(data: account.profileImage! as Data) else { return }
         self.accountImageView.image = image
-        if account.verified{
+        if account.followed{
             followButton.setImage(#imageLiteral(resourceName: "bluecheckmark"), for: .normal)
         } else {
             followButton.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
+        }
+        
+        if account.verified {
+            verifiedImageView.image = #imageLiteral(resourceName: "verified")
         }
     }
 

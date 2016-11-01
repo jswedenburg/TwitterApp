@@ -38,10 +38,10 @@ class ScheduleTableViewCell: UITableViewCell{
             let randomNumber3 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
             let randomNumber4 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
             
-            self.topRightImage.image = UIImage(data: accounts[randomNumber1].profileImage!) ?? #imageLiteral(resourceName: "followMan")
-            self.topLeftImage.image = UIImage(data: accounts[randomNumber2].profileImage!) ?? #imageLiteral(resourceName: "followMan")
-            self.bottomLeftImage.image = UIImage(data: accounts[randomNumber3].profileImage!) ?? #imageLiteral(resourceName: "followMan")
-            self.bottomRightImage.image = UIImage(data: accounts[randomNumber4].profileImage!) ?? #imageLiteral(resourceName: "followMan")
+            self.topRightImage.image = UIImage(data: accounts[randomNumber1].profileImage! as Data) ?? #imageLiteral(resourceName: "followMan")
+            self.topLeftImage.image = UIImage(data: accounts[randomNumber2].profileImage! as Data) ?? #imageLiteral(resourceName: "followMan")
+            self.bottomLeftImage.image = UIImage(data: accounts[randomNumber3].profileImage! as Data) ?? #imageLiteral(resourceName: "followMan")
+            self.bottomRightImage.image = UIImage(data: accounts[randomNumber4].profileImage! as Data) ?? #imageLiteral(resourceName: "followMan")
         }
     }
 }

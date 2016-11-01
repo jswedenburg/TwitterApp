@@ -19,7 +19,7 @@ class AccountCollectionViewCell: UICollectionViewCell {
     func updateWithAccount(account: TwitterAccount){
         self.usernameLabel.text = "@" + (account.screenName ?? "")
         guard let data = account.profileImage else { return }
-        self.accountImageView.image = UIImage(data: data)
+        self.accountImageView.image = UIImage(data: data as Data)
         
         checkMarkImageView.layer.borderWidth = 0.5
         checkMarkImageView.layer.masksToBounds = false
