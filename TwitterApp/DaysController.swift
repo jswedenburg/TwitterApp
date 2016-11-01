@@ -10,6 +10,8 @@ import Foundation
 import CoreData
 
 class DaysController {
+    
+    
     static let sharedController = DaysController()
     
     

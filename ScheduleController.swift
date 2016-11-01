@@ -10,14 +10,12 @@ import Foundation
 import CoreData
 
 class ScheduleController {
+    
+    //MARK: Schedule Core data controller
     static let sharedController = ScheduleController()
-    
     let moc = CoreDataStack.context
-    
     var schedules: [Schedule] {
-        
         let request: NSFetchRequest<Schedule> = Schedule.fetchRequest()
-        
         do {
             let result = try moc.fetch(request)
             return result
@@ -28,16 +26,12 @@ class ScheduleController {
     
     func add(_ schedule: Schedule){
         self.saveToPersistentStorage()
-        
     }
     
     func delete(_ schedule: Schedule){
         schedule.managedObjectContext?.delete(schedule)
-        
         self.saveToPersistentStorage()
     }
-    
-    
     
     func saveToPersistentStorage() {
         do {
@@ -46,8 +40,6 @@ class ScheduleController {
             NSLog("Error saving to core data: \(error)")
         }
     }
-    
-    
 }
 
 

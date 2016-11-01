@@ -10,22 +10,18 @@ import Foundation
 import CoreData
 
 class TwitterAccountController {
+    
+    //MARK Twitter Account Core Data Controller
     static let sharedController = TwitterAccountController()
-    
-    
     
     func add(_ twitterAccount: TwitterAccount){
         self.saveToPersistentStorage()
-        
     }
     
     func delete(_ twitterAccount: TwitterAccount){
         twitterAccount.managedObjectContext?.delete(twitterAccount)
-        
         self.saveToPersistentStorage()
     }
-    
-    
     
     func saveToPersistentStorage() {
         do {
@@ -34,6 +30,4 @@ class TwitterAccountController {
             NSLog("Error saving to core data: \(error)")
         }
     }
-    
-    
 }
