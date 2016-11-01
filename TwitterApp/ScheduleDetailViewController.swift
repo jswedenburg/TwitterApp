@@ -26,6 +26,7 @@ class ScheduleDetailViewController: UIViewController, UICollectionViewDelegate, 
     
     //MARK: View Cycle Overriding Methods
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.barStyle = .black
         TwitterSearchTableViewController.delegate = self
         titleTextField.delegate = self
         self.navigationController?.setToolbarHidden(true, animated: true)

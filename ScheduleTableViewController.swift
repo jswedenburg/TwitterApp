@@ -25,17 +25,19 @@
             self.tableView.reloadData()
         }
     }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+    
+    
+    
     
     //MARK: View Overriding Methods
     override func viewDidLoad() {
         self.tableView.reloadData()
+        self.navigationController?.navigationBar.barStyle = .black
         if let titleFont = UIFont(name: "PaulGrotesk-Bold-Trail", size: 25) {
             self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: titleFont]
         }
         self.navigationController?.navigationBar.barTintColor = twitterBlue
+        
     }
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {

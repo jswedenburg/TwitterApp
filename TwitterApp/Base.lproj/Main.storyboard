@@ -45,7 +45,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahu-bf-WZa">
-                                                    <rect key="frame" x="8" y="8" width="91" height="53"/>
+                                                    <rect key="frame" x="8" y="8" width="90.5" height="53"/>
                                                     <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="44"/>
                                                     <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                                                     <rect key="frame" x="10" y="9" width="73" height="73"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tcj-eq-64S">
-                                                            <rect key="frame" x="0.0" y="0.0" width="37" height="36"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="36.5" id="fUT-Q7-gQa"/>
                                                                 <constraint firstAttribute="width" secondItem="tcj-eq-64S" secondAttribute="height" multiplier="1:1" id="lfh-RC-at1"/>
@@ -93,7 +93,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ccN-RG-qzw">
-                                                            <rect key="frame" x="37" y="36" width="36" height="37"/>
+                                                            <rect key="frame" x="37" y="37" width="36" height="36"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="ccN-RG-qzw" secondAttribute="height" multiplier="1:1" id="6ME-0O-tTc"/>
                                                                 <constraint firstAttribute="width" constant="36.5" id="JkX-4P-aCF"/>
@@ -198,7 +198,6 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="tableView" destination="Us0-eX-yMG" id="aw1-DT-ufy"/>
                     </connections>
@@ -392,7 +391,6 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="accountCollectionView" destination="vGX-h2-F5g" id="Fee-8W-yKp"/>
                         <outlet property="editButton" destination="koK-ri-Brr" id="plV-e2-s7b"/>
@@ -444,13 +442,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBb-Vh-76e">
-                                                    <rect key="frame" x="103" y="30" width="39" height="21"/>
+                                                    <rect key="frame" x="103" y="29" width="39" height="20"/>
                                                     <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
                                                     <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izg-9s-aUY">
-                                                    <rect key="frame" x="103" y="8" width="39" height="21"/>
+                                                    <rect key="frame" x="103" y="8" width="39" height="20"/>
                                                     <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
                                                     <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -578,7 +576,6 @@
             <objects>
                 <navigationController storyboardIdentifier="navcontroller" automaticallyAdjustsScrollViewInsets="NO" id="75u-pf-1q4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jdM-Xd-YJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -597,7 +594,6 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UF7-oI-mMZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WaC-Re-BxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
