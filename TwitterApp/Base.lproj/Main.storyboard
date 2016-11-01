@@ -45,7 +45,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahu-bf-WZa">
-                                                    <rect key="frame" x="8" y="8" width="90.5" height="53"/>
+                                                    <rect key="frame" x="8" y="8" width="91" height="53"/>
                                                     <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="44"/>
                                                     <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -442,19 +442,19 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBb-Vh-76e">
-                                                    <rect key="frame" x="103" y="29" width="39" height="20"/>
+                                                    <rect key="frame" x="103" y="30" width="39" height="21"/>
                                                     <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
                                                     <color key="textColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izg-9s-aUY">
-                                                    <rect key="frame" x="103" y="8" width="39" height="20"/>
+                                                    <rect key="frame" x="103" y="8" width="39" height="21"/>
                                                     <fontDescription key="fontDescription" name="PaulGrotesk-Regular-Trail" family="Paul Grotesk" pointSize="17"/>
                                                     <color key="textColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C9v-Zd-9c7">
-                                                    <rect key="frame" x="150" y="8" width="15" height="15"/>
+                                                    <rect key="frame" x="150" y="11" width="15" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="C9v-Zd-9c7" secondAttribute="height" multiplier="1:1" id="4Iz-fr-rqp"/>
                                                         <constraint firstAttribute="height" constant="15" id="ISS-vB-HVd"/>
@@ -476,10 +476,10 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GsH-3g-mXt" firstAttribute="leading" secondItem="Msw-hv-Z8i" secondAttribute="leadingMargin" id="0BQ-M7-0wc"/>
+                                                <constraint firstItem="C9v-Zd-9c7" firstAttribute="centerY" secondItem="Izg-9s-aUY" secondAttribute="centerY" id="60v-8j-epY"/>
                                                 <constraint firstItem="GsH-3g-mXt" firstAttribute="top" secondItem="Msw-hv-Z8i" secondAttribute="topMargin" id="64Q-dW-hYW"/>
                                                 <constraint firstItem="5Ib-kW-zzX" firstAttribute="centerY" secondItem="Msw-hv-Z8i" secondAttribute="centerY" id="H22-q0-FR1"/>
                                                 <constraint firstItem="mBb-Vh-76e" firstAttribute="leading" secondItem="GsH-3g-mXt" secondAttribute="trailing" constant="11" id="ILA-SF-Zh4"/>
-                                                <constraint firstAttribute="topMargin" secondItem="C9v-Zd-9c7" secondAttribute="top" id="JQo-nc-tCD"/>
                                                 <constraint firstItem="C9v-Zd-9c7" firstAttribute="leading" secondItem="Izg-9s-aUY" secondAttribute="trailing" constant="8" id="JoR-Qa-YQE"/>
                                                 <constraint firstAttribute="trailing" secondItem="5Ib-kW-zzX" secondAttribute="trailing" id="V2H-L5-byd"/>
                                                 <constraint firstItem="mBb-Vh-76e" firstAttribute="top" secondItem="Izg-9s-aUY" secondAttribute="bottom" constant="1" id="WfQ-5i-uXE"/>

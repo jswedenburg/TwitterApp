@@ -51,6 +51,8 @@ class SearchTableViewCell: UITableViewCell {
         
         if account.verified {
             verifiedImageView.image = #imageLiteral(resourceName: "verified")
+        } else {
+            verifiedImageView.image = nil
         }
     }
 

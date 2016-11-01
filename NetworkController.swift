@@ -17,7 +17,7 @@ class NetworkController {
    
     
     
-    static func searchRequest(searchTerm: String, completion: @escaping ([TwitterAccount]) -> Void) {
+    static func searchRequest(searchTerm: String, completion: @escaping (_ accounts: [TwitterAccount], _ error: Bool) -> Void) {
         guard let userID = Twitter.sharedInstance().sessionStore.session()?.userID else { return }
         let client = TWTRAPIClient(userID: userID)
         let searchEndPoint = "https://api.twitter.com/1.1/users/search.json"
@@ -29,8 +29,8 @@ class NetworkController {
         let request = client.urlRequest(withMethod: "GET", url: searchEndPoint, parameters: params, error: clientError)
         client.sendTwitterRequest(request) { (response, data, error) in
             if error != nil {
-                //Handle Error
-                //print("\(error?.localizedDescription)")
+                completion([], true)
+                
             }
             var accountArray: [TwitterAccount] = []
             guard let data = data else { return }
@@ -52,7 +52,7 @@ class NetworkController {
                     DispatchQueue.main.async {
                         let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: nil, profileImageData: data)
                         accountArray.append(newAccount)
-                        completion(accountArray)
+                        completion(accountArray, false)
                     }
                     
                 }

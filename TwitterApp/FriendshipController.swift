@@ -35,7 +35,7 @@ class FriendshipController: NSObject{
                 
                     if error != nil {
                         
-                        print(error)
+                        
                         isError = true
                     
                 }

@@ -56,8 +56,14 @@ class TwitterSearchTableViewController: UIViewController, UITableViewDataSource,
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text else { return }
         
-        NetworkController.searchRequest(searchTerm: searchTerm) { (accounts) in
+        NetworkController.searchRequest(searchTerm: searchTerm) { (accounts, error) in
             self.twitterAccounts = accounts
+            if error {
+                let alertController = UIAlertController(title: "Search Failed", message: "Please logout and try again later", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
         
         
