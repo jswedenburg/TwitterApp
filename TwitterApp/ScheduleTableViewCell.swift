@@ -32,16 +32,37 @@ class ScheduleTableViewCell: UITableViewCell{
     func updateWithSchedule(schedule: Schedule, accounts: [TwitterAccount]) {
         self.titleLabel.text = schedule.title
         self.imageContainer.layer.cornerRadius = 10.0
-        if accounts.count > 0 {
-            let randomNumber1 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
-            let randomNumber2 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
-            let randomNumber3 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
-            let randomNumber4 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
+//        if accounts.count > 0 {
+//            var x = 4
+//            var randomNumbers: [Int] = []
+//            while x > 0 {
+//                print(x)
+//                let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
+//                if randomNumbers.contains(randomNumber) {
+//                    if accounts.count <= x {
+//                        x -= 1
+//                        //let randomNumber1 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
+//                        randomNumbers.append(0)
+//                    }
+//                } else {
+//                    randomNumbers.append(randomNumber)
+//                    x -= 1
+//                }
+//                print(x)
+//            }
+        
             
-            self.topRightImage.image = UIImage(data: accounts[randomNumber1].profileImage! as Data) ?? #imageLiteral(resourceName: "followMan")
-            self.topLeftImage.image = UIImage(data: accounts[randomNumber2].profileImage! as Data) ?? #imageLiteral(resourceName: "followMan")
-            self.bottomLeftImage.image = UIImage(data: accounts[randomNumber3].profileImage! as Data) ?? #imageLiteral(resourceName: "followMan")
-            self.bottomRightImage.image = UIImage(data: accounts[randomNumber4].profileImage! as Data) ?? #imageLiteral(resourceName: "followMan")
+//            let randomNumber1 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
+//            let randomNumber2 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
+//            let randomNumber3 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
+//            let randomNumber4 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
+            
+            
+            
+            self.topRightImage.image = UIImage(data: accounts[0].profileImage! as Data) ?? #imageLiteral(resourceName: "egg")
+            self.topLeftImage.image = UIImage(data: accounts[1].profileImage! as Data) ?? #imageLiteral(resourceName: "egg")
+            self.bottomLeftImage.image = UIImage(data: accounts[2].profileImage! as Data) ?? #imageLiteral(resourceName: "egg")
+            self.bottomRightImage.image = UIImage(data: accounts[3].profileImage! as Data) ?? #imageLiteral(resourceName: "egg")
         }
     }
 }
