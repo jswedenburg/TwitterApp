@@ -85,7 +85,6 @@
                     self.present(alertController, animated: true, completion: nil)
                 } else {
                     schedule.enabled = false
-                    print("diabled")
                 }
             })
         } else {
@@ -101,7 +100,6 @@
                     self.present(alertController, animated: true, completion: nil)
                 } else {
                     schedule.enabled = true
-                    print("enabled")
                 }
             })
         }

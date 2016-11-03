@@ -38,21 +38,24 @@ class NetworkController {
             var accountArray: [TwitterAccount] = []
             guard let data = data else { return }
             guard let jsonDict = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [[String: Any]] else { return }
-            for x in 0...(jsonDict.count - 1) {
-                guard let name = jsonDict[x]["name"] as? String, let screenName = jsonDict[x]["screen_name"] as? String, let imageURL = jsonDict[x]["profile_image_url"] as? String, let verified = jsonDict[x]["verified"] as? Bool else { return }
-                let biggerImage = imageURL.replacingOccurrences(of: "_normal", with: "")
-                guard let url = URL(string: biggerImage) else { return }
-                print(verified)
-                NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
-                    guard let data = data else { return }
-                    DispatchQueue.main.async {
-                        let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: nil, profileImageData: data)
-                        accountArray.append(newAccount)
-                        completion(accountArray, false)
+            if jsonDict.count > 0 {
+                for x in 1...(jsonDict.count) {
+                    let jsonIndex = x - 1
+                    guard let name = jsonDict[jsonIndex]["name"] as? String, let screenName = jsonDict[jsonIndex]["screen_name"] as? String, let imageURL = jsonDict[jsonIndex]["profile_image_url"] as? String, let verified = jsonDict[jsonIndex]["verified"] as? Bool else { return }
+                    let biggerImage = imageURL.replacingOccurrences(of: "_normal", with: "")
+                    guard let url = URL(string: biggerImage) else { return }
+                    NetworkController.performRequestForURL(url: url, httpMethod: .Get) { (data, error) in
+                        guard let data = data else { return }
+                        DispatchQueue.main.async {
+                            let newAccount = TwitterAccount(name: name, screenName: screenName, verified: verified, schedule: nil, profileImageData: data)
+                            accountArray.append(newAccount)
+                            completion(accountArray, false)
+                        }
                     }
                 }
             }
         }
+            
     }
     
     //MARK: Retrieve image data function
