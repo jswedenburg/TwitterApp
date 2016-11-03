@@ -32,37 +32,30 @@ class ScheduleTableViewCell: UITableViewCell{
     func updateWithSchedule(schedule: Schedule, accounts: [TwitterAccount]) {
         self.titleLabel.text = schedule.title
         self.imageContainer.layer.cornerRadius = 10.0
-//        if accounts.count > 0 {
-//            var x = 4
-//            var randomNumbers: [Int] = []
-//            while x > 0 {
-//                print(x)
-//                let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
-//                if randomNumbers.contains(randomNumber) {
-//                    if accounts.count <= x {
-//                        x -= 1
-//                        //let randomNumber1 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
-//                        randomNumbers.append(0)
-//                    }
-//                } else {
-//                    randomNumbers.append(randomNumber)
-//                    x -= 1
-//                }
-//                print(x)
-//            }
-        
-            
-//            let randomNumber1 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
-//            let randomNumber2 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
-//            let randomNumber3 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
-//            let randomNumber4 = GKRandomSource.sharedRandom().nextInt(upperBound: accounts.count)
-            
-            
-            
-            self.topRightImage.image = UIImage(data: accounts[0].profileImage! as Data) ?? #imageLiteral(resourceName: "egg")
-            self.topLeftImage.image = UIImage(data: accounts[1].profileImage! as Data) ?? #imageLiteral(resourceName: "egg")
-            self.bottomLeftImage.image = UIImage(data: accounts[2].profileImage! as Data) ?? #imageLiteral(resourceName: "egg")
-            self.bottomRightImage.image = UIImage(data: accounts[3].profileImage! as Data) ?? #imageLiteral(resourceName: "egg")
+        switch accounts.count {
+        case 1:
+            self.topRightImage.image = UIImage(data: accounts[0].profileImage as! Data)
+            self.topLeftImage.image = UIImage(data: accounts[0].profileImage as! Data)
+            self.bottomLeftImage.image = UIImage(data: accounts[0].profileImage as! Data)
+            self.bottomRightImage.image = UIImage(data: accounts[0].profileImage as! Data)
+        case 2:
+            self.topRightImage.image = UIImage(data: accounts[0].profileImage as! Data)
+            self.topLeftImage.image = UIImage(data: accounts[1].profileImage as! Data)
+            self.bottomLeftImage.image = UIImage(data: accounts[0].profileImage as! Data)
+            self.bottomRightImage.image = UIImage(data: accounts[1].profileImage as! Data)
+        case 3:
+            self.topRightImage.image = UIImage(data: accounts[0].profileImage as! Data)
+            self.topLeftImage.image = UIImage(data: accounts[1].profileImage as! Data)
+            self.bottomLeftImage.image = UIImage(data: accounts[2].profileImage as! Data)
+            self.bottomRightImage.image = UIImage(data: accounts[0].profileImage as! Data)
+        default:
+            self.topRightImage.image = UIImage(data: accounts[0].profileImage as! Data)
+            self.topLeftImage.image = UIImage(data: accounts[1].profileImage as! Data)
+            self.bottomLeftImage.image = UIImage(data: accounts[2].profileImage as! Data)
+            self.bottomRightImage.image = UIImage(data: accounts[3].profileImage as! Data)
         }
+        
+       
     }
+
 }
