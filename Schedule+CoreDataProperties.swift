@@ -2,13 +2,13 @@
 //  Schedule+CoreDataProperties.swift
 //  TwitterApp
 //
-//  Created by Jake SWEDENBURG on 10/6/16.
+//  Created by Jake Swedenburg on 10/31/16.
 //  Copyright © 2016 Jake Swedenbug. All rights reserved.
 //
 
 import Foundation
 import CoreData
- 
+
 
 extension Schedule {
 
@@ -16,12 +16,8 @@ extension Schedule {
         return NSFetchRequest<Schedule>(entityName: "Schedule");
     }
 
-    @NSManaged public var repeating: Bool
-    @NSManaged public var days: Int16
-    @NSManaged public var startTime: NSDate?
-    @NSManaged public var endTime: NSDate?
-    @NSManaged public var title: String?
     @NSManaged public var enabled: Bool
+    @NSManaged public var title: String?
     @NSManaged public var twitterAccounts: NSSet?
 
 }

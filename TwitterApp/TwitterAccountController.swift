@@ -7,34 +7,21 @@
 //
 
 import Foundation
+import CoreData
 
 class TwitterAccountController {
+    
+    //MARK Twitter Account Core Data Controller
     static let sharedController = TwitterAccountController()
     
-    var twitterAccounts: [TwitterAccount] {
-        
-        let request: NSFetchRequest<TwitterAccount> = TwitterAccount.fetchRequest()
-        let moc = CoreDataStack.context
-        do {
-            let result = try moc.fetch(request)
-            return result
-        } catch {
-            return []
-        }
-    }
-    
-    func add(_ schedule: Schedule){
-        self.saveToPersistentStorage()
-        
-    }
-    
-    func delete(_ schedule: Schedule){
-        schedule.managedObjectContext?.delete(schedule)
-        
+    func add(_ twitterAccount: TwitterAccount){
         self.saveToPersistentStorage()
     }
     
-    
+    func delete(_ twitterAccount: TwitterAccount){
+        twitterAccount.managedObjectContext?.delete(twitterAccount)
+        self.saveToPersistentStorage()
+    }
     
     func saveToPersistentStorage() {
         do {
@@ -43,6 +30,4 @@ class TwitterAccountController {
             NSLog("Error saving to core data: \(error)")
         }
     }
-    
-    
 }
